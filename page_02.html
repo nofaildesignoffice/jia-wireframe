@@ -5,679 +5,1075 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>클래스 | 지아 - 속눈썹 창업반·펌·연장·원데이 1:1 과정</title>
+<meta name="description" content="속눈썹 창업반 3개월 24회차, 펌 단과반 5DAY, 클래식 연장 단과반, 원데이. 전 과정 1:1로 진행하고 과제는 화면 영상으로 피드백합니다.">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-/* =========================================================
-   상세페이지 와이어프레임 (모바일 480px · 그레이스케일)
-   지침: wireframe-guide-detail.md
-   ========================================================= */
+
 :root{
-  --text-black:#111; --text-dark:#333; --text-gray:#666; --text-light:#999;
-  --line:#e0e0e0; --bg:#f5f5f5; --bg-card:#fff; --bg-dark:#2d2d2d;
-  --radius:12px; --radius-sm:8px; --bar-h:64px;
+  --text-black:#1A1A1A; --text-dark:#333333; --text-gray:#666666; --text-light:#999999; --text-muted:#BCBCBC;
+  --bg-white:#FFFFFF; --bg-light:#F5F5F5; --bg-dark:#2D2D2D; --bg-black:#1A1A1A;
+  --border-light:#E0E0E0; --border-default:#D0D0D0;
+  --placeholder-bg:#E0E0E0; --placeholder-icon:#BCBCBC;
+  --radius-sm:8px; --radius-md:12px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 4px 12px rgba(0,0,0,0.1);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.65;background:var(--bg);font-size:15px}
+body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.6;background:var(--bg-white)}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 button{cursor:pointer;border:none;font-family:inherit;background:none}
-.wrap{max-width:480px;margin:0 auto;background:var(--bg-card);padding-bottom:var(--bar-h)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.bg-light{background:var(--bg-light)}
+.bg-dark{background:var(--bg-dark)}
+.text-center{text-align:center}
+.section-label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px}
+.section-title{font-size:36px;font-weight:700;color:var(--text-black);line-height:1.35;margin-bottom:16px;letter-spacing:-.02em}
+.section-desc{font-size:16px;color:var(--text-gray);max-width:640px;margin-bottom:48px}
+.text-center .section-desc{margin-left:auto;margin-right:auto}
+.bg-dark .section-title{color:#FFF}
+.bg-dark .section-desc{color:rgba(255,255,255,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-sm);border:1px solid transparent;transition:opacity .2s;font-family:inherit}
+.btn:hover{opacity:.85}
+.btn-primary{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.btn-secondary{background:transparent;color:var(--text-black);border-color:var(--text-black)}
+.bg-dark .btn-primary,.hero .btn-primary{background:#FFF;color:var(--text-black);border-color:#FFF}
+.bg-dark .btn-secondary,.hero .btn-secondary{color:#FFF;border-color:rgba(255,255,255,.35)}
+.btn-sm{padding:10px 18px;font-size:14px}
+.btn-block{width:100%}
+.img-placeholder{background:var(--placeholder-bg);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--placeholder-icon)}
+.img-placeholder svg{width:32px;height:32px}
+.icon-box{width:48px;height:48px;background:var(--bg-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
+.icon-box svg{width:22px;height:22px}
+.icon-circle{width:64px;height:64px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-dark);margin-bottom:24px}
+.icon-circle svg{width:26px;height:26px}
+.micro{font-size:13px;color:var(--text-light);margin-top:12px}
 
-/* GNB (사이트 공통 · 480px 폭에 맞춰 축약) */
-.gnb{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-.gnb-inner{height:56px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
-.gnb-logo{font-size:20px;font-weight:800;color:var(--text-black);letter-spacing:-.03em}
-.gnb-right{display:flex;gap:16px;align-items:center;font-size:13px;color:var(--text-gray)}
-.gnb-burger{width:22px;height:2px;background:var(--text-black);position:relative}
-.gnb-burger::before,.gnb-burger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--text-black)}
-.gnb-burger::before{top:-7px}.gnb-burger::after{top:7px}
-.gnb-menu{display:none;border-top:1px solid var(--line);padding:8px 20px 20px}
-.gnb-menu.is-open{display:block}
-.gnb-menu a{display:block;padding:12px 0;font-size:15px;color:var(--text-dark);border-bottom:1px solid var(--line)}
-.gnb-menu a.sub{padding-left:14px;font-size:14px;color:var(--text-gray)}
-.gnb-menu a:last-child{border-bottom:none}
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:100;background:#FFF;border-bottom:1px solid var(--border-light);transition:padding .2s}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:height .2s}
+.nav.is-scrolled .nav-inner{height:60px}
+.nav-logo{font-size:24px;font-weight:800;color:var(--text-black);letter-spacing:-.03em;transition:font-size .2s}
+.nav.is-scrolled .nav-logo{font-size:20px}
+.nav-links{display:flex;gap:36px}
+.nav-item{position:relative}
+.nav-item>a{display:block;padding:28px 0;font-size:15px;font-weight:600;color:var(--text-dark)}
+.nav-item.is-active>a{color:var(--text-black);text-decoration:underline;text-underline-offset:6px}
+.nav-drop{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFF;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:10px 0;min-width:200px;display:none;box-shadow:var(--shadow-md)}
+.nav-item:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:10px 20px;font-size:14px;color:var(--text-gray);white-space:nowrap}
+.nav-drop a:hover{background:var(--bg-light);color:var(--text-black)}
+.nav-utils{display:flex;align-items:center;gap:20px}
+.nav-utils a{font-size:14px;color:var(--text-gray)}
+.nav-utils svg{width:20px;height:20px}
+.nav-burger{display:none;width:24px;height:24px;color:var(--text-black)}
+.m-menu{display:none;position:fixed;inset:76px 0 0;background:#FFF;z-index:99;overflow-y:auto;padding:24px}
+.m-menu.is-open{display:block}
+.m-group{border-bottom:1px solid var(--border-light)}
+.m-group>button,.m-group>a{display:flex;width:100%;justify-content:space-between;align-items:center;padding:18px 4px;font-size:17px;font-weight:600;color:var(--text-black);text-align:left}
+.m-sub{display:none;padding:0 4px 16px}
+.m-group.is-open .m-sub{display:block}
+.m-sub a{display:block;padding:10px 12px;font-size:15px;color:var(--text-gray)}
+.m-auth{display:flex;gap:12px;margin-top:28px}
 
-/* 섹션 공통 */
-section{padding:48px 20px}
-.sec-white{background:#fff}
-.sec-gray{background:var(--bg)}
-.sec-dark{background:var(--bg-dark)}
-.sec-label{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-align:center;margin-bottom:10px;text-transform:uppercase}
-.sec-title{font-size:22px;font-weight:700;color:var(--text-black);text-align:center;line-height:1.4;margin-bottom:12px;letter-spacing:-.02em}
-.sec-sub{font-size:14px;color:var(--text-gray);text-align:center;margin-bottom:28px}
-.sec-dark .sec-title{color:#fff}
-.sec-dark .sec-sub{color:rgba(255,255,255,.6)}
+/* ===== HERO ===== */
+.hero{position:relative;height:640px;background:var(--bg-dark);overflow:hidden}
+.hero-slide{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+.hero-slide.is-active{display:flex}
+.hero-ph{position:absolute;inset:0;background:var(--bg-dark);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);border:1px dashed rgba(255,255,255,.2)}
+.hero-ph svg{width:56px;height:56px}
+.hero-ph span{position:absolute;bottom:24px;font-size:13px}
+.hero-body{position:relative;z-index:2}
+.hero h1{font-size:48px;font-weight:800;color:#FFF;letter-spacing:-.03em;line-height:1.3;margin-bottom:18px}
+.hero p{font-size:18px;color:rgba(255,255,255,.7)}
+.hero-cta{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);z-index:3}
+.hero-dots{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.hero-dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35)}
+.hero-dots button.is-active{background:#FFF;width:26px;border-radius:5px}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#FFF}
+.hero-arrow svg{width:20px;height:20px}
+.hero-arrow.prev{left:36px}
+.hero-arrow.next{right:36px}
 
-/* 플레이스홀더 */
-.ph{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:12px;text-align:center;padding:12px}
-.ph-full{border-radius:0}
-.icon-ph{width:40px;height:40px;border:1px dashed var(--line);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text-light);flex-shrink:0}
+/* ===== GRIDS ===== */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.card h3{font-size:18px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.card p{font-size:15px;color:var(--text-gray)}
+.pain-card{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px;background:#FFF}
+.pain-card p{font-size:15px;color:var(--text-dark);padding-top:12px}
 
-/* 버튼 */
-.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:15px;font-size:15px;font-weight:700;border-radius:var(--radius-sm);border:1px solid var(--text-black);font-family:inherit}
-.btn-primary{background:var(--text-black);color:#fff}
-.btn-secondary{background:#fff;color:var(--text-black)}
-.sec-dark .btn-primary{background:#fff;color:var(--text-black);border-color:#fff}
+/* class cards */
+.class-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.class-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
+.class-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:var(--text-black);background:var(--bg-light);border-radius:99px;padding:5px 12px;margin-bottom:14px;align-self:flex-start}
+.class-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.class-target{font-size:13px;color:var(--text-light);margin-bottom:14px}
+.class-points{margin-bottom:22px;flex:1}
+.class-points li{font-size:14px;color:var(--text-gray);padding-left:14px;position:relative;margin-bottom:7px}
+.class-points li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
 
-/* 카드 */
-.card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:20px}
-.micro{font-size:13px;color:var(--text-light);text-align:center;margin-top:12px}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.steps-v li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border-light)}
+.steps-v li:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--text-black);flex-shrink:0}
+.steps-v h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:4px}
+.steps-v p{font-size:14px;color:var(--text-gray)}
+blockquote{border-left:3px solid var(--border-default);padding:6px 0 6px 20px;margin-top:28px;font-size:15px;color:var(--text-dark);font-style:normal}
+blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-light);font-style:normal}
 
-/* 1. HERO */
-.hero-img{aspect-ratio:3/4;margin:0 -20px 28px;border:none;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);background:#fff}
-.hero h1{font-size:26px;font-weight:800;color:var(--text-black);text-align:center;line-height:1.4;letter-spacing:-.03em;margin-bottom:12px}
-.hero-sub{font-size:15px;color:var(--text-gray);text-align:center;margin-bottom:24px}
-.trust-list{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 0;margin-bottom:24px}
-.trust-list li{display:flex;align-items:center;gap:10px;padding:10px 0;font-size:14px;color:var(--text-dark)}
-.trust-list li+li{border-top:1px solid var(--line)}
-.tick{width:18px;height:18px;border:1px solid var(--text-dark);border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pill-card{border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;background:#fff}
-.pill-card .icon-ph{margin-bottom:10px}
-.pill-card h4{font-size:14px;font-weight:700;color:var(--text-black);margin-bottom:4px}
-.pill-card p{font-size:13px;color:var(--text-gray);line-height:1.5}
+/* stepbar */
+.stepbar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden}
+.stepbar>div{padding:32px 26px;border-right:1px solid var(--border-light);background:#FFF}
+.stepbar>div:last-child{border-right:none}
+.stepbar .n{font-size:12px;font-weight:700;color:var(--text-light);margin-bottom:12px}
+.stepbar h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.stepbar p{font-size:14px;color:var(--text-gray)}
 
-/* 2. PROOF */
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
-.stat{border:1px solid var(--line);border-radius:var(--radius);padding:20px 14px;text-align:center;background:#fff}
-.stat .label{font-size:12px;color:var(--text-light);margin-bottom:6px}
-.stat .value{font-size:26px;font-weight:800;color:var(--text-black);letter-spacing:-.02em}
-.chip-box{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;margin-bottom:20px}
-.chip-box p{font-size:13px;font-weight:700;color:var(--text-black);margin-bottom:12px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{font-size:12px;color:var(--text-dark);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--bg)}
-.mini-review{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff}
-.mini-review .ph{width:64px;height:64px;flex-shrink:0}
-.mini-review p{font-size:13px;color:var(--text-dark)}
-.mini-review span{display:block;font-size:12px;color:var(--text-light);margin-top:6px}
+/* testimonial */
+.tcar{position:relative}
+.tcar-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.t-card .img-placeholder{aspect-ratio:16/10;margin-bottom:20px}
+.t-quote{font-size:15px;color:var(--text-dark);margin-bottom:20px;min-height:72px}
+.t-meta{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px}
+.tcar-nav{display:flex;gap:10px;justify-content:center;margin-top:36px}
+.tcar-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
+.tcar-nav svg{width:18px;height:18px}
 
-/* 3. PROBLEM */
-.prob li{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff;margin-bottom:10px}
-.prob p{font-size:14px;color:var(--text-dark);padding-top:9px}
+/* store cards */
+.store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
+.store-card-body{padding:32px}
+.store-card h3{font-size:22px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.store-card p{font-size:15px;margin-bottom:24px}
 
-/* 4. EMPATHY */
-.emp-img{aspect-ratio:3/2;margin-bottom:24px}
-blockquote{border-left:2px solid var(--text-dark);padding:4px 0 4px 16px;margin-bottom:24px}
-blockquote p{font-size:16px;color:var(--text-black);font-weight:600;line-height:1.6}
-blockquote cite{display:block;font-size:12px;color:var(--text-light);margin-top:10px;font-style:normal}
-.story p{font-size:14px;color:var(--text-gray);margin-bottom:14px}
-.story p:last-child{margin-bottom:0}
-.story strong{color:var(--text-black);font-weight:700}
+/* subscribe */
+.sub-form{display:flex;gap:10px;max-width:520px;margin:0 auto}
+.sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
 
-/* 5. CAUSE */
-.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:24px}
-.ba .ph{aspect-ratio:1/1}
-.ba .arrow{font-size:18px;color:var(--text-light)}
-.ba-cap{font-size:11px;color:var(--text-light);text-align:center;margin-top:6px}
-.cause-card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff;margin-bottom:10px}
-.cause-num{font-size:12px;font-weight:800;color:var(--text-light);margin-bottom:8px}
-.cause-card h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px}
-.cause-card p{font-size:14px;color:var(--text-gray)}
-.answer-box{background:var(--bg-dark);border-radius:var(--radius);padding:24px;margin-top:20px}
-.answer-box p{font-size:15px;color:#fff;line-height:1.7;text-align:center}
-.answer-box strong{font-weight:800}
+/* FOOTER */
+.footer{background:var(--bg-dark);padding:72px 0 0;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-name{font-size:24px;font-weight:800;color:#FFF;margin-bottom:16px;letter-spacing:-.03em}
+.footer-info{font-size:13px;line-height:2}
+.footer-col-title{font-size:14px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px}
+.footer-bottom nav{display:flex;gap:20px}
+.footer-sns{display:flex;gap:12px;margin-top:20px}
+.footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.footer-sns svg{width:16px;height:16px}
 
-/* 6. SOLUTION */
-.sol{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;margin-bottom:12px}
-.sol .tag{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--text-black);border-radius:99px;padding:5px 11px;margin-bottom:12px}
-.sol h4{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:10px;line-height:1.4}
-.sol p{font-size:14px;color:var(--text-gray);margin-bottom:12px}
-.sol .basis{font-size:12px;color:var(--text-light);border-top:1px solid var(--line);padding-top:10px}
+/* QUICK / TOP */
+.quick{position:fixed;right:24px;bottom:96px;z-index:90;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.quick a{display:flex;align-items:center;gap:8px;background:#FFF;border:1px solid var(--border-default);border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;font-weight:600;color:var(--text-black);box-shadow:var(--shadow-sm)}
+.quick svg{width:16px;height:16px}
+.quick .micro{margin:0;font-size:11px;max-width:190px;text-align:right}
+.top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
+.top-btn.is-show{display:flex}
+.top-btn svg{width:20px;height:20px}
 
-/* 6-1 */
-.dark-quote{background:var(--bg-dark);border-radius:var(--radius);padding:22px;margin:20px 0}
-.dark-quote p{font-size:14px;color:#fff;line-height:1.9}
-.cmp{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
-.cmp th,.cmp td{border:1px solid var(--line);padding:11px 10px;text-align:left;vertical-align:top}
-.cmp th{background:var(--bg);font-weight:700;color:var(--text-black);width:26%}
-.cmp td:last-child{background:#fff;color:var(--text-black);font-weight:600}
-.eff-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.eff{border:1px solid var(--line);border-radius:var(--radius);padding:18px 14px;text-align:center;font-size:13px;font-weight:700;color:var(--text-black);background:#fff}
+@media (max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:768px){
+  .section{padding:64px 0}
+  .section-title{font-size:26px}
+  .nav-links,.nav-utils a{display:none}
+  .nav-burger{display:block}
+  .hero{height:520px}
+  .hero h1{font-size:30px}
+  .hero p{font-size:15px}
+  .hero-arrow{display:none}
+  .grid-2,.grid-3,.grid-4,.split,.tcar-track{grid-template-columns:1fr}
+  .stepbar{grid-template-columns:1fr}
+  .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .sub-form{flex-direction:column}
+  .quick{display:none}
+}
 
-/* 6-2 CLASSES */
-.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;margin-bottom:20px;-webkit-overflow-scrolling:touch}
-.tabs button{flex-shrink:0;font-size:13px;font-weight:700;padding:10px 15px;border:1px solid var(--line);border-radius:99px;color:var(--text-gray);background:#fff;white-space:nowrap}
-.tabs button.is-active{background:var(--text-black);color:#fff;border-color:var(--text-black)}
-.panel{display:none}
-.panel.is-active{display:block}
-.cls-head{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;margin-bottom:12px}
-.cls-head h3{font-size:20px;font-weight:800;color:var(--text-black);margin-bottom:8px}
-.cls-head .one{font-size:14px;color:var(--text-gray);margin-bottom:14px}
-.cls-head .target{font-size:13px;color:var(--text-black);background:var(--bg);border-radius:var(--radius-sm);padding:12px}
-.spec{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;background:#fff}
-.spec th,.spec td{border:1px solid var(--line);padding:11px 12px;text-align:left}
-.spec th{background:var(--bg);font-weight:700;color:var(--text-black);width:38%}
-.spec td{color:var(--text-dark)}
-.spec .price{font-weight:800;color:var(--text-black)}
-.acc{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;margin-bottom:12px}
-.acc-item+.acc-item{border-top:1px solid var(--line)}
-.acc-q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;padding:15px 16px;font-size:14px;font-weight:700;color:var(--text-black);text-align:left}
-.acc-q .mark{font-size:16px;color:var(--text-light);flex-shrink:0}
-.acc-item.is-open .acc-q .mark{transform:rotate(45deg)}
-.acc-a{display:none;padding:0 16px 16px;font-size:13.5px;color:var(--text-gray);line-height:1.75}
+
+/* ===== 페이지 공통 추가 ===== */
+.page-head{background:var(--bg-light);padding:56px 0;border-bottom:1px solid var(--border-light)}
+.crumb{font-size:13px;color:var(--text-light);margin-bottom:14px}
+.crumb a{color:var(--text-light)}
+.page-head h1{font-size:34px;font-weight:800;color:var(--text-black);letter-spacing:-.02em;margin-bottom:10px}
+.page-head p{font-size:16px;color:var(--text-gray)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:#FFF}
+.tbl th,.tbl td{border:1px solid var(--border-light);padding:14px 16px;text-align:left;vertical-align:top}
+.tbl thead th{background:var(--bg-light);font-weight:700;color:var(--text-black);text-align:center}
+.tbl tbody th{background:var(--bg-light);font-weight:700;color:var(--text-black);width:150px}
+.tbl td{color:var(--text-gray)}
+.tbl .strong{color:var(--text-black);font-weight:700}
+.tbl-scroll{overflow-x:auto}
+.acc{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.acc-item+.acc-item{border-top:1px solid var(--border-light)}
+.acc-q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-size:16px;font-weight:600;color:var(--text-black);text-align:left}
+.acc-q .mk{font-size:18px;color:var(--text-light);flex-shrink:0}
+.acc-item.is-open .acc-q .mk{transform:rotate(45deg)}
+.acc-a{display:none;padding:0 24px 24px;font-size:15px;color:var(--text-gray);line-height:1.8}
 .acc-item.is-open .acc-a{display:block}
-.acc-a ul li{padding-left:12px;position:relative;margin-bottom:6px}
-.acc-a ul li::before{content:"";position:absolute;left:0;top:9px;width:3px;height:3px;border-radius:50%;background:var(--text-light)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.tabs button{font-size:14px;font-weight:600;padding:11px 20px;border:1px solid var(--border-default);border-radius:99px;color:var(--text-gray);background:#FFF}
+.tabs button.is-active{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.tabpanel{display:none}
+.tabpanel.is-active{display:block}
+.prod-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.prod-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
+.prod-body{padding:26px;display:flex;flex-direction:column;flex:1}
+.prod-body h3{font-size:19px;font-weight:700;color:var(--text-black);margin:0 0 10px}
+.prod-body p.sum{font-size:14px;color:var(--text-gray);margin-bottom:16px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chip{font-size:12px;color:var(--text-dark);border:1px solid var(--border-light);border-radius:99px;padding:5px 11px;background:var(--bg-light)}
+.price{font-size:22px;font-weight:800;color:var(--text-black);margin-bottom:16px;letter-spacing:-.02em}
+.price small{font-size:13px;font-weight:600;color:var(--text-light)}
+.btn-row{display:flex;gap:8px}
+.btn-row .btn{flex:1}
+.link-inline{display:inline-block;margin-top:12px;font-size:13px;color:var(--text-gray);text-decoration:underline;text-underline-offset:3px}
+.form{max-width:720px;margin:0 auto}
+.form-block{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;margin-bottom:20px}
+.form-block h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.form-block .note{font-size:13px;color:var(--text-light);margin-bottom:24px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px}
+.field .req{color:var(--text-black)}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;color:var(--text-black);background:#FFF}
+.field textarea{resize:vertical;min-height:120px}
+.field .help{font-size:13px;color:var(--text-light);margin-top:8px}
+.radio-row{display:flex;gap:20px;flex-wrap:wrap}
+.radio-row label{display:flex;align-items:center;gap:7px;font-weight:400;font-size:15px;color:var(--text-dark);margin:0}
+.upload{border:1px dashed var(--border-default);border-radius:var(--radius-sm);padding:28px;text-align:center;font-size:14px;color:var(--text-light)}
+.agree label{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--text-gray);margin-bottom:12px}
+.board{width:100%;border-collapse:collapse;font-size:15px;background:#FFF}
+.board th,.board td{border-bottom:1px solid var(--border-light);padding:18px 14px;text-align:center}
+.board thead th{background:var(--bg-light);font-size:14px;font-weight:700;color:var(--text-black);border-top:1px solid var(--border-default)}
+.board td.subj{text-align:left;color:var(--text-black);font-weight:600}
+.board .tag{display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)}
+.pager{display:flex;gap:6px;justify-content:center;margin-top:40px}
+.pager a{width:38px;height:38px;border:1px solid var(--border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-gray)}
+.pager a.is-active{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.notice-pin{border:1px solid var(--text-black);border-radius:var(--radius-md);padding:26px;background:#FFF;margin-bottom:24px}
+.notice-pin .tag{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.notice-pin h3{font-size:18px;font-weight:700;color:var(--text-black);margin:12px 0 8px}
+.search-box{display:flex;gap:8px;max-width:520px;margin:0 auto}
+.search-box input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit}
+.post-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.post-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
+.post-body{padding:22px}
+.post-body .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--text-dark);background:var(--bg-light);border-radius:99px;padding:4px 10px;margin-bottom:12px}
+.post-body h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px;line-height:1.45}
+.post-body p{font-size:14px;color:var(--text-gray);margin-bottom:14px}
+.post-body time{font-size:13px;color:var(--text-light)}
+.locked{border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF;overflow:hidden}
+.locked .body{padding:32px;font-size:15px;color:var(--text-gray);line-height:1.9}
+.locked .cut{border-top:1px solid var(--border-default);background:var(--bg-light);padding:32px;text-align:center}
+.locked .cut p{font-size:15px;font-weight:600;color:var(--text-black);margin-bottom:16px}
+.list-row{display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;background:#FFF;margin-bottom:12px}
+.list-row h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.list-row p{font-size:14px;color:var(--text-gray)}
+.list-row .meta{font-size:13px;color:var(--text-light);margin-top:8px}
+.list-row .lock{font-size:13px;color:var(--text-light);white-space:nowrap}
+.banner{display:flex;justify-content:space-between;align-items:center;gap:24px;background:var(--bg-light);border-radius:var(--radius-md);padding:36px 40px}
+.banner h3{font-size:20px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.banner p{font-size:15px;color:var(--text-gray)}
+.cart-grid{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+.cart-group{border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF;margin-bottom:20px;overflow:hidden}
+.cart-group>h3{font-size:15px;font-weight:700;color:var(--text-black);padding:18px 24px;background:var(--bg-light);border-bottom:1px solid var(--border-light)}
+.cart-item{display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:1px solid var(--border-light)}
+.cart-item:last-of-type{border-bottom:none}
+.cart-item .img-placeholder{width:88px;height:88px;flex-shrink:0}
+.cart-item .info{flex:1}
+.cart-item .info h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.cart-item .info p{font-size:13px;color:var(--text-light)}
+.cart-item .amt{font-size:16px;font-weight:700;color:var(--text-black);white-space:nowrap}
+.cart-note{font-size:13px;color:var(--text-light);padding:14px 24px;background:var(--bg-light)}
+.summary{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF;position:sticky;top:100px}
+.summary h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:20px}
+.summary dl{display:flex;justify-content:space-between;font-size:15px;padding:10px 0;color:var(--text-gray)}
+.summary dl.total{border-top:1px solid var(--border-default);margin-top:12px;padding-top:18px;font-size:18px;font-weight:800;color:var(--text-black)}
+.pay-icons{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.pay-icons span{font-size:12px;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:8px 12px;color:var(--text-light)}
+.stepind{display:flex;gap:0;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;margin-bottom:40px;background:#FFF}
+.stepind div{flex:1;padding:20px;text-align:center;font-size:15px;font-weight:600;color:var(--text-light);border-right:1px solid var(--border-light)}
+.stepind div:last-child{border-right:none}
+.stepind div.is-active{background:var(--text-black);color:#FFF}
+.empty{text-align:center;padding:80px 20px;border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF}
+.empty p{font-size:16px;color:var(--text-light);margin:20px 0 28px}
+.done{text-align:center;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:64px 32px;background:#FFF}
+.done .icon-circle{margin:0 auto 24px}
+.done h2{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px}
+.done .ordno{font-size:15px;color:var(--text-gray);margin-bottom:28px}
+.done .box{border:1px solid var(--border-light);border-radius:var(--radius-sm);background:var(--bg-light);padding:24px;text-align:left;font-size:14px;color:var(--text-gray);line-height:1.9;margin-bottom:28px}
+.channel-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;text-align:center}
+.channel-card .icon-circle{margin:0 auto 20px}
+.channel-card h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.channel-card p{font-size:14px;color:var(--text-gray);margin-bottom:20px}
+.badge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.badge-row span{font-size:13px;font-weight:600;color:var(--text-dark);border:1px solid var(--border-default);border-radius:99px;padding:9px 18px;background:#FFF}
+.map-ph{aspect-ratio:4/3}
+.compare-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF}
+.compare-card .lead{font-size:13px;font-weight:700;color:var(--text-light);margin-bottom:10px}
+.compare-card h3{font-size:20px;font-weight:800;color:var(--text-black);margin-bottom:12px}
+.compare-card p{font-size:14px;color:var(--text-gray)}
+.rule-box{background:var(--bg-dark);border-radius:var(--radius-md);padding:36px;margin-top:24px}
+.rule-box h3{font-size:18px;font-weight:700;color:#FFF;margin-bottom:20px;text-align:center}
+.rule-box ol{max-width:520px;margin:0 auto;counter-reset:r}
+.rule-box li{color:rgba(255,255,255,.85);font-size:15px;padding:10px 0 10px 34px;position:relative;counter-increment:r}
+.rule-box li::before{content:counter(r);position:absolute;left:0;top:11px;width:22px;height:22px;border:1px solid rgba(255,255,255,.4);border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center}
+.rule-box .foot{text-align:center;font-size:14px;color:rgba(255,255,255,.6);margin-top:20px}
+@media (max-width:900px){.cart-grid{grid-template-columns:1fr}.summary{position:static}}
+@media (max-width:768px){
+  .page-head h1{font-size:26px}
+  .banner{flex-direction:column;align-items:flex-start}
+  .stepind{flex-direction:column}
+  .stepind div{border-right:none;border-bottom:1px solid var(--border-light)}
+  .cart-item{flex-wrap:wrap}
+}
 
-/* 6-3 STEPS */
-.stepcard{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;display:flex;gap:14px}
-.stepcard .n{width:26px;height:26px;border:1px solid var(--text-dark);border-radius:50%;font-size:12px;font-weight:700;color:var(--text-black);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.stepcard h4{font-size:15px;font-weight:700;color:var(--text-black);margin-bottom:4px}
-.stepcard p{font-size:13.5px;color:var(--text-gray)}
-.step-arrow{text-align:center;color:var(--text-light);font-size:14px;padding:6px 0}
-.tip{border:1px solid var(--text-dark);border-radius:var(--radius);padding:16px;margin-top:16px;font-size:13.5px;color:var(--text-black);background:#fff}
-.tip b{font-weight:800}
-
-/* 7. EVIDENCE */
-.block-title{font-size:15px;font-weight:800;color:var(--text-black);margin:28px 0 14px;padding-left:11px;border-left:3px solid var(--text-black)}
-.hscroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.hscroll .ph{flex:0 0 200px;aspect-ratio:9/16}
-.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.book{border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:#fff;font-size:13px;font-weight:600;color:var(--text-black);text-align:center}
-
-/* 7.5 STORIES */
-.story-item{margin-bottom:24px}
-.story-item .ph{aspect-ratio:4/3;margin-bottom:12px}
-.story-item .line{font-size:15px;font-weight:700;color:var(--text-black);margin-bottom:8px}
-.story-item .rev{font-size:13.5px;color:var(--text-gray)}
-.closing{text-align:center;font-size:15px;font-weight:700;color:var(--text-black);padding-top:8px}
-
-/* 8. CTA */
-.price-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;margin-bottom:12px}
-.price-card .badge{display:inline-block;font-size:11px;font-weight:700;color:var(--text-dark);background:var(--bg);border-radius:99px;padding:5px 11px;margin-bottom:10px}
-.price-card h4{font-size:18px;font-weight:800;color:var(--text-black);margin-bottom:10px}
-.price-card .amount{font-size:24px;font-weight:800;color:var(--text-black);margin-bottom:6px;letter-spacing:-.02em}
-.price-card .amount small{font-size:13px;font-weight:600;color:var(--text-light)}
-.price-card ul{margin:14px 0 18px}
-.price-card ul li{font-size:13px;color:var(--text-gray);padding-left:12px;position:relative;margin-bottom:5px}
-.price-card ul li::before{content:"";position:absolute;left:0;top:9px;width:3px;height:3px;border-radius:50%;background:var(--text-light)}
-.contact-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
-.contact-2 a{border:1px solid var(--text-black);border-radius:var(--radius-sm);padding:14px;text-align:center;font-size:14px;font-weight:700;color:var(--text-black);background:#fff}
-
-/* 9. 고시 */
-.notice-note{font-size:12px;color:var(--text-light);margin-top:14px;line-height:1.7}
-
-/* 고정 하단바 */
-.fixbar{position:fixed;bottom:0;left:0;right:0;height:var(--bar-h);background:#fff;border-top:1px solid var(--line);z-index:60}
-.fixbar-inner{max-width:480px;margin:0 auto;height:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.fixbar span{font-size:12px;color:var(--text-light);line-height:1.4}
-.fixbar a{background:var(--text-black);color:#fff;font-size:14px;font-weight:700;border-radius:var(--radius-sm);padding:13px 22px;white-space:nowrap}
-
-/* 푸터 */
-.foot{background:var(--bg-dark);padding:32px 20px;color:rgba(255,255,255,.45);font-size:12px;line-height:1.9}
-.foot .brand{font-size:18px;font-weight:800;color:#fff;margin-bottom:12px}
-.foot nav{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap}
-.foot nav a{color:rgba(255,255,255,.6)}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<!-- ===== GNB ===== -->
-<header class="gnb">
-  <div class="gnb-inner">
-    <a href="index.html" class="gnb-logo">jia</a>
-    <div class="gnb-right">
-      <a href="page_06.html">장바구니</a>
-      <button id="burger" aria-label="메뉴"><span class="gnb-burger"></span></button>
+<!-- ================= HEADER ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">jia</a>
+    <nav class="nav-links">
+      <div class="nav-item"><a href="index.html">홈</a></div>
+      <div class="nav-item is-active"><a href="page_02.html">클래스</a></div>
+      <div class="nav-item">
+        <a href="page_03.html">Store</a>
+        <div class="nav-drop">
+          <a href="page_03.html">클래스 상품</a>
+          <a href="page_04.html">전문가용 핀셋</a>
+          <a href="page_05.html">유료 뉴스레터 멤버십</a>
+          <a href="page_06.html">장바구니·주문/결제</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="page_07.html">블로그</a>
+        <div class="nav-drop">
+          <a href="page_07.html">무료회원 뉴스레터</a>
+          <a href="page_08.html">유료회원 뉴스레터</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="page_09.html">고객센터</a>
+        <div class="nav-drop">
+          <a href="page_09.html">공지사항</a>
+          <a href="page_10.html">자주 묻는 질문</a>
+          <a href="page_11.html">1:1 문의</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-utils">
+      <a href="#">로그인</a>
+      <a href="#">회원가입</a>
+      <a href="page_06.html"><i data-lucide="shopping-cart"></i></a>
+      <a href="#"><i data-lucide="search"></i></a>
+      <button class="nav-burger" id="burger"><i data-lucide="menu"></i></button>
     </div>
   </div>
-  <nav class="gnb-menu" id="gnbMenu">
-    <a href="index.html">홈</a>
-    <a href="page_02.html">클래스</a>
-    <a href="page_03.html">Store</a>
-    <a href="page_03.html" class="sub">클래스 상품</a>
-    <a href="page_04.html" class="sub">전문가용 핀셋</a>
-    <a href="page_05.html" class="sub">유료 뉴스레터 멤버십</a>
-    <a href="page_06.html" class="sub">장바구니·주문/결제</a>
-    <a href="page_07.html">블로그</a>
-    <a href="page_07.html" class="sub">무료회원 뉴스레터</a>
-    <a href="page_08.html" class="sub">유료회원 뉴스레터</a>
-    <a href="page_09.html">고객센터</a>
-    <a href="page_09.html" class="sub">공지사항</a>
-    <a href="page_10.html" class="sub">자주 묻는 질문</a>
-    <a href="page_11.html" class="sub">1:1 문의</a>
-  </nav>
 </header>
 
-<!-- ===== 1. HERO ===== -->
-<section class="hero sec-white">
-  <div class="ph hero-img ph-full">[히어로 이미지 · 세로 3:4]</div>
-  <h1>따라 한 기술은,<br>샵에 가면 사라집니다</h1>
-  <p class="hero-sub">지아는 내 손에 맞는 기준을 만드는<br>1:1 속눈썹 클래스입니다.</p>
-  <ul class="trust-list">
-    <li><span class="tick">✓</span>전 과정 1:1 맞춤 진행</li>
-    <li><span class="tick">✓</span>과제는 화면 영상으로 피드백</li>
-    <li><span class="tick">✓</span>수료 후 피드백 기간 제한 없음</li>
-  </ul>
-  <div class="grid2">
-    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>1:1 전용</h4><p>하루를, 한 수업을 한 분에게만 씁니다</p></div>
-    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>맞춤 과제</h4><p>막히는 지점에 따라 다음 과제가 달라집니다</p></div>
-    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>영상 피드백</h4><p>내 과제 화면을 보며 목소리로 설명합니다</p></div>
-    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>사후 관리</h4><p>질문이 멈출 때까지 이어집니다</p></div>
-  </div>
-  <div style="margin-top:24px"><a href="#classes" class="btn btn-primary">내게 맞는 클래스 보기</a></div>
-</section>
-
-<!-- ===== 2. PROOF ===== -->
-<section class="sec-gray">
-  <p class="sec-label">Proof</p>
-  <h2 class="sec-title">숫자로 먼저 말씀드립니다</h2>
-  <div class="stat-grid">
-    <div class="stat"><p class="label">현장 경력</p><p class="value">7년</p></div>
-    <div class="stat"><p class="label">창업반 총 회차</p><p class="value">24회차</p></div>
-    <div class="stat"><p class="label">창업반 모델 실습</p><p class="value">18회</p></div>
-    <div class="stat"><p class="label">수업 진행 방식</p><p class="value">100% 1:1</p></div>
-  </div>
-  <div class="chip-box">
-    <p>모든 과정에 공통으로 들어갑니다</p>
-    <div class="chips">
-      <span class="chip">전 과정 1:1</span><span class="chip">맞춤 과제</span>
-      <span class="chip">화면 영상 피드백</span><span class="chip">사후 피드백 기간 제한 없음</span>
-      <span class="chip">연 1회 이상 리마인드 수업</span>
+<div class="m-menu" id="mMenu">
+  <div class="m-group"><a href="index.html">홈</a></div>
+  <div class="m-group"><a href="page_02.html">클래스</a></div>
+  <div class="m-group">
+    <button>Store <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub">
+      <a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a>
+      <a href="page_05.html">유료 뉴스레터 멤버십</a><a href="page_06.html">장바구니·주문/결제</a>
     </div>
   </div>
-  <div class="mini-review">
-    <div class="ph">[사진]</div>
-    <div>
-      <p>[클라이언트 확인 필요: 대표 후기 1건 · 한 문장]</p>
-      <span>[수강 과정] · [수강 시기]</span>
-    </div>
+  <div class="m-group">
+    <button>블로그 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
   </div>
-</section>
-
-<!-- ===== 3. PROBLEM ===== -->
-<section class="sec-white">
-  <p class="sec-label">Problem</p>
-  <h2 class="sec-title">이 중에 하나라도<br>해당되시나요</h2>
-  <ul class="prob">
-    <li><div class="icon-ph">[아이콘]</div><p>연장을 배웠지만 오래 쉬어서 다시 시작하기가 막막합니다</p></li>
-    <li><div class="icon-ph">[아이콘]</div><p>모델 실습까지 했는데 실제 고객 시술은 아직 불안합니다</p></li>
-    <li><div class="icon-ph">[아이콘]</div><p>가르기, 가모 파지, 진입, 밀착이 매번 일정하지 않습니다</p></li>
-    <li><div class="icon-ph">[아이콘]</div><p>유지력과 시술 결과가 고객마다 달라집니다</p></li>
-    <li><div class="icon-ph">[아이콘]</div><p>다른 사람 자세를 따라 해도 내 손에서는 잘 안 됩니다</p></li>
-    <li><div class="icon-ph">[아이콘]</div><p>적게 심으면 가지런한데, 많이 심으면 라인이 무너집니다</p></li>
-  </ul>
-</section>
-
-<!-- ===== 4. EMPATHY ===== -->
-<section class="sec-gray">
-  <p class="sec-label">Empathy</p>
-  <h2 class="sec-title">실력이 없어서가 아닙니다</h2>
-  <div class="ph emp-img">[감성 이미지 · 3:2]</div>
-  <blockquote>
-    <p>“남을 따라 하는 기술을 배우면,<br>샵에 가서 그 기술 자체를 잃어버려요.”</p>
-    <cite>— 지아 원장 임희진</cite>
-  </blockquote>
-  <div class="story">
-    <p>수업에서는 됐는데 샵에서는 안 되는 경험. 그건 실력이 부족해서가 아니라, 그 동작이 <b>내 손의 것이 아니었기</b> 때문입니다.</p>
-    <p>손 모양도, 힘도, 핀셋 잡는 습관도 사람마다 다릅니다. 그래서 같은 자세를 그대로 복사하면 반드시 어딘가에서 무너집니다.</p>
-    <p><strong>지아는 정해진 자세를 따라 하게 하지 않습니다. 지금 그 손에서 출발해, 혼자서도 반복할 수 있는 기준을 하나씩 세웁니다.</strong></p>
+  <div class="m-group">
+    <button>고객센터 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
   </div>
-</section>
-
-<!-- ===== 5. CAUSE ===== -->
-<section class="sec-white">
-  <p class="sec-label">Cause</p>
-  <h2 class="sec-title">문제는 손이 아니라,<br>기준이 없다는 것입니다</h2>
-  <div class="ba">
-    <div><div class="ph">[가이드가<br>원모 흐름을<br>따라간 경우]</div><p class="ba-cap">결이 잡힌 라인</p></div>
-    <div class="arrow">↔</div>
-    <div><div class="ph">[가이드를<br>일자로만<br>심은 경우]</div><p class="ba-cap">X자가 생긴 라인</p></div>
-  </div>
-  <div class="cause-card">
-    <p class="cause-num">원인 01</p>
-    <h4>기본기를 건너뛴 채 실무부터 배웠다</h4>
-    <p>핀셋 잡는 힘이 아직 불안한데 다음 단계로 넘어가면, 그 위에 쌓는 모든 동작이 흔들립니다.</p>
-  </div>
-  <div class="cause-card">
-    <p class="cause-num">원인 02</p>
-    <h4>결과만 듣고 원인을 못 배웠다</h4>
-    <p>“각도가 잘못됐다”는 말만으로는 고칠 수 없습니다. 어느 장면에서 무너졌는지, 손목을 어떻게 써야 하는지를 봐야 고쳐집니다.</p>
-  </div>
-  <div class="cause-card">
-    <p class="cause-num">원인 03</p>
-    <h4>모두가 같은 진도로 배웠다</h4>
-    <p>어려워하는 지점은 사람마다 다릅니다. 진도에 사람을 맞추면 막힌 곳은 막힌 채로 수료합니다.</p>
-  </div>
-  <div class="answer-box">
-    <p>그래서 지아는<br><strong>사전과제로 기본기를 먼저 잡고</strong>,<br><strong>화면으로 원인을 짚고</strong>,<br><strong>개인별로 다음 과제를 정합니다.</strong></p>
-  </div>
-</section>
-
-<!-- ===== 6. SOLUTION ===== -->
-<section class="sec-gray">
-  <p class="sec-label">Solution</p>
-  <h2 class="sec-title">원인마다, 대응이 따로 있습니다</h2>
-  <div class="sol">
-    <span class="tag">솔루션 1</span>
-    <h4>대면 전 2주, 기본기부터 교정합니다</h4>
-    <p>핀셋 잡기 → 가모 파지 → 가모 진입 → 마네킹 → 테이핑. 영상 시청 → 과제 촬영 → 제출 → 1:1 영상 피드백 → 보완 과제를 <b>매일</b> 반복합니다.</p>
-    <p class="basis">근거 — 클래식 연장 단과반 사전과제 2주 운영</p>
-  </div>
-  <div class="sol">
-    <span class="tag">솔루션 2</span>
-    <h4>결과가 아니라 원인을 화면으로 짚습니다</h4>
-    <p>제출한 영상을 화면에 띄워 어느 장면에서 각도가 무너졌는지, 손목과 손가락을 어떻게 움직여야 하는지를 목소리로 설명합니다.</p>
-    <p class="basis">근거 — 전 과정 공통 영상 피드백</p>
-  </div>
-  <div class="sol">
-    <span class="tag">솔루션 3</span>
-    <h4>다음 과제는 사람마다 다르게 나갑니다</h4>
-    <p>핀셋 잡는 힘이 불안하면 다음 영상을 보내지 않고 힘 조절을 먼저 보완합니다. 진입 각도에서 막히면 그 문제를 교정할 과제가 추가됩니다.</p>
-    <p class="basis">근거 — 전 과정 맞춤 진도 운영</p>
-  </div>
-</section>
-
-<!-- ===== 6-1. 핵심 — 영상 피드백 ===== -->
-<section class="sec-white">
-  <p class="sec-label">Core</p>
-  <h2 class="sec-title">카톡 한 줄이 아닌,<br>다시 한 번 듣는 수업</h2>
-  <div class="ph" style="aspect-ratio:16/9;margin-bottom:20px">[영상 피드백 예시 클립 · 16:9]</div>
-  <p style="font-size:14px;color:var(--text-gray);margin-bottom:4px">과제를 제출하면, 원장이 그 사진과 영상을 직접 화면에 띄워 확인하고 <b>목소리를 담은 녹화 영상</b>으로 피드백합니다.</p>
-  <div class="dark-quote">
-    <p>어느 장면에서 각도가 무너졌는지<br>왜 그 동작이 어려운지<br>손목과 손가락을 어떻게 움직여야 하는지<br>다음 과제에서 무엇을 연습해야 하는지</p>
-  </div>
-  <table class="cmp">
-    <tr><th></th><td style="background:var(--bg);font-weight:700">일반적인 피드백</td><td>지아의 영상 피드백</td></tr>
-    <tr><th>형태</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">카카오톡 텍스트 한두 줄</td><td>내 과제 화면 + 음성 설명 녹화</td></tr>
-    <tr><th>이해</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">글을 다시 해석해야 함</td><td>문제 지점을 눈으로 바로 확인</td></tr>
-    <tr><th>복습</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">지나가면 끝</td><td>내 속도로 몇 번이든 다시 시청</td></tr>
-    <tr><th>다음</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">동일한 진도</td><td>내 문제에 맞춘 보완 과제</td></tr>
-  </table>
-  <div class="eff-grid">
-    <div class="eff">이해가 빨라집니다</div>
-    <div class="eff">개선이 빨라집니다</div>
-    <div class="eff">시행착오가 줄어듭니다</div>
-    <div class="eff">혼자 점검하는 눈이 생깁니다</div>
-  </div>
-</section>
-
-<!-- ===== 6-2. 상품구성 — 클래스 4가지 ===== -->
-<section class="sec-gray" id="classes">
-  <p class="sec-label">Class</p>
-  <h2 class="sec-title">지금 어디에서 막혀 있는지에 따라,<br>시작점이 다릅니다</h2>
-  <p class="sec-sub">네 과정 모두 전 과정 1:1로만 진행합니다.</p>
-
-  <div class="tabs" id="tabs">
-    <button class="is-active" data-tab="c1">창업반</button>
-    <button data-tab="c2">펌 단과반</button>
-    <button data-tab="c3">클래식 연장</button>
-    <button data-tab="c4">원데이</button>
-  </div>
-
-  <!-- 창업반 -->
-  <div class="panel is-active" id="c1">
-    <div class="cls-head">
-      <h3>속눈썹 창업반</h3>
-      <p class="one">처음 핀셋을 잡는 순간부터, 나만의 속눈썹 전문 샵을 준비하는 과정까지</p>
-      <p class="target"><b>대상</b> — 속눈썹 시술 경험이 없지만 전문 샵 운영을 준비하는 분</p>
-    </div>
-    <table class="spec">
-      <tr><th>기간</th><td>3개월</td></tr>
-      <tr><th>총 수업</th><td>24회차</td></tr>
-      <tr><th>방식</th><td>전 과정 1:1 맞춤 진행</td></tr>
-      <tr><th>구성</th><td>창업 컨설팅·기초·마케팅 6회차 + 모델 실습 18회차</td></tr>
-      <tr><th>온라인 이론</th><td>약 15개 콘텐츠 + 교재 5권, 복습 노트 제출</td></tr>
-      <tr><th>수강료</th><td class="price">[클라이언트 확인 필요]</td></tr>
-    </table>
-    <div class="acc">
-      <div class="acc-item is-open"><button class="acc-q">1. 창업 컨설팅<span class="mark">+</span></button><div class="acc-a">창업 절차·행정, 지역과 타깃 설정, 메인 시술 구성, 샵 세팅, 운영 시스템, 마케팅, 오픈 전 체크리스트까지 현재 상황에 맞춰 로드맵을 세웁니다.</div></div>
-      <div class="acc-item"><button class="acc-q">2. 기초 수업<span class="mark">+</span></button><div class="acc-a">핀셋 잡는 법, 페이퍼 연습, 마네킹 실습으로 손의 힘과 각도, 시술 순서를 정확히 익힙니다.</div></div>
-      <div class="acc-item"><button class="acc-q">3. 기술 교육<span class="mark">+</span></button><div class="acc-a"><ul><li>클래식 연장</li><li>디자인 마스카라 연장</li><li>LED 연장</li><li>펌 포인트 연장</li><li>속눈썹 펌</li></ul></div></div>
-      <div class="acc-item"><button class="acc-q">4. 모델 실습 18회<span class="mark">+</span></button><div class="acc-a">실제 모델의 눈매와 모질을 살피고 상황에 맞는 시술을 직접 판단하는 경험을 쌓습니다.</div></div>
-      <div class="acc-item"><button class="acc-q">5. 이론과 고객 응대<span class="mark">+</span></button><div class="acc-a">온라인 이론 학습 후 복습 노트를 제출합니다. 고객이 이해하기 쉬운 말로 안내하고 재방문으로 이어지는 응대 기준을 배웁니다.</div></div>
-      <div class="acc-item"><button class="acc-q">6. 마케팅과 운영<span class="mark">+</span></button><div class="acc-a">내가 정한 타깃과 샵의 방향에 맞춰 무엇을 보여주고 어떤 메시지로 알릴지 정리합니다.</div></div>
-      <div class="acc-item"><button class="acc-q">7. 초기재료 세팅<span class="mark">+</span></button><div class="acc-a">연장·펌·LED 시술에 필요한 재료와 장비 50가지, 교재 7권을 세팅해 전달합니다. 수료 후 별도 구매 없이 바로 시술을 시작할 수 있습니다.</div></div>
-    </div>
-    <div class="chips" style="margin-bottom:16px">
-      <span class="chip">재료·장비 50가지</span><span class="chip">교재 7권</span>
-      <span class="chip">온라인 이론 15개</span><span class="chip">모델 실습 18회</span>
-      <span class="chip">연 1회 이상 리마인드 수업</span>
-    </div>
-    <a href="page_11.html?class=startup" class="btn btn-primary">창업반 상담 신청하기</a>
-  </div>
-
-  <!-- 펌 단과반 -->
-  <div class="panel" id="c2">
-    <div class="cls-head">
-      <h3>1:1 속눈썹 펌 단과반</h3>
-      <p class="one">이론·시연·모델 실습을 하나의 흐름으로 연결한 5DAY 통합 과정</p>
-      <p class="target"><b>대상</b> — 펌의 기준을 처음부터 잡고 싶은 분 / 결과 편차를 줄이고 싶은 분</p>
-    </div>
-    <table class="spec">
-      <tr><th>기간</th><td>5DAY</td></tr>
-      <tr><th>방식</th><td>사전 온라인 이론 + 현장 시연 + 모델 실습 + 과제·피드백</td></tr>
-      <tr><th>수강료</th><td class="price">280만원</td></tr>
-      <tr><th>피드백</th><td>매 수업 과제 및 개별 피드백, 수료 후 실습 결과 피드백</td></tr>
-    </table>
-    <div class="acc">
-      <div class="acc-item is-open"><button class="acc-q">1DAY — 기초 이론과 시술의 기본 흐름<span class="mark">+</span></button><div class="acc-a">기초 페이퍼 연습, 펌제 도포, 랩핑, 결 정리, 시연 및 시연 모델 온라인 이론, 눈매별 적용 방법</div></div>
-      <div class="acc-item"><button class="acc-q">2DAY — 첫 모델 실습과 기본기 적용<span class="mark">+</span></button><div class="acc-a">기초 도포·랩핑·결 정리를 실제 모델에게 적용하고, 결과를 함께 점검한 뒤 과제와 피드백으로 이어갑니다.</div></div>
-      <div class="acc-item"><button class="acc-q">3DAY — 눈매와 속눈썹 상태에 따른 적용력<span class="mark">+</span></button><div class="acc-a">고객별 속눈썹 방향과 모량을 확인한 뒤 시술하고, 눈매 특징에 따라 도포와 랩핑 방향을 조절합니다.</div></div>
-      <div class="acc-item"><button class="acc-q">4DAY — 디자인 완성도와 시술 안정성<span class="mark">+</span></button><div class="acc-a">전체 시술 흐름을 안정적으로 반복하며 결의 방향, 밀착도, 컬의 조화를 세심하게 확인합니다.</div></div>
-      <div class="acc-item"><button class="acc-q">5DAY — 현장 적용력 점검과 나만의 시술 기준<span class="mark">+</span></button><div class="acc-a">진단부터 마무리까지 스스로 계획하고 진행하며, 나만의 시술 순서를 정리합니다.</div></div>
-    </div>
-    <div class="chips" style="margin-bottom:16px">
-      <span class="chip">사전 온라인 이론</span><span class="chip">교재 배송</span>
-      <span class="chip">매 수업 과제·피드백</span><span class="chip">수료 후 실습 피드백</span>
-    </div>
-    <a href="page_11.html?class=perm" class="btn btn-primary">펌 단과반 상담 신청하기</a>
-  </div>
-
-  <!-- 클래식 연장 -->
-  <div class="panel" id="c3">
-    <div class="cls-head">
-      <h3>클래식 연장 단과반</h3>
-      <p class="one">배운 적은 있지만 고객에게 시술하기는 불안하다면</p>
-      <p class="target"><b>대상</b> — 연장을 배웠지만 실무 적용이 불안한 원장 / 취업·프리랜서·샵 운영을 앞둔 분</p>
-    </div>
-    <table class="spec">
-      <tr><th>전체 기간</th><td>사전과제 2주 + 대면 수업 1개월</td></tr>
-      <tr><th>대면 수업</th><td>1:1 총 6회</td></tr>
-      <tr><th>진행 방식</th><td>현재 실력과 문제에 따른 맞춤 진도</td></tr>
-      <tr><th>사후관리</th><td>졸업 후 실제 시술에 대한 지속 피드백</td></tr>
-      <tr><th>수강료</th><td class="price">[클라이언트 확인 필요]</td></tr>
-    </table>
-    <div class="acc">
-      <div class="acc-item is-open"><button class="acc-q">1단계. 사전 기본기 교정 (2주, 온라인)<span class="mark">+</span></button><div class="acc-a"><ul><li>내 손에 맞는 핀셋 잡는 법</li><li>힘 조절과 핀셋 여닫기</li><li>가모 파지 방법</li><li>가모 진입 각도와 방향</li><li>테이핑</li><li>클래식 연장의 기본 동작</li></ul><p style="margin-top:10px"><b>이론 영상 시청 → 과제 촬영 → 영상 제출 → 1:1 영상 피드백 → 보완 과제</b><br>이 과정을 매일 반복하며 대면 수업 전에 잘못된 습관을 먼저 교정합니다.</p></div></div>
-      <div class="acc-item"><button class="acc-q">2단계. 1:1 대면수업 (1개월·총 6회)<span class="mark">+</span></button><div class="acc-a"><ul><li>손과 자세에 맞는 시술 기준 설정</li><li>가르기와 가모 파지</li><li>정확한 진입과 밀착</li><li>글루량과 글루 사용 방법</li><li>유지력을 만드는 시술 과정</li><li>가지런한 방향과 라인 완성</li><li>고객 눈매에 맞는 디자인</li><li>상담과 디자인 선택 기준</li><li>모델 실습과 현장 문제 교정</li><li>시술 속도와 완성도 향상</li></ul></div></div>
-      <div class="acc-item"><button class="acc-q">수업 후 도달점<span class="mark">+</span></button><div class="acc-a"><ul><li>내 시술이 잘되지 않는 원인을 스스로 구분</li><li>내 손에 맞는 자세와 핀셋 사용 기준을 앎</li><li>고객에게 클래식 연장을 혼자 시술</li><li>문제가 생겼을 때 무엇부터 점검할지 판단</li></ul></div></div>
-    </div>
-    <a href="page_11.html?class=classic" class="btn btn-primary">연장 단과반 상담 신청하기</a>
-  </div>
-
-  <!-- 원데이 -->
-  <div class="panel" id="c4">
-    <div class="cls-head">
-      <h3>원데이</h3>
-      <p class="one">지금 내 시술에서 가장 막혀 있는 지점 하나를 정확히 찾아 교정합니다</p>
-      <p class="target"><b>대상</b> — 경력 6개월 이상, 이미 현장에서 시술 중인 원장</p>
-    </div>
-    <table class="spec">
-      <tr><th>진행 방식</th><td>사전 화상 상담 + 대면 1:1 밀착 수업</td></tr>
-      <tr><th>수업 시간</th><td>하루 6시간</td></tr>
-      <tr><th>원칙</th><td>하루 전체를 한 분의 원장님을 위해서만 사용</td></tr>
-      <tr><th>수강료</th><td class="price">[클라이언트 확인 필요]</td></tr>
-    </table>
-    <div class="stepcard" style="margin-bottom:0"><span class="n">1</span><div><h4>사전 상담</h4><p>상담지로 시술 상태를 먼저 파악하고, 화면 상담으로 무엇을 어떻게 교정할지 미리 잡아둡니다</p></div></div>
-    <div class="step-arrow">↓</div>
-    <div class="stepcard" style="margin-bottom:0"><span class="n">2</span><div><h4>손 적응</h4><p>모델이 오기 2시간 전부터 교정 내용에 손을 맞춥니다. 바꿔야 할 부분만 최소한으로 바꿉니다</p></div></div>
-    <div class="step-arrow">↓</div>
-    <div class="stepcard" style="margin-bottom:0"><span class="n">3</span><div><h4>모델 실습</h4><p>모델 2명. 1명은 반쪽 눈 시연 + 반쪽 눈 실습, 나머지 1명은 전체 시술</p></div></div>
-    <div class="step-arrow">↓</div>
-    <div class="stepcard" style="margin-bottom:16px"><span class="n">4</span><div><h4>수업 후</h4><p>그날 교정한 내용을 정리해 전달하고, 이후에도 영상 피드백으로 적용 여부를 확인합니다</p></div></div>
-    <a href="page_11.html?class=oneday" class="btn btn-primary">원데이 상담 신청하기</a>
-  </div>
-</section>
-
-<!-- ===== 6-3. 진행 방식 ===== -->
-<section class="sec-white">
-  <p class="sec-label">Process</p>
-  <h2 class="sec-title">신청하시면 이렇게 진행됩니다</h2>
-  <div class="stepcard"><span class="n">1</span><div><h4>상담지 작성</h4><p>경력, 희망 과정, 지금 가장 큰 고민을 적습니다</p></div></div>
-  <div class="step-arrow">↓</div>
-  <div class="stepcard"><span class="n">2</span><div><h4>1차 화면 상담 영상</h4><p>원장이 시술 사진과 계정을 살펴본 뒤 진단 영상을 보냅니다</p></div></div>
-  <div class="step-arrow">↓</div>
-  <div class="stepcard"><span class="n">3</span><div><h4>2차 카카오톡 상담</h4><p>영상을 보고 생긴 질문을 이어서 나눕니다</p></div></div>
-  <div class="step-arrow">↓</div>
-  <div class="stepcard"><span class="n">4</span><div><h4>등록 · 교재 배송</h4><p>등록이 확정되면 온라인 이론에 필요한 교재를 보내드립니다</p></div></div>
-  <div class="step-arrow">↓</div>
-  <div class="stepcard"><span class="n">5</span><div><h4>수업 시작</h4><p>사전과제(해당 과정) → 대면 수업 → 과제와 피드백</p></div></div>
-  <div class="tip"><b>TIP</b><br>상담 단계에서 ‘이런 것까지 물어봐도 되나’ 싶은 것도 편하게 물어보셔도 됩니다.</div>
-</section>
-
-<!-- ===== 7. EVIDENCE ===== -->
-<section class="sec-gray">
-  <p class="sec-label">Evidence</p>
-  <h2 class="sec-title">보여드릴 수 있는 것만<br>말씀드립니다</h2>
-
-  <p class="block-title">실제 영상 피드백 화면</p>
-  <div class="hscroll">
-    <div class="ph">[피드백 화면 캡처 1]</div>
-    <div class="ph">[피드백 화면 캡처 2]</div>
-    <div class="ph">[피드백 화면 캡처 3]</div>
-  </div>
-
-  <p class="block-title">교재 7권</p>
-  <div class="book-grid">
-    <div class="book">글루에 대한 모든 것</div>
-    <div class="book">마케팅</div>
-    <div class="book">속눈썹모발학</div>
-    <div class="book">창업가이드북</div>
-    <div class="book">LED</div>
-    <div class="book">속눈썹펌</div>
-    <div class="book" style="grid-column:span 2">실습일지 노트</div>
-  </div>
-
-  <p class="block-title">창업반 초기재료 세팅</p>
-  <div class="acc">
-    <div class="acc-item"><button class="acc-q">속눈썹펌<span class="mark">+</span></button><div class="acc-a">미니망고, 망고롯드, 베리, 비키니 4쌍, 비키니 3쌍, 드림롯드 V컬, 드림패치, 피넛롯드 시즌2, 스노우 래쉬토탈클리닉, 반하다 밤바라밤, 반하다 플렉스 틴트, 반하다 블랙 스무디 틴팅, 롤리킹 펌제, 글루리프트밤</div></div>
-    <div class="acc-item"><button class="acc-q">속눈썹연장<span class="mark">+</span></button><div class="acc-a">라몽겔제거제, 뷰티 전처리제, 지아 01~05 V핀셋, 마중물, 플랫모 0.18 C(9·10·11·12), 플랫모 0.18 D(9·10·11·12), 플랫모 0.18 JC MIX, 언더래쉬 다크브라운 0.15 J, 일반연장글루, 글루보관통, 래쉬팔레트</div></div>
-    <div class="acc-item"><button class="acc-q">LED 연장<span class="mark">+</span></button><div class="acc-a">LED글루 2종, LED램프</div></div>
-    <div class="acc-item"><button class="acc-q">기타 부자재<span class="mark">+</span></button><div class="acc-a">베일드클리어, 마이온리 블랙, 눈썹 마네킹, 펌브러쉬, BL래쉬 샴푸 100ml, 니찌반 테이프, 유키반 3281, 유키반 3511, 아이패치 50개 1세트, 립브러쉬, 롱헤드 마이크로면봉, 성윤랩커터, 밀라노펜슬, 미니가위, 사각미러, 땅콩브러쉬, 핀셋클리너, 연습용가모 5개, 차실, 펌지, 면봉, 글루컵, 손풍기, 와이퍼</div></div>
-  </div>
-  <p class="notice-note">연장·펌·LED에 필요한 재료와 장비 50가지를 세팅해 전달합니다. 수료 후 별도 구매 없이 바로 시술을 시작할 수 있습니다. (창업반 한정)</p>
-</section>
-
-<!-- ===== 7.5 STORIES ===== -->
-<section class="sec-white">
-  <p class="sec-label">Stories</p>
-  <h2 class="sec-title">[클라이언트 확인 필요:<br>후기에서 발췌한 헤드카피]</h2>
-  <div class="story-item">
-    <div class="ph">[장면 이미지 1]</div>
-    <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
-    <p class="rev">[클라이언트 확인 필요: 실제 후기 1]</p>
-  </div>
-  <div class="story-item">
-    <div class="ph">[장면 이미지 2]</div>
-    <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
-    <p class="rev">[클라이언트 확인 필요: 실제 후기 2]</p>
-  </div>
-  <div class="story-item">
-    <div class="ph">[장면 이미지 3]</div>
-    <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
-    <p class="rev">[클라이언트 확인 필요: 실제 후기 3]</p>
-  </div>
-  <p class="closing">“한 번 지아에 들어오신 이상,<br>교육에 끝은 없을 거예요.”</p>
-</section>
-
-<!-- ===== 8. CTA ===== -->
-<section class="sec-gray">
-  <p class="sec-label">Apply</p>
-  <h2 class="sec-title">어떤 과정이 맞는지<br>모르셔도 괜찮습니다</h2>
-  <p class="sec-sub">상담지만 남겨주시면, 어디가 막혀 있는지부터 저희가 찾아보겠습니다.</p>
-
-  <div class="price-card">
-    <span class="badge">3개월 · 24회차</span>
-    <h4>속눈썹 창업반</h4>
-    <p class="amount">[클라이언트 확인 필요] <small>부가세 별도 여부 확인</small></p>
-    <ul><li>창업 컨설팅·기초·마케팅 6회차 + 모델 실습 18회차</li><li>재료·장비 50가지, 교재 7권</li><li>연 1회 이상 리마인드 수업</li></ul>
-    <a href="page_11.html?class=startup" class="btn btn-primary">상담 신청하기</a>
-  </div>
-  <div class="price-card">
-    <span class="badge">5DAY</span>
-    <h4>1:1 속눈썹 펌 단과반</h4>
-    <p class="amount">280만원</p>
-    <ul><li>사전 온라인 이론 + 현장 시연 + 모델 실습</li><li>매 수업 과제 및 개별 피드백</li><li>수료 후 실습 결과 피드백</li></ul>
-    <a href="page_11.html?class=perm" class="btn btn-primary">상담 신청하기</a>
-  </div>
-  <div class="price-card">
-    <span class="badge">사전 2주 + 대면 6회</span>
-    <h4>클래식 연장 단과반</h4>
-    <p class="amount">[클라이언트 확인 필요]</p>
-    <ul><li>사전과제 2주 매일 영상 피드백</li><li>1:1 대면 수업 6회</li><li>졸업 후 지속 피드백</li></ul>
-    <a href="page_11.html?class=classic" class="btn btn-primary">상담 신청하기</a>
-  </div>
-  <div class="price-card">
-    <span class="badge">하루 6시간</span>
-    <h4>원데이</h4>
-    <p class="amount">[클라이언트 확인 필요]</p>
-    <ul><li>사전 화상 상담으로 원인 선진단</li><li>모델 2명 실습</li><li>수업 후 교정 내용 정리본 전달</li></ul>
-    <a href="page_11.html?class=oneday" class="btn btn-primary">상담 신청하기</a>
-  </div>
-
-  <div class="contact-2">
-    <a href="#">카카오톡 문의</a>
-    <a href="#">전화 문의</a>
-  </div>
-  <p class="micro">상담은 무료이며, 신청 후 진단 영상을 보내드립니다.</p>
-</section>
-
-<!-- ===== 9. 수강 안내 및 환불 규정 (법정 필수) ===== -->
-<section class="sec-white">
-  <h2 class="sec-title" style="font-size:18px">수강 안내 및 환불 규정</h2>
-  <div class="acc">
-    <div class="acc-item"><button class="acc-q">강의 정보<span class="mark">+</span></button><div class="acc-a">과정명 / 총 교육 시간·회차 / 진행 방식(대면·온라인) / 교육 장소 / 제공 교재 및 재료<br>[클라이언트 확인 필요]</div></div>
-    <div class="acc-item"><button class="acc-q">수강 대상 및 자격<span class="mark">+</span></button><div class="acc-a">과정별 요구 경력 — 원데이는 경력 6개월 이상 권장<br>[클라이언트 확인 필요: 그 외 과정 자격 요건]</div></div>
-    <div class="acc-item"><button class="acc-q">결제 및 수강 기간<span class="mark">+</span></button><div class="acc-a">결제 수단 / 수강 시작일 / 유효 기간<br>[클라이언트 확인 필요]</div></div>
-    <div class="acc-item"><button class="acc-q">환불 및 취소 규정<span class="mark">+</span></button><div class="acc-a">수강 시작 전 취소 / 수강 중 환불 기준(진행 회차 기준 산정) / 교재·재료 개봉 시 처리 / 환불 신청 방법 및 처리 기간<br><b>[클라이언트 확인 필요 — 전자상거래법상 필수 기재]</b></div></div>
-    <div class="acc-item"><button class="acc-q">판매자 정보<span class="mark">+</span></button><div class="acc-a">상호 지아 / 대표 임희진 / 사업자등록번호 [확인 필요] / 통신판매업신고번호 [확인 필요] / 주소 [확인 필요] / 연락처 [확인 필요] / 이메일 [확인 필요]</div></div>
-  </div>
-</section>
-
-<!-- ===== 푸터 ===== -->
-<footer class="foot">
-  <p class="brand">jia</p>
-  상호 지아 | 대표 임희진<br>
-  사업자등록번호 [클라이언트 확인 필요]<br>
-  통신판매업신고번호 [클라이언트 확인 필요]<br>
-  주소 [클라이언트 확인 필요]<br>
-  전화 [클라이언트 확인 필요] | 이메일 [클라이언트 확인 필요]
-  <nav>
-    <a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">환불 및 취소 규정</a>
-  </nav>
-  <p style="margin-top:14px">© jia. All rights reserved.</p>
-</footer>
-
-</div><!-- /.wrap -->
-
-<!-- ===== 고정 하단 신청바 ===== -->
-<div class="fixbar">
-  <div class="fixbar-inner">
-    <span>상담 무료<br>진단 영상 발송</span>
-    <a href="page_11.html">수강 상담 신청</a>
-  </div>
+  <div class="m-auth"><a href="#" class="btn btn-secondary btn-block">로그인</a><a href="#" class="btn btn-primary btn-block">회원가입</a></div>
 </div>
 
+
+<style>
+/* ===== 클래스 페이지 전용 보조 스타일 (공통 토큰만 사용) ===== */
+.hero-class{background:var(--bg-dark);padding:100px 0}
+.hero-class .section-label{color:rgba(255,255,255,.5)}
+.hero-class h1{font-size:46px;font-weight:800;color:#FFF;line-height:1.32;letter-spacing:-.03em;margin-bottom:18px}
+.hero-class p.lead{font-size:18px;color:rgba(255,255,255,.7);margin-bottom:32px}
+.hero-trust{border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:32px}
+.hero-trust li{display:flex;align-items:center;gap:12px;padding:14px 0;font-size:15px;color:rgba(255,255,255,.85)}
+.hero-trust li+li{border-top:1px solid rgba(255,255,255,.12)}
+.hero-trust .tick{width:22px;height:22px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#FFF;flex-shrink:0}
+.hero-class .img-placeholder{background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.2);color:rgba(255,255,255,.35)}
+.strength{border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-md);padding:26px}
+.strength .icon-box{background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);margin-bottom:18px}
+.strength h3{font-size:17px;font-weight:700;color:#FFF;margin-bottom:8px}
+.strength p{font-size:14px;color:rgba(255,255,255,.6)}
+
+.stat{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:34px 24px;text-align:center;background:#FFF}
+.stat .label{font-size:14px;color:var(--text-light);margin-bottom:10px}
+.stat .value{font-size:38px;font-weight:800;color:var(--text-black);letter-spacing:-.03em;line-height:1.1}
+.chip-box{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px 32px;background:#FFF;margin-top:24px}
+.chip-box>p{font-size:15px;font-weight:700;color:var(--text-black);margin-bottom:16px}
+.mini-review{display:flex;gap:24px;align-items:center;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px 32px;background:#FFF;margin-top:20px}
+.mini-review .img-placeholder{width:96px;height:96px;flex-shrink:0}
+.mini-review p{font-size:16px;color:var(--text-dark)}
+.mini-review span{display:block;font-size:13px;color:var(--text-light);margin-top:8px}
+
+.cause-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF}
+.cause-card .num{font-size:13px;font-weight:800;color:var(--text-light);margin-bottom:14px;letter-spacing:.06em}
+.cause-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:12px;line-height:1.4}
+.cause-card p{font-size:15px;color:var(--text-gray)}
+.ba{display:grid;grid-template-columns:1fr 64px 1fr;gap:16px;align-items:center;max-width:760px;margin:0 auto 48px}
+.ba .img-placeholder{aspect-ratio:4/3}
+.ba .arrow{text-align:center;font-size:24px;color:var(--text-light)}
+.ba figcaption{text-align:center;font-size:13px;color:var(--text-light);margin-top:12px}
+.answer-box{background:var(--bg-dark);border-radius:var(--radius-md);padding:48px;margin-top:32px;text-align:center}
+.answer-box p{font-size:20px;color:#FFF;line-height:1.8}
+.answer-box strong{font-weight:800}
+
+.sol{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;display:flex;flex-direction:column}
+.sol .tag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:800;color:#FFF;background:var(--text-black);border-radius:99px;padding:6px 13px;margin-bottom:18px}
+.sol h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:14px;line-height:1.4}
+.sol p{font-size:15px;color:var(--text-gray);margin-bottom:18px;flex:1}
+.sol .basis{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px;margin:0;flex:0}
+
+.dark-quote{background:var(--bg-dark);border-radius:var(--radius-md);padding:40px;margin:32px 0}
+.dark-quote p{font-size:17px;color:#FFF;line-height:2.1;text-align:center}
+.eff{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px 20px;text-align:center;font-size:15px;font-weight:700;color:var(--text-black);background:#FFF}
+
+.cls-head{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:36px;background:#FFF;margin-bottom:20px}
+.cls-head h3{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px;letter-spacing:-.02em}
+.cls-head .one{font-size:16px;color:var(--text-gray);margin-bottom:20px}
+.cls-head .target{font-size:15px;color:var(--text-black);background:var(--bg-light);border-radius:var(--radius-sm);padding:16px 20px}
+.cls-cols{display:grid;grid-template-columns:1fr 1.15fr;gap:20px;align-items:start}
+
+.block-title{font-size:18px;font-weight:800;color:var(--text-black);margin:0 0 20px;padding-left:14px;border-left:3px solid var(--text-black)}
+.hscroll{display:flex;gap:16px;overflow-x:auto;padding-bottom:10px}
+.hscroll .img-placeholder{flex:0 0 260px;aspect-ratio:9/16}
+.book{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px 18px;background:#FFF;font-size:15px;font-weight:600;color:var(--text-black);text-align:center}
+
+.story-item .img-placeholder{aspect-ratio:4/3;margin-bottom:20px}
+.story-item .line{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:10px;line-height:1.45}
+.story-item .rev{font-size:15px;color:var(--text-gray)}
+.closing{text-align:center;font-size:20px;font-weight:700;color:var(--text-black);margin-top:56px;line-height:1.7}
+
+.price-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;display:flex;flex-direction:column}
+.price-card h3{font-size:20px;font-weight:800;color:var(--text-black);margin:0 0 14px}
+.price-card .amount{font-size:26px;font-weight:800;color:var(--text-black);letter-spacing:-.02em;margin-bottom:20px}
+.price-card .amount small{display:block;font-size:13px;font-weight:600;color:var(--text-light);margin-top:6px}
+.price-card ul{margin-bottom:24px;flex:1}
+.price-card ul li{font-size:14px;color:var(--text-gray);padding-left:14px;position:relative;margin-bottom:8px}
+.price-card ul li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
+.contact-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px;margin:32px auto 0}
+
+@media (max-width:1024px){
+  .cls-cols{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  .hero-class{padding:64px 0}
+  .hero-class h1{font-size:30px}
+  .ba{grid-template-columns:1fr;gap:12px}
+  .ba .arrow{transform:rotate(90deg)}
+  .answer-box{padding:32px 24px}
+  .answer-box p{font-size:17px}
+  .dark-quote{padding:28px}
+  .dark-quote p{font-size:15px;line-height:1.9}
+  .cls-head{padding:26px}
+  .cls-head h3{font-size:22px}
+  .contact-2{grid-template-columns:1fr}
+}
+</style>
+
+<!-- ================= 섹션 1 : Hero ================= -->
+<section class="hero-class">
+  <div class="container">
+    <div class="split">
+      <div>
+        <p class="section-label">Class</p>
+        <h1>따라 한 기술은,<br>샵에 가면 사라집니다</h1>
+        <p class="lead">지아는 내 손에 맞는 기준을 만드는 1:1 속눈썹 클래스입니다.</p>
+        <ul class="hero-trust">
+          <li><span class="tick">✓</span>전 과정 1:1 맞춤 진행</li>
+          <li><span class="tick">✓</span>과제는 화면 영상으로 피드백</li>
+          <li><span class="tick">✓</span>수료 후 피드백 기간 제한 없음</li>
+        </ul>
+        <a href="#classes" class="btn btn-primary">내게 맞는 클래스 보기</a>
+      </div>
+      <div class="img-placeholder" style="aspect-ratio:3/4"><i data-lucide="image"></i></div>
+    </div>
+    <div class="grid-4" style="margin-top:64px">
+      <div class="strength"><div class="icon-box"><i data-lucide="user"></i></div><h3>1:1 전용</h3><p>하루를, 한 수업을 한 분에게만 씁니다</p></div>
+      <div class="strength"><div class="icon-box"><i data-lucide="list-checks"></i></div><h3>맞춤 과제</h3><p>막히는 지점에 따라 다음 과제가 달라집니다</p></div>
+      <div class="strength"><div class="icon-box"><i data-lucide="monitor-play"></i></div><h3>영상 피드백</h3><p>내 과제 화면을 보며 목소리로 설명합니다</p></div>
+      <div class="strength"><div class="icon-box"><i data-lucide="infinity"></i></div><h3>사후 관리</h3><p>질문이 멈출 때까지 이어집니다</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 2 : Proof ================= -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Proof</p>
+      <h2 class="section-title">숫자로 먼저 말씀드립니다</h2>
+    </div>
+    <div class="grid-4">
+      <div class="stat"><p class="label">현장 경력</p><p class="value">7년</p></div>
+      <div class="stat"><p class="label">창업반 총 회차</p><p class="value">24회차</p></div>
+      <div class="stat"><p class="label">창업반 모델 실습</p><p class="value">18회</p></div>
+      <div class="stat"><p class="label">수업 진행 방식</p><p class="value">100% 1:1</p></div>
+    </div>
+    <div class="chip-box">
+      <p>모든 과정에 공통으로 들어갑니다</p>
+      <div class="chips">
+        <span class="chip">전 과정 1:1</span><span class="chip">맞춤 과제</span>
+        <span class="chip">화면 영상 피드백</span><span class="chip">사후 피드백 기간 제한 없음</span>
+        <span class="chip">연 1회 이상 리마인드 수업</span>
+      </div>
+    </div>
+    <div class="mini-review">
+      <div class="img-placeholder"><i data-lucide="image"></i></div>
+      <div>
+        <p>[클라이언트 확인 필요: 대표 후기 1건 · 한 문장]</p>
+        <span>[수강 과정] · [수강 시기]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 3 : Problem ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Problem</p>
+      <h2 class="section-title">이 중에 하나라도 해당되시나요</h2>
+    </div>
+    <div class="grid-2">
+      <div class="pain-card"><div class="icon-box"><i data-lucide="clock"></i></div><p>연장을 배웠지만 오래 쉬어서 다시 시작하기가 막막합니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="user"></i></div><p>모델 실습까지 했는데 실제 고객 시술은 아직 불안합니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="move-diagonal"></i></div><p>가르기, 가모 파지, 진입, 밀착이 매번 일정하지 않습니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="trending-down"></i></div><p>유지력과 시술 결과가 고객마다 달라집니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="copy"></i></div><p>다른 사람 자세를 따라 해도 내 손에서는 잘 안 됩니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="align-left"></i></div><p>적게 심으면 가지런한데, 많이 심으면 라인이 무너집니다</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 4 : Empathy ================= -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="img-placeholder" style="aspect-ratio:3/2"><i data-lucide="image"></i></div>
+      <div>
+        <p class="section-label">Empathy</p>
+        <h2 class="section-title">실력이 없어서가 아닙니다</h2>
+        <blockquote style="margin:0 0 28px">
+          “남을 따라 하는 기술을 배우면, 샵에 가서 그 기술 자체를 잃어버려요.”
+          <cite>— 지아 원장 임희진</cite>
+        </blockquote>
+        <p style="font-size:15px;margin-bottom:16px">수업에서는 됐는데 샵에서는 안 되는 경험. 그건 실력이 부족해서가 아니라, 그 동작이 <strong style="color:var(--text-black)">내 손의 것이 아니었기</strong> 때문입니다.</p>
+        <p style="font-size:15px;margin-bottom:16px">손 모양도, 힘도, 핀셋 잡는 습관도 사람마다 다릅니다. 그래서 같은 자세를 그대로 복사하면 반드시 어딘가에서 무너집니다.</p>
+        <p style="font-size:15px;color:var(--text-black);font-weight:700">지아는 정해진 자세를 따라 하게 하지 않습니다. 지금 그 손에서 출발해, 혼자서도 반복할 수 있는 기준을 하나씩 세웁니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 5 : Cause ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Cause</p>
+      <h2 class="section-title">문제는 손이 아니라, 기준이 없다는 것입니다</h2>
+    </div>
+    <div class="ba">
+      <figure>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <figcaption>가이드가 원모 흐름을 따라간 경우 — 결이 잡힌 라인</figcaption>
+      </figure>
+      <div class="arrow">↔</div>
+      <figure>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <figcaption>가이드를 일자로만 심은 경우 — X자가 생긴 라인</figcaption>
+      </figure>
+    </div>
+    <div class="grid-3">
+      <div class="cause-card">
+        <p class="num">원인 01</p>
+        <h3>기본기를 건너뛴 채 실무부터 배웠다</h3>
+        <p>핀셋 잡는 힘이 아직 불안한데 다음 단계로 넘어가면, 그 위에 쌓는 모든 동작이 흔들립니다.</p>
+      </div>
+      <div class="cause-card">
+        <p class="num">원인 02</p>
+        <h3>결과만 듣고 원인을 못 배웠다</h3>
+        <p>“각도가 잘못됐다”는 말만으로는 고칠 수 없습니다. 어느 장면에서 무너졌는지, 손목을 어떻게 써야 하는지를 봐야 고쳐집니다.</p>
+      </div>
+      <div class="cause-card">
+        <p class="num">원인 03</p>
+        <h3>모두가 같은 진도로 배웠다</h3>
+        <p>어려워하는 지점은 사람마다 다릅니다. 진도에 사람을 맞추면 막힌 곳은 막힌 채로 수료합니다.</p>
+      </div>
+    </div>
+    <div class="answer-box">
+      <p>그래서 지아는 <strong>사전과제로 기본기를 먼저 잡고</strong>,<br><strong>화면으로 원인을 짚고</strong>, <strong>개인별로 다음 과제를 정합니다.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 6 : Solution ================= -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Solution</p>
+      <h2 class="section-title">원인마다, 대응이 따로 있습니다</h2>
+    </div>
+    <div class="grid-3">
+      <div class="sol">
+        <span class="tag">솔루션 1</span>
+        <h3>대면 전 2주, 기본기부터 교정합니다</h3>
+        <p>핀셋 잡기 → 가모 파지 → 가모 진입 → 마네킹 → 테이핑. 영상 시청 → 과제 촬영 → 제출 → 1:1 영상 피드백 → 보완 과제를 <strong style="color:var(--text-black)">매일</strong> 반복합니다.</p>
+        <p class="basis">근거 — 클래식 연장 단과반 사전과제 2주 운영</p>
+      </div>
+      <div class="sol">
+        <span class="tag">솔루션 2</span>
+        <h3>결과가 아니라 원인을 화면으로 짚습니다</h3>
+        <p>제출한 영상을 화면에 띄워 어느 장면에서 각도가 무너졌는지, 손목과 손가락을 어떻게 움직여야 하는지를 목소리로 설명합니다.</p>
+        <p class="basis">근거 — 전 과정 공통 영상 피드백</p>
+      </div>
+      <div class="sol">
+        <span class="tag">솔루션 3</span>
+        <h3>다음 과제는 사람마다 다르게 나갑니다</h3>
+        <p>핀셋 잡는 힘이 불안하면 다음 영상을 보내지 않고 힘 조절을 먼저 보완합니다. 진입 각도에서 막히면 그 문제를 교정할 과제가 추가됩니다.</p>
+        <p class="basis">근거 — 전 과정 맞춤 진도 운영</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 6-1 : 핵심 — 영상 피드백 ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Core</p>
+      <h2 class="section-title">카톡 한 줄이 아닌, 다시 한 번 듣는 수업</h2>
+      <p class="section-desc">과제를 제출하면, 원장이 그 사진과 영상을 직접 화면에 띄워 확인하고 목소리를 담은 녹화 영상으로 피드백합니다.</p>
+    </div>
+    <div class="img-placeholder" style="aspect-ratio:16/9;max-width:860px;margin:0 auto"><i data-lucide="play-circle"></i></div>
+    <div class="dark-quote" style="max-width:860px;margin-left:auto;margin-right:auto">
+      <p>어느 장면에서 각도가 무너졌는지<br>왜 그 동작이 어려운지<br>손목과 손가락을 어떻게 움직여야 하는지<br>다음 과제에서 무엇을 연습해야 하는지</p>
+    </div>
+    <div class="tbl-scroll" style="max-width:860px;margin:0 auto 40px">
+      <table class="tbl">
+        <thead><tr><th style="width:130px"></th><th>일반적인 피드백</th><th>지아의 영상 피드백</th></tr></thead>
+        <tbody>
+          <tr><th>형태</th><td>카카오톡 텍스트 한두 줄</td><td class="strong">내 과제 화면 + 음성 설명 녹화</td></tr>
+          <tr><th>이해</th><td>글을 다시 해석해야 함</td><td class="strong">문제 지점을 눈으로 바로 확인</td></tr>
+          <tr><th>복습</th><td>지나가면 끝</td><td class="strong">내 속도로 몇 번이든 다시 시청</td></tr>
+          <tr><th>다음</th><td>동일한 진도</td><td class="strong">내 문제에 맞춘 보완 과제</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-4">
+      <div class="eff">이해가 빨라집니다</div>
+      <div class="eff">개선이 빨라집니다</div>
+      <div class="eff">시행착오가 줄어듭니다</div>
+      <div class="eff">혼자 점검하는 눈이 생깁니다</div>
+    </div>
+    <p class="micro text-center">[클라이언트 확인 필요: 영상 피드백 예시 클립 1편 — 개인 연락처·고객 실명 편집본]</p>
+  </div>
+</section>
+
+<section class="section bg-light" id="classes">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Class</p>
+      <h2 class="section-title">지금 어디에서 막혀 있는지에 따라, 시작점이 다릅니다</h2>
+      <p class="section-desc">네 과정 모두 전 과정 1:1로만 진행합니다.</p>
+    </div>
+
+    <div class="tabs" data-tabs style="justify-content:center">
+      <button class="is-active" data-tab="c1">속눈썹 창업반</button>
+      <button data-tab="c2">1:1 속눈썹 펌 단과반</button>
+      <button data-tab="c3">클래식 연장 단과반</button>
+      <button data-tab="c4">원데이</button>
+    </div>
+
+    <!-- 창업반 -->
+    <div class="tabpanel is-active" id="c1">
+      <div class="cls-head">
+        <h3>속눈썹 창업반</h3>
+        <p class="one">처음 핀셋을 잡는 순간부터, 나만의 속눈썹 전문 샵을 준비하는 과정까지</p>
+        <p class="target"><strong>대상</strong> — 속눈썹 시술 경험이 없지만 전문 샵 운영을 준비하는 분</p>
+      </div>
+      <div class="cls-cols">
+        <table class="tbl">
+          <tbody>
+            <tr><th>기간</th><td>3개월</td></tr>
+            <tr><th>총 수업</th><td>24회차</td></tr>
+            <tr><th>방식</th><td>전 과정 1:1 맞춤 진행</td></tr>
+            <tr><th>구성</th><td>창업 컨설팅·기초·마케팅 6회차 + 모델 실습 18회차</td></tr>
+            <tr><th>온라인 이론</th><td>약 15개 콘텐츠 + 교재 5권, 복습 노트 제출</td></tr>
+            <tr><th>수강료</th><td class="strong">[클라이언트 확인 필요]</td></tr>
+          </tbody>
+        </table>
+        <div class="acc">
+          <div class="acc-item is-open"><button class="acc-q">1. 창업 컨설팅<span class="mk">+</span></button><div class="acc-a">창업 절차·행정, 지역과 타깃 설정, 메인 시술 구성, 샵 세팅, 운영 시스템, 마케팅, 오픈 전 체크리스트까지 현재 상황에 맞춰 로드맵을 세웁니다.</div></div>
+          <div class="acc-item"><button class="acc-q">2. 기초 수업<span class="mk">+</span></button><div class="acc-a">핀셋 잡는 법, 페이퍼 연습, 마네킹 실습으로 손의 힘과 각도, 시술 순서를 정확히 익힙니다.</div></div>
+          <div class="acc-item"><button class="acc-q">3. 기술 교육<span class="mk">+</span></button><div class="acc-a">클래식 연장 / 디자인 마스카라 연장 / LED 연장 / 펌 포인트 연장 / 속눈썹 펌</div></div>
+          <div class="acc-item"><button class="acc-q">4. 모델 실습 18회<span class="mk">+</span></button><div class="acc-a">실제 모델의 눈매와 모질을 살피고 상황에 맞는 시술을 직접 판단하는 경험을 쌓습니다.</div></div>
+          <div class="acc-item"><button class="acc-q">5. 이론과 고객 응대<span class="mk">+</span></button><div class="acc-a">온라인 이론 학습 후 복습 노트를 제출합니다. 고객이 이해하기 쉬운 말로 안내하고 재방문으로 이어지는 응대 기준을 배웁니다.</div></div>
+          <div class="acc-item"><button class="acc-q">6. 마케팅과 운영<span class="mk">+</span></button><div class="acc-a">내가 정한 타깃과 샵의 방향에 맞춰 무엇을 보여주고 어떤 메시지로 알릴지 정리합니다.</div></div>
+          <div class="acc-item"><button class="acc-q">7. 초기재료 세팅<span class="mk">+</span></button><div class="acc-a">연장·펌·LED 시술에 필요한 재료와 장비 50가지, 교재 7권을 세팅해 전달합니다. 수료 후 별도 구매 없이 바로 시술을 시작할 수 있습니다.</div></div>
+        </div>
+      </div>
+      <div class="chips" style="margin:24px 0">
+        <span class="chip">재료·장비 50가지</span><span class="chip">교재 7권</span>
+        <span class="chip">온라인 이론 15개</span><span class="chip">모델 실습 18회</span>
+        <span class="chip">연 1회 이상 리마인드 수업</span>
+      </div>
+      <a href="page_11.html?class=startup" class="btn btn-primary">창업반 상담 신청하기</a>
+    </div>
+
+    <!-- 펌 단과반 -->
+    <div class="tabpanel" id="c2">
+      <div class="cls-head">
+        <h3>1:1 속눈썹 펌 단과반</h3>
+        <p class="one">이론·시연·모델 실습을 하나의 흐름으로 연결한 5DAY 통합 과정</p>
+        <p class="target"><strong>대상</strong> — 펌의 기준을 처음부터 잡고 싶은 분 / 결과 편차를 줄이고 싶은 분</p>
+      </div>
+      <div class="cls-cols">
+        <table class="tbl">
+          <tbody>
+            <tr><th>기간</th><td>5DAY</td></tr>
+            <tr><th>방식</th><td>사전 온라인 이론 + 현장 시연 + 모델 실습 + 과제·피드백</td></tr>
+            <tr><th>수강료</th><td class="strong">280만원</td></tr>
+            <tr><th>피드백</th><td>매 수업 과제 및 개별 피드백, 수료 후 실습 결과 피드백</td></tr>
+          </tbody>
+        </table>
+        <div class="acc">
+          <div class="acc-item is-open"><button class="acc-q">1DAY — 기초 이론과 시술의 기본 흐름<span class="mk">+</span></button><div class="acc-a">기초 페이퍼 연습, 펌제 도포, 랩핑, 결 정리, 시연 및 시연 모델 온라인 이론, 눈매별 적용 방법</div></div>
+          <div class="acc-item"><button class="acc-q">2DAY — 첫 모델 실습과 기본기 적용<span class="mk">+</span></button><div class="acc-a">기초 도포·랩핑·결 정리를 실제 모델에게 적용하고, 결과를 함께 확인하며 보완점을 찾은 뒤 과제와 피드백으로 이어갑니다.</div></div>
+          <div class="acc-item"><button class="acc-q">3DAY — 눈매와 속눈썹 상태에 따른 적용력<span class="mk">+</span></button><div class="acc-a">고객별 속눈썹 방향과 모량을 확인한 뒤 시술하고, 눈매 특징에 따라 도포와 랩핑의 방향을 조절합니다.</div></div>
+          <div class="acc-item"><button class="acc-q">4DAY — 디자인 완성도와 시술 안정성<span class="mk">+</span></button><div class="acc-a">전체 시술 흐름을 보다 안정적으로 반복하며 결의 방향, 밀착도, 컬의 조화를 세심하게 확인합니다.</div></div>
+          <div class="acc-item"><button class="acc-q">5DAY — 현장 적용력 점검과 나만의 시술 기준<span class="mk">+</span></button><div class="acc-a">진단부터 마무리까지 스스로 계획하고 진행하며, 나만의 시술 순서를 정리합니다.</div></div>
+        </div>
+      </div>
+      <div class="chips" style="margin:24px 0">
+        <span class="chip">사전 온라인 이론</span><span class="chip">교재 배송</span>
+        <span class="chip">매 수업 과제·피드백</span><span class="chip">수료 후 실습 피드백</span>
+      </div>
+      <a href="page_11.html?class=perm" class="btn btn-primary">펌 단과반 상담 신청하기</a>
+    </div>
+
+    <!-- 클래식 연장 -->
+    <div class="tabpanel" id="c3">
+      <div class="cls-head">
+        <h3>클래식 연장 단과반</h3>
+        <p class="one">배운 적은 있지만 고객에게 시술하기는 불안하다면</p>
+        <p class="target"><strong>대상</strong> — 연장을 배웠지만 실무 적용이 불안한 원장 / 취업·프리랜서·샵 운영을 앞둔 분</p>
+      </div>
+      <div class="cls-cols">
+        <table class="tbl">
+          <tbody>
+            <tr><th>전체 기간</th><td>사전과제 2주 + 대면 수업 1개월</td></tr>
+            <tr><th>대면 수업</th><td>1:1 총 6회</td></tr>
+            <tr><th>진행 방식</th><td>현재 실력과 문제에 따른 맞춤 진도</td></tr>
+            <tr><th>사후관리</th><td>졸업 후 실제 시술에 대한 지속 피드백</td></tr>
+            <tr><th>수강료</th><td class="strong">[클라이언트 확인 필요]</td></tr>
+          </tbody>
+        </table>
+        <div class="acc">
+          <div class="acc-item is-open"><button class="acc-q">1단계. 사전 기본기 교정 (2주, 온라인)<span class="mk">+</span></button><div class="acc-a">내 손에 맞는 핀셋 잡는 법 · 힘 조절과 핀셋 여닫기 · 가모 파지 방법 · 가모 진입 각도와 방향 · 테이핑 · 클래식 연장의 기본 동작<br><br><strong>이론 영상 시청 → 과제 촬영 → 영상 제출 → 1:1 영상 피드백 → 보완 과제</strong><br>이 과정을 매일 반복하며 대면 수업 전에 잘못된 습관을 먼저 교정합니다.</div></div>
+          <div class="acc-item"><button class="acc-q">2단계. 1:1 대면수업 (1개월·총 6회)<span class="mk">+</span></button><div class="acc-a">손과 자세에 맞는 시술 기준 설정 · 가르기와 가모 파지 · 정확한 진입과 밀착 · 글루량과 글루 사용 방법 · 유지력을 만드는 시술 과정 · 가지런한 방향과 라인 완성 · 고객 눈매에 맞는 디자인 · 상담과 디자인 선택 기준 · 모델 실습과 현장 문제 교정 · 시술 속도와 완성도 향상</div></div>
+          <div class="acc-item"><button class="acc-q">수업 후 도달점<span class="mk">+</span></button><div class="acc-a">내 시술이 잘되지 않는 원인을 스스로 구분 · 내 손에 맞는 자세와 핀셋 사용 기준을 앎 · 고객에게 클래식 연장을 혼자 시술 · 문제가 생겼을 때 무엇부터 점검할지 판단</div></div>
+        </div>
+      </div>
+      <a href="page_11.html?class=classic" class="btn btn-primary" style="margin-top:24px">연장 단과반 상담 신청하기</a>
+    </div>
+
+    <!-- 원데이 -->
+    <div class="tabpanel" id="c4">
+      <div class="cls-head">
+        <h3>원데이</h3>
+        <p class="one">지금 내 시술에서 가장 막혀 있는 지점 하나를 정확히 찾아 교정합니다</p>
+        <p class="target"><strong>대상</strong> — 경력 6개월 이상, 이미 현장에서 시술 중인 원장</p>
+      </div>
+      <table class="tbl" style="margin-bottom:24px">
+        <tbody>
+          <tr><th style="width:180px">진행 방식</th><td>사전 화상 상담 + 대면 1:1 밀착 수업</td></tr>
+          <tr><th>수업 시간</th><td>하루 6시간</td></tr>
+          <tr><th>원칙</th><td>하루 전체를 한 분의 원장님을 위해서만 사용</td></tr>
+          <tr><th>수강료</th><td class="strong">[클라이언트 확인 필요]</td></tr>
+        </tbody>
+      </table>
+      <div class="stepbar">
+        <div><p class="n">STEP 01</p><h4>사전 상담</h4><p>상담지로 시술 상태를 먼저 파악하고, 화면 상담으로 무엇을 어떻게 교정할지 미리 잡아둡니다</p></div>
+        <div><p class="n">STEP 02</p><h4>손 적응</h4><p>모델이 오기 2시간 전부터 교정 내용에 손을 맞춥니다. 바꿔야 할 부분만 최소한으로 바꿉니다</p></div>
+        <div><p class="n">STEP 03</p><h4>모델 실습</h4><p>모델 2명. 1명은 반쪽 눈 시연 + 반쪽 눈 실습, 나머지 1명은 전체 시술</p></div>
+        <div><p class="n">STEP 04</p><h4>수업 후</h4><p>그날 교정한 내용을 정리해 전달하고, 이후에도 영상 피드백으로 적용 여부를 확인합니다</p></div>
+      </div>
+      <a href="page_11.html?class=oneday" class="btn btn-primary" style="margin-top:24px">원데이 상담 신청하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 6-3 : 진행 방식 ================= -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Process</p>
+      <h2 class="section-title">신청하시면 이렇게 진행됩니다</h2>
+    </div>
+    <div class="stepbar" style="grid-template-columns:repeat(5,1fr)">
+      <div><p class="n">STEP 01</p><h4>상담지 작성</h4><p>경력, 희망 과정, 지금 가장 큰 고민을 적습니다</p></div>
+      <div><p class="n">STEP 02</p><h4>1차 화면 상담 영상</h4><p>원장이 시술 사진과 계정을 살펴본 뒤 진단 영상을 보냅니다</p></div>
+      <div><p class="n">STEP 03</p><h4>2차 카카오톡 상담</h4><p>영상을 보고 생긴 질문을 이어서 나눕니다</p></div>
+      <div><p class="n">STEP 04</p><h4>등록 · 교재 배송</h4><p>등록이 확정되면 온라인 이론에 필요한 교재를 보내드립니다</p></div>
+      <div><p class="n">STEP 05</p><h4>수업 시작</h4><p>사전과제(해당 과정) → 대면 수업 → 과제와 피드백</p></div>
+    </div>
+    <div class="card text-center" style="max-width:760px;margin:32px auto 0;border-color:var(--text-black)">
+      <p style="font-size:15px;color:var(--text-black)"><strong>TIP</strong> — 상담 단계에서 ‘이런 것까지 물어봐도 되나’ 싶은 것도 편하게 물어보셔도 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 7 : Evidence ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Evidence</p>
+      <h2 class="section-title">보여드릴 수 있는 것만 말씀드립니다</h2>
+    </div>
+
+    <p class="block-title">실제 영상 피드백 화면</p>
+    <div class="hscroll" style="margin-bottom:48px">
+      <div class="img-placeholder"><i data-lucide="image"></i></div>
+      <div class="img-placeholder"><i data-lucide="image"></i></div>
+      <div class="img-placeholder"><i data-lucide="image"></i></div>
+    </div>
+
+    <p class="block-title">교재 7권</p>
+    <div class="grid-4" style="margin-bottom:48px">
+      <div class="book">글루에 대한 모든 것</div>
+      <div class="book">마케팅</div>
+      <div class="book">속눈썹모발학</div>
+      <div class="book">창업가이드북</div>
+      <div class="book">LED</div>
+      <div class="book">속눈썹펌</div>
+      <div class="book">실습일지 노트</div>
+    </div>
+
+    <p class="block-title">창업반 초기재료 세팅</p>
+    <div class="acc">
+      <div class="acc-item"><button class="acc-q">속눈썹펌<span class="mk">+</span></button><div class="acc-a">미니망고, 망고롯드, 베리, 비키니 4쌍, 비키니 3쌍, 드림롯드 V컬, 드림패치, 피넛롯드 시즌2, 스노우 래쉬토탈클리닉, 반하다 밤바라밤, 반하다 플렉스 틴트, 반하다 블랙 스무디 틴팅, 롤리킹 펌제, 글루리프트밤</div></div>
+      <div class="acc-item"><button class="acc-q">속눈썹연장<span class="mk">+</span></button><div class="acc-a">라몽겔제거제, 뷰티 전처리제, 지아 01~05 V핀셋, 마중물, 플랫모 0.18 C(9·10·11·12), 플랫모 0.18 D(9·10·11·12), 플랫모 0.18 JC MIX, 언더래쉬 다크브라운 0.15 J, 일반연장글루, 글루보관통, 래쉬팔레트</div></div>
+      <div class="acc-item"><button class="acc-q">LED 연장<span class="mk">+</span></button><div class="acc-a">LED글루 2종, LED램프</div></div>
+      <div class="acc-item"><button class="acc-q">기타 부자재<span class="mk">+</span></button><div class="acc-a">베일드클리어, 마이온리 블랙, 눈썹 마네킹, 펌브러쉬, BL래쉬 샴푸 100ml, 니찌반 테이프, 유키반 3281, 유키반 3511, 아이패치 50개 1세트, 립브러쉬, 롱헤드 마이크로면봉, 성윤랩커터, 밀라노펜슬, 미니가위, 사각미러, 땅콩브러쉬, 핀셋클리너, 연습용가모 5개, 차실, 펌지, 면봉, 글루컵, 손풍기, 와이퍼</div></div>
+    </div>
+    <p class="micro">연장·펌·LED에 필요한 재료와 장비 50가지를 세팅해 전달합니다. 수료 후 별도 구매 없이 바로 시술을 시작할 수 있습니다. (창업반 한정)</p>
+  </div>
+</section>
+
+<!-- ================= 섹션 7.5 : Stories ================= -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Stories</p>
+      <h2 class="section-title">[클라이언트 확인 필요: 후기에서 발췌한 헤드카피]</h2>
+    </div>
+    <div class="grid-3">
+      <article class="story-item">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
+        <p class="rev">[클라이언트 확인 필요: 실제 후기 1]</p>
+      </article>
+      <article class="story-item">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
+        <p class="rev">[클라이언트 확인 필요: 실제 후기 2]</p>
+      </article>
+      <article class="story-item">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
+        <p class="rev">[클라이언트 확인 필요: 실제 후기 3]</p>
+      </article>
+    </div>
+    <p class="closing">“한 번 지아에 들어오신 이상,<br>교육에 끝은 없을 거예요.”</p>
+  </div>
+</section>
+
+<!-- ================= 섹션 8 : CTA ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Apply</p>
+      <h2 class="section-title">어떤 과정이 맞는지 모르셔도 괜찮습니다</h2>
+      <p class="section-desc">상담지만 남겨주시면, 어디가 막혀 있는지부터 저희가 찾아보겠습니다.</p>
+    </div>
+    <div class="grid-4">
+      <div class="price-card">
+        <span class="badge">3개월 · 24회차</span>
+        <h3>속눈썹 창업반</h3>
+        <p class="amount">[클라이언트 확인 필요]<small>부가세 별도 여부 확인</small></p>
+        <ul>
+          <li>창업 컨설팅·기초·마케팅 6회차 + 모델 실습 18회차</li>
+          <li>재료·장비 50가지, 교재 7권</li>
+          <li>연 1회 이상 리마인드 수업</li>
+        </ul>
+        <a href="page_11.html?class=startup" class="btn btn-primary btn-block">상담 신청하기</a>
+      </div>
+      <div class="price-card">
+        <span class="badge">5DAY</span>
+        <h3>1:1 속눈썹 펌 단과반</h3>
+        <p class="amount">280만원<small>부가세 별도 여부 확인</small></p>
+        <ul>
+          <li>사전 온라인 이론 + 현장 시연 + 모델 실습</li>
+          <li>매 수업 과제 및 개별 피드백</li>
+          <li>수료 후 실습 결과 피드백</li>
+        </ul>
+        <a href="page_11.html?class=perm" class="btn btn-primary btn-block">상담 신청하기</a>
+      </div>
+      <div class="price-card">
+        <span class="badge">사전 2주 + 대면 6회</span>
+        <h3>클래식 연장 단과반</h3>
+        <p class="amount">[클라이언트 확인 필요]</p>
+        <ul>
+          <li>사전과제 2주 매일 영상 피드백</li>
+          <li>1:1 대면 수업 6회</li>
+          <li>졸업 후 지속 피드백</li>
+        </ul>
+        <a href="page_11.html?class=classic" class="btn btn-primary btn-block">상담 신청하기</a>
+      </div>
+      <div class="price-card">
+        <span class="badge">하루 6시간</span>
+        <h3>원데이</h3>
+        <p class="amount">[클라이언트 확인 필요]</p>
+        <ul>
+          <li>사전 화상 상담으로 원인 선진단</li>
+          <li>모델 2명 실습</li>
+          <li>수업 후 교정 내용 정리본 전달</li>
+        </ul>
+        <a href="page_11.html?class=oneday" class="btn btn-primary btn-block">상담 신청하기</a>
+      </div>
+    </div>
+    <div class="contact-2">
+      <a href="#" class="btn btn-secondary">카카오톡 문의</a>
+      <a href="#" class="btn btn-secondary">전화 문의</a>
+    </div>
+    <p class="micro text-center">상담은 무료이며, 신청 후 진단 영상을 보내드립니다.</p>
+  </div>
+</section>
+
+<!-- ================= 섹션 9 : 수강 안내 및 환불 규정 (법정 필수) ================= -->
+<section class="section">
+  <div class="container" style="max-width:900px">
+    <div class="text-center">
+      <h2 class="section-title" style="font-size:26px">수강 안내 및 환불 규정</h2>
+    </div>
+    <div class="acc">
+      <div class="acc-item"><button class="acc-q">강의 정보<span class="mk">+</span></button><div class="acc-a">과정명 / 총 교육 시간·회차 / 진행 방식(대면·온라인) / 교육 장소 / 제공 교재 및 재료<br>[클라이언트 확인 필요]</div></div>
+      <div class="acc-item"><button class="acc-q">수강 대상 및 자격<span class="mk">+</span></button><div class="acc-a">과정별 요구 경력 — 원데이는 경력 6개월 이상 권장<br>[클라이언트 확인 필요: 그 외 과정 자격 요건]</div></div>
+      <div class="acc-item"><button class="acc-q">결제 및 수강 기간<span class="mk">+</span></button><div class="acc-a">결제 수단 / 수강 시작일 / 유효 기간<br>[클라이언트 확인 필요]</div></div>
+      <div class="acc-item"><button class="acc-q">환불 및 취소 규정<span class="mk">+</span></button><div class="acc-a">수강 시작 전 취소 / 수강 중 환불 기준(진행 회차 기준 산정) / 교재·재료 개봉 시 처리 / 환불 신청 방법 및 처리 기간<br><strong>[클라이언트 확인 필요 — 전자상거래법상 필수 기재]</strong></div></div>
+      <div class="acc-item"><button class="acc-q">판매자 정보<span class="mk">+</span></button><div class="acc-a">상호 지아 / 대표 임희진 / 사업자등록번호 [확인 필요] / 통신판매업신고번호 [확인 필요] / 주소 [확인 필요] / 연락처 [확인 필요] / 이메일 [확인 필요]</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 최하단 : Contact Us -->
+<section class="section bg-dark">
+  <div class="container text-center">
+    <h2 class="section-title">지금 뭐가 문제인지 몰라도 괜찮습니다</h2>
+    <p class="section-desc">어디가 막혀 있는지는 저희가 먼저 찾아보겠습니다.</p>
+    <a href="page_11.html" class="btn btn-primary">수강 상담 신청하기</a>
+    <p class="micro">상담은 무료이며, 신청 후 진단 영상을 보내드립니다.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">jia</p>
+        <div class="footer-info">
+          상호 지아 &nbsp;|&nbsp; 대표 임희진<br>
+          사업자등록번호 [클라이언트 확인 필요]<br>
+          통신판매업신고번호 [클라이언트 확인 필요]<br>
+          주소 [클라이언트 확인 필요]<br>
+          전화 [클라이언트 확인 필요] &nbsp;|&nbsp; 이메일 [클라이언트 확인 필요]<br>
+          개인정보관리책임자 [클라이언트 확인 필요]
+        </div>
+        <div class="footer-sns">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><p class="footer-col-title">클래스</p><a href="page_02.html">클래스 안내</a></div>
+      <div class="footer-col"><p class="footer-col-title">Store</p><a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a><a href="page_05.html">유료 뉴스레터 멤버십</a></div>
+      <div class="footer-col"><p class="footer-col-title">블로그</p><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
+      <div class="footer-col"><p class="footer-col-title">고객센터</p><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© jia. All rights reserved.</span>
+      <nav><a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">환불 및 취소 규정</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- QUICK + TOP -->
+<div class="quick">
+  <a href="page_11.html"><i data-lucide="clipboard-list"></i>수강 상담 신청</a>
+  <a href="#"><i data-lucide="message-circle"></i>카카오톡 문의</a>
+  <a href="#"><i data-lucide="instagram"></i>인스타그램</a>
+  <p class="micro">상담 신청하시면 영업 전화 대신 진단 영상을 보내드립니다</p>
+</div>
+<button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
+
 <script>
-/* GNB */
-document.getElementById('burger').onclick=function(){
-  document.getElementById('gnbMenu').classList.toggle('is-open');
-};
-/* 탭 전환 */
-document.querySelectorAll('#tabs button').forEach(function(b){
-  b.onclick=function(){
-    document.querySelectorAll('#tabs button').forEach(function(x){x.classList.remove('is-active')});
-    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('is-active')});
-    b.classList.add('is-active');
-    document.getElementById(b.dataset.tab).classList.add('is-active');
-  };
+lucide.createIcons();
+
+/* 헤더 스크롤 축소 + TOP */
+var nav=document.getElementById('nav'), topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY;
+  nav.classList.toggle('is-scrolled', y>60);
+  topBtn.classList.toggle('is-show', y>400);
+});
+topBtn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+
+/* 모바일 메뉴 */
+document.getElementById('burger').onclick=function(){document.getElementById('mMenu').classList.toggle('is-open')};
+document.querySelectorAll('.m-group > button').forEach(function(b){
+  b.onclick=function(){b.parentElement.classList.toggle('is-open')};
 });
 /* 아코디언 */
 document.querySelectorAll('.acc-q').forEach(function(q){
   q.onclick=function(){q.parentElement.classList.toggle('is-open')};
+});
+/* 탭 */
+document.querySelectorAll('[data-tabs] button').forEach(function(b){
+  b.onclick=function(){
+    var root=b.closest('[data-tabs]');
+    root.querySelectorAll('button').forEach(function(x){x.classList.remove('is-active')});
+    document.querySelectorAll('.tabpanel').forEach(function(p){p.classList.remove('is-active')});
+    b.classList.add('is-active');
+    var t=document.getElementById(b.dataset.tab); if(t) t.classList.add('is-active');
+  };
 });
 </script>
 </body>
