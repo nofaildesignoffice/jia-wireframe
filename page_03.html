@@ -1,0 +1,653 @@
+<!-- PAGE: 클래스 상품 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>클래스 상품 | 지아 - 과정별 수강료 및 신청</title>
+<meta name="description" content="창업반·펌 단과반·클래식 연장 단과반·원데이 네 과정을 한눈에 비교하고 신청하세요. 전 과정 1:1, 결제 전 무료 상담도 가능합니다.">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+
+:root{
+  --text-black:#1A1A1A; --text-dark:#333333; --text-gray:#666666; --text-light:#999999; --text-muted:#BCBCBC;
+  --bg-white:#FFFFFF; --bg-light:#F5F5F5; --bg-dark:#2D2D2D; --bg-black:#1A1A1A;
+  --border-light:#E0E0E0; --border-default:#D0D0D0;
+  --placeholder-bg:#E0E0E0; --placeholder-icon:#BCBCBC;
+  --radius-sm:8px; --radius-md:12px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 4px 12px rgba(0,0,0,0.1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.6;background:var(--bg-white)}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;font-family:inherit;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.bg-light{background:var(--bg-light)}
+.bg-dark{background:var(--bg-dark)}
+.text-center{text-align:center}
+.section-label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px}
+.section-title{font-size:36px;font-weight:700;color:var(--text-black);line-height:1.35;margin-bottom:16px;letter-spacing:-.02em}
+.section-desc{font-size:16px;color:var(--text-gray);max-width:640px;margin-bottom:48px}
+.text-center .section-desc{margin-left:auto;margin-right:auto}
+.bg-dark .section-title{color:#FFF}
+.bg-dark .section-desc{color:rgba(255,255,255,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-sm);border:1px solid transparent;transition:opacity .2s;font-family:inherit}
+.btn:hover{opacity:.85}
+.btn-primary{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.btn-secondary{background:transparent;color:var(--text-black);border-color:var(--text-black)}
+.bg-dark .btn-primary,.hero .btn-primary{background:#FFF;color:var(--text-black);border-color:#FFF}
+.bg-dark .btn-secondary,.hero .btn-secondary{color:#FFF;border-color:rgba(255,255,255,.35)}
+.btn-sm{padding:10px 18px;font-size:14px}
+.btn-block{width:100%}
+.img-placeholder{background:var(--placeholder-bg);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--placeholder-icon)}
+.img-placeholder svg{width:32px;height:32px}
+.icon-box{width:48px;height:48px;background:var(--bg-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
+.icon-box svg{width:22px;height:22px}
+.icon-circle{width:64px;height:64px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-dark);margin-bottom:24px}
+.icon-circle svg{width:26px;height:26px}
+.micro{font-size:13px;color:var(--text-light);margin-top:12px}
+
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:100;background:#FFF;border-bottom:1px solid var(--border-light);transition:padding .2s}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:height .2s}
+.nav.is-scrolled .nav-inner{height:60px}
+.nav-logo{font-size:24px;font-weight:800;color:var(--text-black);letter-spacing:-.03em;transition:font-size .2s}
+.nav.is-scrolled .nav-logo{font-size:20px}
+.nav-links{display:flex;gap:36px}
+.nav-item{position:relative}
+.nav-item>a{display:block;padding:28px 0;font-size:15px;font-weight:600;color:var(--text-dark)}
+.nav-item.is-active>a{color:var(--text-black);text-decoration:underline;text-underline-offset:6px}
+.nav-drop{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFF;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:10px 0;min-width:200px;display:none;box-shadow:var(--shadow-md)}
+.nav-item:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:10px 20px;font-size:14px;color:var(--text-gray);white-space:nowrap}
+.nav-drop a:hover{background:var(--bg-light);color:var(--text-black)}
+.nav-utils{display:flex;align-items:center;gap:20px}
+.nav-utils a{font-size:14px;color:var(--text-gray)}
+.nav-utils svg{width:20px;height:20px}
+.nav-burger{display:none;width:24px;height:24px;color:var(--text-black)}
+.m-menu{display:none;position:fixed;inset:76px 0 0;background:#FFF;z-index:99;overflow-y:auto;padding:24px}
+.m-menu.is-open{display:block}
+.m-group{border-bottom:1px solid var(--border-light)}
+.m-group>button,.m-group>a{display:flex;width:100%;justify-content:space-between;align-items:center;padding:18px 4px;font-size:17px;font-weight:600;color:var(--text-black);text-align:left}
+.m-sub{display:none;padding:0 4px 16px}
+.m-group.is-open .m-sub{display:block}
+.m-sub a{display:block;padding:10px 12px;font-size:15px;color:var(--text-gray)}
+.m-auth{display:flex;gap:12px;margin-top:28px}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:640px;background:var(--bg-dark);overflow:hidden}
+.hero-slide{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+.hero-slide.is-active{display:flex}
+.hero-ph{position:absolute;inset:0;background:var(--bg-dark);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);border:1px dashed rgba(255,255,255,.2)}
+.hero-ph svg{width:56px;height:56px}
+.hero-ph span{position:absolute;bottom:24px;font-size:13px}
+.hero-body{position:relative;z-index:2}
+.hero h1{font-size:48px;font-weight:800;color:#FFF;letter-spacing:-.03em;line-height:1.3;margin-bottom:18px}
+.hero p{font-size:18px;color:rgba(255,255,255,.7)}
+.hero-cta{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);z-index:3}
+.hero-dots{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.hero-dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35)}
+.hero-dots button.is-active{background:#FFF;width:26px;border-radius:5px}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#FFF}
+.hero-arrow svg{width:20px;height:20px}
+.hero-arrow.prev{left:36px}
+.hero-arrow.next{right:36px}
+
+/* ===== GRIDS ===== */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.card h3{font-size:18px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.card p{font-size:15px;color:var(--text-gray)}
+.pain-card{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px;background:#FFF}
+.pain-card p{font-size:15px;color:var(--text-dark);padding-top:12px}
+
+/* class cards */
+.class-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.class-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
+.class-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:var(--text-black);background:var(--bg-light);border-radius:99px;padding:5px 12px;margin-bottom:14px;align-self:flex-start}
+.class-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.class-target{font-size:13px;color:var(--text-light);margin-bottom:14px}
+.class-points{margin-bottom:22px;flex:1}
+.class-points li{font-size:14px;color:var(--text-gray);padding-left:14px;position:relative;margin-bottom:7px}
+.class-points li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.steps-v li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border-light)}
+.steps-v li:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--text-black);flex-shrink:0}
+.steps-v h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:4px}
+.steps-v p{font-size:14px;color:var(--text-gray)}
+blockquote{border-left:3px solid var(--border-default);padding:6px 0 6px 20px;margin-top:28px;font-size:15px;color:var(--text-dark);font-style:normal}
+blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-light);font-style:normal}
+
+/* stepbar */
+.stepbar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden}
+.stepbar>div{padding:32px 26px;border-right:1px solid var(--border-light);background:#FFF}
+.stepbar>div:last-child{border-right:none}
+.stepbar .n{font-size:12px;font-weight:700;color:var(--text-light);margin-bottom:12px}
+.stepbar h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.stepbar p{font-size:14px;color:var(--text-gray)}
+
+/* testimonial */
+.tcar{position:relative}
+.tcar-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.t-card .img-placeholder{aspect-ratio:16/10;margin-bottom:20px}
+.t-quote{font-size:15px;color:var(--text-dark);margin-bottom:20px;min-height:72px}
+.t-meta{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px}
+.tcar-nav{display:flex;gap:10px;justify-content:center;margin-top:36px}
+.tcar-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
+.tcar-nav svg{width:18px;height:18px}
+
+/* store cards */
+.store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
+.store-card-body{padding:32px}
+.store-card h3{font-size:22px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.store-card p{font-size:15px;margin-bottom:24px}
+
+/* subscribe */
+.sub-form{display:flex;gap:10px;max-width:520px;margin:0 auto}
+.sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
+
+/* FOOTER */
+.footer{background:var(--bg-dark);padding:72px 0 0;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-name{font-size:24px;font-weight:800;color:#FFF;margin-bottom:16px;letter-spacing:-.03em}
+.footer-info{font-size:13px;line-height:2}
+.footer-col-title{font-size:14px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px}
+.footer-bottom nav{display:flex;gap:20px}
+.footer-sns{display:flex;gap:12px;margin-top:20px}
+.footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.footer-sns svg{width:16px;height:16px}
+
+/* QUICK / TOP */
+.quick{position:fixed;right:24px;bottom:96px;z-index:90;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.quick a{display:flex;align-items:center;gap:8px;background:#FFF;border:1px solid var(--border-default);border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;font-weight:600;color:var(--text-black);box-shadow:var(--shadow-sm)}
+.quick svg{width:16px;height:16px}
+.quick .micro{margin:0;font-size:11px;max-width:190px;text-align:right}
+.top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
+.top-btn.is-show{display:flex}
+.top-btn svg{width:20px;height:20px}
+
+@media (max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:768px){
+  .section{padding:64px 0}
+  .section-title{font-size:26px}
+  .nav-links,.nav-utils a{display:none}
+  .nav-burger{display:block}
+  .hero{height:520px}
+  .hero h1{font-size:30px}
+  .hero p{font-size:15px}
+  .hero-arrow{display:none}
+  .grid-2,.grid-3,.grid-4,.split,.tcar-track{grid-template-columns:1fr}
+  .stepbar{grid-template-columns:1fr}
+  .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .sub-form{flex-direction:column}
+  .quick{display:none}
+}
+
+
+/* ===== 페이지 공통 추가 ===== */
+.page-head{background:var(--bg-light);padding:56px 0;border-bottom:1px solid var(--border-light)}
+.crumb{font-size:13px;color:var(--text-light);margin-bottom:14px}
+.crumb a{color:var(--text-light)}
+.page-head h1{font-size:34px;font-weight:800;color:var(--text-black);letter-spacing:-.02em;margin-bottom:10px}
+.page-head p{font-size:16px;color:var(--text-gray)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:#FFF}
+.tbl th,.tbl td{border:1px solid var(--border-light);padding:14px 16px;text-align:left;vertical-align:top}
+.tbl thead th{background:var(--bg-light);font-weight:700;color:var(--text-black);text-align:center}
+.tbl tbody th{background:var(--bg-light);font-weight:700;color:var(--text-black);width:150px}
+.tbl td{color:var(--text-gray)}
+.tbl .strong{color:var(--text-black);font-weight:700}
+.tbl-scroll{overflow-x:auto}
+.acc{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.acc-item+.acc-item{border-top:1px solid var(--border-light)}
+.acc-q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-size:16px;font-weight:600;color:var(--text-black);text-align:left}
+.acc-q .mk{font-size:18px;color:var(--text-light);flex-shrink:0}
+.acc-item.is-open .acc-q .mk{transform:rotate(45deg)}
+.acc-a{display:none;padding:0 24px 24px;font-size:15px;color:var(--text-gray);line-height:1.8}
+.acc-item.is-open .acc-a{display:block}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.tabs button{font-size:14px;font-weight:600;padding:11px 20px;border:1px solid var(--border-default);border-radius:99px;color:var(--text-gray);background:#FFF}
+.tabs button.is-active{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.tabpanel{display:none}
+.tabpanel.is-active{display:block}
+.prod-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.prod-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
+.prod-body{padding:26px;display:flex;flex-direction:column;flex:1}
+.prod-body h3{font-size:19px;font-weight:700;color:var(--text-black);margin:0 0 10px}
+.prod-body p.sum{font-size:14px;color:var(--text-gray);margin-bottom:16px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chip{font-size:12px;color:var(--text-dark);border:1px solid var(--border-light);border-radius:99px;padding:5px 11px;background:var(--bg-light)}
+.price{font-size:22px;font-weight:800;color:var(--text-black);margin-bottom:16px;letter-spacing:-.02em}
+.price small{font-size:13px;font-weight:600;color:var(--text-light)}
+.btn-row{display:flex;gap:8px}
+.btn-row .btn{flex:1}
+.link-inline{display:inline-block;margin-top:12px;font-size:13px;color:var(--text-gray);text-decoration:underline;text-underline-offset:3px}
+.form{max-width:720px;margin:0 auto}
+.form-block{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;margin-bottom:20px}
+.form-block h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.form-block .note{font-size:13px;color:var(--text-light);margin-bottom:24px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px}
+.field .req{color:var(--text-black)}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;color:var(--text-black);background:#FFF}
+.field textarea{resize:vertical;min-height:120px}
+.field .help{font-size:13px;color:var(--text-light);margin-top:8px}
+.radio-row{display:flex;gap:20px;flex-wrap:wrap}
+.radio-row label{display:flex;align-items:center;gap:7px;font-weight:400;font-size:15px;color:var(--text-dark);margin:0}
+.upload{border:1px dashed var(--border-default);border-radius:var(--radius-sm);padding:28px;text-align:center;font-size:14px;color:var(--text-light)}
+.agree label{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--text-gray);margin-bottom:12px}
+.board{width:100%;border-collapse:collapse;font-size:15px;background:#FFF}
+.board th,.board td{border-bottom:1px solid var(--border-light);padding:18px 14px;text-align:center}
+.board thead th{background:var(--bg-light);font-size:14px;font-weight:700;color:var(--text-black);border-top:1px solid var(--border-default)}
+.board td.subj{text-align:left;color:var(--text-black);font-weight:600}
+.board .tag{display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)}
+.pager{display:flex;gap:6px;justify-content:center;margin-top:40px}
+.pager a{width:38px;height:38px;border:1px solid var(--border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-gray)}
+.pager a.is-active{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.notice-pin{border:1px solid var(--text-black);border-radius:var(--radius-md);padding:26px;background:#FFF;margin-bottom:24px}
+.notice-pin .tag{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.notice-pin h3{font-size:18px;font-weight:700;color:var(--text-black);margin:12px 0 8px}
+.search-box{display:flex;gap:8px;max-width:520px;margin:0 auto}
+.search-box input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit}
+.post-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.post-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
+.post-body{padding:22px}
+.post-body .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--text-dark);background:var(--bg-light);border-radius:99px;padding:4px 10px;margin-bottom:12px}
+.post-body h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px;line-height:1.45}
+.post-body p{font-size:14px;color:var(--text-gray);margin-bottom:14px}
+.post-body time{font-size:13px;color:var(--text-light)}
+.locked{border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF;overflow:hidden}
+.locked .body{padding:32px;font-size:15px;color:var(--text-gray);line-height:1.9}
+.locked .cut{border-top:1px solid var(--border-default);background:var(--bg-light);padding:32px;text-align:center}
+.locked .cut p{font-size:15px;font-weight:600;color:var(--text-black);margin-bottom:16px}
+.list-row{display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;background:#FFF;margin-bottom:12px}
+.list-row h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.list-row p{font-size:14px;color:var(--text-gray)}
+.list-row .meta{font-size:13px;color:var(--text-light);margin-top:8px}
+.list-row .lock{font-size:13px;color:var(--text-light);white-space:nowrap}
+.banner{display:flex;justify-content:space-between;align-items:center;gap:24px;background:var(--bg-light);border-radius:var(--radius-md);padding:36px 40px}
+.banner h3{font-size:20px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.banner p{font-size:15px;color:var(--text-gray)}
+.cart-grid{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+.cart-group{border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF;margin-bottom:20px;overflow:hidden}
+.cart-group>h3{font-size:15px;font-weight:700;color:var(--text-black);padding:18px 24px;background:var(--bg-light);border-bottom:1px solid var(--border-light)}
+.cart-item{display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:1px solid var(--border-light)}
+.cart-item:last-of-type{border-bottom:none}
+.cart-item .img-placeholder{width:88px;height:88px;flex-shrink:0}
+.cart-item .info{flex:1}
+.cart-item .info h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.cart-item .info p{font-size:13px;color:var(--text-light)}
+.cart-item .amt{font-size:16px;font-weight:700;color:var(--text-black);white-space:nowrap}
+.cart-note{font-size:13px;color:var(--text-light);padding:14px 24px;background:var(--bg-light)}
+.summary{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF;position:sticky;top:100px}
+.summary h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:20px}
+.summary dl{display:flex;justify-content:space-between;font-size:15px;padding:10px 0;color:var(--text-gray)}
+.summary dl.total{border-top:1px solid var(--border-default);margin-top:12px;padding-top:18px;font-size:18px;font-weight:800;color:var(--text-black)}
+.pay-icons{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.pay-icons span{font-size:12px;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:8px 12px;color:var(--text-light)}
+.stepind{display:flex;gap:0;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;margin-bottom:40px;background:#FFF}
+.stepind div{flex:1;padding:20px;text-align:center;font-size:15px;font-weight:600;color:var(--text-light);border-right:1px solid var(--border-light)}
+.stepind div:last-child{border-right:none}
+.stepind div.is-active{background:var(--text-black);color:#FFF}
+.empty{text-align:center;padding:80px 20px;border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF}
+.empty p{font-size:16px;color:var(--text-light);margin:20px 0 28px}
+.done{text-align:center;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:64px 32px;background:#FFF}
+.done .icon-circle{margin:0 auto 24px}
+.done h2{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px}
+.done .ordno{font-size:15px;color:var(--text-gray);margin-bottom:28px}
+.done .box{border:1px solid var(--border-light);border-radius:var(--radius-sm);background:var(--bg-light);padding:24px;text-align:left;font-size:14px;color:var(--text-gray);line-height:1.9;margin-bottom:28px}
+.channel-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;text-align:center}
+.channel-card .icon-circle{margin:0 auto 20px}
+.channel-card h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.channel-card p{font-size:14px;color:var(--text-gray);margin-bottom:20px}
+.badge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.badge-row span{font-size:13px;font-weight:600;color:var(--text-dark);border:1px solid var(--border-default);border-radius:99px;padding:9px 18px;background:#FFF}
+.map-ph{aspect-ratio:4/3}
+.compare-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF}
+.compare-card .lead{font-size:13px;font-weight:700;color:var(--text-light);margin-bottom:10px}
+.compare-card h3{font-size:20px;font-weight:800;color:var(--text-black);margin-bottom:12px}
+.compare-card p{font-size:14px;color:var(--text-gray)}
+.rule-box{background:var(--bg-dark);border-radius:var(--radius-md);padding:36px;margin-top:24px}
+.rule-box h3{font-size:18px;font-weight:700;color:#FFF;margin-bottom:20px;text-align:center}
+.rule-box ol{max-width:520px;margin:0 auto;counter-reset:r}
+.rule-box li{color:rgba(255,255,255,.85);font-size:15px;padding:10px 0 10px 34px;position:relative;counter-increment:r}
+.rule-box li::before{content:counter(r);position:absolute;left:0;top:11px;width:22px;height:22px;border:1px solid rgba(255,255,255,.4);border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center}
+.rule-box .foot{text-align:center;font-size:14px;color:rgba(255,255,255,.6);margin-top:20px}
+@media (max-width:900px){.cart-grid{grid-template-columns:1fr}.summary{position:static}}
+@media (max-width:768px){
+  .page-head h1{font-size:26px}
+  .banner{flex-direction:column;align-items:flex-start}
+  .stepind{flex-direction:column}
+  .stepind div{border-right:none;border-bottom:1px solid var(--border-light)}
+  .cart-item{flex-wrap:wrap}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">jia</a>
+    <nav class="nav-links">
+      <div class="nav-item"><a href="index.html">홈</a></div>
+      <div class="nav-item"><a href="page_02.html">클래스</a></div>
+      <div class="nav-item is-active">
+        <a href="page_03.html">Store</a>
+        <div class="nav-drop">
+          <a href="page_03.html">클래스 상품</a>
+          <a href="page_04.html">전문가용 핀셋</a>
+          <a href="page_05.html">유료 뉴스레터 멤버십</a>
+          <a href="page_06.html">장바구니·주문/결제</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="page_07.html">블로그</a>
+        <div class="nav-drop">
+          <a href="page_07.html">무료회원 뉴스레터</a>
+          <a href="page_08.html">유료회원 뉴스레터</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="page_09.html">고객센터</a>
+        <div class="nav-drop">
+          <a href="page_09.html">공지사항</a>
+          <a href="page_10.html">자주 묻는 질문</a>
+          <a href="page_11.html">1:1 문의</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-utils">
+      <a href="#">로그인</a>
+      <a href="#">회원가입</a>
+      <a href="page_06.html"><i data-lucide="shopping-cart"></i></a>
+      <a href="#"><i data-lucide="search"></i></a>
+      <button class="nav-burger" id="burger"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="m-menu" id="mMenu">
+  <div class="m-group"><a href="index.html">홈</a></div>
+  <div class="m-group"><a href="page_02.html">클래스</a></div>
+  <div class="m-group">
+    <button>Store <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub">
+      <a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a>
+      <a href="page_05.html">유료 뉴스레터 멤버십</a><a href="page_06.html">장바구니·주문/결제</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button>블로그 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
+  </div>
+  <div class="m-group">
+    <button>고객센터 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
+  </div>
+  <div class="m-auth"><a href="#" class="btn btn-secondary btn-block">로그인</a><a href="#" class="btn btn-primary btn-block">회원가입</a></div>
+</div>
+
+
+<section class="page-head">
+  <div class="container">
+    <p class="crumb"><a href="index.html">홈</a> &nbsp;›&nbsp; <a href="page_03.html">Store</a> &nbsp;›&nbsp; 클래스 상품</p>
+    <h1>지아 클래스</h1>
+    <p>네 과정 모두 전 과정 1:1로 진행합니다. 결제 전 상담부터 받으셔도 됩니다.</p>
+  </div>
+</section>
+
+<!-- 섹션 2 : 한눈에 비교 -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Compare</p>
+      <h2 class="section-title">어떤 과정이 나에게 맞을까요</h2>
+    </div>
+    <div class="tbl-scroll">
+      <table class="tbl">
+        <thead>
+          <tr><th style="width:130px">항목</th><th>창업반</th><th>펌 단과반</th><th>클래식 연장 단과반</th><th>원데이</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>대상</th><td>시술 경험 없음</td><td>펌 기준을 잡고 싶은 분</td><td>배웠지만 실무가 불안한 분</td><td>경력 6개월 이상</td></tr>
+          <tr><th>기간</th><td>3개월</td><td>5DAY</td><td>사전 2주 + 대면 1개월</td><td>하루</td></tr>
+          <tr><th>총 수업</th><td>24회차</td><td>5일</td><td>대면 6회</td><td>6시간</td></tr>
+          <tr><th>사전과제</th><td>—</td><td>사전 온라인 이론</td><td>2주 매일 과제·피드백</td><td>사전 화상 상담</td></tr>
+          <tr><th>모델 실습</th><td>18회</td><td>있음</td><td>있음</td><td>모델 2명</td></tr>
+          <tr><th>배우는 기술</th><td>클래식/디자인 마스카라/LED/펌 포인트 연장 + 속눈썹 펌</td><td>속눈썹 펌</td><td>클래식 연장</td><td>지금 막힌 지점 1가지</td></tr>
+          <tr><th>재료·교재</th><td>재료·장비 50가지 + 교재 7권</td><td>교재 배송</td><td>—</td><td>—</td></tr>
+          <tr><th>사후 피드백</th><td>기간 제한 없음 + 리마인드 수업</td><td>기간 제한 없음</td><td>기간 제한 없음</td><td>기간 제한 없음</td></tr>
+          <tr><th>수강료</th><td class="strong">[클라이언트 확인 필요]</td><td class="strong">280만원</td><td class="strong">[클라이언트 확인 필요]</td><td class="strong">[클라이언트 확인 필요]</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 3 : 상품 카드 4개 -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Products</p>
+      <h2 class="section-title">과정 선택</h2>
+    </div>
+    <div class="grid-2">
+
+      <article class="prod-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="prod-body">
+          <span class="badge">3개월 · 24회차</span>
+          <h3>속눈썹 창업반</h3>
+          <p class="sum">핀셋을 처음 잡는 분부터 샵 오픈 준비까지 한 흐름으로. 창업 컨설팅으로 시작해 18회 모델 실습으로 마무리합니다.</p>
+          <div class="chips"><span class="chip">재료·장비 50가지</span><span class="chip">교재 7권</span><span class="chip">온라인 이론 15개</span></div>
+          <p class="price">[클라이언트 확인 필요]</p>
+          <div class="btn-row">
+            <a href="page_06.html" class="btn btn-secondary btn-sm">장바구니 담기</a>
+            <a href="page_06.html" class="btn btn-primary btn-sm">바로 결제하기</a>
+          </div>
+          <a href="page_02.html#classes" class="link-inline">과정 자세히 보기</a> &nbsp;
+          <a href="page_11.html" class="link-inline">먼저 상담받기</a>
+          <p class="micro">전 과정 1:1 · 일정은 상담 후 조율합니다</p>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="prod-body">
+          <span class="badge">5DAY</span>
+          <h3>1:1 속눈썹 펌 단과반</h3>
+          <p class="sum">이론·시연·모델 실습을 5일에 연결합니다. 매 수업 과제와 개별 피드백이 함께합니다.</p>
+          <div class="chips"><span class="chip">사전 온라인 이론</span><span class="chip">교재 배송</span><span class="chip">수료 후 피드백</span></div>
+          <p class="price">280만원 <small>부가세 별도 여부 확인 필요</small></p>
+          <div class="btn-row">
+            <a href="page_06.html" class="btn btn-secondary btn-sm">장바구니 담기</a>
+            <a href="page_06.html" class="btn btn-primary btn-sm">바로 결제하기</a>
+          </div>
+          <a href="page_02.html#classes" class="link-inline">과정 자세히 보기</a> &nbsp;
+          <a href="page_11.html" class="link-inline">먼저 상담받기</a>
+          <p class="micro">전 과정 1:1 · 일정은 상담 후 조율합니다</p>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="prod-body">
+          <span class="badge">사전 2주 + 대면 6회</span>
+          <h3>클래식 연장 단과반</h3>
+          <p class="sum">사전과제로 기본기를 먼저 교정하고, 대면 6회에서 실무로 연결합니다.</p>
+          <div class="chips"><span class="chip">매일 영상 피드백</span><span class="chip">맞춤 진도</span><span class="chip">사후 피드백</span></div>
+          <p class="price">[클라이언트 확인 필요]</p>
+          <div class="btn-row">
+            <a href="page_06.html" class="btn btn-secondary btn-sm">장바구니 담기</a>
+            <a href="page_06.html" class="btn btn-primary btn-sm">바로 결제하기</a>
+          </div>
+          <a href="page_02.html#classes" class="link-inline">과정 자세히 보기</a> &nbsp;
+          <a href="page_11.html" class="link-inline">먼저 상담받기</a>
+          <p class="micro">전 과정 1:1 · 일정은 상담 후 조율합니다</p>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="prod-body">
+          <span class="badge">하루 6시간</span>
+          <h3>원데이</h3>
+          <p class="sum">지금 막혀 있는 한 지점을 찾아 최소한의 변화로 교정합니다. 다음 날 바로 적용할 수 있습니다.</p>
+          <div class="chips"><span class="chip">사전 화상 상담</span><span class="chip">모델 2명</span><span class="chip">수업 후 정리본</span></div>
+          <p class="price">[클라이언트 확인 필요]</p>
+          <div class="btn-row">
+            <a href="page_06.html" class="btn btn-secondary btn-sm">장바구니 담기</a>
+            <a href="page_06.html" class="btn btn-primary btn-sm">바로 결제하기</a>
+          </div>
+          <a href="page_02.html#classes" class="link-inline">과정 자세히 보기</a> &nbsp;
+          <a href="page_11.html" class="link-inline">먼저 상담받기</a>
+          <p class="micro">전 과정 1:1 · 일정은 상담 후 조율합니다</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 4 : 결제 전 확인 -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Before you pay</p>
+      <h2 class="section-title">결제하기 전에 많이들 물어보시는 것</h2>
+    </div>
+    <div class="acc" style="max-width:840px;margin:0 auto">
+      <div class="acc-item is-open"><button class="acc-q">바로 결제해도 되나요, 상담을 먼저 받아야 하나요?<span class="mk">+</span></button>
+        <div class="acc-a">상담을 먼저 받으셔도 됩니다. 상담지를 남겨주시면 진단 영상을 보내드리고, 그 후에 결정하셔도 늦지 않습니다.</div></div>
+      <div class="acc-item"><button class="acc-q">일정은 어떻게 잡나요?<span class="mk">+</span></button>
+        <div class="acc-a">결제 후 상담을 통해 조율합니다. [클라이언트 확인 필요: 개강 주기·정원 운영 방식]</div></div>
+      <div class="acc-item"><button class="acc-q">경력이 없어도 되나요?<span class="mk">+</span></button>
+        <div class="acc-a">창업반은 시술 경험이 없는 분을 기준으로 설계되어 있습니다. 원데이는 경력 6개월 이상을 권합니다.</div></div>
+      <div class="acc-item"><button class="acc-q">사전과제는 꼭 해야 하나요?<span class="mk">+</span></button>
+        <div class="acc-a">클래식 연장 단과반은 사전과제 2주가 과정에 포함됩니다. 매일 제출해주시면 대면 수업 전에 기본기가 정리됩니다.</div></div>
+      <div class="acc-item"><button class="acc-q">환불이 되나요?<span class="mk">+</span></button>
+        <div class="acc-a">[클라이언트 확인 필요: 환불 규정 요약 1~2줄 + 전문 링크]</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 섹션 5 : 법정 고지 -->
+<section class="section bg-light">
+  <div class="container" style="max-width:840px">
+    <div class="text-center">
+      <h2 class="section-title" style="font-size:24px">상품 정보 및 환불 규정</h2>
+    </div>
+
+    <div class="acc">
+      <div class="acc-item"><button class="acc-q">강의 정보<span class="mk">+</span></button><div class="acc-a">과정명 / 총 교육 시간·회차 / 진행 방식(대면·온라인) / 교육 장소 / 제공 교재 및 재료<br>[클라이언트 확인 필요]</div></div>
+      <div class="acc-item"><button class="acc-q">수강 대상 및 자격<span class="mk">+</span></button><div class="acc-a">과정별 요구 경력 — 원데이는 경력 6개월 이상 권장<br>[클라이언트 확인 필요: 그 외 과정 자격 요건]</div></div>
+      <div class="acc-item"><button class="acc-q">결제 및 수강 기간<span class="mk">+</span></button><div class="acc-a">결제 수단 / 수강 시작일 / 유효 기간<br>[클라이언트 확인 필요]</div></div>
+      <div class="acc-item"><button class="acc-q">환불 및 취소 규정<span class="mk">+</span></button><div class="acc-a">수강 시작 전 취소 / 수강 중 환불 기준(진행 회차 기준 산정) / 교재·재료 개봉 시 처리 / 환불 신청 방법 및 처리 기간<br><strong>[클라이언트 확인 필요 — 전자상거래법상 필수 기재]</strong></div></div>
+      <div class="acc-item"><button class="acc-q">판매자 정보<span class="mk">+</span></button><div class="acc-a">상호 지아 / 대표 임희진 / 사업자등록번호 [확인 필요] / 통신판매업신고번호 [확인 필요] / 주소 [확인 필요] / 연락처 [확인 필요] / 이메일 [확인 필요]</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 최하단 : Contact Us -->
+<section class="section bg-dark">
+  <div class="container text-center">
+    <h2 class="section-title">결정이 어려우시면, 먼저 여쭤보세요</h2>
+    <p class="section-desc">어떤 과정이 맞는지부터 같이 정해드립니다.</p>
+    <a href="page_11.html" class="btn btn-primary">수강 상담 신청하기</a>
+    <p class="micro">상담은 무료입니다.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">jia</p>
+        <div class="footer-info">
+          상호 지아 &nbsp;|&nbsp; 대표 임희진<br>
+          사업자등록번호 [클라이언트 확인 필요]<br>
+          통신판매업신고번호 [클라이언트 확인 필요]<br>
+          주소 [클라이언트 확인 필요]<br>
+          전화 [클라이언트 확인 필요] &nbsp;|&nbsp; 이메일 [클라이언트 확인 필요]<br>
+          개인정보관리책임자 [클라이언트 확인 필요]
+        </div>
+        <div class="footer-sns">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><p class="footer-col-title">클래스</p><a href="page_02.html">클래스 안내</a></div>
+      <div class="footer-col"><p class="footer-col-title">Store</p><a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a><a href="page_05.html">유료 뉴스레터 멤버십</a></div>
+      <div class="footer-col"><p class="footer-col-title">블로그</p><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
+      <div class="footer-col"><p class="footer-col-title">고객센터</p><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© jia. All rights reserved.</span>
+      <nav><a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">환불 및 취소 규정</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- QUICK + TOP -->
+<div class="quick">
+  <a href="page_11.html"><i data-lucide="clipboard-list"></i>수강 상담 신청</a>
+  <a href="#"><i data-lucide="message-circle"></i>카카오톡 문의</a>
+  <a href="#"><i data-lucide="instagram"></i>인스타그램</a>
+  <p class="micro">상담 신청하시면 영업 전화 대신 진단 영상을 보내드립니다</p>
+</div>
+<button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
+
+<script>
+lucide.createIcons();
+
+/* 헤더 스크롤 축소 + TOP */
+var nav=document.getElementById('nav'), topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY;
+  nav.classList.toggle('is-scrolled', y>60);
+  topBtn.classList.toggle('is-show', y>400);
+});
+topBtn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+
+/* 모바일 메뉴 */
+document.getElementById('burger').onclick=function(){document.getElementById('mMenu').classList.toggle('is-open')};
+document.querySelectorAll('.m-group > button').forEach(function(b){
+  b.onclick=function(){b.parentElement.classList.toggle('is-open')};
+});
+/* 아코디언 */
+document.querySelectorAll('.acc-q').forEach(function(q){
+  q.onclick=function(){q.parentElement.classList.toggle('is-open')};
+});
+/* 탭 */
+document.querySelectorAll('[data-tabs] button').forEach(function(b){
+  b.onclick=function(){
+    var root=b.closest('[data-tabs]');
+    root.querySelectorAll('button').forEach(function(x){x.classList.remove('is-active')});
+    document.querySelectorAll('.tabpanel').forEach(function(p){p.classList.remove('is-active')});
+    b.classList.add('is-active');
+    var t=document.getElementById(b.dataset.tab); if(t) t.classList.add('is-active');
+  };
+});
+</script>
+</body>
+</html>

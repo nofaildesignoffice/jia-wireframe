@@ -1,0 +1,510 @@
+<!-- PAGE: 자주 묻는 질문 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자주 묻는 질문 | 지아</title>
+<meta name="description" content="수강 전 확인사항, 클래스 진행 방식, 과제와 영상 피드백, 결제와 환불까지 자주 묻는 질문을 모았습니다.">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+
+:root{
+  --text-black:#1A1A1A; --text-dark:#333333; --text-gray:#666666; --text-light:#999999; --text-muted:#BCBCBC;
+  --bg-white:#FFFFFF; --bg-light:#F5F5F5; --bg-dark:#2D2D2D; --bg-black:#1A1A1A;
+  --border-light:#E0E0E0; --border-default:#D0D0D0;
+  --placeholder-bg:#E0E0E0; --placeholder-icon:#BCBCBC;
+  --radius-sm:8px; --radius-md:12px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 4px 12px rgba(0,0,0,0.1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.6;background:var(--bg-white)}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;font-family:inherit;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.bg-light{background:var(--bg-light)}
+.bg-dark{background:var(--bg-dark)}
+.text-center{text-align:center}
+.section-label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px}
+.section-title{font-size:36px;font-weight:700;color:var(--text-black);line-height:1.35;margin-bottom:16px;letter-spacing:-.02em}
+.section-desc{font-size:16px;color:var(--text-gray);max-width:640px;margin-bottom:48px}
+.text-center .section-desc{margin-left:auto;margin-right:auto}
+.bg-dark .section-title{color:#FFF}
+.bg-dark .section-desc{color:rgba(255,255,255,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-sm);border:1px solid transparent;transition:opacity .2s;font-family:inherit}
+.btn:hover{opacity:.85}
+.btn-primary{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.btn-secondary{background:transparent;color:var(--text-black);border-color:var(--text-black)}
+.bg-dark .btn-primary,.hero .btn-primary{background:#FFF;color:var(--text-black);border-color:#FFF}
+.bg-dark .btn-secondary,.hero .btn-secondary{color:#FFF;border-color:rgba(255,255,255,.35)}
+.btn-sm{padding:10px 18px;font-size:14px}
+.btn-block{width:100%}
+.img-placeholder{background:var(--placeholder-bg);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--placeholder-icon)}
+.img-placeholder svg{width:32px;height:32px}
+.icon-box{width:48px;height:48px;background:var(--bg-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
+.icon-box svg{width:22px;height:22px}
+.icon-circle{width:64px;height:64px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-dark);margin-bottom:24px}
+.icon-circle svg{width:26px;height:26px}
+.micro{font-size:13px;color:var(--text-light);margin-top:12px}
+
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:100;background:#FFF;border-bottom:1px solid var(--border-light);transition:padding .2s}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:height .2s}
+.nav.is-scrolled .nav-inner{height:60px}
+.nav-logo{font-size:24px;font-weight:800;color:var(--text-black);letter-spacing:-.03em;transition:font-size .2s}
+.nav.is-scrolled .nav-logo{font-size:20px}
+.nav-links{display:flex;gap:36px}
+.nav-item{position:relative}
+.nav-item>a{display:block;padding:28px 0;font-size:15px;font-weight:600;color:var(--text-dark)}
+.nav-item.is-active>a{color:var(--text-black);text-decoration:underline;text-underline-offset:6px}
+.nav-drop{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFF;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:10px 0;min-width:200px;display:none;box-shadow:var(--shadow-md)}
+.nav-item:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:10px 20px;font-size:14px;color:var(--text-gray);white-space:nowrap}
+.nav-drop a:hover{background:var(--bg-light);color:var(--text-black)}
+.nav-utils{display:flex;align-items:center;gap:20px}
+.nav-utils a{font-size:14px;color:var(--text-gray)}
+.nav-utils svg{width:20px;height:20px}
+.nav-burger{display:none;width:24px;height:24px;color:var(--text-black)}
+.m-menu{display:none;position:fixed;inset:76px 0 0;background:#FFF;z-index:99;overflow-y:auto;padding:24px}
+.m-menu.is-open{display:block}
+.m-group{border-bottom:1px solid var(--border-light)}
+.m-group>button,.m-group>a{display:flex;width:100%;justify-content:space-between;align-items:center;padding:18px 4px;font-size:17px;font-weight:600;color:var(--text-black);text-align:left}
+.m-sub{display:none;padding:0 4px 16px}
+.m-group.is-open .m-sub{display:block}
+.m-sub a{display:block;padding:10px 12px;font-size:15px;color:var(--text-gray)}
+.m-auth{display:flex;gap:12px;margin-top:28px}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:640px;background:var(--bg-dark);overflow:hidden}
+.hero-slide{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+.hero-slide.is-active{display:flex}
+.hero-ph{position:absolute;inset:0;background:var(--bg-dark);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);border:1px dashed rgba(255,255,255,.2)}
+.hero-ph svg{width:56px;height:56px}
+.hero-ph span{position:absolute;bottom:24px;font-size:13px}
+.hero-body{position:relative;z-index:2}
+.hero h1{font-size:48px;font-weight:800;color:#FFF;letter-spacing:-.03em;line-height:1.3;margin-bottom:18px}
+.hero p{font-size:18px;color:rgba(255,255,255,.7)}
+.hero-cta{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);z-index:3}
+.hero-dots{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.hero-dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35)}
+.hero-dots button.is-active{background:#FFF;width:26px;border-radius:5px}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#FFF}
+.hero-arrow svg{width:20px;height:20px}
+.hero-arrow.prev{left:36px}
+.hero-arrow.next{right:36px}
+
+/* ===== GRIDS ===== */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.card h3{font-size:18px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.card p{font-size:15px;color:var(--text-gray)}
+.pain-card{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px;background:#FFF}
+.pain-card p{font-size:15px;color:var(--text-dark);padding-top:12px}
+
+/* class cards */
+.class-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.class-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
+.class-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:var(--text-black);background:var(--bg-light);border-radius:99px;padding:5px 12px;margin-bottom:14px;align-self:flex-start}
+.class-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.class-target{font-size:13px;color:var(--text-light);margin-bottom:14px}
+.class-points{margin-bottom:22px;flex:1}
+.class-points li{font-size:14px;color:var(--text-gray);padding-left:14px;position:relative;margin-bottom:7px}
+.class-points li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.steps-v li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border-light)}
+.steps-v li:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--text-black);flex-shrink:0}
+.steps-v h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:4px}
+.steps-v p{font-size:14px;color:var(--text-gray)}
+blockquote{border-left:3px solid var(--border-default);padding:6px 0 6px 20px;margin-top:28px;font-size:15px;color:var(--text-dark);font-style:normal}
+blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-light);font-style:normal}
+
+/* stepbar */
+.stepbar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden}
+.stepbar>div{padding:32px 26px;border-right:1px solid var(--border-light);background:#FFF}
+.stepbar>div:last-child{border-right:none}
+.stepbar .n{font-size:12px;font-weight:700;color:var(--text-light);margin-bottom:12px}
+.stepbar h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.stepbar p{font-size:14px;color:var(--text-gray)}
+
+/* testimonial */
+.tcar{position:relative}
+.tcar-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.t-card .img-placeholder{aspect-ratio:16/10;margin-bottom:20px}
+.t-quote{font-size:15px;color:var(--text-dark);margin-bottom:20px;min-height:72px}
+.t-meta{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px}
+.tcar-nav{display:flex;gap:10px;justify-content:center;margin-top:36px}
+.tcar-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
+.tcar-nav svg{width:18px;height:18px}
+
+/* store cards */
+.store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
+.store-card-body{padding:32px}
+.store-card h3{font-size:22px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.store-card p{font-size:15px;margin-bottom:24px}
+
+/* subscribe */
+.sub-form{display:flex;gap:10px;max-width:520px;margin:0 auto}
+.sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
+
+/* FOOTER */
+.footer{background:var(--bg-dark);padding:72px 0 0;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-name{font-size:24px;font-weight:800;color:#FFF;margin-bottom:16px;letter-spacing:-.03em}
+.footer-info{font-size:13px;line-height:2}
+.footer-col-title{font-size:14px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px}
+.footer-bottom nav{display:flex;gap:20px}
+.footer-sns{display:flex;gap:12px;margin-top:20px}
+.footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.footer-sns svg{width:16px;height:16px}
+
+/* QUICK / TOP */
+.quick{position:fixed;right:24px;bottom:96px;z-index:90;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.quick a{display:flex;align-items:center;gap:8px;background:#FFF;border:1px solid var(--border-default);border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;font-weight:600;color:var(--text-black);box-shadow:var(--shadow-sm)}
+.quick svg{width:16px;height:16px}
+.quick .micro{margin:0;font-size:11px;max-width:190px;text-align:right}
+.top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
+.top-btn.is-show{display:flex}
+.top-btn svg{width:20px;height:20px}
+
+@media (max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:768px){
+  .section{padding:64px 0}
+  .section-title{font-size:26px}
+  .nav-links,.nav-utils a{display:none}
+  .nav-burger{display:block}
+  .hero{height:520px}
+  .hero h1{font-size:30px}
+  .hero p{font-size:15px}
+  .hero-arrow{display:none}
+  .grid-2,.grid-3,.grid-4,.split,.tcar-track{grid-template-columns:1fr}
+  .stepbar{grid-template-columns:1fr}
+  .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .sub-form{flex-direction:column}
+  .quick{display:none}
+}
+
+
+/* ===== 페이지 공통 추가 ===== */
+.page-head{background:var(--bg-light);padding:56px 0;border-bottom:1px solid var(--border-light)}
+.crumb{font-size:13px;color:var(--text-light);margin-bottom:14px}
+.crumb a{color:var(--text-light)}
+.page-head h1{font-size:34px;font-weight:800;color:var(--text-black);letter-spacing:-.02em;margin-bottom:10px}
+.page-head p{font-size:16px;color:var(--text-gray)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:#FFF}
+.tbl th,.tbl td{border:1px solid var(--border-light);padding:14px 16px;text-align:left;vertical-align:top}
+.tbl thead th{background:var(--bg-light);font-weight:700;color:var(--text-black);text-align:center}
+.tbl tbody th{background:var(--bg-light);font-weight:700;color:var(--text-black);width:150px}
+.tbl td{color:var(--text-gray)}
+.tbl .strong{color:var(--text-black);font-weight:700}
+.tbl-scroll{overflow-x:auto}
+.acc{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.acc-item+.acc-item{border-top:1px solid var(--border-light)}
+.acc-q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-size:16px;font-weight:600;color:var(--text-black);text-align:left}
+.acc-q .mk{font-size:18px;color:var(--text-light);flex-shrink:0}
+.acc-item.is-open .acc-q .mk{transform:rotate(45deg)}
+.acc-a{display:none;padding:0 24px 24px;font-size:15px;color:var(--text-gray);line-height:1.8}
+.acc-item.is-open .acc-a{display:block}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.tabs button{font-size:14px;font-weight:600;padding:11px 20px;border:1px solid var(--border-default);border-radius:99px;color:var(--text-gray);background:#FFF}
+.tabs button.is-active{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.tabpanel{display:none}
+.tabpanel.is-active{display:block}
+.prod-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.prod-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
+.prod-body{padding:26px;display:flex;flex-direction:column;flex:1}
+.prod-body h3{font-size:19px;font-weight:700;color:var(--text-black);margin:0 0 10px}
+.prod-body p.sum{font-size:14px;color:var(--text-gray);margin-bottom:16px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chip{font-size:12px;color:var(--text-dark);border:1px solid var(--border-light);border-radius:99px;padding:5px 11px;background:var(--bg-light)}
+.price{font-size:22px;font-weight:800;color:var(--text-black);margin-bottom:16px;letter-spacing:-.02em}
+.price small{font-size:13px;font-weight:600;color:var(--text-light)}
+.btn-row{display:flex;gap:8px}
+.btn-row .btn{flex:1}
+.link-inline{display:inline-block;margin-top:12px;font-size:13px;color:var(--text-gray);text-decoration:underline;text-underline-offset:3px}
+.form{max-width:720px;margin:0 auto}
+.form-block{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;margin-bottom:20px}
+.form-block h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.form-block .note{font-size:13px;color:var(--text-light);margin-bottom:24px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px}
+.field .req{color:var(--text-black)}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;color:var(--text-black);background:#FFF}
+.field textarea{resize:vertical;min-height:120px}
+.field .help{font-size:13px;color:var(--text-light);margin-top:8px}
+.radio-row{display:flex;gap:20px;flex-wrap:wrap}
+.radio-row label{display:flex;align-items:center;gap:7px;font-weight:400;font-size:15px;color:var(--text-dark);margin:0}
+.upload{border:1px dashed var(--border-default);border-radius:var(--radius-sm);padding:28px;text-align:center;font-size:14px;color:var(--text-light)}
+.agree label{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--text-gray);margin-bottom:12px}
+.board{width:100%;border-collapse:collapse;font-size:15px;background:#FFF}
+.board th,.board td{border-bottom:1px solid var(--border-light);padding:18px 14px;text-align:center}
+.board thead th{background:var(--bg-light);font-size:14px;font-weight:700;color:var(--text-black);border-top:1px solid var(--border-default)}
+.board td.subj{text-align:left;color:var(--text-black);font-weight:600}
+.board .tag{display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)}
+.pager{display:flex;gap:6px;justify-content:center;margin-top:40px}
+.pager a{width:38px;height:38px;border:1px solid var(--border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-gray)}
+.pager a.is-active{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.notice-pin{border:1px solid var(--text-black);border-radius:var(--radius-md);padding:26px;background:#FFF;margin-bottom:24px}
+.notice-pin .tag{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.notice-pin h3{font-size:18px;font-weight:700;color:var(--text-black);margin:12px 0 8px}
+.search-box{display:flex;gap:8px;max-width:520px;margin:0 auto}
+.search-box input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit}
+.post-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.post-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
+.post-body{padding:22px}
+.post-body .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--text-dark);background:var(--bg-light);border-radius:99px;padding:4px 10px;margin-bottom:12px}
+.post-body h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px;line-height:1.45}
+.post-body p{font-size:14px;color:var(--text-gray);margin-bottom:14px}
+.post-body time{font-size:13px;color:var(--text-light)}
+.locked{border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF;overflow:hidden}
+.locked .body{padding:32px;font-size:15px;color:var(--text-gray);line-height:1.9}
+.locked .cut{border-top:1px solid var(--border-default);background:var(--bg-light);padding:32px;text-align:center}
+.locked .cut p{font-size:15px;font-weight:600;color:var(--text-black);margin-bottom:16px}
+.list-row{display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;background:#FFF;margin-bottom:12px}
+.list-row h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.list-row p{font-size:14px;color:var(--text-gray)}
+.list-row .meta{font-size:13px;color:var(--text-light);margin-top:8px}
+.list-row .lock{font-size:13px;color:var(--text-light);white-space:nowrap}
+.banner{display:flex;justify-content:space-between;align-items:center;gap:24px;background:var(--bg-light);border-radius:var(--radius-md);padding:36px 40px}
+.banner h3{font-size:20px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.banner p{font-size:15px;color:var(--text-gray)}
+.cart-grid{display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
+.cart-group{border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF;margin-bottom:20px;overflow:hidden}
+.cart-group>h3{font-size:15px;font-weight:700;color:var(--text-black);padding:18px 24px;background:var(--bg-light);border-bottom:1px solid var(--border-light)}
+.cart-item{display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:1px solid var(--border-light)}
+.cart-item:last-of-type{border-bottom:none}
+.cart-item .img-placeholder{width:88px;height:88px;flex-shrink:0}
+.cart-item .info{flex:1}
+.cart-item .info h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:6px}
+.cart-item .info p{font-size:13px;color:var(--text-light)}
+.cart-item .amt{font-size:16px;font-weight:700;color:var(--text-black);white-space:nowrap}
+.cart-note{font-size:13px;color:var(--text-light);padding:14px 24px;background:var(--bg-light)}
+.summary{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF;position:sticky;top:100px}
+.summary h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:20px}
+.summary dl{display:flex;justify-content:space-between;font-size:15px;padding:10px 0;color:var(--text-gray)}
+.summary dl.total{border-top:1px solid var(--border-default);margin-top:12px;padding-top:18px;font-size:18px;font-weight:800;color:var(--text-black)}
+.pay-icons{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.pay-icons span{font-size:12px;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:8px 12px;color:var(--text-light)}
+.stepind{display:flex;gap:0;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;margin-bottom:40px;background:#FFF}
+.stepind div{flex:1;padding:20px;text-align:center;font-size:15px;font-weight:600;color:var(--text-light);border-right:1px solid var(--border-light)}
+.stepind div:last-child{border-right:none}
+.stepind div.is-active{background:var(--text-black);color:#FFF}
+.empty{text-align:center;padding:80px 20px;border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF}
+.empty p{font-size:16px;color:var(--text-light);margin:20px 0 28px}
+.done{text-align:center;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:64px 32px;background:#FFF}
+.done .icon-circle{margin:0 auto 24px}
+.done h2{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px}
+.done .ordno{font-size:15px;color:var(--text-gray);margin-bottom:28px}
+.done .box{border:1px solid var(--border-light);border-radius:var(--radius-sm);background:var(--bg-light);padding:24px;text-align:left;font-size:14px;color:var(--text-gray);line-height:1.9;margin-bottom:28px}
+.channel-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;text-align:center}
+.channel-card .icon-circle{margin:0 auto 20px}
+.channel-card h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.channel-card p{font-size:14px;color:var(--text-gray);margin-bottom:20px}
+.badge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.badge-row span{font-size:13px;font-weight:600;color:var(--text-dark);border:1px solid var(--border-default);border-radius:99px;padding:9px 18px;background:#FFF}
+.map-ph{aspect-ratio:4/3}
+.compare-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF}
+.compare-card .lead{font-size:13px;font-weight:700;color:var(--text-light);margin-bottom:10px}
+.compare-card h3{font-size:20px;font-weight:800;color:var(--text-black);margin-bottom:12px}
+.compare-card p{font-size:14px;color:var(--text-gray)}
+.rule-box{background:var(--bg-dark);border-radius:var(--radius-md);padding:36px;margin-top:24px}
+.rule-box h3{font-size:18px;font-weight:700;color:#FFF;margin-bottom:20px;text-align:center}
+.rule-box ol{max-width:520px;margin:0 auto;counter-reset:r}
+.rule-box li{color:rgba(255,255,255,.85);font-size:15px;padding:10px 0 10px 34px;position:relative;counter-increment:r}
+.rule-box li::before{content:counter(r);position:absolute;left:0;top:11px;width:22px;height:22px;border:1px solid rgba(255,255,255,.4);border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center}
+.rule-box .foot{text-align:center;font-size:14px;color:rgba(255,255,255,.6);margin-top:20px}
+@media (max-width:900px){.cart-grid{grid-template-columns:1fr}.summary{position:static}}
+@media (max-width:768px){
+  .page-head h1{font-size:26px}
+  .banner{flex-direction:column;align-items:flex-start}
+  .stepind{flex-direction:column}
+  .stepind div{border-right:none;border-bottom:1px solid var(--border-light)}
+  .cart-item{flex-wrap:wrap}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">jia</a>
+    <nav class="nav-links">
+      <div class="nav-item"><a href="index.html">홈</a></div>
+      <div class="nav-item"><a href="page_02.html">클래스</a></div>
+      <div class="nav-item">
+        <a href="page_03.html">Store</a>
+        <div class="nav-drop">
+          <a href="page_03.html">클래스 상품</a>
+          <a href="page_04.html">전문가용 핀셋</a>
+          <a href="page_05.html">유료 뉴스레터 멤버십</a>
+          <a href="page_06.html">장바구니·주문/결제</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="page_07.html">블로그</a>
+        <div class="nav-drop">
+          <a href="page_07.html">무료회원 뉴스레터</a>
+          <a href="page_08.html">유료회원 뉴스레터</a>
+        </div>
+      </div>
+      <div class="nav-item is-active">
+        <a href="page_09.html">고객센터</a>
+        <div class="nav-drop">
+          <a href="page_09.html">공지사항</a>
+          <a href="page_10.html">자주 묻는 질문</a>
+          <a href="page_11.html">1:1 문의</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-utils">
+      <a href="#">로그인</a>
+      <a href="#">회원가입</a>
+      <a href="page_06.html"><i data-lucide="shopping-cart"></i></a>
+      <a href="#"><i data-lucide="search"></i></a>
+      <button class="nav-burger" id="burger"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="m-menu" id="mMenu">
+  <div class="m-group"><a href="index.html">홈</a></div>
+  <div class="m-group"><a href="page_02.html">클래스</a></div>
+  <div class="m-group">
+    <button>Store <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub">
+      <a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a>
+      <a href="page_05.html">유료 뉴스레터 멤버십</a><a href="page_06.html">장바구니·주문/결제</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button>블로그 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
+  </div>
+  <div class="m-group">
+    <button>고객센터 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
+  </div>
+  <div class="m-auth"><a href="#" class="btn btn-secondary btn-block">로그인</a><a href="#" class="btn btn-primary btn-block">회원가입</a></div>
+</div>
+
+
+<section class="page-head text-center">
+  <div class="container">
+    <h1>자주 묻는 질문</h1>
+    <p style="margin-bottom:28px">이런 것까지 물어봐도 되나 싶은 것도 괜찮습니다.</p>
+    <div class="search-box">
+      <input type="text" placeholder="궁금한 내용을 검색해보세요">
+      <button class="btn btn-primary">검색</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:900px">
+<div class="tabs" data-tabs><button class="is-active" data-tab="f1">수강 전</button><button class="" data-tab="f2">클래스</button><button class="" data-tab="f3">과제와 피드백</button><button class="" data-tab="f4">결제·환불</button><button class="" data-tab="f5">상품·배송</button></div><div class="tabpanel is-active" id="f1"><div class="acc"><div class="acc-item is-open"><button class="acc-q">시술 경험이 전혀 없어도 되나요?<span class="mk">+</span></button><div class="acc-a">창업반은 핀셋을 한 번도 잡아보지 않은 분을 기준으로 설계되어 있습니다. 핀셋 잡는 법, 페이퍼 연습, 마네킹 실습부터 충분히 익힌 뒤 다음 단계로 넘어갑니다.</div></div><div class="acc-item "><button class="acc-q">원데이는 아무나 들을 수 있나요?<span class="mk">+</span></button><div class="acc-a">경력 6개월 이상, 이미 현장에서 시술 중인 분을 위한 과정입니다. 처음 시작하는 단계라면 다른 과정을 권해드립니다.</div></div><div class="acc-item "><button class="acc-q">상담은 어떻게 진행되나요?<span class="mk">+</span></button><div class="acc-a">상담지를 남겨주시면 원장이 시술 사진과 계정을 먼저 살펴본 뒤 1차 화면 상담 영상을 보내드립니다. 이후 카카오톡으로 2차 상담을 이어갑니다.</div></div><div class="acc-item "><button class="acc-q">상담 신청하면 영업 전화가 오나요?<span class="mk">+</span></button><div class="acc-a">전화 대신 진단 영상이 갑니다. 영상을 보시고 궁금한 점을 카카오톡으로 편하게 물어보시면 됩니다.</div></div><div class="acc-item "><button class="acc-q">취업이나 프리랜서를 앞두고 있는데 언제 시작해야 하나요?<span class="mk">+</span></button><div class="acc-a">일을 시작하시려는 시점에서 역산해 일정을 잡아드립니다. 현장에서 요구하는 시술 속도까지 맞추려면 여유를 두고 시작하시는 편이 좋습니다.</div></div></div></div><div class="tabpanel " id="f2"><div class="acc"><div class="acc-item is-open"><button class="acc-q">수업은 몇 명이 함께 듣나요?<span class="mk">+</span></button><div class="acc-a">네 과정 모두 <strong>전 과정 1:1</strong>로만 진행합니다. 원데이는 하루 전체를 한 분을 위해서만 씁니다.</div></div><div class="acc-item "><button class="acc-q">모두 같은 진도로 나가나요?<span class="mk">+</span></button><div class="acc-a">아닙니다. 제공되는 이론은 같아도 어려워하는 부분은 사람마다 다릅니다. 핀셋 잡는 힘이 아직 불안하면 다음 단계로 넘어가지 않고 힘 조절을 먼저 보완합니다.</div></div><div class="acc-item "><button class="acc-q">창업반은 무엇을 배우나요?<span class="mk">+</span></button><div class="acc-a">클래식 연장, 디자인 마스카라 연장, LED 연장, 펌 포인트 연장, 속눈썹 펌을 한 과정에서 배웁니다. 총 24회차 중 18회차가 모델 실습입니다.</div></div><div class="acc-item "><button class="acc-q">창업반 재료는 따로 사야 하나요?<span class="mk">+</span></button><div class="acc-a">연장·펌·LED에 필요한 재료와 장비 50가지, 교재 7권을 세팅해 전달합니다. 수료 후 별도 구매 없이 바로 시술을 시작하실 수 있습니다.</div></div><div class="acc-item "><button class="acc-q">이론 수업은 어떻게 진행되나요?<span class="mk">+</span></button><div class="acc-a">대면 시간을 실습에 더 쓸 수 있도록 이론은 온라인 영상으로 진행합니다. 진도에 맞춰 안내드리고, 학습 후 복습 노트를 제출합니다.</div></div></div></div><div class="tabpanel " id="f3"><div class="acc"><div class="acc-item is-open"><button class="acc-q">피드백은 어떤 방식인가요?<span class="mk">+</span></button><div class="acc-a">보내주신 과제 사진·영상을 원장이 화면에 직접 띄워놓고, 목소리를 담은 녹화 영상으로 짚어드립니다. 카카오톡 메시지 한 줄로 끝내지 않습니다.</div></div><div class="acc-item "><button class="acc-q">왜 글이 아니라 영상인가요?<span class="mk">+</span></button><div class="acc-a">어느 장면에서 각도가 무너졌는지, 손목과 손가락을 어떻게 움직여야 하는지를 화면으로 바로 보실 수 있기 때문입니다. 이해가 빨라지면 개선도 빨라집니다.</div></div><div class="acc-item "><button class="acc-q">사전과제 2주 동안 다 못 하면 어쩌죠?<span class="mk">+</span></button><div class="acc-a">매일 제출만 해주시면 2주 안에 정리됩니다. 못 따라오실까 봐 걱정하지 않으셔도 됩니다.</div></div><div class="acc-item "><button class="acc-q">과제는 어떻게 촬영해 보내나요?<span class="mk">+</span></button><div class="acc-a">지정된 앵글이 나오도록 핸드폰을 거치해 일직선으로 세우고, 5분 내외로 촬영해 카카오톡으로 보내주시면 됩니다.</div></div><div class="acc-item "><button class="acc-q">수료하면 피드백이 끝나나요?<span class="mk">+</span></button><div class="acc-a">아닙니다. 피드백 기간을 따로 정해두지 않습니다. 현장에서 생긴 질문이 멈출 때까지 이어집니다. 창업반은 연 1회 이상 리마인드 수업도 함께합니다.</div></div></div></div><div class="tabpanel " id="f4"><div class="acc"><div class="acc-item is-open"><button class="acc-q">수강료는 얼마인가요?<span class="mk">+</span></button><div class="acc-a">1:1 속눈썹 펌 단과반은 280만원입니다. 나머지 과정은 [클라이언트 확인 필요]</div></div><div class="acc-item "><button class="acc-q">분할 결제가 되나요?<span class="mk">+</span></button><div class="acc-a">[클라이언트 확인 필요]</div></div><div class="acc-item "><button class="acc-q">환불이 되나요?<span class="mk">+</span></button><div class="acc-a">[클라이언트 확인 필요: 환불 규정 요약 + 전문 링크]</div></div><div class="acc-item "><button class="acc-q">일정 변경이 가능한가요?<span class="mk">+</span></button><div class="acc-a">[클라이언트 확인 필요]</div></div></div></div><div class="tabpanel " id="f5"><div class="acc"><div class="acc-item is-open"><button class="acc-q">어떤 핀셋을 사야 할지 모르겠어요<span class="mk">+</span></button><div class="acc-a">핀셋을 세워 잡는 편이면 일자 핀셋이, 자연스럽게 누워 잡히는 편이면 곡선 핀셋이 유리합니다. 판단이 어려우시면 핀셋 잡은 손 사진을 보내주세요.</div></div><div class="acc-item "><button class="acc-q">배송은 얼마나 걸리나요?<span class="mk">+</span></button><div class="acc-a">[클라이언트 확인 필요]</div></div><div class="acc-item "><button class="acc-q">교환·반품이 되나요?<span class="mk">+</span></button><div class="acc-a">[클라이언트 확인 필요]</div></div><div class="acc-item "><button class="acc-q">수강생 할인이 있나요?<span class="mk">+</span></button><div class="acc-a">[클라이언트 확인 필요]</div></div></div></div>
+  </div>
+</section>
+
+<!-- 최하단 : Contact Us -->
+<section class="section bg-dark">
+  <div class="container text-center">
+    <h2 class="section-title">여기에 없는 질문이라면</h2>
+    <p class="section-desc">이런 것까지 물어봐도 되나 싶은 것도 괜찮습니다. 편하게 물어보세요.</p>
+    <a href="page_11.html" class="btn btn-primary">1:1 문의하기</a>
+    <p class="micro">상담은 무료입니다.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">jia</p>
+        <div class="footer-info">
+          상호 지아 &nbsp;|&nbsp; 대표 임희진<br>
+          사업자등록번호 [클라이언트 확인 필요]<br>
+          통신판매업신고번호 [클라이언트 확인 필요]<br>
+          주소 [클라이언트 확인 필요]<br>
+          전화 [클라이언트 확인 필요] &nbsp;|&nbsp; 이메일 [클라이언트 확인 필요]<br>
+          개인정보관리책임자 [클라이언트 확인 필요]
+        </div>
+        <div class="footer-sns">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><p class="footer-col-title">클래스</p><a href="page_02.html">클래스 안내</a></div>
+      <div class="footer-col"><p class="footer-col-title">Store</p><a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a><a href="page_05.html">유료 뉴스레터 멤버십</a></div>
+      <div class="footer-col"><p class="footer-col-title">블로그</p><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
+      <div class="footer-col"><p class="footer-col-title">고객센터</p><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© jia. All rights reserved.</span>
+      <nav><a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">환불 및 취소 규정</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- QUICK + TOP -->
+<div class="quick">
+  <a href="page_11.html"><i data-lucide="clipboard-list"></i>수강 상담 신청</a>
+  <a href="#"><i data-lucide="message-circle"></i>카카오톡 문의</a>
+  <a href="#"><i data-lucide="instagram"></i>인스타그램</a>
+  <p class="micro">상담 신청하시면 영업 전화 대신 진단 영상을 보내드립니다</p>
+</div>
+<button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
+
+<script>
+lucide.createIcons();
+
+/* 헤더 스크롤 축소 + TOP */
+var nav=document.getElementById('nav'), topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY;
+  nav.classList.toggle('is-scrolled', y>60);
+  topBtn.classList.toggle('is-show', y>400);
+});
+topBtn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+
+/* 모바일 메뉴 */
+document.getElementById('burger').onclick=function(){document.getElementById('mMenu').classList.toggle('is-open')};
+document.querySelectorAll('.m-group > button').forEach(function(b){
+  b.onclick=function(){b.parentElement.classList.toggle('is-open')};
+});
+/* 아코디언 */
+document.querySelectorAll('.acc-q').forEach(function(q){
+  q.onclick=function(){q.parentElement.classList.toggle('is-open')};
+});
+/* 탭 */
+document.querySelectorAll('[data-tabs] button').forEach(function(b){
+  b.onclick=function(){
+    var root=b.closest('[data-tabs]');
+    root.querySelectorAll('button').forEach(function(x){x.classList.remove('is-active')});
+    document.querySelectorAll('.tabpanel').forEach(function(p){p.classList.remove('is-active')});
+    b.classList.add('is-active');
+    var t=document.getElementById(b.dataset.tab); if(t) t.classList.add('is-active');
+  };
+});
+</script>
+</body>
+</html>

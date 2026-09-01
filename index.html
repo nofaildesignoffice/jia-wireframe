@@ -1,0 +1,625 @@
+<!-- PAGE: 홈 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지아 | 속눈썹 연장·펌 전 과정 1:1 교육</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{
+  --text-black:#1A1A1A; --text-dark:#333333; --text-gray:#666666; --text-light:#999999; --text-muted:#BCBCBC;
+  --bg-white:#FFFFFF; --bg-light:#F5F5F5; --bg-dark:#2D2D2D; --bg-black:#1A1A1A;
+  --border-light:#E0E0E0; --border-default:#D0D0D0;
+  --placeholder-bg:#E0E0E0; --placeholder-icon:#BCBCBC;
+  --radius-sm:8px; --radius-md:12px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 4px 12px rgba(0,0,0,0.1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.6;background:var(--bg-white)}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;font-family:inherit;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.bg-light{background:var(--bg-light)}
+.bg-dark{background:var(--bg-dark)}
+.text-center{text-align:center}
+.section-label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px}
+.section-title{font-size:36px;font-weight:700;color:var(--text-black);line-height:1.35;margin-bottom:16px;letter-spacing:-.02em}
+.section-desc{font-size:16px;color:var(--text-gray);max-width:640px;margin-bottom:48px}
+.text-center .section-desc{margin-left:auto;margin-right:auto}
+.bg-dark .section-title{color:#FFF}
+.bg-dark .section-desc{color:rgba(255,255,255,.6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-sm);border:1px solid transparent;transition:opacity .2s;font-family:inherit}
+.btn:hover{opacity:.85}
+.btn-primary{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
+.btn-secondary{background:transparent;color:var(--text-black);border-color:var(--text-black)}
+.bg-dark .btn-primary,.hero .btn-primary{background:#FFF;color:var(--text-black);border-color:#FFF}
+.bg-dark .btn-secondary,.hero .btn-secondary{color:#FFF;border-color:rgba(255,255,255,.35)}
+.btn-sm{padding:10px 18px;font-size:14px}
+.btn-block{width:100%}
+.img-placeholder{background:var(--placeholder-bg);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--placeholder-icon)}
+.img-placeholder svg{width:32px;height:32px}
+.icon-box{width:48px;height:48px;background:var(--bg-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
+.icon-box svg{width:22px;height:22px}
+.icon-circle{width:64px;height:64px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-dark);margin-bottom:24px}
+.icon-circle svg{width:26px;height:26px}
+.micro{font-size:13px;color:var(--text-light);margin-top:12px}
+
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:100;background:#FFF;border-bottom:1px solid var(--border-light);transition:padding .2s}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:height .2s}
+.nav.is-scrolled .nav-inner{height:60px}
+.nav-logo{font-size:24px;font-weight:800;color:var(--text-black);letter-spacing:-.03em;transition:font-size .2s}
+.nav.is-scrolled .nav-logo{font-size:20px}
+.nav-links{display:flex;gap:36px}
+.nav-item{position:relative}
+.nav-item>a{display:block;padding:28px 0;font-size:15px;font-weight:600;color:var(--text-dark)}
+.nav-item.is-active>a{color:var(--text-black);text-decoration:underline;text-underline-offset:6px}
+.nav-drop{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFF;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:10px 0;min-width:200px;display:none;box-shadow:var(--shadow-md)}
+.nav-item:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:10px 20px;font-size:14px;color:var(--text-gray);white-space:nowrap}
+.nav-drop a:hover{background:var(--bg-light);color:var(--text-black)}
+.nav-utils{display:flex;align-items:center;gap:20px}
+.nav-utils a{font-size:14px;color:var(--text-gray)}
+.nav-utils svg{width:20px;height:20px}
+.nav-burger{display:none;width:24px;height:24px;color:var(--text-black)}
+.m-menu{display:none;position:fixed;inset:76px 0 0;background:#FFF;z-index:99;overflow-y:auto;padding:24px}
+.m-menu.is-open{display:block}
+.m-group{border-bottom:1px solid var(--border-light)}
+.m-group>button,.m-group>a{display:flex;width:100%;justify-content:space-between;align-items:center;padding:18px 4px;font-size:17px;font-weight:600;color:var(--text-black);text-align:left}
+.m-sub{display:none;padding:0 4px 16px}
+.m-group.is-open .m-sub{display:block}
+.m-sub a{display:block;padding:10px 12px;font-size:15px;color:var(--text-gray)}
+.m-auth{display:flex;gap:12px;margin-top:28px}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:640px;background:var(--bg-dark);overflow:hidden}
+.hero-slide{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+.hero-slide.is-active{display:flex}
+.hero-ph{position:absolute;inset:0;background:var(--bg-dark);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);border:1px dashed rgba(255,255,255,.2)}
+.hero-ph svg{width:56px;height:56px}
+.hero-ph span{position:absolute;bottom:24px;font-size:13px}
+.hero-body{position:relative;z-index:2}
+.hero h1{font-size:48px;font-weight:800;color:#FFF;letter-spacing:-.03em;line-height:1.3;margin-bottom:18px}
+.hero p{font-size:18px;color:rgba(255,255,255,.7)}
+.hero-cta{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);z-index:3}
+.hero-dots{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.hero-dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35)}
+.hero-dots button.is-active{background:#FFF;width:26px;border-radius:5px}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#FFF}
+.hero-arrow svg{width:20px;height:20px}
+.hero-arrow.prev{left:36px}
+.hero-arrow.next{right:36px}
+
+/* ===== GRIDS ===== */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.card h3{font-size:18px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.card p{font-size:15px;color:var(--text-gray)}
+.pain-card{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px;background:#FFF}
+.pain-card p{font-size:15px;color:var(--text-dark);padding-top:12px}
+
+/* class cards */
+.class-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.class-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
+.class-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;font-size:12px;font-weight:700;color:var(--text-black);background:var(--bg-light);border-radius:99px;padding:5px 12px;margin-bottom:14px;align-self:flex-start}
+.class-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.class-target{font-size:13px;color:var(--text-light);margin-bottom:14px}
+.class-points{margin-bottom:22px;flex:1}
+.class-points li{font-size:14px;color:var(--text-gray);padding-left:14px;position:relative;margin-bottom:7px}
+.class-points li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.steps-v li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border-light)}
+.steps-v li:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--text-black);flex-shrink:0}
+.steps-v h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:4px}
+.steps-v p{font-size:14px;color:var(--text-gray)}
+blockquote{border-left:3px solid var(--border-default);padding:6px 0 6px 20px;margin-top:28px;font-size:15px;color:var(--text-dark);font-style:normal}
+blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-light);font-style:normal}
+
+/* stepbar */
+.stepbar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden}
+.stepbar>div{padding:32px 26px;border-right:1px solid var(--border-light);background:#FFF}
+.stepbar>div:last-child{border-right:none}
+.stepbar .n{font-size:12px;font-weight:700;color:var(--text-light);margin-bottom:12px}
+.stepbar h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.stepbar p{font-size:14px;color:var(--text-gray)}
+
+/* testimonial */
+.tcar{position:relative}
+.tcar-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
+.t-card .img-placeholder{aspect-ratio:16/10;margin-bottom:20px}
+.t-quote{font-size:15px;color:var(--text-dark);margin-bottom:20px;min-height:72px}
+.t-meta{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px}
+.tcar-nav{display:flex;gap:10px;justify-content:center;margin-top:36px}
+.tcar-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
+.tcar-nav svg{width:18px;height:18px}
+
+/* store cards */
+.store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
+.store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
+.store-card-body{padding:32px}
+.store-card h3{font-size:22px;font-weight:700;color:var(--text-black);margin-bottom:10px}
+.store-card p{font-size:15px;margin-bottom:24px}
+
+/* subscribe */
+.sub-form{display:flex;gap:10px;max-width:520px;margin:0 auto}
+.sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
+
+/* FOOTER */
+.footer{background:var(--bg-dark);padding:72px 0 0;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand-name{font-size:24px;font-weight:800;color:#FFF;margin-bottom:16px;letter-spacing:-.03em}
+.footer-info{font-size:13px;line-height:2}
+.footer-col-title{font-size:14px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px}
+.footer-bottom nav{display:flex;gap:20px}
+.footer-sns{display:flex;gap:12px;margin-top:20px}
+.footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.footer-sns svg{width:16px;height:16px}
+
+/* QUICK / TOP */
+.quick{position:fixed;right:24px;bottom:96px;z-index:90;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.quick a{display:flex;align-items:center;gap:8px;background:#FFF;border:1px solid var(--border-default);border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;font-weight:600;color:var(--text-black);box-shadow:var(--shadow-sm)}
+.quick svg{width:16px;height:16px}
+.quick .micro{margin:0;font-size:11px;max-width:190px;text-align:right}
+.top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
+.top-btn.is-show{display:flex}
+.top-btn svg{width:20px;height:20px}
+
+@media (max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:768px){
+  .section{padding:64px 0}
+  .section-title{font-size:26px}
+  .nav-links,.nav-utils a{display:none}
+  .nav-burger{display:block}
+  .hero{height:520px}
+  .hero h1{font-size:30px}
+  .hero p{font-size:15px}
+  .hero-arrow{display:none}
+  .grid-2,.grid-3,.grid-4,.split,.tcar-track{grid-template-columns:1fr}
+  .stepbar{grid-template-columns:1fr}
+  .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .sub-form{flex-direction:column}
+  .quick{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">jia</a>
+    <nav class="nav-links">
+      <div class="nav-item is-active"><a href="index.html">홈</a></div>
+      <div class="nav-item"><a href="page_02.html">클래스</a></div>
+      <div class="nav-item">
+        <a href="page_03.html">Store</a>
+        <div class="nav-drop">
+          <a href="page_03.html">클래스 상품</a>
+          <a href="page_04.html">전문가용 핀셋</a>
+          <a href="page_05.html">유료 뉴스레터 멤버십</a>
+          <a href="page_06.html">장바구니·주문/결제</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="page_07.html">블로그</a>
+        <div class="nav-drop">
+          <a href="page_07.html">무료회원 뉴스레터</a>
+          <a href="page_08.html">유료회원 뉴스레터</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="page_09.html">고객센터</a>
+        <div class="nav-drop">
+          <a href="page_09.html">공지사항</a>
+          <a href="page_10.html">자주 묻는 질문</a>
+          <a href="page_11.html">1:1 문의</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-utils">
+      <a href="#">로그인</a>
+      <a href="#">회원가입</a>
+      <a href="page_06.html"><i data-lucide="shopping-cart"></i></a>
+      <a href="#"><i data-lucide="search"></i></a>
+      <button class="nav-burger" id="burger"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="m-menu" id="mMenu">
+  <div class="m-group"><a href="index.html">홈</a></div>
+  <div class="m-group"><a href="page_02.html">클래스</a></div>
+  <div class="m-group">
+    <button>Store <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub">
+      <a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a>
+      <a href="page_05.html">유료 뉴스레터 멤버십</a><a href="page_06.html">장바구니·주문/결제</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button>블로그 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
+  </div>
+  <div class="m-group">
+    <button>고객센터 <i data-lucide="chevron-down"></i></button>
+    <div class="m-sub"><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
+  </div>
+  <div class="m-auth"><a href="#" class="btn btn-secondary btn-block">로그인</a><a href="#" class="btn btn-primary btn-block">회원가입</a></div>
+</div>
+
+<!-- ================= 섹션 1 : 히어로 (슬라이드 3장) ================= -->
+<section class="hero" id="hero">
+  <div class="hero-slide is-active">
+    <div class="hero-ph"><i data-lucide="image"></i><span>[히어로 배경 이미지 1 · 1920×1080]</span></div>
+    <div class="hero-body">
+      <h1>속눈썹, 전 과정 1:1로 배웁니다</h1>
+      <p>정해진 진도가 아니라 내 손에 맞는 기준을 만듭니다</p>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <div class="hero-ph"><i data-lucide="image"></i><span>[히어로 배경 이미지 2 · 1920×1080]</span></div>
+    <div class="hero-body">
+      <h1>카톡 한 줄이 아닌, 영상 피드백</h1>
+      <p>보내주신 과제를 화면에 띄워 원장이 직접 짚어드립니다</p>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <div class="hero-ph"><i data-lucide="image"></i><span>[히어로 배경 이미지 3 · 1920×1080]</span></div>
+    <div class="hero-body">
+      <h1>수료가 끝이 아닙니다</h1>
+      <p>질문이 멈출 때까지 피드백 기간을 정해두지 않습니다</p>
+    </div>
+  </div>
+  <button class="hero-arrow prev" id="hPrev"><i data-lucide="chevron-left"></i></button>
+  <button class="hero-arrow next" id="hNext"><i data-lucide="chevron-right"></i></button>
+  <div class="hero-cta"><a href="page_02.html" class="btn btn-primary">클래스 살펴보기</a></div>
+  <div class="hero-dots" id="hDots">
+    <button class="is-active"></button><button></button><button></button>
+  </div>
+</section>
+
+<!-- ================= 섹션 2 : 문제 공감 ================= -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Problem</p>
+      <h2 class="section-title">배우긴 배웠는데, 고객 앞에서는 왜 손이 멈출까요</h2>
+      <p class="section-desc">기술을 몰라서가 아닙니다. 내 손에 맞는 기준이 없어서입니다.</p>
+    </div>
+    <div class="grid-2">
+      <div class="pain-card"><div class="icon-box"><i data-lucide="clock"></i></div><p>연장을 배웠지만 오래 쉬어서 다시 시작하기가 막막합니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="user"></i></div><p>모델 실습까지 했는데 실제 고객 시술은 여전히 불안합니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="move-diagonal"></i></div><p>가르기, 가모 파지, 진입, 밀착이 매번 일정하지 않습니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="trending-down"></i></div><p>유지력과 시술 결과가 고객마다 달라집니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="copy"></i></div><p>다른 사람 자세를 따라 해도 내 손에서는 잘 안 됩니다</p></div>
+      <div class="pain-card"><div class="icon-box"><i data-lucide="align-left"></i></div><p>적게 심으면 가지런한데, 많이 심으면 라인이 무너집니다</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 3 : 클래스 4가지 ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Class</p>
+      <h2 class="section-title">지금 어디에서 막혀 있는지에 따라, 시작점이 다릅니다</h2>
+      <p class="section-desc">네 가지 과정 모두 전 과정 1:1로만 진행합니다.</p>
+    </div>
+    <div class="grid-4">
+      <article class="class-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="class-card-body">
+          <span class="badge">3개월 · 24회차</span>
+          <h3>속눈썹 창업반</h3>
+          <p class="class-target">핀셋을 한 번도 안 잡아본 예비 창업자</p>
+          <ul class="class-points">
+            <li>창업 컨설팅으로 시작</li><li>연장·펌 전 기술</li>
+            <li>18회 모델 실습</li><li>재료·장비 50가지와 교재 7권 세팅 제공</li>
+          </ul>
+          <a href="page_02.html#classes" class="btn btn-secondary btn-sm btn-block">자세히 보기</a>
+          <p class="micro">전 과정 1:1 맞춤 진행</p>
+        </div>
+      </article>
+      <article class="class-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="class-card-body">
+          <span class="badge">5DAY · 280만원</span>
+          <h3>1:1 속눈썹 펌 단과반</h3>
+          <p class="class-target">펌의 기준을 처음부터 잡고 싶은 분</p>
+          <ul class="class-points">
+            <li>사전 온라인 이론</li><li>현장 시연</li>
+            <li>모델 실습</li><li>매 수업 과제와 개별 피드백</li>
+          </ul>
+          <a href="page_02.html#classes" class="btn btn-secondary btn-sm btn-block">자세히 보기</a>
+          <p class="micro">전 과정 1:1 맞춤 진행</p>
+        </div>
+      </article>
+      <article class="class-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="class-card-body">
+          <span class="badge">사전과제 2주 + 대면 6회</span>
+          <h3>클래식 연장 단과반</h3>
+          <p class="class-target">배웠지만 혼자 시술이 불안한 원장</p>
+          <ul class="class-points">
+            <li>사전과제로 기본기 먼저 교정</li><li>대면 6회로 실무 연결</li>
+            <li>현재 실력에 맞춘 맞춤 진도</li>
+          </ul>
+          <a href="page_02.html#classes" class="btn btn-secondary btn-sm btn-block">자세히 보기</a>
+          <p class="micro">전 과정 1:1 맞춤 진행</p>
+        </div>
+      </article>
+      <article class="class-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="class-card-body">
+          <span class="badge">하루 6시간 · 경력 6개월↑</span>
+          <h3>원데이</h3>
+          <p class="class-target">지금 시술에서 한 지점이 반복해 막히는 분</p>
+          <ul class="class-points">
+            <li>사전 화상 상담으로 원인 선진단</li><li>손 적응</li>
+            <li>모델 2명 실습</li><li>다음 날 바로 샵에 적용</li>
+          </ul>
+          <a href="page_02.html#classes" class="btn btn-secondary btn-sm btn-block">자세히 보기</a>
+          <p class="micro">전 과정 1:1 맞춤 진행</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 4 : 영상 피드백 ================= -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="img-placeholder" style="aspect-ratio:16/9"><i data-lucide="play-circle"></i></div>
+        <p class="micro">실제 수강생 피드백 영상입니다 · [클라이언트 확인 필요: 편집본 1편]</p>
+      </div>
+      <div>
+        <p class="section-label">Feedback</p>
+        <h2 class="section-title">카톡 한 줄로 “각도가 잘못됐어요”라고 하지 않습니다</h2>
+        <p class="section-desc" style="margin-bottom:24px">보내주신 과제 영상을 화면에 그대로 띄워, 어느 장면에서 무엇이 무너졌는지 목소리로 짚어드립니다.</p>
+        <ul class="steps-v">
+          <li><span class="step-num">1</span><div><h4>과제 제출</h4><p>연습 영상이나 시술 사진을 카카오톡으로 보냅니다</p></div></li>
+          <li><span class="step-num">2</span><div><h4>화면 피드백 녹화</h4><p>원장이 그 영상을 띄워놓고 짚어가며 설명합니다</p></div></li>
+          <li><span class="step-num">3</span><div><h4>반복 시청</h4><p>놓친 설명은 내 속도로 몇 번이든 다시 봅니다</p></div></li>
+          <li><span class="step-num">4</span><div><h4>맞춤 보완 과제</h4><p>막힌 지점에 맞춰 다음 과제가 새로 정해집니다</p></div></li>
+        </ul>
+        <blockquote>
+          “각도가 60에서 80도가 되어야 한다고 했습니다. 그런데 지금 각도가 조금 누워 있습니다. 손목을 사용하시거나, 엄지와 검지를 이렇게 움직이시면 됩니다.”
+          <cite>— 실제 과제 피드백 영상 중</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 5 : 차별점 3축 ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Why jia</p>
+      <h2 class="section-title">잘 가르치는 것보다, 혼자서도 되게 만드는 것</h2>
+      <p class="section-desc">지아가 7년 동안 바꾸지 않은 세 가지입니다.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="user-check"></i></div>
+        <h3>전 과정 1:1</h3>
+        <p>이론 영상은 같아도 막히는 지점은 사람마다 다릅니다. 핀셋 잡는 힘이 아직 불안하면 다음 단계로 넘기지 않습니다. 정해진 커리큘럼에 사람을 맞추지 않고, 지금 실력에 맞춰 다음 과제를 정합니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="monitor-play"></i></div>
+        <h3>화면으로 하는 영상 피드백</h3>
+        <p>글로 받은 피드백을 다시 해석할 필요가 없습니다. 내 동작과 문제 지점을 화면으로 바로 보기 때문에 이해가 빨라지고, 이해가 빨라지니 개선도 빨라집니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i data-lucide="infinity"></i></div>
+        <h3>기간을 정해두지 않은 사후 피드백</h3>
+        <p>수료는 마침표가 아닙니다. 현장에서 새로 생긴 고민과 시술 영상에 대해, 질문이 멈출 때까지 피드백을 이어갑니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 6 : 상담 프로세스 ================= -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Consulting</p>
+      <h2 class="section-title">상담 신청하시면, 영업 전화 대신 진단 영상이 갑니다</h2>
+      <p class="section-desc">지금 어디가 막혀 있는지부터 확인하고 과정을 권해드립니다.</p>
+    </div>
+    <div class="stepbar">
+      <div><p class="n">STEP 01</p><h4>상담지 작성</h4><p>경력, 희망 과정, 지금 가장 큰 고민을 적어주세요</p></div>
+      <div><p class="n">STEP 02</p><h4>원장이 먼저 진단</h4><p>보내주신 시술 사진과 계정을 직접 살펴봅니다</p></div>
+      <div><p class="n">STEP 03</p><h4>1차 화면 상담 영상</h4><p>무엇이 어긋나 있는지 화면으로 짚어 보내드립니다</p></div>
+      <div><p class="n">STEP 04</p><h4>2차 카카오톡 상담</h4><p>영상을 보고 생긴 질문을 편하게 이어서 여쭤보세요</p></div>
+    </div>
+    <p class="micro text-center">이런 것까지 물어봐도 되나 싶은 것도 괜찮습니다</p>
+  </div>
+</section>
+
+<!-- ================= 섹션 7 : 후기 ================= -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Review</p>
+      <h2 class="section-title">[클라이언트 확인 필요: 후기 섹션 헤드카피]</h2>
+      <p class="section-desc">수료하신 원장님들이 남겨주신 이야기입니다.</p>
+    </div>
+    <div class="tcar">
+      <div class="tcar-track" id="tTrack">
+        <article class="t-card">
+          <div class="img-placeholder"><i data-lucide="image"></i></div>
+          <p class="t-quote">[클라이언트 확인 필요: 수강 후기 1]</p>
+          <p class="t-meta">클래식 연장 단과반 · [작성자]</p>
+        </article>
+        <article class="t-card">
+          <div class="img-placeholder"><i data-lucide="image"></i></div>
+          <p class="t-quote">[클라이언트 확인 필요: 수강 후기 2]</p>
+          <p class="t-meta">속눈썹 창업반 · [작성자]</p>
+        </article>
+        <article class="t-card">
+          <div class="img-placeholder"><i data-lucide="image"></i></div>
+          <p class="t-quote">[클라이언트 확인 필요: 수강 후기 3]</p>
+          <p class="t-meta">원데이 · [작성자]</p>
+        </article>
+      </div>
+      <div class="tcar-nav">
+        <button id="tPrev"><i data-lucide="chevron-left"></i></button>
+        <button id="tNext"><i data-lucide="chevron-right"></i></button>
+      </div>
+      <p class="micro text-center">총 6건 중 3건 표시 · [클라이언트 확인 필요: 후기 6건]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 8 : Store ================= -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Store</p>
+      <h2 class="section-title">수업이 끝나도, 손에 남는 것들</h2>
+    </div>
+    <div class="grid-2">
+      <article class="store-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="store-card-body">
+          <h3>전문가용 핀셋</h3>
+          <p>지아가 수업과 현장에서 직접 쓰는 V핀셋 01~05. 창업반 재료 세팅에도 그대로 들어갑니다.</p>
+          <a href="page_04.html" class="btn btn-secondary">핀셋 보러 가기</a>
+        </div>
+      </article>
+      <article class="store-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="store-card-body">
+          <h3>유료 뉴스레터 멤버십</h3>
+          <p>수업에서 다 못 나눈 시술과 운영 이야기를 정기적으로 보내드립니다.</p>
+          <a href="page_05.html" class="btn btn-secondary">멤버십 살펴보기</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 9 : 무료 뉴스레터 ================= -->
+<section class="section bg-dark">
+  <div class="container text-center">
+    <h2 class="section-title">아직 결정 못 하셨어도 괜찮습니다</h2>
+    <p class="section-desc">속눈썹샵 운영과 시술에 바로 쓰는 이야기를 무료로 보내드립니다.</p>
+    <form class="sub-form" onsubmit="return false">
+      <input type="email" placeholder="이메일 주소를 입력해주세요">
+      <a href="page_07.html" class="btn btn-primary">무료로 받아보기</a>
+    </form>
+    <p class="micro">언제든 구독을 해지할 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- ================= 최하단 : Contact Us ================= -->
+<section class="section bg-dark" style="border-top:1px solid rgba(255,255,255,.1)">
+  <div class="container text-center">
+    <h2 class="section-title">지금 뭐가 문제인지 몰라도 괜찮습니다</h2>
+    <p class="section-desc">어디가 막혀 있는지는 저희가 먼저 찾아보겠습니다.</p>
+    <a href="page_11.html" class="btn btn-primary">수강 상담 신청하기</a>
+    <p class="micro">상담은 무료이며, 신청 후 진단 영상을 보내드립니다.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">jia</p>
+        <div class="footer-info">
+          상호 지아 &nbsp;|&nbsp; 대표 임희진<br>
+          사업자등록번호 [클라이언트 확인 필요]<br>
+          통신판매업신고번호 [클라이언트 확인 필요]<br>
+          주소 [클라이언트 확인 필요]<br>
+          전화 [클라이언트 확인 필요] &nbsp;|&nbsp; 이메일 [클라이언트 확인 필요]<br>
+          개인정보관리책임자 [클라이언트 확인 필요]
+        </div>
+        <div class="footer-sns">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><p class="footer-col-title">클래스</p><a href="page_02.html">클래스 안내</a></div>
+      <div class="footer-col"><p class="footer-col-title">Store</p><a href="page_03.html">클래스 상품</a><a href="page_04.html">전문가용 핀셋</a><a href="page_05.html">유료 뉴스레터 멤버십</a></div>
+      <div class="footer-col"><p class="footer-col-title">블로그</p><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
+      <div class="footer-col"><p class="footer-col-title">고객센터</p><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© jia. All rights reserved.</span>
+      <nav><a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">환불 및 취소 규정</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- QUICK + TOP -->
+<div class="quick">
+  <a href="page_11.html"><i data-lucide="clipboard-list"></i>수강 상담 신청</a>
+  <a href="#"><i data-lucide="message-circle"></i>카카오톡 문의</a>
+  <a href="#"><i data-lucide="instagram"></i>인스타그램</a>
+  <p class="micro">상담 신청하시면 영업 전화 대신 진단 영상을 보내드립니다</p>
+</div>
+<button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
+
+<script>
+lucide.createIcons();
+
+/* 헤더 스크롤 축소 + TOP */
+var nav=document.getElementById('nav'), topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY;
+  nav.classList.toggle('is-scrolled', y>60);
+  topBtn.classList.toggle('is-show', y>400);
+});
+topBtn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+
+/* 모바일 메뉴 */
+document.getElementById('burger').onclick=function(){document.getElementById('mMenu').classList.toggle('is-open')};
+document.querySelectorAll('.m-group > button').forEach(function(b){
+  b.onclick=function(){b.parentElement.classList.toggle('is-open')};
+});
+
+/* 히어로 캐러셀 — 슬라이드 3장 자동 전환 */
+var slides=document.querySelectorAll('.hero-slide'),
+    dots=document.querySelectorAll('#hDots button'), hi=0, timer;
+function go(n){
+  hi=(n+slides.length)%slides.length;
+  slides.forEach(function(s,i){s.classList.toggle('is-active',i===hi)});
+  dots.forEach(function(d,i){d.classList.toggle('is-active',i===hi)});
+}
+function play(){timer=setInterval(function(){go(hi+1)},4500)}
+function reset(){clearInterval(timer);play()}
+dots.forEach(function(d,i){d.onclick=function(){go(i);reset()}});
+document.getElementById('hPrev').onclick=function(){go(hi-1);reset()};
+document.getElementById('hNext').onclick=function(){go(hi+1);reset()};
+play();
+
+/* 후기 캐러셀 */
+var tCards=document.querySelectorAll('#tTrack .t-card'), ti=0;
+document.getElementById('tPrev').onclick=function(){ti=Math.max(0,ti-1)};
+document.getElementById('tNext').onclick=function(){ti=Math.min(tCards.length-1,ti+1)};
+</script>
+</body>
+</html>

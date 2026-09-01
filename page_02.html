@@ -1,0 +1,684 @@
+<!-- PAGE: 클래스 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>클래스 | 지아 - 속눈썹 창업반·펌·연장·원데이 1:1 과정</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+/* =========================================================
+   상세페이지 와이어프레임 (모바일 480px · 그레이스케일)
+   지침: wireframe-guide-detail.md
+   ========================================================= */
+:root{
+  --text-black:#111; --text-dark:#333; --text-gray:#666; --text-light:#999;
+  --line:#e0e0e0; --bg:#f5f5f5; --bg-card:#fff; --bg-dark:#2d2d2d;
+  --radius:12px; --radius-sm:8px; --bar-h:64px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.65;background:var(--bg);font-size:15px}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;font-family:inherit;background:none}
+.wrap{max-width:480px;margin:0 auto;background:var(--bg-card);padding-bottom:var(--bar-h)}
+
+/* GNB (사이트 공통 · 480px 폭에 맞춰 축약) */
+.gnb{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.gnb-inner{height:56px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.gnb-logo{font-size:20px;font-weight:800;color:var(--text-black);letter-spacing:-.03em}
+.gnb-right{display:flex;gap:16px;align-items:center;font-size:13px;color:var(--text-gray)}
+.gnb-burger{width:22px;height:2px;background:var(--text-black);position:relative}
+.gnb-burger::before,.gnb-burger::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--text-black)}
+.gnb-burger::before{top:-7px}.gnb-burger::after{top:7px}
+.gnb-menu{display:none;border-top:1px solid var(--line);padding:8px 20px 20px}
+.gnb-menu.is-open{display:block}
+.gnb-menu a{display:block;padding:12px 0;font-size:15px;color:var(--text-dark);border-bottom:1px solid var(--line)}
+.gnb-menu a.sub{padding-left:14px;font-size:14px;color:var(--text-gray)}
+.gnb-menu a:last-child{border-bottom:none}
+
+/* 섹션 공통 */
+section{padding:48px 20px}
+.sec-white{background:#fff}
+.sec-gray{background:var(--bg)}
+.sec-dark{background:var(--bg-dark)}
+.sec-label{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-align:center;margin-bottom:10px;text-transform:uppercase}
+.sec-title{font-size:22px;font-weight:700;color:var(--text-black);text-align:center;line-height:1.4;margin-bottom:12px;letter-spacing:-.02em}
+.sec-sub{font-size:14px;color:var(--text-gray);text-align:center;margin-bottom:28px}
+.sec-dark .sec-title{color:#fff}
+.sec-dark .sec-sub{color:rgba(255,255,255,.6)}
+
+/* 플레이스홀더 */
+.ph{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:12px;text-align:center;padding:12px}
+.ph-full{border-radius:0}
+.icon-ph{width:40px;height:40px;border:1px dashed var(--line);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text-light);flex-shrink:0}
+
+/* 버튼 */
+.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:15px;font-size:15px;font-weight:700;border-radius:var(--radius-sm);border:1px solid var(--text-black);font-family:inherit}
+.btn-primary{background:var(--text-black);color:#fff}
+.btn-secondary{background:#fff;color:var(--text-black)}
+.sec-dark .btn-primary{background:#fff;color:var(--text-black);border-color:#fff}
+
+/* 카드 */
+.card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:20px}
+.micro{font-size:13px;color:var(--text-light);text-align:center;margin-top:12px}
+
+/* 1. HERO */
+.hero-img{aspect-ratio:3/4;margin:0 -20px 28px;border:none;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);background:#fff}
+.hero h1{font-size:26px;font-weight:800;color:var(--text-black);text-align:center;line-height:1.4;letter-spacing:-.03em;margin-bottom:12px}
+.hero-sub{font-size:15px;color:var(--text-gray);text-align:center;margin-bottom:24px}
+.trust-list{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:6px 0;margin-bottom:24px}
+.trust-list li{display:flex;align-items:center;gap:10px;padding:10px 0;font-size:14px;color:var(--text-dark)}
+.trust-list li+li{border-top:1px solid var(--line)}
+.tick{width:18px;height:18px;border:1px solid var(--text-dark);border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pill-card{border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;background:#fff}
+.pill-card .icon-ph{margin-bottom:10px}
+.pill-card h4{font-size:14px;font-weight:700;color:var(--text-black);margin-bottom:4px}
+.pill-card p{font-size:13px;color:var(--text-gray);line-height:1.5}
+
+/* 2. PROOF */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.stat{border:1px solid var(--line);border-radius:var(--radius);padding:20px 14px;text-align:center;background:#fff}
+.stat .label{font-size:12px;color:var(--text-light);margin-bottom:6px}
+.stat .value{font-size:26px;font-weight:800;color:var(--text-black);letter-spacing:-.02em}
+.chip-box{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;margin-bottom:20px}
+.chip-box p{font-size:13px;font-weight:700;color:var(--text-black);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;color:var(--text-dark);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--bg)}
+.mini-review{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff}
+.mini-review .ph{width:64px;height:64px;flex-shrink:0}
+.mini-review p{font-size:13px;color:var(--text-dark)}
+.mini-review span{display:block;font-size:12px;color:var(--text-light);margin-top:6px}
+
+/* 3. PROBLEM */
+.prob li{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff;margin-bottom:10px}
+.prob p{font-size:14px;color:var(--text-dark);padding-top:9px}
+
+/* 4. EMPATHY */
+.emp-img{aspect-ratio:3/2;margin-bottom:24px}
+blockquote{border-left:2px solid var(--text-dark);padding:4px 0 4px 16px;margin-bottom:24px}
+blockquote p{font-size:16px;color:var(--text-black);font-weight:600;line-height:1.6}
+blockquote cite{display:block;font-size:12px;color:var(--text-light);margin-top:10px;font-style:normal}
+.story p{font-size:14px;color:var(--text-gray);margin-bottom:14px}
+.story p:last-child{margin-bottom:0}
+.story strong{color:var(--text-black);font-weight:700}
+
+/* 5. CAUSE */
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:24px}
+.ba .ph{aspect-ratio:1/1}
+.ba .arrow{font-size:18px;color:var(--text-light)}
+.ba-cap{font-size:11px;color:var(--text-light);text-align:center;margin-top:6px}
+.cause-card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff;margin-bottom:10px}
+.cause-num{font-size:12px;font-weight:800;color:var(--text-light);margin-bottom:8px}
+.cause-card h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.cause-card p{font-size:14px;color:var(--text-gray)}
+.answer-box{background:var(--bg-dark);border-radius:var(--radius);padding:24px;margin-top:20px}
+.answer-box p{font-size:15px;color:#fff;line-height:1.7;text-align:center}
+.answer-box strong{font-weight:800}
+
+/* 6. SOLUTION */
+.sol{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;margin-bottom:12px}
+.sol .tag{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--text-black);border-radius:99px;padding:5px 11px;margin-bottom:12px}
+.sol h4{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:10px;line-height:1.4}
+.sol p{font-size:14px;color:var(--text-gray);margin-bottom:12px}
+.sol .basis{font-size:12px;color:var(--text-light);border-top:1px solid var(--line);padding-top:10px}
+
+/* 6-1 */
+.dark-quote{background:var(--bg-dark);border-radius:var(--radius);padding:22px;margin:20px 0}
+.dark-quote p{font-size:14px;color:#fff;line-height:1.9}
+.cmp{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
+.cmp th,.cmp td{border:1px solid var(--line);padding:11px 10px;text-align:left;vertical-align:top}
+.cmp th{background:var(--bg);font-weight:700;color:var(--text-black);width:26%}
+.cmp td:last-child{background:#fff;color:var(--text-black);font-weight:600}
+.eff-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.eff{border:1px solid var(--line);border-radius:var(--radius);padding:18px 14px;text-align:center;font-size:13px;font-weight:700;color:var(--text-black);background:#fff}
+
+/* 6-2 CLASSES */
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;margin-bottom:20px;-webkit-overflow-scrolling:touch}
+.tabs button{flex-shrink:0;font-size:13px;font-weight:700;padding:10px 15px;border:1px solid var(--line);border-radius:99px;color:var(--text-gray);background:#fff;white-space:nowrap}
+.tabs button.is-active{background:var(--text-black);color:#fff;border-color:var(--text-black)}
+.panel{display:none}
+.panel.is-active{display:block}
+.cls-head{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;margin-bottom:12px}
+.cls-head h3{font-size:20px;font-weight:800;color:var(--text-black);margin-bottom:8px}
+.cls-head .one{font-size:14px;color:var(--text-gray);margin-bottom:14px}
+.cls-head .target{font-size:13px;color:var(--text-black);background:var(--bg);border-radius:var(--radius-sm);padding:12px}
+.spec{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;background:#fff}
+.spec th,.spec td{border:1px solid var(--line);padding:11px 12px;text-align:left}
+.spec th{background:var(--bg);font-weight:700;color:var(--text-black);width:38%}
+.spec td{color:var(--text-dark)}
+.spec .price{font-weight:800;color:var(--text-black)}
+.acc{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;margin-bottom:12px}
+.acc-item+.acc-item{border-top:1px solid var(--line)}
+.acc-q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;padding:15px 16px;font-size:14px;font-weight:700;color:var(--text-black);text-align:left}
+.acc-q .mark{font-size:16px;color:var(--text-light);flex-shrink:0}
+.acc-item.is-open .acc-q .mark{transform:rotate(45deg)}
+.acc-a{display:none;padding:0 16px 16px;font-size:13.5px;color:var(--text-gray);line-height:1.75}
+.acc-item.is-open .acc-a{display:block}
+.acc-a ul li{padding-left:12px;position:relative;margin-bottom:6px}
+.acc-a ul li::before{content:"";position:absolute;left:0;top:9px;width:3px;height:3px;border-radius:50%;background:var(--text-light)}
+
+/* 6-3 STEPS */
+.stepcard{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;display:flex;gap:14px}
+.stepcard .n{width:26px;height:26px;border:1px solid var(--text-dark);border-radius:50%;font-size:12px;font-weight:700;color:var(--text-black);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stepcard h4{font-size:15px;font-weight:700;color:var(--text-black);margin-bottom:4px}
+.stepcard p{font-size:13.5px;color:var(--text-gray)}
+.step-arrow{text-align:center;color:var(--text-light);font-size:14px;padding:6px 0}
+.tip{border:1px solid var(--text-dark);border-radius:var(--radius);padding:16px;margin-top:16px;font-size:13.5px;color:var(--text-black);background:#fff}
+.tip b{font-weight:800}
+
+/* 7. EVIDENCE */
+.block-title{font-size:15px;font-weight:800;color:var(--text-black);margin:28px 0 14px;padding-left:11px;border-left:3px solid var(--text-black)}
+.hscroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.hscroll .ph{flex:0 0 200px;aspect-ratio:9/16}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.book{border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:#fff;font-size:13px;font-weight:600;color:var(--text-black);text-align:center}
+
+/* 7.5 STORIES */
+.story-item{margin-bottom:24px}
+.story-item .ph{aspect-ratio:4/3;margin-bottom:12px}
+.story-item .line{font-size:15px;font-weight:700;color:var(--text-black);margin-bottom:8px}
+.story-item .rev{font-size:13.5px;color:var(--text-gray)}
+.closing{text-align:center;font-size:15px;font-weight:700;color:var(--text-black);padding-top:8px}
+
+/* 8. CTA */
+.price-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff;margin-bottom:12px}
+.price-card .badge{display:inline-block;font-size:11px;font-weight:700;color:var(--text-dark);background:var(--bg);border-radius:99px;padding:5px 11px;margin-bottom:10px}
+.price-card h4{font-size:18px;font-weight:800;color:var(--text-black);margin-bottom:10px}
+.price-card .amount{font-size:24px;font-weight:800;color:var(--text-black);margin-bottom:6px;letter-spacing:-.02em}
+.price-card .amount small{font-size:13px;font-weight:600;color:var(--text-light)}
+.price-card ul{margin:14px 0 18px}
+.price-card ul li{font-size:13px;color:var(--text-gray);padding-left:12px;position:relative;margin-bottom:5px}
+.price-card ul li::before{content:"";position:absolute;left:0;top:9px;width:3px;height:3px;border-radius:50%;background:var(--text-light)}
+.contact-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.contact-2 a{border:1px solid var(--text-black);border-radius:var(--radius-sm);padding:14px;text-align:center;font-size:14px;font-weight:700;color:var(--text-black);background:#fff}
+
+/* 9. 고시 */
+.notice-note{font-size:12px;color:var(--text-light);margin-top:14px;line-height:1.7}
+
+/* 고정 하단바 */
+.fixbar{position:fixed;bottom:0;left:0;right:0;height:var(--bar-h);background:#fff;border-top:1px solid var(--line);z-index:60}
+.fixbar-inner{max-width:480px;margin:0 auto;height:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.fixbar span{font-size:12px;color:var(--text-light);line-height:1.4}
+.fixbar a{background:var(--text-black);color:#fff;font-size:14px;font-weight:700;border-radius:var(--radius-sm);padding:13px 22px;white-space:nowrap}
+
+/* 푸터 */
+.foot{background:var(--bg-dark);padding:32px 20px;color:rgba(255,255,255,.45);font-size:12px;line-height:1.9}
+.foot .brand{font-size:18px;font-weight:800;color:#fff;margin-bottom:12px}
+.foot nav{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap}
+.foot nav a{color:rgba(255,255,255,.6)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ===== GNB ===== -->
+<header class="gnb">
+  <div class="gnb-inner">
+    <a href="index.html" class="gnb-logo">jia</a>
+    <div class="gnb-right">
+      <a href="page_06.html">장바구니</a>
+      <button id="burger" aria-label="메뉴"><span class="gnb-burger"></span></button>
+    </div>
+  </div>
+  <nav class="gnb-menu" id="gnbMenu">
+    <a href="index.html">홈</a>
+    <a href="page_02.html">클래스</a>
+    <a href="page_03.html">Store</a>
+    <a href="page_03.html" class="sub">클래스 상품</a>
+    <a href="page_04.html" class="sub">전문가용 핀셋</a>
+    <a href="page_05.html" class="sub">유료 뉴스레터 멤버십</a>
+    <a href="page_06.html" class="sub">장바구니·주문/결제</a>
+    <a href="page_07.html">블로그</a>
+    <a href="page_07.html" class="sub">무료회원 뉴스레터</a>
+    <a href="page_08.html" class="sub">유료회원 뉴스레터</a>
+    <a href="page_09.html">고객센터</a>
+    <a href="page_09.html" class="sub">공지사항</a>
+    <a href="page_10.html" class="sub">자주 묻는 질문</a>
+    <a href="page_11.html" class="sub">1:1 문의</a>
+  </nav>
+</header>
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero sec-white">
+  <div class="ph hero-img ph-full">[히어로 이미지 · 세로 3:4]</div>
+  <h1>따라 한 기술은,<br>샵에 가면 사라집니다</h1>
+  <p class="hero-sub">지아는 내 손에 맞는 기준을 만드는<br>1:1 속눈썹 클래스입니다.</p>
+  <ul class="trust-list">
+    <li><span class="tick">✓</span>전 과정 1:1 맞춤 진행</li>
+    <li><span class="tick">✓</span>과제는 화면 영상으로 피드백</li>
+    <li><span class="tick">✓</span>수료 후 피드백 기간 제한 없음</li>
+  </ul>
+  <div class="grid2">
+    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>1:1 전용</h4><p>하루를, 한 수업을 한 분에게만 씁니다</p></div>
+    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>맞춤 과제</h4><p>막히는 지점에 따라 다음 과제가 달라집니다</p></div>
+    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>영상 피드백</h4><p>내 과제 화면을 보며 목소리로 설명합니다</p></div>
+    <div class="pill-card"><div class="icon-ph">[아이콘]</div><h4>사후 관리</h4><p>질문이 멈출 때까지 이어집니다</p></div>
+  </div>
+  <div style="margin-top:24px"><a href="#classes" class="btn btn-primary">내게 맞는 클래스 보기</a></div>
+</section>
+
+<!-- ===== 2. PROOF ===== -->
+<section class="sec-gray">
+  <p class="sec-label">Proof</p>
+  <h2 class="sec-title">숫자로 먼저 말씀드립니다</h2>
+  <div class="stat-grid">
+    <div class="stat"><p class="label">현장 경력</p><p class="value">7년</p></div>
+    <div class="stat"><p class="label">창업반 총 회차</p><p class="value">24회차</p></div>
+    <div class="stat"><p class="label">창업반 모델 실습</p><p class="value">18회</p></div>
+    <div class="stat"><p class="label">수업 진행 방식</p><p class="value">100% 1:1</p></div>
+  </div>
+  <div class="chip-box">
+    <p>모든 과정에 공통으로 들어갑니다</p>
+    <div class="chips">
+      <span class="chip">전 과정 1:1</span><span class="chip">맞춤 과제</span>
+      <span class="chip">화면 영상 피드백</span><span class="chip">사후 피드백 기간 제한 없음</span>
+      <span class="chip">연 1회 이상 리마인드 수업</span>
+    </div>
+  </div>
+  <div class="mini-review">
+    <div class="ph">[사진]</div>
+    <div>
+      <p>[클라이언트 확인 필요: 대표 후기 1건 · 한 문장]</p>
+      <span>[수강 과정] · [수강 시기]</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. PROBLEM ===== -->
+<section class="sec-white">
+  <p class="sec-label">Problem</p>
+  <h2 class="sec-title">이 중에 하나라도<br>해당되시나요</h2>
+  <ul class="prob">
+    <li><div class="icon-ph">[아이콘]</div><p>연장을 배웠지만 오래 쉬어서 다시 시작하기가 막막합니다</p></li>
+    <li><div class="icon-ph">[아이콘]</div><p>모델 실습까지 했는데 실제 고객 시술은 아직 불안합니다</p></li>
+    <li><div class="icon-ph">[아이콘]</div><p>가르기, 가모 파지, 진입, 밀착이 매번 일정하지 않습니다</p></li>
+    <li><div class="icon-ph">[아이콘]</div><p>유지력과 시술 결과가 고객마다 달라집니다</p></li>
+    <li><div class="icon-ph">[아이콘]</div><p>다른 사람 자세를 따라 해도 내 손에서는 잘 안 됩니다</p></li>
+    <li><div class="icon-ph">[아이콘]</div><p>적게 심으면 가지런한데, 많이 심으면 라인이 무너집니다</p></li>
+  </ul>
+</section>
+
+<!-- ===== 4. EMPATHY ===== -->
+<section class="sec-gray">
+  <p class="sec-label">Empathy</p>
+  <h2 class="sec-title">실력이 없어서가 아닙니다</h2>
+  <div class="ph emp-img">[감성 이미지 · 3:2]</div>
+  <blockquote>
+    <p>“남을 따라 하는 기술을 배우면,<br>샵에 가서 그 기술 자체를 잃어버려요.”</p>
+    <cite>— 지아 원장 임희진</cite>
+  </blockquote>
+  <div class="story">
+    <p>수업에서는 됐는데 샵에서는 안 되는 경험. 그건 실력이 부족해서가 아니라, 그 동작이 <b>내 손의 것이 아니었기</b> 때문입니다.</p>
+    <p>손 모양도, 힘도, 핀셋 잡는 습관도 사람마다 다릅니다. 그래서 같은 자세를 그대로 복사하면 반드시 어딘가에서 무너집니다.</p>
+    <p><strong>지아는 정해진 자세를 따라 하게 하지 않습니다. 지금 그 손에서 출발해, 혼자서도 반복할 수 있는 기준을 하나씩 세웁니다.</strong></p>
+  </div>
+</section>
+
+<!-- ===== 5. CAUSE ===== -->
+<section class="sec-white">
+  <p class="sec-label">Cause</p>
+  <h2 class="sec-title">문제는 손이 아니라,<br>기준이 없다는 것입니다</h2>
+  <div class="ba">
+    <div><div class="ph">[가이드가<br>원모 흐름을<br>따라간 경우]</div><p class="ba-cap">결이 잡힌 라인</p></div>
+    <div class="arrow">↔</div>
+    <div><div class="ph">[가이드를<br>일자로만<br>심은 경우]</div><p class="ba-cap">X자가 생긴 라인</p></div>
+  </div>
+  <div class="cause-card">
+    <p class="cause-num">원인 01</p>
+    <h4>기본기를 건너뛴 채 실무부터 배웠다</h4>
+    <p>핀셋 잡는 힘이 아직 불안한데 다음 단계로 넘어가면, 그 위에 쌓는 모든 동작이 흔들립니다.</p>
+  </div>
+  <div class="cause-card">
+    <p class="cause-num">원인 02</p>
+    <h4>결과만 듣고 원인을 못 배웠다</h4>
+    <p>“각도가 잘못됐다”는 말만으로는 고칠 수 없습니다. 어느 장면에서 무너졌는지, 손목을 어떻게 써야 하는지를 봐야 고쳐집니다.</p>
+  </div>
+  <div class="cause-card">
+    <p class="cause-num">원인 03</p>
+    <h4>모두가 같은 진도로 배웠다</h4>
+    <p>어려워하는 지점은 사람마다 다릅니다. 진도에 사람을 맞추면 막힌 곳은 막힌 채로 수료합니다.</p>
+  </div>
+  <div class="answer-box">
+    <p>그래서 지아는<br><strong>사전과제로 기본기를 먼저 잡고</strong>,<br><strong>화면으로 원인을 짚고</strong>,<br><strong>개인별로 다음 과제를 정합니다.</strong></p>
+  </div>
+</section>
+
+<!-- ===== 6. SOLUTION ===== -->
+<section class="sec-gray">
+  <p class="sec-label">Solution</p>
+  <h2 class="sec-title">원인마다, 대응이 따로 있습니다</h2>
+  <div class="sol">
+    <span class="tag">솔루션 1</span>
+    <h4>대면 전 2주, 기본기부터 교정합니다</h4>
+    <p>핀셋 잡기 → 가모 파지 → 가모 진입 → 마네킹 → 테이핑. 영상 시청 → 과제 촬영 → 제출 → 1:1 영상 피드백 → 보완 과제를 <b>매일</b> 반복합니다.</p>
+    <p class="basis">근거 — 클래식 연장 단과반 사전과제 2주 운영</p>
+  </div>
+  <div class="sol">
+    <span class="tag">솔루션 2</span>
+    <h4>결과가 아니라 원인을 화면으로 짚습니다</h4>
+    <p>제출한 영상을 화면에 띄워 어느 장면에서 각도가 무너졌는지, 손목과 손가락을 어떻게 움직여야 하는지를 목소리로 설명합니다.</p>
+    <p class="basis">근거 — 전 과정 공통 영상 피드백</p>
+  </div>
+  <div class="sol">
+    <span class="tag">솔루션 3</span>
+    <h4>다음 과제는 사람마다 다르게 나갑니다</h4>
+    <p>핀셋 잡는 힘이 불안하면 다음 영상을 보내지 않고 힘 조절을 먼저 보완합니다. 진입 각도에서 막히면 그 문제를 교정할 과제가 추가됩니다.</p>
+    <p class="basis">근거 — 전 과정 맞춤 진도 운영</p>
+  </div>
+</section>
+
+<!-- ===== 6-1. 핵심 — 영상 피드백 ===== -->
+<section class="sec-white">
+  <p class="sec-label">Core</p>
+  <h2 class="sec-title">카톡 한 줄이 아닌,<br>다시 한 번 듣는 수업</h2>
+  <div class="ph" style="aspect-ratio:16/9;margin-bottom:20px">[영상 피드백 예시 클립 · 16:9]</div>
+  <p style="font-size:14px;color:var(--text-gray);margin-bottom:4px">과제를 제출하면, 원장이 그 사진과 영상을 직접 화면에 띄워 확인하고 <b>목소리를 담은 녹화 영상</b>으로 피드백합니다.</p>
+  <div class="dark-quote">
+    <p>어느 장면에서 각도가 무너졌는지<br>왜 그 동작이 어려운지<br>손목과 손가락을 어떻게 움직여야 하는지<br>다음 과제에서 무엇을 연습해야 하는지</p>
+  </div>
+  <table class="cmp">
+    <tr><th></th><td style="background:var(--bg);font-weight:700">일반적인 피드백</td><td>지아의 영상 피드백</td></tr>
+    <tr><th>형태</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">카카오톡 텍스트 한두 줄</td><td>내 과제 화면 + 음성 설명 녹화</td></tr>
+    <tr><th>이해</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">글을 다시 해석해야 함</td><td>문제 지점을 눈으로 바로 확인</td></tr>
+    <tr><th>복습</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">지나가면 끝</td><td>내 속도로 몇 번이든 다시 시청</td></tr>
+    <tr><th>다음</th><td style="background:#fff;font-weight:400;color:var(--text-gray)">동일한 진도</td><td>내 문제에 맞춘 보완 과제</td></tr>
+  </table>
+  <div class="eff-grid">
+    <div class="eff">이해가 빨라집니다</div>
+    <div class="eff">개선이 빨라집니다</div>
+    <div class="eff">시행착오가 줄어듭니다</div>
+    <div class="eff">혼자 점검하는 눈이 생깁니다</div>
+  </div>
+</section>
+
+<!-- ===== 6-2. 상품구성 — 클래스 4가지 ===== -->
+<section class="sec-gray" id="classes">
+  <p class="sec-label">Class</p>
+  <h2 class="sec-title">지금 어디에서 막혀 있는지에 따라,<br>시작점이 다릅니다</h2>
+  <p class="sec-sub">네 과정 모두 전 과정 1:1로만 진행합니다.</p>
+
+  <div class="tabs" id="tabs">
+    <button class="is-active" data-tab="c1">창업반</button>
+    <button data-tab="c2">펌 단과반</button>
+    <button data-tab="c3">클래식 연장</button>
+    <button data-tab="c4">원데이</button>
+  </div>
+
+  <!-- 창업반 -->
+  <div class="panel is-active" id="c1">
+    <div class="cls-head">
+      <h3>속눈썹 창업반</h3>
+      <p class="one">처음 핀셋을 잡는 순간부터, 나만의 속눈썹 전문 샵을 준비하는 과정까지</p>
+      <p class="target"><b>대상</b> — 속눈썹 시술 경험이 없지만 전문 샵 운영을 준비하는 분</p>
+    </div>
+    <table class="spec">
+      <tr><th>기간</th><td>3개월</td></tr>
+      <tr><th>총 수업</th><td>24회차</td></tr>
+      <tr><th>방식</th><td>전 과정 1:1 맞춤 진행</td></tr>
+      <tr><th>구성</th><td>창업 컨설팅·기초·마케팅 6회차 + 모델 실습 18회차</td></tr>
+      <tr><th>온라인 이론</th><td>약 15개 콘텐츠 + 교재 5권, 복습 노트 제출</td></tr>
+      <tr><th>수강료</th><td class="price">[클라이언트 확인 필요]</td></tr>
+    </table>
+    <div class="acc">
+      <div class="acc-item is-open"><button class="acc-q">1. 창업 컨설팅<span class="mark">+</span></button><div class="acc-a">창업 절차·행정, 지역과 타깃 설정, 메인 시술 구성, 샵 세팅, 운영 시스템, 마케팅, 오픈 전 체크리스트까지 현재 상황에 맞춰 로드맵을 세웁니다.</div></div>
+      <div class="acc-item"><button class="acc-q">2. 기초 수업<span class="mark">+</span></button><div class="acc-a">핀셋 잡는 법, 페이퍼 연습, 마네킹 실습으로 손의 힘과 각도, 시술 순서를 정확히 익힙니다.</div></div>
+      <div class="acc-item"><button class="acc-q">3. 기술 교육<span class="mark">+</span></button><div class="acc-a"><ul><li>클래식 연장</li><li>디자인 마스카라 연장</li><li>LED 연장</li><li>펌 포인트 연장</li><li>속눈썹 펌</li></ul></div></div>
+      <div class="acc-item"><button class="acc-q">4. 모델 실습 18회<span class="mark">+</span></button><div class="acc-a">실제 모델의 눈매와 모질을 살피고 상황에 맞는 시술을 직접 판단하는 경험을 쌓습니다.</div></div>
+      <div class="acc-item"><button class="acc-q">5. 이론과 고객 응대<span class="mark">+</span></button><div class="acc-a">온라인 이론 학습 후 복습 노트를 제출합니다. 고객이 이해하기 쉬운 말로 안내하고 재방문으로 이어지는 응대 기준을 배웁니다.</div></div>
+      <div class="acc-item"><button class="acc-q">6. 마케팅과 운영<span class="mark">+</span></button><div class="acc-a">내가 정한 타깃과 샵의 방향에 맞춰 무엇을 보여주고 어떤 메시지로 알릴지 정리합니다.</div></div>
+      <div class="acc-item"><button class="acc-q">7. 초기재료 세팅<span class="mark">+</span></button><div class="acc-a">연장·펌·LED 시술에 필요한 재료와 장비 50가지, 교재 7권을 세팅해 전달합니다. 수료 후 별도 구매 없이 바로 시술을 시작할 수 있습니다.</div></div>
+    </div>
+    <div class="chips" style="margin-bottom:16px">
+      <span class="chip">재료·장비 50가지</span><span class="chip">교재 7권</span>
+      <span class="chip">온라인 이론 15개</span><span class="chip">모델 실습 18회</span>
+      <span class="chip">연 1회 이상 리마인드 수업</span>
+    </div>
+    <a href="page_11.html?class=startup" class="btn btn-primary">창업반 상담 신청하기</a>
+  </div>
+
+  <!-- 펌 단과반 -->
+  <div class="panel" id="c2">
+    <div class="cls-head">
+      <h3>1:1 속눈썹 펌 단과반</h3>
+      <p class="one">이론·시연·모델 실습을 하나의 흐름으로 연결한 5DAY 통합 과정</p>
+      <p class="target"><b>대상</b> — 펌의 기준을 처음부터 잡고 싶은 분 / 결과 편차를 줄이고 싶은 분</p>
+    </div>
+    <table class="spec">
+      <tr><th>기간</th><td>5DAY</td></tr>
+      <tr><th>방식</th><td>사전 온라인 이론 + 현장 시연 + 모델 실습 + 과제·피드백</td></tr>
+      <tr><th>수강료</th><td class="price">280만원</td></tr>
+      <tr><th>피드백</th><td>매 수업 과제 및 개별 피드백, 수료 후 실습 결과 피드백</td></tr>
+    </table>
+    <div class="acc">
+      <div class="acc-item is-open"><button class="acc-q">1DAY — 기초 이론과 시술의 기본 흐름<span class="mark">+</span></button><div class="acc-a">기초 페이퍼 연습, 펌제 도포, 랩핑, 결 정리, 시연 및 시연 모델 온라인 이론, 눈매별 적용 방법</div></div>
+      <div class="acc-item"><button class="acc-q">2DAY — 첫 모델 실습과 기본기 적용<span class="mark">+</span></button><div class="acc-a">기초 도포·랩핑·결 정리를 실제 모델에게 적용하고, 결과를 함께 점검한 뒤 과제와 피드백으로 이어갑니다.</div></div>
+      <div class="acc-item"><button class="acc-q">3DAY — 눈매와 속눈썹 상태에 따른 적용력<span class="mark">+</span></button><div class="acc-a">고객별 속눈썹 방향과 모량을 확인한 뒤 시술하고, 눈매 특징에 따라 도포와 랩핑 방향을 조절합니다.</div></div>
+      <div class="acc-item"><button class="acc-q">4DAY — 디자인 완성도와 시술 안정성<span class="mark">+</span></button><div class="acc-a">전체 시술 흐름을 안정적으로 반복하며 결의 방향, 밀착도, 컬의 조화를 세심하게 확인합니다.</div></div>
+      <div class="acc-item"><button class="acc-q">5DAY — 현장 적용력 점검과 나만의 시술 기준<span class="mark">+</span></button><div class="acc-a">진단부터 마무리까지 스스로 계획하고 진행하며, 나만의 시술 순서를 정리합니다.</div></div>
+    </div>
+    <div class="chips" style="margin-bottom:16px">
+      <span class="chip">사전 온라인 이론</span><span class="chip">교재 배송</span>
+      <span class="chip">매 수업 과제·피드백</span><span class="chip">수료 후 실습 피드백</span>
+    </div>
+    <a href="page_11.html?class=perm" class="btn btn-primary">펌 단과반 상담 신청하기</a>
+  </div>
+
+  <!-- 클래식 연장 -->
+  <div class="panel" id="c3">
+    <div class="cls-head">
+      <h3>클래식 연장 단과반</h3>
+      <p class="one">배운 적은 있지만 고객에게 시술하기는 불안하다면</p>
+      <p class="target"><b>대상</b> — 연장을 배웠지만 실무 적용이 불안한 원장 / 취업·프리랜서·샵 운영을 앞둔 분</p>
+    </div>
+    <table class="spec">
+      <tr><th>전체 기간</th><td>사전과제 2주 + 대면 수업 1개월</td></tr>
+      <tr><th>대면 수업</th><td>1:1 총 6회</td></tr>
+      <tr><th>진행 방식</th><td>현재 실력과 문제에 따른 맞춤 진도</td></tr>
+      <tr><th>사후관리</th><td>졸업 후 실제 시술에 대한 지속 피드백</td></tr>
+      <tr><th>수강료</th><td class="price">[클라이언트 확인 필요]</td></tr>
+    </table>
+    <div class="acc">
+      <div class="acc-item is-open"><button class="acc-q">1단계. 사전 기본기 교정 (2주, 온라인)<span class="mark">+</span></button><div class="acc-a"><ul><li>내 손에 맞는 핀셋 잡는 법</li><li>힘 조절과 핀셋 여닫기</li><li>가모 파지 방법</li><li>가모 진입 각도와 방향</li><li>테이핑</li><li>클래식 연장의 기본 동작</li></ul><p style="margin-top:10px"><b>이론 영상 시청 → 과제 촬영 → 영상 제출 → 1:1 영상 피드백 → 보완 과제</b><br>이 과정을 매일 반복하며 대면 수업 전에 잘못된 습관을 먼저 교정합니다.</p></div></div>
+      <div class="acc-item"><button class="acc-q">2단계. 1:1 대면수업 (1개월·총 6회)<span class="mark">+</span></button><div class="acc-a"><ul><li>손과 자세에 맞는 시술 기준 설정</li><li>가르기와 가모 파지</li><li>정확한 진입과 밀착</li><li>글루량과 글루 사용 방법</li><li>유지력을 만드는 시술 과정</li><li>가지런한 방향과 라인 완성</li><li>고객 눈매에 맞는 디자인</li><li>상담과 디자인 선택 기준</li><li>모델 실습과 현장 문제 교정</li><li>시술 속도와 완성도 향상</li></ul></div></div>
+      <div class="acc-item"><button class="acc-q">수업 후 도달점<span class="mark">+</span></button><div class="acc-a"><ul><li>내 시술이 잘되지 않는 원인을 스스로 구분</li><li>내 손에 맞는 자세와 핀셋 사용 기준을 앎</li><li>고객에게 클래식 연장을 혼자 시술</li><li>문제가 생겼을 때 무엇부터 점검할지 판단</li></ul></div></div>
+    </div>
+    <a href="page_11.html?class=classic" class="btn btn-primary">연장 단과반 상담 신청하기</a>
+  </div>
+
+  <!-- 원데이 -->
+  <div class="panel" id="c4">
+    <div class="cls-head">
+      <h3>원데이</h3>
+      <p class="one">지금 내 시술에서 가장 막혀 있는 지점 하나를 정확히 찾아 교정합니다</p>
+      <p class="target"><b>대상</b> — 경력 6개월 이상, 이미 현장에서 시술 중인 원장</p>
+    </div>
+    <table class="spec">
+      <tr><th>진행 방식</th><td>사전 화상 상담 + 대면 1:1 밀착 수업</td></tr>
+      <tr><th>수업 시간</th><td>하루 6시간</td></tr>
+      <tr><th>원칙</th><td>하루 전체를 한 분의 원장님을 위해서만 사용</td></tr>
+      <tr><th>수강료</th><td class="price">[클라이언트 확인 필요]</td></tr>
+    </table>
+    <div class="stepcard" style="margin-bottom:0"><span class="n">1</span><div><h4>사전 상담</h4><p>상담지로 시술 상태를 먼저 파악하고, 화면 상담으로 무엇을 어떻게 교정할지 미리 잡아둡니다</p></div></div>
+    <div class="step-arrow">↓</div>
+    <div class="stepcard" style="margin-bottom:0"><span class="n">2</span><div><h4>손 적응</h4><p>모델이 오기 2시간 전부터 교정 내용에 손을 맞춥니다. 바꿔야 할 부분만 최소한으로 바꿉니다</p></div></div>
+    <div class="step-arrow">↓</div>
+    <div class="stepcard" style="margin-bottom:0"><span class="n">3</span><div><h4>모델 실습</h4><p>모델 2명. 1명은 반쪽 눈 시연 + 반쪽 눈 실습, 나머지 1명은 전체 시술</p></div></div>
+    <div class="step-arrow">↓</div>
+    <div class="stepcard" style="margin-bottom:16px"><span class="n">4</span><div><h4>수업 후</h4><p>그날 교정한 내용을 정리해 전달하고, 이후에도 영상 피드백으로 적용 여부를 확인합니다</p></div></div>
+    <a href="page_11.html?class=oneday" class="btn btn-primary">원데이 상담 신청하기</a>
+  </div>
+</section>
+
+<!-- ===== 6-3. 진행 방식 ===== -->
+<section class="sec-white">
+  <p class="sec-label">Process</p>
+  <h2 class="sec-title">신청하시면 이렇게 진행됩니다</h2>
+  <div class="stepcard"><span class="n">1</span><div><h4>상담지 작성</h4><p>경력, 희망 과정, 지금 가장 큰 고민을 적습니다</p></div></div>
+  <div class="step-arrow">↓</div>
+  <div class="stepcard"><span class="n">2</span><div><h4>1차 화면 상담 영상</h4><p>원장이 시술 사진과 계정을 살펴본 뒤 진단 영상을 보냅니다</p></div></div>
+  <div class="step-arrow">↓</div>
+  <div class="stepcard"><span class="n">3</span><div><h4>2차 카카오톡 상담</h4><p>영상을 보고 생긴 질문을 이어서 나눕니다</p></div></div>
+  <div class="step-arrow">↓</div>
+  <div class="stepcard"><span class="n">4</span><div><h4>등록 · 교재 배송</h4><p>등록이 확정되면 온라인 이론에 필요한 교재를 보내드립니다</p></div></div>
+  <div class="step-arrow">↓</div>
+  <div class="stepcard"><span class="n">5</span><div><h4>수업 시작</h4><p>사전과제(해당 과정) → 대면 수업 → 과제와 피드백</p></div></div>
+  <div class="tip"><b>TIP</b><br>상담 단계에서 ‘이런 것까지 물어봐도 되나’ 싶은 것도 편하게 물어보셔도 됩니다.</div>
+</section>
+
+<!-- ===== 7. EVIDENCE ===== -->
+<section class="sec-gray">
+  <p class="sec-label">Evidence</p>
+  <h2 class="sec-title">보여드릴 수 있는 것만<br>말씀드립니다</h2>
+
+  <p class="block-title">실제 영상 피드백 화면</p>
+  <div class="hscroll">
+    <div class="ph">[피드백 화면 캡처 1]</div>
+    <div class="ph">[피드백 화면 캡처 2]</div>
+    <div class="ph">[피드백 화면 캡처 3]</div>
+  </div>
+
+  <p class="block-title">교재 7권</p>
+  <div class="book-grid">
+    <div class="book">글루에 대한 모든 것</div>
+    <div class="book">마케팅</div>
+    <div class="book">속눈썹모발학</div>
+    <div class="book">창업가이드북</div>
+    <div class="book">LED</div>
+    <div class="book">속눈썹펌</div>
+    <div class="book" style="grid-column:span 2">실습일지 노트</div>
+  </div>
+
+  <p class="block-title">창업반 초기재료 세팅</p>
+  <div class="acc">
+    <div class="acc-item"><button class="acc-q">속눈썹펌<span class="mark">+</span></button><div class="acc-a">미니망고, 망고롯드, 베리, 비키니 4쌍, 비키니 3쌍, 드림롯드 V컬, 드림패치, 피넛롯드 시즌2, 스노우 래쉬토탈클리닉, 반하다 밤바라밤, 반하다 플렉스 틴트, 반하다 블랙 스무디 틴팅, 롤리킹 펌제, 글루리프트밤</div></div>
+    <div class="acc-item"><button class="acc-q">속눈썹연장<span class="mark">+</span></button><div class="acc-a">라몽겔제거제, 뷰티 전처리제, 지아 01~05 V핀셋, 마중물, 플랫모 0.18 C(9·10·11·12), 플랫모 0.18 D(9·10·11·12), 플랫모 0.18 JC MIX, 언더래쉬 다크브라운 0.15 J, 일반연장글루, 글루보관통, 래쉬팔레트</div></div>
+    <div class="acc-item"><button class="acc-q">LED 연장<span class="mark">+</span></button><div class="acc-a">LED글루 2종, LED램프</div></div>
+    <div class="acc-item"><button class="acc-q">기타 부자재<span class="mark">+</span></button><div class="acc-a">베일드클리어, 마이온리 블랙, 눈썹 마네킹, 펌브러쉬, BL래쉬 샴푸 100ml, 니찌반 테이프, 유키반 3281, 유키반 3511, 아이패치 50개 1세트, 립브러쉬, 롱헤드 마이크로면봉, 성윤랩커터, 밀라노펜슬, 미니가위, 사각미러, 땅콩브러쉬, 핀셋클리너, 연습용가모 5개, 차실, 펌지, 면봉, 글루컵, 손풍기, 와이퍼</div></div>
+  </div>
+  <p class="notice-note">연장·펌·LED에 필요한 재료와 장비 50가지를 세팅해 전달합니다. 수료 후 별도 구매 없이 바로 시술을 시작할 수 있습니다. (창업반 한정)</p>
+</section>
+
+<!-- ===== 7.5 STORIES ===== -->
+<section class="sec-white">
+  <p class="sec-label">Stories</p>
+  <h2 class="sec-title">[클라이언트 확인 필요:<br>후기에서 발췌한 헤드카피]</h2>
+  <div class="story-item">
+    <div class="ph">[장면 이미지 1]</div>
+    <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
+    <p class="rev">[클라이언트 확인 필요: 실제 후기 1]</p>
+  </div>
+  <div class="story-item">
+    <div class="ph">[장면 이미지 2]</div>
+    <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
+    <p class="rev">[클라이언트 확인 필요: 실제 후기 2]</p>
+  </div>
+  <div class="story-item">
+    <div class="ph">[장면 이미지 3]</div>
+    <p class="line">[클라이언트 확인 필요: 달라진 점 한 줄]</p>
+    <p class="rev">[클라이언트 확인 필요: 실제 후기 3]</p>
+  </div>
+  <p class="closing">“한 번 지아에 들어오신 이상,<br>교육에 끝은 없을 거예요.”</p>
+</section>
+
+<!-- ===== 8. CTA ===== -->
+<section class="sec-gray">
+  <p class="sec-label">Apply</p>
+  <h2 class="sec-title">어떤 과정이 맞는지<br>모르셔도 괜찮습니다</h2>
+  <p class="sec-sub">상담지만 남겨주시면, 어디가 막혀 있는지부터 저희가 찾아보겠습니다.</p>
+
+  <div class="price-card">
+    <span class="badge">3개월 · 24회차</span>
+    <h4>속눈썹 창업반</h4>
+    <p class="amount">[클라이언트 확인 필요] <small>부가세 별도 여부 확인</small></p>
+    <ul><li>창업 컨설팅·기초·마케팅 6회차 + 모델 실습 18회차</li><li>재료·장비 50가지, 교재 7권</li><li>연 1회 이상 리마인드 수업</li></ul>
+    <a href="page_11.html?class=startup" class="btn btn-primary">상담 신청하기</a>
+  </div>
+  <div class="price-card">
+    <span class="badge">5DAY</span>
+    <h4>1:1 속눈썹 펌 단과반</h4>
+    <p class="amount">280만원</p>
+    <ul><li>사전 온라인 이론 + 현장 시연 + 모델 실습</li><li>매 수업 과제 및 개별 피드백</li><li>수료 후 실습 결과 피드백</li></ul>
+    <a href="page_11.html?class=perm" class="btn btn-primary">상담 신청하기</a>
+  </div>
+  <div class="price-card">
+    <span class="badge">사전 2주 + 대면 6회</span>
+    <h4>클래식 연장 단과반</h4>
+    <p class="amount">[클라이언트 확인 필요]</p>
+    <ul><li>사전과제 2주 매일 영상 피드백</li><li>1:1 대면 수업 6회</li><li>졸업 후 지속 피드백</li></ul>
+    <a href="page_11.html?class=classic" class="btn btn-primary">상담 신청하기</a>
+  </div>
+  <div class="price-card">
+    <span class="badge">하루 6시간</span>
+    <h4>원데이</h4>
+    <p class="amount">[클라이언트 확인 필요]</p>
+    <ul><li>사전 화상 상담으로 원인 선진단</li><li>모델 2명 실습</li><li>수업 후 교정 내용 정리본 전달</li></ul>
+    <a href="page_11.html?class=oneday" class="btn btn-primary">상담 신청하기</a>
+  </div>
+
+  <div class="contact-2">
+    <a href="#">카카오톡 문의</a>
+    <a href="#">전화 문의</a>
+  </div>
+  <p class="micro">상담은 무료이며, 신청 후 진단 영상을 보내드립니다.</p>
+</section>
+
+<!-- ===== 9. 수강 안내 및 환불 규정 (법정 필수) ===== -->
+<section class="sec-white">
+  <h2 class="sec-title" style="font-size:18px">수강 안내 및 환불 규정</h2>
+  <div class="acc">
+    <div class="acc-item"><button class="acc-q">강의 정보<span class="mark">+</span></button><div class="acc-a">과정명 / 총 교육 시간·회차 / 진행 방식(대면·온라인) / 교육 장소 / 제공 교재 및 재료<br>[클라이언트 확인 필요]</div></div>
+    <div class="acc-item"><button class="acc-q">수강 대상 및 자격<span class="mark">+</span></button><div class="acc-a">과정별 요구 경력 — 원데이는 경력 6개월 이상 권장<br>[클라이언트 확인 필요: 그 외 과정 자격 요건]</div></div>
+    <div class="acc-item"><button class="acc-q">결제 및 수강 기간<span class="mark">+</span></button><div class="acc-a">결제 수단 / 수강 시작일 / 유효 기간<br>[클라이언트 확인 필요]</div></div>
+    <div class="acc-item"><button class="acc-q">환불 및 취소 규정<span class="mark">+</span></button><div class="acc-a">수강 시작 전 취소 / 수강 중 환불 기준(진행 회차 기준 산정) / 교재·재료 개봉 시 처리 / 환불 신청 방법 및 처리 기간<br><b>[클라이언트 확인 필요 — 전자상거래법상 필수 기재]</b></div></div>
+    <div class="acc-item"><button class="acc-q">판매자 정보<span class="mark">+</span></button><div class="acc-a">상호 지아 / 대표 임희진 / 사업자등록번호 [확인 필요] / 통신판매업신고번호 [확인 필요] / 주소 [확인 필요] / 연락처 [확인 필요] / 이메일 [확인 필요]</div></div>
+  </div>
+</section>
+
+<!-- ===== 푸터 ===== -->
+<footer class="foot">
+  <p class="brand">jia</p>
+  상호 지아 | 대표 임희진<br>
+  사업자등록번호 [클라이언트 확인 필요]<br>
+  통신판매업신고번호 [클라이언트 확인 필요]<br>
+  주소 [클라이언트 확인 필요]<br>
+  전화 [클라이언트 확인 필요] | 이메일 [클라이언트 확인 필요]
+  <nav>
+    <a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">환불 및 취소 규정</a>
+  </nav>
+  <p style="margin-top:14px">© jia. All rights reserved.</p>
+</footer>
+
+</div><!-- /.wrap -->
+
+<!-- ===== 고정 하단 신청바 ===== -->
+<div class="fixbar">
+  <div class="fixbar-inner">
+    <span>상담 무료<br>진단 영상 발송</span>
+    <a href="page_11.html">수강 상담 신청</a>
+  </div>
+</div>
+
+<script>
+/* GNB */
+document.getElementById('burger').onclick=function(){
+  document.getElementById('gnbMenu').classList.toggle('is-open');
+};
+/* 탭 전환 */
+document.querySelectorAll('#tabs button').forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll('#tabs button').forEach(function(x){x.classList.remove('is-active')});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('is-active')});
+    b.classList.add('is-active');
+    document.getElementById(b.dataset.tab).classList.add('is-active');
+  };
+});
+/* 아코디언 */
+document.querySelectorAll('.acc-q').forEach(function(q){
+  q.onclick=function(){q.parentElement.classList.toggle('is-open')};
+});
+</script>
+</body>
+</html>
