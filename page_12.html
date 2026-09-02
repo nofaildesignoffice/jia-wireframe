@@ -59,8 +59,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .rv-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block;background:var(--placeholder-bg)}
 .rv-body{padding:24px 24px 0;flex:1}
 .rv-head{font-size:16px;font-weight:700;color:var(--text-black);line-height:1.45;margin-bottom:10px;letter-spacing:-.01em}
-.rv-text{position:relative;font-size:15px;line-height:1.7;color:var(--text-gray);max-height:63.75px;overflow:hidden}
-.rv-text.is-clamped::after{content:'…';position:absolute;right:0;bottom:0;padding-left:20px;background:#FFF;color:var(--text-gray);line-height:1.7}
+.rv-text{font-size:15px;line-height:1.7;color:var(--text-gray);min-height:76.5px}
 .rv-meta{font-size:13px;color:var(--text-light);margin-top:14px}
 .rv-foot{padding:20px 24px 24px;text-align:center}
 .rv-more{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;color:var(--text-black);border:1px solid var(--border-default);border-radius:var(--radius-sm);background:#FFF;font-family:inherit;transition:opacity .2s}
@@ -1079,6 +1078,23 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <!-- TOP -->
 <button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
 
+<!-- ================= 후기 모달 ================= -->
+<div class="rv-modal" id="rvModal" hidden>
+  <div class="rv-back" data-rv-close></div>
+  <div class="rv-box" role="dialog" aria-modal="true" aria-labelledby="rvDHead">
+    <button class="rv-close" data-rv-close aria-label="닫기"><i data-lucide="x"></i></button>
+    <div class="rv-grid">
+      <div class="rv-shot"><img id="rvDImg" src="" alt="수강생이 보내온 후기 원본 캡처"></div>
+      <div class="rv-detail">
+        <p class="rv-dhead" id="rvDHead"></p>
+        <p class="rv-dmeta" id="rvDMeta"></p>
+        <div id="rvDBody"></div>
+        <div class="rv-dnote" id="rvDNote" hidden><span>원장 코멘트</span><p id="rvDNoteText"></p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 lucide.createIcons();
 
@@ -1131,10 +1147,34 @@ document.querySelectorAll('.rv').forEach(function(rv){
   render();
 });
 
-/* 2.5줄을 넘겨 실제로 잘린 카드에만 말줄임 표시 */
-document.querySelectorAll('.rv-text').forEach(function(t){
-  t.classList.toggle('is-clamped', t.scrollHeight > t.clientHeight + 1);
-});
+/* 본문 클램프 — 2줄 + 3번째 줄은 절반 길이까지만 쓰고 …로 끊는다 */
+function rvClamp(el){
+  var full = el.getAttribute('data-full');
+  if(full===null){ full = el.textContent.trim(); el.setAttribute('data-full', full); }
+  el.textContent = full;
+  var node = el.firstChild;
+  if(!node || !full) return;
+  var lh = parseFloat(getComputedStyle(el).lineHeight),
+      W  = el.clientWidth,
+      rg = document.createRange(),
+      top0 = null, lineLeft = null, cut = full.length;
+  for(var i=0;i<full.length;i++){
+    rg.setStart(node,i); rg.setEnd(node,i+1);
+    var r = rg.getBoundingClientRect();
+    if(!r.width && !r.height) continue;
+    if(top0===null) top0 = r.top;
+    var line = Math.round((r.top-top0)/lh);
+    if(line>2){ cut=i; break; }                       /* 4번째 줄 진입 */
+    if(line===2){
+      if(lineLeft===null) lineLeft = r.left;
+      if(r.right-lineLeft > W*0.5){ cut=i; break; }   /* 3번째 줄 절반 */
+    }
+  }
+  if(cut < full.length) el.textContent = full.slice(0,cut).replace(/\s+$/,'') + '…';
+}
+function rvClampAll(){ document.querySelectorAll('.rv-text').forEach(rvClamp) }
+rvClampAll();
+window.addEventListener('resize', rvClampAll);
 
 /* ===== 후기 모달 ===== */
 (function(){
@@ -1161,23 +1201,6 @@ document.querySelectorAll('.rv-text').forEach(function(t){
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden) close()});
 })();
 </script>
-
-<!-- ================= 후기 모달 ================= -->
-<div class="rv-modal" id="rvModal" hidden>
-  <div class="rv-back" data-rv-close></div>
-  <div class="rv-box" role="dialog" aria-modal="true" aria-labelledby="rvDHead">
-    <button class="rv-close" data-rv-close aria-label="닫기"><i data-lucide="x"></i></button>
-    <div class="rv-grid">
-      <div class="rv-shot"><img id="rvDImg" src="" alt="수강생이 보내온 후기 원본 캡처"></div>
-      <div class="rv-detail">
-        <p class="rv-dhead" id="rvDHead"></p>
-        <p class="rv-dmeta" id="rvDMeta"></p>
-        <div id="rvDBody"></div>
-        <div class="rv-dnote" id="rvDNote" hidden><span>원장 코멘트</span><p id="rvDNoteText"></p></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
