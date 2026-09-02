@@ -225,6 +225,8 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .hero p{font-size:15px}
   .hero-arrow{display:none}
   .grid-2,.grid-3,.grid-4,.split{grid-template-columns:1fr}
+  .split.rev>*:first-child{order:0}
+  .cause-sec h3{font-size:22px}
   .stepbar{grid-template-columns:1fr}
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -453,10 +455,12 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .mini-review p{font-size:16px;color:var(--text-dark)}
 .mini-review span{display:block;font-size:13px;color:var(--text-light);margin-top:8px}
 
-.cause-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF}
-.cause-card .num{font-size:13px;font-weight:800;color:var(--text-light);margin-bottom:14px;letter-spacing:.06em}
-.cause-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:12px;line-height:1.4}
-.cause-card p{font-size:15px;color:var(--text-gray)}
+.split.rev>*:first-child{order:2}
+.cause-sec .num{font-size:13px;font-weight:800;color:var(--text-light);margin-bottom:14px;letter-spacing:.06em}
+.cause-sec h3{font-size:28px;font-weight:700;color:var(--text-black);margin-bottom:16px;line-height:1.35;letter-spacing:-.02em}
+.cause-sec .body{font-size:16px;color:var(--text-gray);line-height:1.8}
+.cause-sec .img-placeholder{aspect-ratio:4/3}
+.cause-sec .shot{font-size:13px;color:var(--text-light);margin-top:12px;text-align:center}
 .ba{display:grid;grid-template-columns:1fr 64px 1fr;gap:16px;align-items:center;max-width:760px;margin:0 auto 48px}
 .ba .img-placeholder{aspect-ratio:4/3}
 .ba .arrow{text-align:center;font-size:24px;color:var(--text-light)}
@@ -718,25 +722,25 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
     <div class="text-center">
       <p class="section-label">Problem</p>
       <h2 class="section-title">창업을 마음먹고 나서, 여기서부터 막히기 시작합니다</h2>
-      <p class="section-desc">기술을 배우면 되는 줄 알았는데, 배우기도 전에 막히는 것들이 있습니다.</p>
+      <p class="section-desc">기술만 배우면 되는 줄 알았는데, 배우기도 전에 막히는 것들이 있습니다.</p>
     </div>
     <div class="grid-2">
       <div class="pain-card"><div class="icon-box"><i data-lucide="badge-check"></i></div>
-        <p><strong>면허부터 걸립니다.</strong> 속눈썹 시술로 영업하려면 미용사(메이크업) 국가면허가 있어야 한다는데, 저는 아직 없습니다.</p></div>
+        <p><strong>“면허부터 걸려요.”</strong> 속눈썹으로 영업하려면 미용사(메이크업) 면허가 있어야 한다는데, 저는 아직 없거든요.</p></div>
       <div class="pain-card"><div class="icon-box"><i data-lucide="home"></i></div>
-        <p><strong>집에서 조용히 시작하려 했습니다.</strong> 그런데 주거용 공간에서는 미용업 영업신고 자체가 안 된다고 합니다.</p></div>
+        <p><strong>“집에서 조용히 시작하려고 했어요.”</strong> 그런데 주거용 공간에서는 미용업 영업신고 자체가 안 된다고 하더라구요.</p></div>
       <div class="pain-card"><div class="icon-box"><i data-lucide="list-ordered"></i></div>
-        <p><strong>순서를 모르겠습니다.</strong> 위생교육, 영업신고, 사업자등록… 무엇을 먼저 해야 하는지부터 헷갈립니다.</p></div>
+        <p><strong>“순서를 모르겠어요.”</strong> 위생교육, 영업신고, 사업자등록… 뭘 먼저 해야 하는지부터 헷갈려요.</p></div>
       <div class="pain-card"><div class="icon-box"><i data-lucide="wallet"></i></div>
-        <p><strong>돈이 얼마나 드는지 감이 없습니다.</strong> 보증금, 인테리어, 재료, 장비… 그리고 오픈하고 나서 버틸 돈은 또 얼마가 필요한지.</p></div>
+        <p><strong>“돈이 얼마나 드는지 감이 없어요.”</strong> 보증금에 인테리어에 재료까지, 오픈하고 나서 버틸 돈은 또 얼마나 있어야 하는지 모르겠어요.</p></div>
       <div class="pain-card"><div class="icon-box"><i data-lucide="package-x"></i></div>
-        <p><strong>재료는 더 막막합니다.</strong> 어떤 브랜드를 얼마나 사야 하는지 몰라 하나씩 검색하다 보면, 잘못 산 것들이 서랍에 쌓입니다.</p></div>
+        <p><strong>“재료는 더 막막해요.”</strong> 뭘 얼마나 사야 하는지 몰라서 하나씩 검색하다 보면, 잘못 산 것들만 서랍에 쌓여요.</p></div>
       <div class="pain-card"><div class="icon-box"><i data-lucide="user-x"></i></div>
-        <p><strong>배워도 고객 앞에 설 자신이 없습니다.</strong> 자격증까지는 어떻게든 되는데, 그게 실제 시술로 이어질지는 다른 문제입니다.</p></div>
+        <p><strong>“배워도 고객 앞에 설 자신이 없어요.”</strong> 자격증은 어떻게든 딴다 쳐도, 그게 진짜 시술로 이어질지는 모르겠어요.</p></div>
       <div class="pain-card"><div class="icon-box"><i data-lucide="calendar-x"></i></div>
-        <p><strong>오픈한 다음이 더 무섭습니다.</strong> 예약이 비는 날은 그날 매출이 0원이라는데, 그때 무엇을 해야 하는지 모릅니다.</p></div>
+        <p><strong>“오픈한 다음이 더 무서워요.”</strong> 예약 없는 날은 그날 매출이 0원이라는데, 그럴 때 뭘 해야 하는지 모르겠어요.</p></div>
       <div class="pain-card"><div class="icon-box"><i data-lucide="help-circle"></i></div>
-        <p><strong>물어볼 곳이 없습니다.</strong> 결정은 매번 혼자 해야 하는데, 이게 맞는 선택인지 확인해 줄 사람이 없습니다.</p></div>
+        <p><strong>“물어볼 곳이 없어요.”</strong> 결정은 매번 혼자 해야 하는데, 이게 맞는 건지 확인해 줄 사람이 없어요.</p></div>
     </div>
     <p class="micro text-center">[클라이언트 확인 필요: 면허·영업신고 관련 문구는 게시 전 최신 법령 기준으로 재확인]</p>
   </div>
@@ -763,28 +767,56 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
 </section>
 
-<!-- ================= 섹션 6 : Cause ================= -->
-<section class="section">
+<!-- ================= Cause 1 : 원인 01 ================= -->
+<section class="section cause-sec">
   <div class="container">
     <div class="text-center">
       <p class="section-label">Cause</p>
       <h2 class="section-title">배우고도 문을 못 여는 데는, 이유가 있습니다</h2>
     </div>
-    <div class="grid-3">
-      <div class="cause-card">
+    <div class="split">
+      <div>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="shot">[촬영 필요: 자격증·교재만 놓인 책상 컷]</p>
+      </div>
+      <div>
         <p class="num">원인 01</p>
         <h3>교육이 자격증에서 끝났다</h3>
-        <p>시험 대비 중심으로 배우면 수료 후에 남는 건 자격증뿐입니다. 면허와 영업신고, 자리와 재료, 가격과 응대는 아무도 알려주지 않은 채 혼자 부딪히게 됩니다.</p>
+        <p class="body">시험 대비 중심으로 배우면 수료 후에 남는 건 자격증뿐입니다. 면허와 영업신고, 자리와 재료, 가격과 응대는 아무도 알려주지 않은 채 혼자 부딪히게 됩니다.</p>
       </div>
-      <div class="cause-card">
+    </div>
+  </div>
+</section>
+
+<!-- ================= Cause 2 : 원인 02 ================= -->
+<section class="section cause-sec bg-light">
+  <div class="container">
+    <div class="split rev">
+      <div>
         <p class="num">원인 02</p>
         <h3>무엇을 얼마나 준비할지 알려주는 곳이 없었다</h3>
-        <p>어떤 브랜드를 얼마나, 어떤 기준으로 골라야 하는지 감이 없는 상태에서 하나씩 검색하다 보면 시간도 비용도 예상보다 훨씬 많이 듭니다. 잘못 산 재료가 서랍에 쌓이는 경우도 흔합니다.</p>
+        <p class="body">어떤 브랜드를 얼마나, 어떤 기준으로 골라야 하는지 감이 없는 상태에서 하나씩 검색하다 보면 시간도 비용도 예상보다 훨씬 많이 듭니다. 잘못 산 재료가 서랍에 쌓이는 경우도 흔합니다.</p>
       </div>
-      <div class="cause-card">
+      <div>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="shot">[촬영 필요: 창업반 재료·장비 50종 세팅 전체 컷]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Cause 3 : 원인 03 ================= -->
+<section class="section cause-sec">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="shot">[촬영 필요: 샵 내부 · 예약 관리 화면 컷]</p>
+      </div>
+      <div>
         <p class="num">원인 03</p>
         <h3>시술 실력과 운영 능력을 같은 것으로 봤다</h3>
-        <p>손이 좋아지는 것과 샵이 굴러가는 것은 다른 일입니다. 예약을 채우고, 객단가를 잡고, 재방문을 만드는 건 시술과 별개로 배워야 하는 영역입니다.</p>
+        <p class="body">손이 좋아지는 것과 샵이 굴러가는 것은 다른 일입니다. 예약을 채우고, 객단가를 잡고, 재방문을 만드는 건 시술과 별개로 배워야 하는 영역입니다.</p>
       </div>
     </div>
     <div class="answer-box">
