@@ -183,27 +183,30 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .stepbar p{font-size:14px;color:var(--text-gray)}
 
 /* store cards */
-.store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
-.store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
-.store-card-body{padding:32px}
-.store-card h3{font-size:22px;font-weight:700;color:var(--text-black);margin-bottom:10px}
-.store-card p{font-size:15px;margin-bottom:24px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.p-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
+.p-card .img-placeholder{border-radius:0;aspect-ratio:1/1}
+.p-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.p-cat{font-size:12px;font-weight:700;color:var(--text-light);letter-spacing:.04em;margin-bottom:8px}
+.p-name{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px;line-height:1.4}
+.p-price{font-size:18px;font-weight:800;color:var(--text-black);margin-bottom:12px;letter-spacing:-.02em}
+.p-desc{font-size:13px;color:var(--text-gray);margin-bottom:0;flex:1}
 
 /* subscribe */
 .sub-form{display:flex;gap:10px;max-width:520px;margin:0 auto}
 .sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
 
 /* FOOTER */
-.footer{background:var(--bg-dark);padding:72px 0 0;color:rgba(255,255,255,.5)}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-brand-name{font-size:24px;font-weight:800;color:#FFF;margin-bottom:16px;letter-spacing:-.03em}
-.footer-info{font-size:13px;line-height:2}
-.footer-col-title{font-size:14px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:16px}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:10px}
-.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px}
+.footer{background:var(--bg-white);padding:72px 0 0;color:var(--text-gray);border-top:1px solid var(--border-light)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid var(--border-light)}
+.footer-brand-name{font-size:24px;font-weight:800;color:var(--text-black);margin-bottom:16px;letter-spacing:-.03em}
+.footer-info{font-size:13px;line-height:2;color:var(--text-gray)}
+.footer-col-title{font-size:14px;font-weight:700;color:var(--text-black);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:var(--text-gray);margin-bottom:10px}
+.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:var(--text-light);flex-wrap:wrap;gap:12px}
 .footer-bottom nav{display:flex;gap:20px}
 .footer-sns{display:flex;gap:12px;margin-top:20px}
-.footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.footer-sns a{width:36px;height:36px;border:1px solid var(--border-default);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
 .footer-sns svg{width:16px;height:16px}
 
 /* TOP */
@@ -213,6 +216,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
 @media (max-width:1024px){
   .grid-4{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr 1fr}
 }
 @media (max-width:768px){
@@ -224,7 +228,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .hero h1,.hero h2{font-size:30px}
   .hero p{font-size:15px}
   .hero-arrow{display:none}
-  .grid-2,.grid-3,.grid-4,.split{grid-template-columns:1fr}
+  .grid-2,.grid-3,.grid-4,.split,.prod-grid{grid-template-columns:1fr}
   .stepbar{grid-template-columns:1fr}
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -751,31 +755,34 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <p class="section-label">Store</p>
       <h2 class="section-title">수업이 끝나도, 손에 남는 것들</h2>
     </div>
-    <div class="grid-3">
-      <article class="store-card">
+    <div class="prod-grid">
+      <a class="p-card" href="page_04.html">
         <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="store-card-body">
-          <h3>퍼스트 전처리제</h3>
-          <p>완벽한 결과를 만드는 첫 루틴. 시술 전 붙임의 조건을 먼저 만듭니다.</p>
-          <a href="page_04.html" class="btn btn-secondary">제품 보러 가기</a>
+        <div class="p-body">
+          <p class="p-cat">전문가용 핀셋</p>
+          <p class="p-name">지아 V핀셋</p>
+          <p class="p-price">45,000원</p>
+          <p class="p-desc">지아가 수업과 현장에서 직접 쓰는 핀셋입니다. V01~05, 손 잡는 방식에 맞는 형태로 준비되어 있습니다.</p>
         </div>
-      </article>
-      <article class="store-card">
+      </a>
+      <a class="p-card" href="page_04.html">
         <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="store-card-body">
-          <h3>전문가용 핀셋</h3>
-          <p>지아가 수업과 현장에서 직접 쓰는 V핀셋 01~05. 창업반 재료 세팅에도 그대로 들어갑니다.</p>
-          <a href="page_04.html" class="btn btn-secondary">제품 보러 가기</a>
+        <div class="p-body">
+          <p class="p-cat">전처리제</p>
+          <p class="p-name">퍼스트 전처리제 (FIRST PRE-TREATMENT)</p>
+          <p class="p-price">28,000원</p>
+          <p class="p-desc">완벽한 결과를 만드는 첫 루틴. 테이핑 후 가모를 얹기 전 사용하는 전문가용 전처리제입니다.</p>
         </div>
-      </article>
-      <article class="store-card">
+      </a>
+      <a class="p-card" href="page_05.html">
         <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="store-card-body">
-          <h3>유료 뉴스레터 멤버십</h3>
-          <p>수업에서 다 못 나눈 시술과 운영 이야기를 정기적으로 보내드립니다.</p>
-          <a href="page_05.html" class="btn btn-secondary">멤버십 살펴보기</a>
+        <div class="p-body">
+          <p class="p-cat">멤버십</p>
+          <p class="p-name">블로그 유료회원 정기구독</p>
+          <p class="p-price">9,900원 / 월</p>
+          <p class="p-desc">수업에서 다 못 나눈 시술과 운영 이야기를 정기적으로 보내드립니다. 언제든 해지할 수 있습니다.</p>
         </div>
-      </article>
+      </a>
     </div>
   </div>
 </section>
@@ -805,7 +812,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
           개인정보관리책임자 [클라이언트 확인 필요]
         </div>
         <div class="footer-sns">
-          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="camera"></i></a>
           <a href="#"><i data-lucide="message-circle"></i></a>
         </div>
       </div>

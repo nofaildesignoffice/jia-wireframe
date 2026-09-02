@@ -159,16 +159,16 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
 
 /* FOOTER */
-.footer{background:var(--bg-dark);padding:72px 0 0;color:rgba(255,255,255,.5)}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-brand-name{font-size:24px;font-weight:800;color:#FFF;margin-bottom:16px;letter-spacing:-.03em}
-.footer-info{font-size:13px;line-height:2}
-.footer-col-title{font-size:14px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:16px}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:10px}
-.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:12px}
+.footer{background:var(--bg-white);padding:72px 0 0;color:var(--text-gray);border-top:1px solid var(--border-light)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid var(--border-light)}
+.footer-brand-name{font-size:24px;font-weight:800;color:var(--text-black);margin-bottom:16px;letter-spacing:-.03em}
+.footer-info{font-size:13px;line-height:2;color:var(--text-gray)}
+.footer-col-title{font-size:14px;font-weight:700;color:var(--text-black);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:var(--text-gray);margin-bottom:10px}
+.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:var(--text-light);flex-wrap:wrap;gap:12px}
 .footer-bottom nav{display:flex;gap:20px}
 .footer-sns{display:flex;gap:12px;margin-top:20px}
-.footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.footer-sns a{width:36px;height:36px;border:1px solid var(--border-default);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
 .footer-sns svg{width:16px;height:16px}
 
 /* TOP */
@@ -244,8 +244,9 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .field input,.field select,.field textarea{width:100%;padding:13px 15px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;color:var(--text-black);background:#FFF}
 .field textarea{resize:vertical;min-height:120px}
 .field .help{font-size:13px;color:var(--text-light);margin-top:8px}
-.radio-row{display:flex;gap:20px;flex-wrap:wrap}
-.radio-row label{display:flex;align-items:center;gap:7px;font-weight:400;font-size:15px;color:var(--text-dark);margin:0}
+.radio-row{display:flex;gap:20px;flex-wrap:nowrap}
+.radio-row label{display:flex;align-items:center;gap:7px;font-weight:400;font-size:15px;color:var(--text-dark);margin:0;white-space:nowrap}
+.radio-row input{flex-shrink:0}
 .upload{border:1px dashed var(--border-default);border-radius:var(--radius-sm);padding:28px;text-align:center;font-size:14px;color:var(--text-light)}
 .agree label{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--text-gray);margin-bottom:12px}
 .board{width:100%;border-collapse:collapse;font-size:15px;background:#FFF}
@@ -531,7 +532,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
           개인정보관리책임자 [클라이언트 확인 필요]
         </div>
         <div class="footer-sns">
-          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="camera"></i></a>
           <a href="#"><i data-lucide="message-circle"></i></a>
         </div>
       </div>
