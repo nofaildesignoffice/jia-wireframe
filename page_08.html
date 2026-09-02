@@ -277,6 +277,9 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .list-row p{font-size:14px;color:var(--text-gray)}
 .list-row .meta{font-size:13px;color:var(--text-light);margin-top:8px}
 .list-row .lock{font-size:13px;color:var(--text-light);white-space:nowrap}
+.post-body .lock{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--text-light)}
+.post-body .lock svg{width:13px;height:13px}
+.post-foot{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .banner{display:flex;justify-content:space-between;align-items:center;gap:24px;background:var(--bg-light);border-radius:var(--radius-md);padding:36px 40px}
 .banner h3{font-size:20px;font-weight:700;color:var(--text-black);margin-bottom:8px}
 .banner p{font-size:15px;color:var(--text-gray)}
@@ -398,10 +401,9 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
 
 <section class="section">
-  <div class="container" style="max-width:900px">
+  <div class="container">
     <div class="text-center">
       <h1 class="section-title">유료회원 뉴스레터</h1>
-      <p class="section-desc">수업에서 다 못 나눈 이야기를 이어서 씁니다.</p>
     </div>
     <div class="tabs" data-tabs style="justify-content:center">
       <button class="is-active" data-tab="m-all">전체</button>
@@ -410,59 +412,79 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <button data-tab="m-3">샵 운영</button>
     </div>
     <div class="tabpanel is-active" id="m-all">
-      <div class="list-row">
-        <div>
-          <span class="tag" style="display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)">시술</span>
-          <h3 style="margin-top:10px">1회차 — [클라이언트 확인 필요: 제목]</h3>
+      <div class="grid-3">
+      <article class="post-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="post-body">
+          <span class="tag">시술</span>
+          <h3>1회차 — [클라이언트 확인 필요: 제목]</h3>
           <p>[발췌 2줄]</p>
-          <p class="meta">[발행일]</p>
+          <div class="post-foot">
+            <time>[발행일]</time>
+            <span class="lock"><i data-lucide="lock"></i> 구독 필요</span>
+          </div>
         </div>
-        <span class="lock">잠김 · 구독 필요</span>
-      </div>
-      <div class="list-row">
-        <div>
-          <span class="tag" style="display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)">제품과 도구</span>
-          <h3 style="margin-top:10px">2회차 — [클라이언트 확인 필요: 제목]</h3>
+      </article>
+      <article class="post-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="post-body">
+          <span class="tag">제품과 도구</span>
+          <h3>2회차 — [클라이언트 확인 필요: 제목]</h3>
           <p>[발췌 2줄]</p>
-          <p class="meta">[발행일]</p>
+          <div class="post-foot">
+            <time>[발행일]</time>
+            <span class="lock"><i data-lucide="lock"></i> 구독 필요</span>
+          </div>
         </div>
-        <span class="lock">잠김 · 구독 필요</span>
-      </div>
-      <div class="list-row">
-        <div>
-          <span class="tag" style="display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)">샵 운영</span>
-          <h3 style="margin-top:10px">3회차 — [클라이언트 확인 필요: 제목]</h3>
+      </article>
+      <article class="post-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="post-body">
+          <span class="tag">샵 운영</span>
+          <h3>3회차 — [클라이언트 확인 필요: 제목]</h3>
           <p>[발췌 2줄]</p>
-          <p class="meta">[발행일]</p>
+          <div class="post-foot">
+            <time>[발행일]</time>
+            <span class="lock"><i data-lucide="lock"></i> 구독 필요</span>
+          </div>
         </div>
-        <span class="lock">잠김 · 구독 필요</span>
-      </div>
-      <div class="list-row">
-        <div>
-          <span class="tag" style="display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)">시술</span>
-          <h3 style="margin-top:10px">4회차 — [클라이언트 확인 필요: 제목]</h3>
+      </article>
+      <article class="post-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="post-body">
+          <span class="tag">시술</span>
+          <h3>4회차 — [클라이언트 확인 필요: 제목]</h3>
           <p>[발췌 2줄]</p>
-          <p class="meta">[발행일]</p>
+          <div class="post-foot">
+            <time>[발행일]</time>
+            <span class="lock"><i data-lucide="lock"></i> 구독 필요</span>
+          </div>
         </div>
-        <span class="lock">잠김 · 구독 필요</span>
-      </div>
-      <div class="list-row">
-        <div>
-          <span class="tag" style="display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)">제품과 도구</span>
-          <h3 style="margin-top:10px">5회차 — [클라이언트 확인 필요: 제목]</h3>
+      </article>
+      <article class="post-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="post-body">
+          <span class="tag">제품과 도구</span>
+          <h3>5회차 — [클라이언트 확인 필요: 제목]</h3>
           <p>[발췌 2줄]</p>
-          <p class="meta">[발행일]</p>
+          <div class="post-foot">
+            <time>[발행일]</time>
+            <span class="lock"><i data-lucide="lock"></i> 구독 필요</span>
+          </div>
         </div>
-        <span class="lock">잠김 · 구독 필요</span>
-      </div>
-      <div class="list-row">
-        <div>
-          <span class="tag" style="display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)">샵 운영</span>
-          <h3 style="margin-top:10px">6회차 — [클라이언트 확인 필요: 제목]</h3>
+      </article>
+      <article class="post-card">
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <div class="post-body">
+          <span class="tag">샵 운영</span>
+          <h3>6회차 — [클라이언트 확인 필요: 제목]</h3>
           <p>[발췌 2줄]</p>
-          <p class="meta">[발행일]</p>
+          <div class="post-foot">
+            <time>[발행일]</time>
+            <span class="lock"><i data-lucide="lock"></i> 구독 필요</span>
+          </div>
         </div>
-        <span class="lock">잠김 · 구독 필요</span>
+      </article>
       </div>
       <div class="pager"><a href="#" class="is-active">1</a><a href="#">2</a><a href="#">›</a></div>
     </div>
