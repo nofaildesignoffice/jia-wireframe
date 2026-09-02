@@ -51,6 +51,55 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .icon-circle svg{width:26px;height:26px}
 .micro{font-size:13px;color:var(--text-light);margin-top:12px}
 
+/* ===== 후기 카드 슬라이더 + 모달 ===== */
+.rv{position:relative}
+.rv-vp{overflow:hidden}
+.rv-track{display:flex;gap:24px;transition:transform .35s ease}
+.rv-card{flex:0 0 calc((100% - 48px)/3);display:flex;flex-direction:column;background:#FFF;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden}
+.rv-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block;background:var(--placeholder-bg)}
+.rv-body{padding:24px 24px 0;flex:1}
+.rv-head{font-size:16px;font-weight:700;color:var(--text-black);line-height:1.45;margin-bottom:10px;letter-spacing:-.01em}
+.rv-text{position:relative;font-size:15px;line-height:1.7;color:var(--text-gray);max-height:63.75px;overflow:hidden}
+.rv-text.is-clamped::after{content:'…';position:absolute;right:0;bottom:0;padding-left:20px;background:#FFF;color:var(--text-gray);line-height:1.7}
+.rv-meta{font-size:13px;color:var(--text-light);margin-top:14px}
+.rv-foot{padding:20px 24px 24px;text-align:center}
+.rv-more{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;color:var(--text-black);border:1px solid var(--border-default);border-radius:var(--radius-sm);background:#FFF;font-family:inherit;transition:opacity .2s}
+.rv-more:hover{opacity:.7}
+.rv-more svg{width:15px;height:15px}
+.rv-nav{position:absolute;top:120px;width:44px;height:44px;border-radius:50%;background:#FFF;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-black);z-index:5;box-shadow:var(--shadow-sm)}
+.rv-nav:disabled{opacity:.3;cursor:default}
+.rv-nav svg{width:20px;height:20px}
+.rv-prev{left:-22px}
+.rv-next{right:-22px}
+.rv-count{text-align:center;font-size:13px;color:var(--text-light);margin-top:28px}
+/* 모달 */
+.rv-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:40px 24px}
+.rv-modal[hidden]{display:none}
+.rv-back{position:absolute;inset:0;background:rgba(26,26,26,.6)}
+.rv-box{position:relative;background:#FFF;border-radius:var(--radius-md);width:100%;max-width:900px;max-height:calc(100vh - 80px);overflow:auto;box-shadow:var(--shadow-md)}
+.rv-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:#FFF;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;color:var(--text-black);z-index:2}
+.rv-close svg{width:18px;height:18px}
+.rv-grid{display:grid;grid-template-columns:400px 1fr}
+.rv-shot{background:var(--bg-light);padding:32px;display:flex;align-items:flex-start;justify-content:center}
+.rv-shot img{width:100%;border-radius:var(--radius-sm);display:block}
+.rv-detail{padding:56px 40px 40px}
+.rv-detail .rv-dhead{font-size:22px;font-weight:700;color:var(--text-black);line-height:1.4;margin-bottom:8px;letter-spacing:-.02em}
+.rv-detail .rv-dmeta{font-size:13px;color:var(--text-light);margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border-light)}
+.rv-detail p.rv-p{font-size:15px;line-height:1.8;color:var(--text-dark);margin-bottom:14px}
+.rv-dnote{margin-top:28px;padding:20px 22px;background:var(--bg-light);border-radius:var(--radius-sm)}
+.rv-dnote span{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px}
+.rv-dnote p{font-size:14px;line-height:1.75;color:var(--text-gray)}
+@media (max-width:1024px){
+  .rv-card{flex:0 0 calc((100% - 24px)/2)}
+  .rv-prev{left:8px}.rv-next{right:8px}
+  .rv-grid{grid-template-columns:1fr}
+  .rv-detail{padding:32px 28px 40px}
+}
+@media (max-width:768px){
+  .rv-card{flex:0 0 100%}
+  .rv-nav{top:100px}
+}
+
 /* ===== NAV ===== */
 .nav{position:sticky;top:0;z-index:100;background:#FFF;border-bottom:1px solid var(--border-light);transition:padding .2s}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;transition:height .2s}
@@ -136,17 +185,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .stepbar h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px}
 .stepbar p{font-size:14px;color:var(--text-gray)}
 
-/* testimonial */
-.tcar{position:relative}
-.tcar-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.t-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
-.t-card .img-placeholder{aspect-ratio:16/10;margin-bottom:20px}
-.t-quote{font-size:15px;color:var(--text-dark);margin-bottom:20px;min-height:72px}
-.t-meta{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px}
-.tcar-nav{display:flex;gap:10px;justify-content:center;margin-top:36px}
-.tcar-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
-.tcar-nav svg{width:18px;height:18px}
-
 /* store cards */
 .store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
 .store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
@@ -189,7 +227,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .hero h1{font-size:30px}
   .hero p{font-size:15px}
   .hero-arrow{display:none}
-  .grid-2,.grid-3,.grid-4,.split,.tcar-track{grid-template-columns:1fr}
+  .grid-2,.grid-3,.grid-4,.split{grid-template-columns:1fr}
   .stepbar{grid-template-columns:1fr}
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -541,26 +579,151 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   <div class="container">
     <div class="text-center">
       <p class="section-label">Stories</p>
-      <h2 class="section-title">[클라이언트 확인 필요: 창업 수료생 후기에서 발췌한 헤드카피]</h2>
-      <p class="section-desc">현재 확보된 후기 중 창업반 수료생 후기가 없습니다. 창업반 후기 확보 시 이 섹션에 배치합니다.</p>
+      <h2 class="section-title">핀셋 한번 못 잡던 분이, 지금은 예약을 마감합니다</h2>
+      <p class="section-desc">창업반을 수료하고 자기 샵을 연 원장님들이 직접 보내주신 메시지입니다.</p>
     </div>
-    <div class="grid-3">
-      <article class="story-item">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <p class="line">[클라이언트 확인 필요: 오픈 후 달라진 점 한 줄]</p>
-        <p class="rev">[클라이언트 확인 필요: 창업 수료생 후기 1]</p>
-      </article>
-      <article class="story-item">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <p class="line">[클라이언트 확인 필요: 오픈 후 달라진 점 한 줄]</p>
-        <p class="rev">[클라이언트 확인 필요: 창업 수료생 후기 2]</p>
-      </article>
-      <article class="story-item">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <p class="line">[클라이언트 확인 필요: 오픈 후 달라진 점 한 줄]</p>
-        <p class="rev">[클라이언트 확인 필요: 창업 수료생 후기 3]</p>
-      </article>
+<div class="rv">
+  <div class="rv-vp">
+    <div class="rv-track">
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-02.png" alt="수강생이 보내온 후기 메시지 캡처 2">
+      <div class="rv-body">
+        <p class="rv-head">질문이 넘 많았는데 오늘도 감사합니다</p>
+        <p class="rv-text">원장님 질문이 넘 많았는데 오늘도 감사합니다!! 열심히 해보겠습니닷 좋은 밤 되세욥</p>
+        <p class="rv-meta">창업반(정규) · 수강 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">원장님 질문이 넘 많았는데 오늘도 감사합니다!!</p>
+        <p class="rv-p">열심히 해보겠습니닷 좋은 밤 되세욥</p>
+      </div>
+      <div class="rv-note" hidden>3년전 실습 모델로 와주시고 지금은 나의 수강생분이 되어주신 나의 정규. 쑥쓰러움이 많으셔서 질문 하나 주실 때면 얼굴이 빨개지곤 하신다. 열심히 하려는 마음이 하나하나 다 귀여워서 나의 것을 다 주고싶다.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-04.png" alt="수강생이 보내온 후기 메시지 캡처 4">
+      <div class="rv-body">
+        <p class="rv-head">기술뿐 아니라 일에 대한 자세와 마음가짐까지 배웠어요</p>
+        <p class="rv-text">원장님, 그동안 정말 감사했습니다. 처음에는 많이 서툴고 긴장도 많이 했는데, 항상 따뜻하게 알려주시고 아낌없이 노하우를 전해주셔서 큰 힘이 되었습니다. 기술뿐 아니라 일에 대한 자세와 마음가짐까지 많이 배우는 소중한 시간이었어요. 앞으로도 원장님께 배운 것을 잊지 않고 꾸준히 노력해서 좋은 결과로 보답하도록 노력할께요.^^</p>
+        <p class="rv-meta">수료생 · 수강 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">원장님, 그동안 정말 감사했습니다.</p>
+        <p class="rv-p">처음에는 많이 서툴고 긴장도 많이 했는데, 항상 따뜻하게 알려주시고 아낌없이 노하우를 전해주셔서 큰 힘이 되었습니다.</p>
+        <p class="rv-p">기술뿐 아니라 일에 대한 자세와 마음가짐까지 많이 배우는 소중한 시간이었어요. 앞으로도 원장님께 배운 것을 잊지 않고 꾸준히 노력해서 좋은 결과로 보답하도록 노력할께요.^^</p>
+      </div>
+      <div class="rv-note" hidden>받은 마음보다 더 크게 돌려드릴 수 있는 사람이 되어야지. 그러니 우리 평생 봅시다잉.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-07.png" alt="수강생이 보내온 후기 메시지 캡처 7">
+      <div class="rv-body">
+        <p class="rv-head">저 느린 거 아는데 끝까지 다 알려주셨어요</p>
+        <p class="rv-text">원장님 저 느린거 아는데 하나하나 끝까지 다 알려주시고 이렇게 해보자 저렇게 해보자 해주시고 피드백도 제 마음을 읽으셨나요 울뻔했어요 진짜 열심히 해볼게요. 지아에 온게 너무 다행이다 싶어요. 감사해요 원장님 꼭 제껄로 만들어서 다음 실습 멋지게 해보겠습니다아!!!!!</p>
+        <p class="rv-meta">수강생 · 수강 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">원장님 저 느린거 아는데 하나하나 끝까지 다 알려주시고 이렇게 해보자 저렇게 해보자 해주시고 피드백도 제 마음을 읽으셨나요 울뻔했어요</p>
+        <p class="rv-p">진짜 열심히 해볼게요. 지아에 온게 너무 다행이다 싶어요. 감사해요 원장님</p>
+        <p class="rv-p">꼭 제껄로 만들어서 다음 실습 멋지게 해보겠습니다아!!!!!</p>
+      </div>
+      <div class="rv-note" hidden>결과가 아닌 과정을 보는 피드백으로, 다음 시술에서 바로 개선할 수 있는 그런 피드백입니다.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-08.png" alt="수강생이 보내온 후기 메시지 캡처 8">
+      <div class="rv-body">
+        <p class="rv-head">제 선택이 틀리지 않았다는 생각이 들어요</p>
+        <p class="rv-text">원장니임 오늘 피드백도 감사합니다! 저 답답할텐데도 늘 진심으로 챙겨주셔서 감사해요 수강하는 곳이 많았지만 인스타만 보고 선택하는 게 쉽지 않았거든요ㅠㅠ 그런데 지금은 수강도 수강이지만 넘 좋은 분을 만난 것 같아 제 선택이 틀리지 않았다는 생각이 들어요. 열심히 할게요</p>
+        <p class="rv-meta">수강생 · 수강 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">원장니임 오늘 피드백도 감사합니다! 저 답답할텐데도 늘 진심으로 챙겨주셔서 감사해요</p>
+        <p class="rv-p">수강하는 곳이 많았지만 인스타만 보고 선택하는 게 쉽지 않았거든요ㅠㅠ</p>
+        <p class="rv-p">그런데 지금은 수강도 수강이지만 넘 좋은 분을 만난 것 같아 제 선택이 틀리지 않았다는 생각이 들어요. 열심히 할게요</p>
+      </div>
+      <div class="rv-note" hidden>답답하지 않아요. 각자의 속도대로 아주 잘 가고 계신겁니다. 손만 놓지 마셔요.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-09.png" alt="수강생이 보내온 후기 메시지 캡처 9">
+      <div class="rv-body">
+        <p class="rv-head">핀셋 한번 못 잡아보던 사람이 원장님이 되고</p>
+        <p class="rv-text">원장님 저 펌포인트 수강문의 들어왔는데요,,,,?</p>
+        <p class="rv-meta">창업반 수료 · 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">원장님 저 펌포인트 수강문의 들어왔는데요,,,,?</p>
+      </div>
+      <div class="rv-note" hidden>핀셋 한번 잡아보지 못했던 사람이 한 명의 고객님을 책임지는 원장님이 되고, 또 한번 성장해 한명의 수강생을 책임질 수 있는 수강원장이 됩니다. 우리가 어디까지 성장할지 아직 아무도 몰라요.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-11.png" alt="수강생이 보내온 후기 메시지 캡처 11">
+      <div class="rv-body">
+        <p class="rv-head">이번 달 예약, 마감됐어요</p>
+        <p class="rv-text">안그래도 저 이번달 예약 마감댔어요오!! 인스타 열심히 하긴 해야하는데ㅜㅜㅜ 소개가 많아가지구 예약이 다 찼어용 속눈썹 하나만 가지고 될까 고민 진짜 많이 했는데 원장님 말 듣고 하나만 파길 진짜 잘했지 머에요 7월부터는 인스타도 열심히 해보려구해요. 속눈썹 하나로 먹고살게 해주신 우리 지아 원장님,, 최고에용</p>
+        <p class="rv-meta">창업반 수료 · 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">안그래도 저 이번달 예약 마감댔어요오!!</p>
+        <p class="rv-p">인스타 열심히 하긴 해야하는데ㅜㅜㅜ 소개가 많아가지구 예약이 다 찼어용</p>
+        <p class="rv-p">속눈썹 하나만 가지고 될까 고민 진짜 많이 했는데 원장님 말 듣고 하나만 파길 진짜 잘했지 머에요</p>
+        <p class="rv-p">7월부터는 인스타도 열심히 해보려구해요. 속눈썹 하나로 먹고살게 해주신 우리 지아 원장님,, 최고에용</p>
+      </div>
+      <div class="rv-note" hidden>졸업 후에 이런 소식을 들을 때면 참 뿌듯합니다. 성장은 늘 그렇더라구요. 매일 볼 땐 모르는데 뒤돌아보면 정말 많이 와있어요.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-13.png" alt="수강생이 보내온 후기 메시지 캡처 13">
+      <div class="rv-body">
+        <p class="rv-head">아무것도 모르는데 괜찮겠냐고 하셨죠</p>
+        <p class="rv-text">원장님~ 고객이 원하는 스타일을 명확하게 얘기 안할때에 눈매에 따라 컬이나 길이를 어떻게 정해야 하는지 궁금해요 고객이 말하는 자연스러움과 제가 생각하는 자연스러움이 다를테니 그 기준이 어려운거 같아요</p>
+        <p class="rv-meta">창업반 수료 · 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">원장님~ 고객이 원하는 스타일을 명확하게 얘기 안할때에 눈매에 따라 컬이나 길이를 어떻게 정해야 하는지 궁금해요</p>
+        <p class="rv-p">고객이 말하는 자연스러움과 제가 생각하는 자연스러움이 다를테니 그 기준이 어려운거 같아요</p>
+      </div>
+      <div class="rv-note" hidden>이 질문을 보는데 처음 오셨을때가 생각이나요. 아무것도 모르는데 괜찮겠냐고 하셨죠? 그런데 지금은요? 못할것만 같던 나를 걱정하던 시기에서, 고객님의 눈을 어떻게 하면 더 만족시켜드릴 수 있을까를 걱정하시네요.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-15.png" alt="수강생이 보내온 후기 메시지 캡처 15">
+      <div class="rv-body">
+        <p class="rv-head">오픈하고 보니 6월 한 달을 정신없이 보냈어요</p>
+        <p class="rv-text">이것저것 걱정이 엄청 많았는데 오픈하고 보니 정신이 하나도 없어서 정신 차려보니 일하고 있더라구요ㅜㅜㅎㅎ 일단해야 한다는 그 말을 몸소 느꼈던 한달이였어요 너무 감사하게도 모델연습했을때 고객님들이 찾아와주셔서 6월 한달은 진짜 정신없이 보냈어요 고객님들이 오히려 축하한다고 선물이랑 돈도 더 주고 가신 분들도 계셔요 이제 시작이지만 앞으로 더 잘해볼게요. 원장님한테 밥 사드릴 수 있는 그날까지ㅎㅎ</p>
+        <p class="rv-meta">창업반 수료 · 오픈 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">이것저것 걱정이 엄청 많았는데 오픈하고 보니 정신이 하나도 없어서 정신 차려보니 일하고 있더라구요ㅜㅜㅎㅎ 일단해야 한다는 그 말을 몸소 느꼈던 한달이였어요</p>
+        <p class="rv-p">너무 감사하게도 모델연습했을때 고객님들이 찾아와주셔서 6월 한달은 진짜 정신없이 보냈어요</p>
+        <p class="rv-p">고객님들이 오히려 축하한다고 선물이랑 돈도 더 주고 가신 분들도 계셔요</p>
+        <p class="rv-p">이제 시작이지만 앞으로 더 잘해볼게요. 원장님한테 밥 사드릴 수 있는 그날까지ㅎㅎ</p>
+      </div>
+      <div class="rv-note" hidden>밥 안 먹어도 벌써 배부르네요.</div>
+    </article>
+    <article class="rv-card">
+      <img class="rv-img" src="assets/review-18.png" alt="수강생이 보내온 후기 메시지 캡처 18">
+      <div class="rv-body">
+        <p class="rv-head">수강 끝나면 끝인 줄 알았는데, 언제든 물어보면 영상 피드백을 주세요</p>
+        <p class="rv-text">넵!!! 감사합니다 그리고 그때 몬스터 젤 큰 거 하라고 하신 분 진짜. 7번 아니었음 닿을뻔한거 있죠. 원장님 최고!!!!! 감사합니다 제가 지아 수강생인게 너무너무 좋아요. 수강 끝나면 끝인줄 알았지만 언제든 물어보면 영상피드백 주시고 긴급요청하면 바로 답변주시고 제가 지아를 선택했던건 진짜 최고의 선택이었던것 같아요~~ 원장님처럼 열심히 살아야겠단 생각들어요!!!! 항상 감사합니다</p>
+        <p class="rv-meta">수료생 · 수강 원장님</p>
+      </div>
+      <div class="rv-foot"><button class="rv-more">자세히 보기 <i data-lucide="arrow-up-right"></i></button></div>
+      <div class="rv-full" hidden>
+        <p class="rv-p">넵!!! 감사합니다 그리고 그때 몬스터 젤 큰 거 하라고 하신 분 진짜. 7번 아니었음 닿을뻔한거 있죠. 원장님 최고!!!!! 감사합니다</p>
+        <p class="rv-p">제가 지아 수강생인게 너무너무 좋아요. 수강 끝나면 끝인줄 알았지만 언제든 물어보면 영상피드백 주시고 긴급요청하면 바로 답변주시고 제가 지아를 선택했던건 진짜 최고의 선택이었던것 같아요~~</p>
+        <p class="rv-p">원장님처럼 열심히 살아야겠단 생각들어요!!!! 항상 감사합니다</p>
+      </div>
+      <div class="rv-note" hidden>저는 언제나 같은 자리에 있습니다. 마음 편할 수 있는 그런 곳, 한 곳쯤은 있어야죠.</div>
+    </article>
     </div>
+  </div>
+  <button class="rv-nav rv-prev" aria-label="이전 후기"><i data-lucide="chevron-left"></i></button>
+  <button class="rv-nav rv-next" aria-label="다음 후기"><i data-lucide="chevron-right"></i></button>
+  <p class="rv-count">수강생이 직접 보내주신 후기 9건 · 좌우로 넘겨보세요</p>
+</div>
     <p class="closing">“처음의 마음으로<br>오래 함께하겠습니다.”</p>
   </div>
 </section>
@@ -947,6 +1110,74 @@ document.querySelectorAll('[data-tabs] button').forEach(function(b){
     var t=document.getElementById(b.dataset.tab); if(t) t.classList.add('is-active');
   };
 });
+
+/* ===== 후기 카드 슬라이더 ===== */
+document.querySelectorAll('.rv').forEach(function(rv){
+  var track=rv.querySelector('.rv-track'),
+      cards=track.querySelectorAll('.rv-card'),
+      prev=rv.querySelector('.rv-prev'), next=rv.querySelector('.rv-next'),
+      idx=0;
+  function perView(){var w=window.innerWidth; return w<=768?1:(w<=1024?2:3)}
+  function maxIdx(){return Math.max(0, cards.length-perView())}
+  function render(){
+    if(idx>maxIdx()) idx=maxIdx();
+    var step=cards[0].getBoundingClientRect().width+24;
+    track.style.transform='translateX('+(-idx*step)+'px)';
+    prev.disabled=(idx<=0); next.disabled=(idx>=maxIdx());
+  }
+  prev.onclick=function(){idx=Math.max(0,idx-1);render()};
+  next.onclick=function(){idx=Math.min(maxIdx(),idx+1);render()};
+  window.addEventListener('resize',render);
+  render();
+});
+
+/* 2.5줄을 넘겨 실제로 잘린 카드에만 말줄임 표시 */
+document.querySelectorAll('.rv-text').forEach(function(t){
+  t.classList.toggle('is-clamped', t.scrollHeight > t.clientHeight + 1);
+});
+
+/* ===== 후기 모달 ===== */
+(function(){
+  var modal=document.getElementById('rvModal');
+  if(!modal) return;
+  var dImg=document.getElementById('rvDImg'), dHead=document.getElementById('rvDHead'),
+      dMeta=document.getElementById('rvDMeta'), dBody=document.getElementById('rvDBody'),
+      dNote=document.getElementById('rvDNote'), dNoteT=document.getElementById('rvDNoteText');
+  function open(card){
+    dImg.src=card.querySelector('.rv-img').getAttribute('src');
+    dHead.textContent=card.querySelector('.rv-head').textContent;
+    dMeta.textContent=card.querySelector('.rv-meta').textContent;
+    dBody.innerHTML=card.querySelector('.rv-full').innerHTML;
+    var note=card.querySelector('.rv-note');
+    if(note){dNoteT.textContent=note.textContent; dNote.hidden=false} else {dNote.hidden=true}
+    modal.hidden=false; document.body.style.overflow='hidden';
+    if(window.lucide) lucide.createIcons();
+  }
+  function close(){modal.hidden=true; document.body.style.overflow=''}
+  document.querySelectorAll('.rv-more').forEach(function(b){
+    b.onclick=function(){open(b.closest('.rv-card'))};
+  });
+  modal.querySelectorAll('[data-rv-close]').forEach(function(x){x.onclick=close});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden) close()});
+})();
 </script>
+
+<!-- ================= 후기 모달 ================= -->
+<div class="rv-modal" id="rvModal" hidden>
+  <div class="rv-back" data-rv-close></div>
+  <div class="rv-box" role="dialog" aria-modal="true" aria-labelledby="rvDHead">
+    <button class="rv-close" data-rv-close aria-label="닫기"><i data-lucide="x"></i></button>
+    <div class="rv-grid">
+      <div class="rv-shot"><img id="rvDImg" src="" alt="수강생이 보내온 후기 원본 캡처"></div>
+      <div class="rv-detail">
+        <p class="rv-dhead" id="rvDHead"></p>
+        <p class="rv-dmeta" id="rvDMeta"></p>
+        <div id="rvDBody"></div>
+        <div class="rv-dnote" id="rvDNote" hidden><span>원장 코멘트</span><p id="rvDNoteText"></p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
