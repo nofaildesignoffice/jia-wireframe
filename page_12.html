@@ -461,19 +461,16 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .cause-sec .body{font-size:16px;color:var(--text-gray);line-height:1.8}
 .cause-sec .img-placeholder{aspect-ratio:4/3}
 .cause-sec .shot{font-size:13px;color:var(--text-light);margin-top:12px;text-align:center}
-.ba{display:grid;grid-template-columns:1fr 64px 1fr;gap:16px;align-items:center;max-width:760px;margin:0 auto 48px}
-.ba .img-placeholder{aspect-ratio:4/3}
-.ba .arrow{text-align:center;font-size:24px;color:var(--text-light)}
-.ba figcaption{text-align:center;font-size:13px;color:var(--text-light);margin-top:12px}
-.answer-box{background:var(--bg-dark);border-radius:var(--radius-md);padding:48px;margin-top:32px;text-align:center}
-.answer-box p{font-size:20px;color:#FFF;line-height:1.8}
+.answer-box{margin-top:64px;text-align:center}
+.answer-box p{font-size:22px;color:var(--text-black);line-height:1.75;letter-spacing:-.01em}
 .answer-box strong{font-weight:800}
 
-.sol{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;display:flex;flex-direction:column}
-.sol .tag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:800;color:#FFF;background:var(--text-black);border-radius:99px;padding:6px 13px;margin-bottom:18px}
-.sol h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:14px;line-height:1.4}
-.sol p{font-size:15px;color:var(--text-gray);margin-bottom:18px;flex:1}
-.sol .basis{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px;margin:0;flex:0}
+.sol-sec .tag{display:inline-block;font-size:12px;font-weight:800;color:#FFF;background:var(--text-black);border-radius:99px;padding:6px 13px;margin-bottom:18px}
+.sol-sec h3{font-size:28px;font-weight:700;color:var(--text-black);margin-bottom:16px;line-height:1.35;letter-spacing:-.02em}
+.sol-sec .body{font-size:16px;color:var(--text-gray);line-height:1.8}
+.sol-sec .basis{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px;margin-top:20px}
+.sol-sec .img-placeholder{aspect-ratio:4/3}
+.sol-sec .shot{font-size:13px;color:var(--text-light);margin-top:12px;text-align:center}
 
 .dark-quote{background:var(--bg-dark);border-radius:var(--radius-md);padding:40px;margin:32px 0}
 .dark-quote p{font-size:17px;color:#FFF;line-height:2.1;text-align:center}
@@ -511,10 +508,8 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .grid-5{grid-template-columns:repeat(2,1fr)}
   .hero-class{padding:64px 0}
   .hero-class h1{font-size:30px}
-  .ba{grid-template-columns:1fr;gap:12px}
-  .ba .arrow{transform:rotate(90deg)}
-  .answer-box{padding:32px 24px}
-  .answer-box p{font-size:17px}
+  .answer-box p{font-size:18px}
+  .sol-sec h3{font-size:22px}
   .dark-quote{padding:28px}
   .dark-quote p{font-size:15px;line-height:1.9}
   .cls-head{padding:26px}
@@ -825,31 +820,59 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
 </section>
 
-<!-- ================= 섹션 7 : Solution ================= -->
-<section class="section bg-light">
+<!-- ================= Solution 1 : 기준 1 ================= -->
+<section class="section sol-sec bg-light">
   <div class="container">
     <div class="text-center">
       <p class="section-label">Solution</p>
       <h2 class="section-title">창업을 준비하는 세 가지 기준</h2>
       <p class="section-desc">지아 창업반은 실제 현장에서 필요한 세 가지 기준을 함께 만들어갑니다.</p>
     </div>
-    <div class="grid-3">
-      <div class="sol">
+    <div class="split">
+      <div>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="shot">[촬영 필요: 모델 실습 장면]</p>
+      </div>
+      <div>
         <span class="tag">기준 1</span>
         <h3>고객에게 시술할 수 있는 실력</h3>
-        <p>기본기부터 다양한 연장·펌 디자인까지, 실제 모델 실습을 통해 안정적인 시술력을 만듭니다.</p>
+        <p class="body">기본기부터 다양한 연장·펌 디자인까지, 실제 모델 실습을 통해 안정적인 시술력을 만듭니다.</p>
         <p class="basis">근거 — 24회차 중 18회차가 모델 실습</p>
       </div>
-      <div class="sol">
+    </div>
+  </div>
+</section>
+
+<!-- ================= Solution 2 : 기준 2 ================= -->
+<section class="section sol-sec">
+  <div class="container">
+    <div class="split rev">
+      <div>
         <span class="tag">기준 2</span>
         <h3>고객을 응대할 수 있는 능력</h3>
-        <p>고객의 눈매와 모질, 상황에 맞춰 이해하기 쉬운 언어로 상담하고 재방문으로 이어질 수 있는 응대 기준을 배웁니다.</p>
+        <p class="body">고객의 눈매와 모질, 상황에 맞춰 이해하기 쉬운 언어로 상담하고 재방문으로 이어질 수 있는 응대 기준을 배웁니다.</p>
         <p class="basis">근거 — 온라인 이론 학습 후 복습 노트 제출</p>
       </div>
-      <div class="sol">
+      <div>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="shot">[촬영 필요: 상담·응대 장면 또는 온라인 이론 화면]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Solution 3 : 기준 3 ================= -->
+<section class="section sol-sec bg-light">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="img-placeholder"><i data-lucide="image"></i></div>
+        <p class="shot">[촬영 필요: 창업 컨설팅 수업 장면 — 로드맵 작성]</p>
+      </div>
+      <div>
         <span class="tag">기준 3</span>
         <h3>1인 창업에 대한 이해</h3>
-        <p>나의 지역과 타깃, 샵의 방향, 운영 시스템과 마케팅까지 나만의 창업 로드맵을 설계합니다.</p>
+        <p class="body">나의 지역과 타깃, 샵의 방향, 운영 시스템과 마케팅까지 나만의 창업 로드맵을 설계합니다.</p>
         <p class="basis">근거 — 첫 수업이 창업 컨설팅, 마케팅 수업 포함</p>
       </div>
     </div>
@@ -875,10 +898,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
     <div class="dark-quote" style="max-width:860px;margin-left:auto;margin-right:auto">
       <p>어느 장면에서 각도가 무너졌는지<br>왜 그 동작이 어려운지<br>손목과 손가락을 어떻게 움직여야 하는지<br>다음 과제에서 무엇을 연습해야 하는지</p>
     </div>
-    <blockquote style="max-width:860px;margin:0 auto 40px">
-      “각도가 60에서 80도가 되어야 한다고 했습니다. 그런데 지금 각도가 조금 누워 있습니다. 손목을 사용하시거나, 엄지와 검지를 이렇게 움직이시면 됩니다.”
-      <cite>— 실제 과제 피드백 영상 중</cite>
-    </blockquote>
     <div class="tbl-scroll" style="max-width:860px;margin:0 auto 40px">
       <table class="tbl">
         <thead><tr><th style="width:130px"></th><th>일반적인 피드백</th><th>지아의 영상 피드백</th></tr></thead>
