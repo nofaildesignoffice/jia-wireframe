@@ -205,6 +205,20 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .footer-sns svg{width:16px;height:16px}
 
 /* TOP */
+.fixcta{position:fixed;left:0;right:0;bottom:24px;z-index:95;padding:0 24px;pointer-events:none;opacity:0;transform:translateY(16px);transition:opacity .25s,transform .25s}
+.fixcta.is-show{opacity:1;transform:translateY(0)}
+.fixcta-inner{max-width:1200px;margin:0 auto;background:var(--bg-dark);border-radius:var(--radius-md);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:28px;box-shadow:var(--shadow-md);pointer-events:auto}
+.fixcta .copy{font-size:16px;font-weight:600;color:#FFF;line-height:1.6}
+.fixcta .copy span{display:block;font-size:15px;font-weight:400;color:rgba(255,255,255,.6);margin-top:4px}
+.fixcta .btn{flex-shrink:0}
+body.has-fixcta .top-btn{bottom:136px}
+@media (max-width:768px){
+  .fixcta{bottom:12px;padding:0 12px}
+  .fixcta-inner{flex-direction:column;align-items:stretch;gap:14px;padding:18px 20px;text-align:center}
+  .fixcta .copy{font-size:15px}
+  .fixcta .copy span{font-size:14px}
+  body.has-fixcta .top-btn{bottom:170px}
+}
 .top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
 .top-btn.is-show{display:flex}
 .top-btn svg{width:20px;height:20px}
@@ -1080,6 +1094,14 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <!-- TOP -->
 <button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
 
+<!-- ================= 하단 고정 CTA 배너 ================= -->
+<div class="fixcta" id="fixCta">
+  <div class="fixcta-inner">
+    <p class="copy">기술도, 창업도 처음이라도 괜찮습니다<span>3개월 24회차. 시술부터 샵 운영까지 1:1로 함께합니다</span></p>
+    <a href="page_11.html?class=startup" class="btn btn-primary">속눈썹 창업반 신청하기</a>
+  </div>
+</div>
+
 <!-- ================= 후기 모달 ================= -->
 <div class="rv-modal" id="rvModal" hidden>
   <div class="rv-back" data-rv-close></div>
@@ -1199,6 +1221,23 @@ window.addEventListener('resize', rvClampAll);
   });
   modal.querySelectorAll('[data-rv-close]').forEach(function(x){x.onclick=close});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden) close()});
+})();
+
+/* ===== 하단 고정 CTA 배너 ===== */
+(function(){
+  var bar=document.getElementById('fixCta');
+  if(!bar) return;
+  var footer=document.querySelector('.footer');
+  function upd(){
+    var past = window.scrollY > 600;
+    var nearEnd = footer && footer.getBoundingClientRect().top < window.innerHeight - 40;
+    var show = past && !nearEnd;
+    bar.classList.toggle('is-show', show);
+    document.body.classList.toggle('has-fixcta', show);
+  }
+  window.addEventListener('scroll', upd);
+  window.addEventListener('resize', upd);
+  upd();
 })();
 </script>
 
