@@ -485,7 +485,9 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .core-split .stepbar>div:last-child{border-bottom:none}
 .cls-cta{margin-top:20px}
 .cls-cta .btn{width:100%}
-.cls-cta-wide{margin-top:32px;padding-top:28px;border-top:1px solid var(--border-light);text-align:center}
+.stepbar-v{grid-template-columns:1fr}
+.stepbar-v>div{border-right:none;border-bottom:1px solid var(--border-light);padding:24px 26px}
+.stepbar-v>div:last-child{border-bottom:none}
 
 .cls-head{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:36px;background:#FFF;margin-bottom:20px}
 .cls-head h3{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px;letter-spacing:-.02em}
@@ -1094,7 +1096,9 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
         <p class="one">지금 내 시술에서 가장 막혀 있는 지점 하나를 정확히 찾아 교정합니다</p>
         <p class="target"><strong>대상</strong> — 경력 6개월 이상, 이미 현장에서 시술 중인 원장</p>
       </div>
-      <table class="tbl" style="margin-bottom:24px">
+      <div class="cls-cols">
+        <div>
+          <table class="tbl">
         <tbody>
           <tr><th style="width:180px">진행 방식</th><td>사전 화상 상담 + 대면 1:1 밀착 수업</td></tr>
           <tr><th>수업 시간</th><td>하루 6시간</td></tr>
@@ -1102,13 +1106,15 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
           <tr><th>수강료</th><td class="strong">[클라이언트 확인 필요]</td></tr>
         </tbody>
       </table>
-      <div class="stepbar">
+          <div class="cls-cta"><a href="page_11.html?class=oneday" class="btn btn-primary">원데이 신청하기</a></div>
+        </div>
+        <div class="stepbar stepbar-v">
         <div><p class="n">STEP 01</p><h4>사전 상담</h4><p>상담지로 시술 상태를 먼저 파악하고, 화면 상담으로 무엇을 어떻게 교정할지 미리 잡아둡니다</p></div>
         <div><p class="n">STEP 02</p><h4>손 적응</h4><p>모델이 오기 2시간 전부터 교정 내용에 손을 맞춥니다. 바꿔야 할 부분만 최소한으로 바꿉니다</p></div>
         <div><p class="n">STEP 03</p><h4>모델 실습</h4><p>모델 2명. 1명은 반쪽 눈 시연 + 반쪽 눈 실습, 나머지 1명은 전체 시술</p></div>
         <div><p class="n">STEP 04</p><h4>수업 후</h4><p>그날 교정한 내용을 정리해 전달하고, 이후에도 영상 피드백으로 적용 여부를 확인합니다</p></div>
       </div>
-      <div class="cls-cta-wide"><a href="page_11.html?class=oneday" class="btn btn-primary">원데이 신청하기</a></div>
+      </div>
     </div>
   </div>
 </section>
