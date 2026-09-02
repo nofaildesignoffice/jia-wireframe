@@ -406,15 +406,9 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 /* ===== 클래스 페이지 전용 보조 스타일 (공통 토큰만 사용) ===== */
 .hero-class{background:var(--bg-dark);padding:100px 0}
 .hero-class .section-label{color:rgba(255,255,255,.5)}
-.hero-class h1{font-size:46px;font-weight:800;color:#FFF;line-height:1.32;letter-spacing:-.03em;margin-bottom:18px}
-.hero-class p.lead{font-size:18px;color:rgba(255,255,255,.7);margin-bottom:32px}
-.hero-trust{border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:32px}
-.hero-trust li{display:flex;align-items:center;gap:12px;padding:14px 0;font-size:15px;color:rgba(255,255,255,.85)}
-.hero-trust li+li{border-top:1px solid rgba(255,255,255,.12)}
-.hero-trust .tick{width:22px;height:22px;border:1px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#FFF;flex-shrink:0}
-.hero-class .img-placeholder{background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.2);color:rgba(255,255,255,.35)}
+.hero-class h1{max-width:760px;margin-left:auto;margin-right:auto;font-size:46px;font-weight:800;color:#FFF;line-height:1.32;letter-spacing:-.03em;margin-bottom:18px}
+.hero-class p.lead{font-size:18px;color:rgba(255,255,255,.7);max-width:620px;margin:0 auto 8px}
 .strength{border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-md);padding:26px}
-.strength .icon-box{background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);margin-bottom:18px}
 .strength h3{font-size:17px;font-weight:700;color:#FFF;margin-bottom:8px}
 .strength p{font-size:14px;color:rgba(255,255,255,.6)}
 
@@ -501,25 +495,16 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <!-- ================= 섹션 1 : Hero ================= -->
 <section class="hero-class">
   <div class="container">
-    <div class="split">
-      <div>
-        <p class="section-label">Class</p>
-        <h1>따라 한 기술은,<br>샵에 가면 사라집니다</h1>
-        <p class="lead">지아는 내 손에 맞는 기준을 만드는 1:1 속눈썹 클래스입니다.</p>
-        <ul class="hero-trust">
-          <li><span class="tick">✓</span>전 과정 1:1 맞춤 진행</li>
-          <li><span class="tick">✓</span>과제는 화면 영상으로 피드백</li>
-          <li><span class="tick">✓</span>수료 후 피드백 기간 제한 없음</li>
-        </ul>
-        <a href="#classes" class="btn btn-primary">내게 맞는 클래스 보기</a>
-      </div>
-      <div class="img-placeholder" style="aspect-ratio:3/4"><i data-lucide="image"></i></div>
+    <div class="text-center">
+      <p class="section-label">Class</p>
+      <h1>따라 한 기술은,<br>샵에 가면 사라집니다</h1>
+      <p class="lead">지아는 내 손에 맞는 기준을 만드는 1:1 속눈썹 클래스입니다.</p>
     </div>
     <div class="grid-4" style="margin-top:64px">
-      <div class="strength"><div class="icon-box"><i data-lucide="user"></i></div><h3>1:1 전용</h3><p>하루를, 한 수업을 한 분에게만 씁니다</p></div>
-      <div class="strength"><div class="icon-box"><i data-lucide="list-checks"></i></div><h3>맞춤 과제</h3><p>막히는 지점에 따라 다음 과제가 달라집니다</p></div>
-      <div class="strength"><div class="icon-box"><i data-lucide="monitor-play"></i></div><h3>영상 피드백</h3><p>내 과제 화면을 보며 목소리로 설명합니다</p></div>
-      <div class="strength"><div class="icon-box"><i data-lucide="infinity"></i></div><h3>사후 관리</h3><p>질문이 멈출 때까지 이어집니다</p></div>
+      <div class="strength"><h3>1:1 전용</h3><p>하루를, 한 수업을 한 분에게만 씁니다</p></div>
+      <div class="strength"><h3>맞춤 과제</h3><p>막히는 지점에 따라 다음 과제가 달라집니다</p></div>
+      <div class="strength"><h3>영상 피드백</h3><p>내 과제 화면을 보며 목소리로 설명합니다</p></div>
+      <div class="strength"><h3>사후 관리</h3><p>질문이 멈출 때까지 이어집니다</p></div>
     </div>
   </div>
 </section>
@@ -607,12 +592,12 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <h2 class="section-title">이 중에 하나라도 해당되시나요</h2>
     </div>
     <div class="grid-2">
-      <div class="pain-card"><div class="icon-box"><i data-lucide="clock"></i></div><p>연장을 배웠지만 오래 쉬어서 다시 시작하기가 막막합니다</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="user"></i></div><p>모델 실습까지 했는데 실제 고객 시술은 아직 불안합니다</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="move-diagonal"></i></div><p>가르기, 가모 파지, 진입, 밀착이 매번 일정하지 않습니다</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="trending-down"></i></div><p>유지력과 시술 결과가 고객마다 달라집니다</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="copy"></i></div><p>다른 사람 자세를 따라 해도 내 손에서는 잘 안 됩니다</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="align-left"></i></div><p>적게 심으면 가지런한데, 많이 심으면 라인이 무너집니다</p></div>
+      <div class="pain-card"><p>연장을 배웠지만 오래 쉬어서 다시 시작하기가 막막합니다</p></div>
+      <div class="pain-card"><p>모델 실습까지 했는데 실제 고객 시술은 아직 불안합니다</p></div>
+      <div class="pain-card"><p>가르기, 가모 파지, 진입, 밀착이 매번 일정하지 않습니다</p></div>
+      <div class="pain-card"><p>유지력과 시술 결과가 고객마다 달라집니다</p></div>
+      <div class="pain-card"><p>다른 사람 자세를 따라 해도 내 손에서는 잘 안 됩니다</p></div>
+      <div class="pain-card"><p>적게 심으면 가지런한데, 많이 심으면 라인이 무너집니다</p></div>
     </div>
   </div>
 </section>
