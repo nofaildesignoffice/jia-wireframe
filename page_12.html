@@ -486,10 +486,10 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .cls-cta .btn{width:100%}
 .cls-cta-wide{margin-top:32px;padding-top:28px;border-top:1px solid var(--border-light);text-align:center}
 
-.cls-head{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:36px;background:#FFF;margin-bottom:20px}
+.cls-head{margin-bottom:24px}
 .cls-head h3{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px;letter-spacing:-.02em}
-.cls-head .one{font-size:16px;color:var(--text-gray);margin-bottom:20px}
-.cls-head .target{font-size:15px;color:var(--text-black);background:var(--bg-light);border-radius:var(--radius-sm);padding:16px 20px}
+.cls-head .one{font-size:16px;color:var(--text-gray);margin-bottom:16px}
+.cls-head .chips{flex-wrap:nowrap;overflow-x:auto;margin:0;padding-bottom:2px}
 .cls-cols{display:grid;grid-template-columns:1fr 1.15fr;gap:20px;align-items:start}
 
 .block-title{font-size:18px;font-weight:800;color:var(--text-black);margin:0 0 20px;padding-left:14px;border-left:3px solid var(--text-black)}
@@ -948,13 +948,18 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
     <div class="cls-head">
       <h3>속눈썹 창업반</h3>
       <p class="one">기술만 배우고 끝나는 수업이 아니라, 어떤 고객을 만나고 어떤 샵을 만들고 싶은지부터 함께 정리합니다.</p>
-      <p class="target"><strong>대상</strong> — 속눈썹 시술 경험이 없지만 전문 샵 운영을 준비하는 분</p>
+      <div class="chips">
+        <span class="chip">재료·장비 50가지</span><span class="chip">교재 7권</span>
+        <span class="chip">온라인 이론 약 15개</span><span class="chip">모델 실습 18회</span>
+        <span class="chip">연 1회 이상 리마인드 수업</span>
+      </div>
     </div>
 
     <div class="cls-cols">
       <div>
       <table class="tbl">
         <tbody>
+          <tr><th>대상</th><td>속눈썹 시술 경험이 없지만 전문 샵 운영을 준비하는 분</td></tr>
           <tr><th>기간</th><td>3개월</td></tr>
           <tr><th>총 수업</th><td>24회차</td></tr>
           <tr><th>방식</th><td>전 과정 1:1 맞춤 진행</td></tr>
@@ -978,11 +983,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       </div>
     </div>
 
-    <div class="chips" style="margin:24px 0">
-      <span class="chip">재료·장비 50가지</span><span class="chip">교재 7권</span>
-      <span class="chip">온라인 이론 약 15개</span><span class="chip">모델 실습 18회</span>
-      <span class="chip">연 1회 이상 리마인드 수업</span>
-    </div>
   </div>
 </section>
 
