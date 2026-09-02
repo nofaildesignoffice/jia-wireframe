@@ -64,12 +64,11 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .rv-more{display:inline-flex;align-items:center;gap:6px;padding:6px 4px;font-size:14px;font-weight:600;color:var(--text-black);border:none;background:none;font-family:inherit;transition:opacity .2s}
 .rv-more:hover{opacity:.7}
 .rv-more svg{width:15px;height:15px}
-.rv-nav{position:absolute;top:120px;width:44px;height:44px;border-radius:50%;background:#FFF;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-black);z-index:5;box-shadow:var(--shadow-sm)}
+.rv-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#FFF;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-black);z-index:5;box-shadow:var(--shadow-sm)}
 .rv-nav:disabled{opacity:.3;cursor:default}
 .rv-nav svg{width:20px;height:20px}
 .rv-prev{left:-22px}
 .rv-next{right:-22px}
-.rv-count{text-align:center;font-size:13px;color:var(--text-light);margin-top:28px}
 /* 모달 */
 .rv-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:40px 24px}
 .rv-modal[hidden]{display:none}
@@ -94,7 +93,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 }
 @media (max-width:768px){
   .rv-card{flex:0 0 100%}
-  .rv-nav{top:100px}
 }
 
 /* ===== NAV ===== */
@@ -478,11 +476,15 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .dark-quote p{font-size:19px;color:var(--text-black);line-height:2.1;font-weight:600}
 .eff-line{margin-top:16px;text-align:center;font-size:18px;color:var(--text-black);line-height:1.8;letter-spacing:-.01em}
 .eff-line strong{font-weight:800}
+.core-head{text-align:left}
+.core-head .section-desc{margin-left:0;margin-right:0;max-width:none}
 .core-split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-bottom:16px}
 .core-split .stepbar{grid-template-columns:1fr}
 .core-split .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light);padding:24px 26px}
 .core-split .stepbar>div:last-child{border-bottom:none}
-.cls-cta{margin-top:40px;padding-top:32px;border-top:1px solid var(--border-light);text-align:center}
+.cls-cta{margin-top:20px}
+.cls-cta .btn{width:100%}
+.cls-cta-wide{margin-top:32px;padding-top:28px;border-top:1px solid var(--border-light);text-align:center}
 
 .cls-head{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:36px;background:#FFF;margin-bottom:20px}
 .cls-head h3{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px;letter-spacing:-.02em}
@@ -717,7 +719,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
   <button class="rv-nav rv-prev" aria-label="이전 후기"><i data-lucide="chevron-left"></i></button>
   <button class="rv-nav rv-next" aria-label="다음 후기"><i data-lucide="chevron-right"></i></button>
-  <p class="rv-count">수강생이 직접 보내주신 후기 9건 · 좌우로 넘겨보세요</p>
 </div>
   </div>
 </section>
@@ -899,10 +900,10 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <!-- ================= 섹션 6-1 : 핵심 — 영상 피드백 ================= -->
 <section class="section">
   <div class="container">
-    <div class="text-center">
+    <div class="core-head">
       <p class="section-label">Core</p>
       <h2 class="section-title">카톡 한 줄이 아닌, 다시 한 번 듣는 수업</h2>
-      <p class="section-desc">과제를 제출하면, 원장이 그 사진과 영상을 직접 화면에 띄워 확인하고 목소리를 담은 녹화 영상으로 피드백합니다.</p>
+      <p class="section-desc">과제를 제출하면, 원장이 그 사진과 영상을 직접 화면에 띄워 확인하고<br>목소리를 담은 녹화 영상으로 피드백합니다.</p>
     </div>
     <div class="core-split">
       <div>
@@ -951,6 +952,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
     </div>
 
     <div class="cls-cols">
+      <div>
       <table class="tbl">
         <tbody>
           <tr><th>기간</th><td>3개월</td></tr>
@@ -963,6 +965,8 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
           <tr><th>수강료</th><td class="strong">[클라이언트 확인 필요]</td></tr>
         </tbody>
       </table>
+        <div class="cls-cta"><a href="page_11.html?class=startup" class="btn btn-primary">속눈썹 창업반 신청하기</a></div>
+      </div>
       <div class="acc">
         <div class="acc-item is-open"><button class="acc-q">1. 창업 컨설팅<span class="mk">+</span></button><div class="acc-a">창업 준비 과정과 행정 절차, 지역과 타깃 설정, 메인 시술 구성, 샵 세팅, 운영 시스템, 마케팅과 홍보, 오픈 전 체크리스트까지 현재 상황에 맞춰 로드맵을 세워갑니다.</div></div>
         <div class="acc-item"><button class="acc-q">2. 기초 수업<span class="mk">+</span></button><div class="acc-a">핀셋을 잡는 법부터 페이퍼 연습, 마네킹 실습 등 기본 동작을 충분히 익힙니다. 손의 힘과 각도, 시술의 순서를 정확히 이해한 뒤 다음 단계로 넘어갑니다.</div></div>
@@ -979,7 +983,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <span class="chip">온라인 이론 약 15개</span><span class="chip">모델 실습 18회</span>
       <span class="chip">연 1회 이상 리마인드 수업</span>
     </div>
-    <div class="cls-cta"><a href="page_11.html?class=startup" class="btn btn-primary">속눈썹 창업반 신청하기</a></div>
   </div>
 </section>
 

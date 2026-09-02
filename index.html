@@ -63,12 +63,11 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .rv-more{display:inline-flex;align-items:center;gap:6px;padding:6px 4px;font-size:14px;font-weight:600;color:var(--text-black);border:none;background:none;font-family:inherit;transition:opacity .2s}
 .rv-more:hover{opacity:.7}
 .rv-more svg{width:15px;height:15px}
-.rv-nav{position:absolute;top:120px;width:44px;height:44px;border-radius:50%;background:#FFF;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-black);z-index:5;box-shadow:var(--shadow-sm)}
+.rv-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#FFF;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;color:var(--text-black);z-index:5;box-shadow:var(--shadow-sm)}
 .rv-nav:disabled{opacity:.3;cursor:default}
 .rv-nav svg{width:20px;height:20px}
 .rv-prev{left:-22px}
 .rv-next{right:-22px}
-.rv-count{text-align:center;font-size:13px;color:var(--text-light);margin-top:28px}
 /* 모달 */
 .rv-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:40px 24px}
 .rv-modal[hidden]{display:none}
@@ -93,7 +92,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 }
 @media (max-width:768px){
   .rv-card{flex:0 0 100%}
-  .rv-nav{top:100px}
 }
 
 /* ===== NAV ===== */
@@ -743,7 +741,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
   <button class="rv-nav rv-prev" aria-label="이전 후기"><i data-lucide="chevron-left"></i></button>
   <button class="rv-nav rv-next" aria-label="다음 후기"><i data-lucide="chevron-right"></i></button>
-  <p class="rv-count">수강생이 직접 보내주신 후기 19건 · 좌우로 넘겨보세요</p>
 </div>
   </div>
 </section>
