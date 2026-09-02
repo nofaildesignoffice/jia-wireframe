@@ -171,11 +171,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .footer-sns a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
 .footer-sns svg{width:16px;height:16px}
 
-/* QUICK / TOP */
-.quick{position:fixed;right:24px;bottom:96px;z-index:90;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
-.quick a{display:flex;align-items:center;gap:8px;background:#FFF;border:1px solid var(--border-default);border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;font-weight:600;color:var(--text-black);box-shadow:var(--shadow-sm)}
-.quick svg{width:16px;height:16px}
-.quick .micro{margin:0;font-size:11px;max-width:190px;text-align:right}
+/* TOP */
 .top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
 .top-btn.is-show{display:flex}
 .top-btn svg{width:20px;height:20px}
@@ -198,8 +194,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .sub-form{flex-direction:column}
-  .quick{display:none}
-}
+  }
 
 
 /* ===== 페이지 공통 추가 ===== */
@@ -567,13 +562,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
 </footer>
 
-<!-- QUICK + TOP -->
-<div class="quick">
-  <a href="page_11.html"><i data-lucide="clipboard-list"></i>수강 상담 신청</a>
-  <a href="#"><i data-lucide="message-circle"></i>카카오톡 문의</a>
-  <a href="#"><i data-lucide="instagram"></i>인스타그램</a>
-  <p class="micro">상담 신청하시면 영업 전화 대신 진단 영상을 보내드립니다</p>
-</div>
+<!-- TOP -->
 <button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
 
 <script>
