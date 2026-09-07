@@ -9,6 +9,7 @@
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css" rel="stylesheet">
+<link href="assets/site-sections.css" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 
@@ -26,32 +27,14 @@ body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.6;
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 button{cursor:pointer;border:none;font-family:inherit;background:none}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-.section{padding:100px 0}
-.bg-light{background:var(--bg-light)}
-.bg-dark{background:var(--bg-dark)}
-.text-center{text-align:center}
-.section-label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px}
-.section-title{font-size:36px;font-weight:700;color:var(--text-black);line-height:1.35;margin-bottom:16px;letter-spacing:-.02em}
-.section-desc{font-size:16px;color:var(--text-gray);max-width:640px;margin-bottom:48px}
-.text-center .section-desc{margin-left:auto;margin-right:auto}
-.bg-dark .section-title{color:#FFF}
-.bg-dark .section-desc{color:rgba(255,255,255,.6)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-sm);border:1px solid transparent;transition:opacity .2s;font-family:inherit}
-.btn:hover{opacity:.85}
 .btn-primary{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
 .btn-secondary{background:transparent;color:var(--text-black);border-color:var(--text-black)}
-.bg-dark .btn-primary,.hero .btn-primary{background:#FFF;color:var(--text-black);border-color:#FFF}
-.bg-dark .btn-secondary,.hero .btn-secondary{color:#FFF;border-color:rgba(255,255,255,.35)}
 .btn-sm{padding:10px 18px;font-size:14px}
 .btn-block{width:100%}
-.img-placeholder{background:var(--placeholder-bg);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--placeholder-icon)}
-.img-placeholder svg{width:32px;height:32px}
 .icon-box{width:48px;height:48px;background:var(--bg-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
 .icon-box svg{width:22px;height:22px}
 .icon-circle{width:64px;height:64px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-dark);margin-bottom:24px}
 .icon-circle svg{width:26px;height:26px}
-.micro{font-size:13px;color:var(--text-light);margin-top:12px}
 
 /* ===== HERO ===== */
 .hero{position:relative;height:640px;background:var(--bg-dark);overflow:hidden}
@@ -73,20 +56,12 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .hero-arrow.next{right:36px}
 
 /* ===== GRIDS ===== */
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
-.card h3{font-size:18px;font-weight:700;color:var(--text-black);margin-bottom:10px}
-.card p{font-size:15px;color:var(--text-gray)}
 .pain-card{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px;background:#FFF}
 .pain-card p{font-size:15px;color:var(--text-dark);padding-top:12px}
 
 /* class cards */
 .class-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
-.class-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
 .class-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
-.badge{display:inline-block;font-size:12px;font-weight:700;color:var(--text-black);background:var(--bg-light);border-radius:99px;padding:5px 12px;margin-bottom:14px;align-self:flex-start}
 .class-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:8px}
 .class-target{font-size:13px;color:var(--text-light);margin-bottom:14px}
 .class-points{margin-bottom:22px;flex:1}
@@ -94,7 +69,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .class-points li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
 
 /* split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .steps-v li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border-light)}
 .steps-v li:last-child{border-bottom:none}
 .step-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--text-black);flex-shrink:0}
@@ -115,7 +89,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .tcar{position:relative}
 .tcar-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .t-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
-.t-card .img-placeholder{aspect-ratio:16/10;margin-bottom:20px}
 .t-quote{font-size:15px;color:var(--text-dark);margin-bottom:20px;min-height:72px}
 .t-meta{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px}
 .tcar-nav{display:flex;gap:10px;justify-content:center;margin-top:36px}
@@ -124,7 +97,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
 /* store cards */
 .store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
-.store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
 .store-card-body{padding:32px}
 .store-card h3{font-size:22px;font-weight:700;color:var(--text-black);margin-bottom:10px}
 .store-card p{font-size:15px;margin-bottom:24px}
@@ -135,16 +107,12 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
 
 @media (max-width:1024px){
-  .grid-4{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:768px){
-  .section{padding:64px 0}
-  .section-title{font-size:26px}
   .hero{height:520px}
   .hero h1{font-size:30px}
   .hero p{font-size:15px}
   .hero-arrow{display:none}
-  .grid-2,.grid-3,.grid-4,.split,.tcar-track{grid-template-columns:1fr}
   .stepbar{grid-template-columns:1fr}
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
   .sub-form{flex-direction:column}
@@ -152,11 +120,8 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
 
 /* ===== 페이지 공통 추가 ===== */
-.page-head{background:var(--bg-light);padding:56px 0;border-bottom:1px solid var(--border-light)}
 .crumb{font-size:13px;color:var(--text-light);margin-bottom:14px}
 .crumb a{color:var(--text-light)}
-.page-head h1{font-size:34px;font-weight:800;color:var(--text-black);letter-spacing:-.02em;margin-bottom:10px}
-.page-head p{font-size:16px;color:var(--text-gray)}
 .tbl{width:100%;border-collapse:collapse;font-size:14px;background:#FFF}
 .tbl th,.tbl td{border:1px solid var(--border-light);padding:14px 16px;text-align:left;vertical-align:top}
 .tbl thead th{background:var(--bg-light);font-weight:700;color:var(--text-black);text-align:center}
@@ -177,7 +142,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .tabpanel{display:none}
 .tabpanel.is-active{display:block}
 .prod-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
-.prod-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
 .prod-body{padding:26px;display:flex;flex-direction:column;flex:1}
 .prod-body h3{font-size:19px;font-weight:700;color:var(--text-black);margin:0 0 10px}
 .prod-body p.sum{font-size:14px;color:var(--text-gray);margin-bottom:16px;flex:1}
@@ -186,7 +150,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .price{font-size:22px;font-weight:800;color:var(--text-black);margin-bottom:16px;letter-spacing:-.02em}
 .price small{font-size:13px;font-weight:600;color:var(--text-light)}
 .btn-row{display:flex;gap:8px}
-.btn-row .btn{flex:1}
 .link-inline{display:inline-block;margin-top:12px;font-size:13px;color:var(--text-gray);text-decoration:underline;text-underline-offset:3px}
 .form{max-width:720px;margin:0 auto}
 .form-block{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;margin-bottom:20px}
@@ -214,7 +177,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .search-box{display:flex;gap:8px;max-width:520px;margin:0 auto}
 .search-box input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit}
 .post-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
-.post-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
 .post-body{padding:22px}
 .post-body .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--text-dark);background:var(--bg-light);border-radius:99px;padding:4px 10px;margin-bottom:12px}
 .post-body h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px;line-height:1.45}
@@ -237,7 +199,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .cart-group>h3{font-size:15px;font-weight:700;color:var(--text-black);padding:18px 24px;background:var(--bg-light);border-bottom:1px solid var(--border-light)}
 .cart-item{display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:1px solid var(--border-light)}
 .cart-item:last-of-type{border-bottom:none}
-.cart-item .img-placeholder{width:88px;height:88px;flex-shrink:0}
 .cart-item .info{flex:1}
 .cart-item .info h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:6px}
 .cart-item .info p{font-size:13px;color:var(--text-light)}
@@ -279,22 +240,12 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .rule-box .foot{text-align:center;font-size:14px;color:rgba(255,255,255,.6);margin-top:20px}
 @media (max-width:900px){.cart-grid{grid-template-columns:1fr}.summary{position:static}}
 @media (max-width:768px){
-  .page-head h1{font-size:26px}
   .banner{flex-direction:column;align-items:flex-start}
   .stepind{flex-direction:column}
   .stepind div{border-right:none;border-bottom:1px solid var(--border-light)}
   .cart-item{flex-wrap:wrap}
 }
 
-.page-head.plain{background:var(--bg-white);border-bottom:none}
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.p-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
-.p-card .img-placeholder{border-radius:0;aspect-ratio:1/1}
-.p-body{padding:20px;display:flex;flex-direction:column;flex:1}
-.p-cat{font-size:12px;font-weight:700;color:var(--text-light);letter-spacing:.04em;margin-bottom:8px}
-.p-name{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:8px;line-height:1.4}
-.p-price{font-size:18px;font-weight:800;color:var(--text-black);margin-bottom:12px;letter-spacing:-.02em}
-.p-desc{font-size:13px;color:var(--text-gray);margin-bottom:0;flex:1}
 @media (max-width:1024px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:768px){.prod-grid{grid-template-columns:1fr}}
 </style>
@@ -452,49 +403,48 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 </header>
 
 
-<!-- 페이지 헤더 -->
-<section class="page-head plain">
-  <div class="container text-center">
-    <h1>STORE</h1>
-    <p>지아가 수업과 현장에서 직접 쓰는 제품입니다.</p>
+<!-- ================= Store (유라인 Care 스타일 · 메인과 동일) ================= -->
+<section class="care_section">
+  <div class="title">
+    <h3>JIA Store</h3>
+    <p>지아가 수업과 현장에서 직접 쓰는 제품입니다</p>
+    <span>수업에서 쓰던 <b>그 도구와 그 루틴</b>을 샵에서도 그대로 이어가실 수 있도록<br class="pc_br">
+      직접 써보고 남은 것들만 준비했습니다.</span>
   </div>
-</section>
-
-<!-- 상품 리스트 -->
-<section class="section">
-  <div class="container">
-    <div class="prod-grid">
-      <article class="p-card">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="p-body">
-          <p class="p-cat">전문가용 핀셋</p>
-          <p class="p-name">지아 V핀셋</p>
-          <p class="p-price">17,000원</p>
-          <p class="p-desc">지아가 수업과 현장에서 직접 쓰는 핀셋입니다. V01~05, 손 잡는 방식에 맞는 형태로 준비되어 있습니다.</p>
-        </div>
-      </article>
-      <article class="p-card">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="p-body">
-          <p class="p-cat">전처리제</p>
-          <p class="p-name">퍼스트 전처리제 (FIRST PRE-TREATMENT)</p>
-          <p class="p-price">13,000원</p>
-          <p class="p-desc">완벽한 결과를 만드는 첫 루틴. 테이핑 후 가모를 얹기 전 사용하는 전문가용 전처리제입니다.</p>
-        </div>
-      </article>
-      <article class="p-card">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="p-body">
-          <p class="p-cat">멤버십</p>
-          <p class="p-name">블로그 유료회원 정기구독</p>
-          <p class="p-price">9,900원 / 월</p>
-          <p class="p-desc">수업에서 다 못 나눈 시술과 운영 이야기를 정기적으로 보내드립니다. 언제든 해지할 수 있습니다.</p>
-        </div>
-      </article>
+  <div class="cont">
+    <div class="box">
+      <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
+      <div class="txt">
+        <p>지아 V핀셋</p>
+        <span>V Tweezers 01–05</span>
+        <em>17,000원</em>
+        <i>지아가 수업과 현장에서 직접 쓰는 핀셋입니다. V01~05, 손 잡는 방식에 맞는 형태로 준비되어 있습니다.</i>
+      </div>
+      <a href="page_11.html" class="more_btn">자세히 보러가기</a>
+    </div>
+    <div class="box">
+      <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
+      <div class="txt">
+        <p>퍼스트 전처리제</p>
+        <span>First Pre-Treatment</span>
+        <em>13,000원</em>
+        <i>완벽한 결과를 만드는 첫 루틴. 테이핑 후 가모를 얹기 전 사용하는 전문가용 전처리제입니다.</i>
+      </div>
+      <a href="page_11.html" class="more_btn">자세히 보러가기</a>
+    </div>
+    <div class="box">
+      <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
+      <div class="txt">
+        <p>블로그 유료회원 정기구독</p>
+        <span>Membership</span>
+        <em>9,900원 / 월</em>
+        <i>수업에서 다 못 나눈 시술과 운영 이야기를 정기적으로 보내드립니다. 언제든 해지할 수 있습니다.</i>
+      </div>
+      <a href="page_05.html" class="more_btn">자세히 보러가기</a>
     </div>
   </div>
+  <p class="apply-note">가격은 레이아웃 확인용 임시 표기입니다 · 제품 문의는 1:1 문의로 남겨주시면 안내드립니다.</p>
 </section>
-
 
 <!-- ================= FOOTER (유라인 푸터 스타일) ================= -->
 <footer id="footer">
