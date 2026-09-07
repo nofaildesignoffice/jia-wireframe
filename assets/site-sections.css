@@ -510,3 +510,38 @@
   .tabclass_section .stepbar h4{font-size:4.2666666667vw;margin-bottom:2vw}
   .tabclass_section .stepbar p{font-size:3.7333333333vw}
 }
+
+/* ==========================================================================
+   프리미엄 시스템 — 유라인 "Premium System" (i03-cut-solution) 스타일
+   텍스트가 위, 세로 이미지가 아래. 보더·아이콘 없는 4열 그리드.
+   ========================================================================== */
+.premium_section{padding:7.4479vw 6.25vw 5.5729166667vw;background:#FFFAF2}
+.premium_section .title{margin-bottom:3.8541666667vw;text-align:center}
+.premium_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.03em;margin-bottom:.8333333333vw}
+.premium_section .title p{font-size:1.1458333333vw;font-weight:600;color:var(--ul-ink);letter-spacing:-.055em;margin-bottom:.8333333333vw}
+.premium_section .title span{font-size:.8333333333vw;font-weight:400;line-height:1.5;color:#48433c;display:block;word-break:keep-all}
+.premium_section .title span strong{font-weight:400;color:var(--ul-brown)}
+
+.premium_section .cont{display:flex;justify-content:space-between;padding-top:1.6666666667vw}
+.premium_section .cont .box{width:20.3125vw}
+.premium_section .cont .box p{font-size:1.1458333333vw;font-weight:600;margin-bottom:.8333333333vw;color:var(--ul-ink);letter-spacing:-.03em;word-break:keep-all}
+.premium_section .cont .box span{font-size:.78125vw;font-weight:400;color:#707070;line-height:1.53;margin-bottom:2.0833333333vw;display:block;word-break:keep-all}
+.premium_section .cont .box .pm-img{width:100%;height:23.4375vw;margin-bottom:0;background:#F1E9DC;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#B2B2B2;padding:1.6vw;text-align:center}
+.premium_section .cont .box .pm-img svg{width:40px;height:40px}
+.premium_section .cont .box .pm-img em{font-style:normal;font-size:.7291666667vw;line-height:1.5;margin-top:1vw;word-break:keep-all}
+
+@media screen and (max-width:900px){
+  .premium_section{padding:13.1925vw 5.3333333333vw 15.8312vw;background:#F9F5EF}
+  .premium_section .title{text-align:left;margin-bottom:0}
+  .premium_section .title h3{font-size:10.6666666667vw;margin-bottom:1.6vw}
+  .premium_section .title p{font-size:4.2666666667vw;margin-bottom:4.2666666667vw}
+  .premium_section .title span{font-size:3.4666666667vw;line-height:1.6}
+  .premium_section .title span strong{font-weight:700}
+  .premium_section .cont{flex-direction:column;justify-content:flex-start;padding-top:5.3333333333vw}
+  .premium_section .cont .box{width:100%}
+  .premium_section .cont .box:not(:last-child){margin-bottom:5.3333333333vw}
+  .premium_section .cont .box p{font-size:4.2666666667vw;margin-bottom:2.1333333333vw}
+  .premium_section .cont .box span{font-size:3.7333333333vw;color:#463e32;line-height:1.44;margin-bottom:2.0833333333vw}
+  .premium_section .cont .box .pm-img{height:59.7333333333vw;margin-bottom:4.2666666667vw;padding:6vw}
+  .premium_section .cont .box .pm-img em{font-size:3.2vw;margin-top:4vw}
+}
