@@ -545,3 +545,42 @@
   .premium_section .cont .box .pm-img{height:59.7333333333vw;margin-bottom:4.2666666667vw;padding:6vw}
   .premium_section .cont .box .pm-img em{font-size:3.2vw;margin-top:4vw}
 }
+
+/* ==========================================================================
+   시그니처 스텝 — 유라인 "Signature of ULINE" (.special_cont) 스타일
+   이미지 위, Erode 번호와 라벨이 아래. 보더 없이 여백으로만 구분.
+   모바일에서는 가로 스크롤.
+   ========================================================================== */
+.special_section{background:#F9F5EF;padding:8.3333333333vw 0 9.1145833333vw}
+.special_section .title{text-align:center;margin-bottom:4.0625vw;padding:0 24px}
+.special_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.03em;margin-bottom:.2083333333vw}
+.special_section .title .introAddText{font-size:1.1458333333vw;line-height:1.364;letter-spacing:-.055em;font-weight:600;color:var(--ul-ink)}
+.special_section .title .basicText{font-size:.8854166667vw;line-height:1.412;color:#48433c;margin-top:.9375vw;letter-spacing:-.056em;word-break:keep-all}
+
+.special_section .cont{display:flex;justify-content:space-between;width:66.6666666667vw;margin:0 auto;text-align:center}
+.special_section .cont .box{width:12.1875vw}
+.special_section .cont .box .img{width:12.1875vw;height:13.8020833333vw;margin-bottom:1.875vw;background:#EFE7DA;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#B2B2B2;padding:1.2vw;text-align:center}
+.special_section .cont .box .img svg{width:36px;height:36px}
+.special_section .cont .box .img em{font-style:normal;font-size:.6771vw;line-height:1.5;margin-top:.8vw;word-break:keep-all}
+.special_section .cont .box .n{font-size:.8333333333vw;font-weight:400;font-family:"Erode","Pretendard",serif;margin-bottom:1px;color:var(--ul-taupe);letter-spacing:.02em}
+.special_section .cont .box .nm{font-size:1.0416666667vw;font-weight:400;font-family:"Erode","Pretendard",serif;color:var(--ul-ink);letter-spacing:-.02em;display:block;word-break:keep-all;line-height:1.35}
+.special_section .cont .box .d{font-size:.7812vw;line-height:1.6;color:#707070;margin-top:.83vw;word-break:keep-all}
+.special_section .foot-note{max-width:1000px;margin:4vw auto 0;padding:0 24px;text-align:center;font-size:.9375vw;color:#4A453F;line-height:1.8;word-break:keep-all}
+.special_section .foot-note strong{font-weight:700;color:var(--ul-brown)}
+
+@media screen and (max-width:900px){
+  .special_section{padding:18.4vw 0 21.6vw}
+  .special_section .title{margin-bottom:8.5333333333vw}
+  .special_section .title h3{font-size:10.6666666667vw}
+  .special_section .title .introAddText{font-size:4vw;letter-spacing:-.04em;word-break:keep-all}
+  .special_section .title .basicText{font-size:3.4666666667vw;line-height:1.462;color:#090909;margin-top:3.2vw}
+  .special_section .cont{width:100%;overflow-x:auto;justify-content:flex-start;padding-left:5.3333333333vw;padding-bottom:9.0667vw}
+  .special_section .cont .box{width:38.9333333333vw;flex-shrink:0;margin-right:4.8vw}
+  .special_section .cont .box:last-child{margin-right:5.3333333333vw}
+  .special_section .cont .box .img{width:38.9333333333vw;height:44.2666666667vw;margin-bottom:7.4666666667vw;padding:4vw}
+  .special_section .cont .box .img em{font-size:2.9vw;margin-top:3vw}
+  .special_section .cont .box .n{font-size:3.7333333333vw}
+  .special_section .cont .box .nm{font-size:5.3333333333vw}
+  .special_section .cont .box .d{font-size:3.4666666667vw;margin-top:3.2vw}
+  .special_section .foot-note{font-size:3.7333333333vw;margin-top:8vw}
+}
