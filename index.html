@@ -115,7 +115,8 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 #header .header .header-wrap .headerBox{display:flex;align-items:center;height:100%}
 
 #header .header .header-wrap .logo{margin-right:4.1666666667vw;z-index:100}
-#header .header .header-wrap .logo a{display:flex;align-items:center;height:2.0833333333vw;font-size:1.4583333333vw;font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1}
+#header .header .header-wrap .logo a{display:flex;align-items:center;height:2.0833333333vw}
+#header .header .header-wrap .logo img{height:100%;width:auto;display:block}
 
 #header .header .header-wrap .menu{display:flex;align-items:center;opacity:1;transition:opacity .6s;height:100%}
 #header .header .header-wrap .menu.off{opacity:0;pointer-events:none}
@@ -380,6 +381,108 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
   .tv_section .rv-filter{opacity:0}
 }
 
+/* ===== Store — 유라인 Care 스타일 ===== */
+.care_section{background:var(--ul-cream);padding:9.375vw 0 0}
+.care_section .title{text-align:center;margin-bottom:3.59375vw;padding:0 24px}
+.care_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;color:#463E32;line-height:1;letter-spacing:-.02em}
+.care_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;margin:.4166666667vw 0 1.5625vw;letter-spacing:-.02em}
+.care_section .title span{font-size:.9375vw;font-weight:400;line-height:1.6;color:#4A453F;display:block}
+.care_section .title span b{font-weight:600}
+.care_section .cont{border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1;display:flex}
+.care_section .cont .box{padding:2.0833333333vw 1.0416666667vw 1.7708333333vw;text-align:center;width:33.3333%;display:flex;flex-direction:column}
+.care_section .cont .box:not(:last-child){border-right:1px solid #d1d1d1}
+.care_section .cont .box .img{width:15vw;height:17.96875vw;margin:0 auto}
+.care_section .cont .box .img .img-ph{width:100%;height:100%;background:#F8F1E5;display:flex;align-items:center;justify-content:center;color:#B2B2B2}
+.care_section .cont .box .img .img-ph svg{width:40px;height:40px}
+.care_section .cont .box .txt{margin:1.4vw 0 1.3020833333vw;text-align:center;flex:1}
+.care_section .cont .box .txt p{font-size:.9375vw;font-weight:600;margin-bottom:.2083333333vw;color:var(--ul-ink);letter-spacing:-.02em}
+.care_section .cont .box .txt span{font-family:"Erode","Pretendard",serif;font-size:.8333333333vw;font-weight:400;color:#7A746C;display:block}
+.care_section .cont .box .txt em{display:block;font-style:normal;font-size:1.0416666667vw;font-weight:700;color:var(--ul-brown);margin-top:.72vw;letter-spacing:-.02em}
+.care_section .cont .box .txt i{display:block;font-style:normal;font-size:.8333333333vw;font-weight:400;line-height:1.65;color:#6B6660;margin-top:.52vw;word-break:keep-all}
+.care_section .cont .box .more_btn{width:100%;height:3.125vw;border:1px solid #adadad;display:flex;align-items:center;justify-content:center;font-size:.8333333333vw;font-weight:400;color:var(--ul-ink);transition:all .3s}
+.care_section .cont .box .more_btn:hover{color:#fff;background:#2a2a2a;border-color:#555}
+
+@media screen and (max-width:900px){
+  .care_section{padding:19.525vw 0 0}
+  .care_section .title{margin-bottom:6.4vw}
+  .care_section .title h3{font-size:9.6vw}
+  .care_section .title p{font-size:4.2666666667vw;margin:2.1333333333vw 0 4.2666666667vw}
+  .care_section .title span{font-size:3.4666666667vw;word-break:keep-all}
+  .care_section .cont{flex-wrap:wrap}
+  .care_section .cont .box{width:100%;padding:6.4vw 5.3333333333vw}
+  .care_section .cont .box:not(:last-child){border-right:none;border-bottom:1px solid #d1d1d1}
+  .care_section .cont .box .img{width:61.3333333333vw;height:73.6vw}
+  .care_section .cont .box .txt{margin:5.3vw 0 6.6666666667vw}
+  .care_section .cont .box .txt p{font-size:4.5333333333vw;margin-bottom:.5333333333vw;letter-spacing:-.03em}
+  .care_section .cont .box .txt span{font-size:3.7333333333vw}
+  .care_section .cont .box .txt em{font-size:4.8vw;margin-top:3.2vw}
+  .care_section .cont .box .txt i{font-size:3.7333333333vw;margin-top:2.4vw}
+  .care_section .cont .box .more_btn{width:100%;height:12.8vw;font-size:4vw}
+}
+
+/* ===== 뉴스레터 CTA — 유라인 톤앤매너 ===== */
+.letter_section{background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink));padding:7.8vw 0;text-align:center}
+.letter_section .letter-inner{padding:0 24px}
+.letter_section h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;color:#fff;line-height:1;letter-spacing:-.02em;margin-bottom:1.3vw}
+.letter_section p{font-size:1.6666666667vw;font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:.83vw}
+.letter_section span{display:block;font-size:.9375vw;font-weight:400;line-height:1.8;color:var(--ul-sub)}
+.letter_section a{width:280px;height:55px;font-size:1.0416666667vw;letter-spacing:-.05em;margin:2.6vw auto 0;display:flex;align-items:center;justify-content:center;border:1px solid #fff;color:#fff;transition:background .3s,color .3s}
+.letter_section a:hover{background:#fff;color:var(--ul-ink)}
+
+/* ===== FOOTER — 유라인 푸터 스타일 ===== */
+#footer{background:#1a1a1a;padding:1.5625vw 3.125vw 1.1979166667vw 6.25vw;z-index:98;position:relative}
+#footer .inner{display:flex;align-items:flex-start}
+#footer .inner .logo{width:5.7291666667vw;margin-right:5.5729166667vw;flex-shrink:0}
+#footer .inner .logo a{display:block}
+#footer .inner .logo img{width:100%;height:auto;display:block}
+#footer .inner .cont{width:100%}
+#footer .inner .cont .top{display:flex;align-items:center;padding-bottom:1.0416666667vw;border-bottom:1px solid #393939;margin-bottom:1.71875vw}
+#footer .inner .cont .top a{font-size:.7291666667vw;font-weight:500;color:#ccc}
+#footer .inner .cont .top a:not(:last-child){margin-right:2.0833333333vw}
+#footer .inner .cont .info{display:flex;align-items:flex-start}
+#footer .inner .cont .info > div{width:100%}
+#footer .inner .cont .info > div.left{width:18.2291666667vw;flex-shrink:0}
+#footer .inner .cont .info > div > div{display:flex}
+#footer .inner .cont .info > div > div:not(:last-child){margin-bottom:.5208333333vw}
+#footer .inner .cont .info > div > div > p{font-size:.6770833333vw;font-weight:400;color:#fffcf8;margin-right:.5208333333vw;flex-shrink:0}
+#footer .inner .cont .info > div > div span{font-size:.6770833333vw;font-weight:400;color:#bebebe}
+#footer .inner .cont .info > div > div span a{color:#bebebe}
+#footer .inner .cont .info > div .copy{margin-top:1.71875vw;justify-content:space-between;align-items:center}
+#footer .inner .cont .info > div .copy p{font-size:.7291666667vw;font-weight:500;color:#fffcf8;margin-right:0}
+#footer .inner .cont .info > div .copy .sns a{font-size:.6770833333vw;font-weight:500;color:#fffcf8}
+#footer .inner .cont .info > div .copy .sns a:not(:first-child){margin-left:1.5625vw}
+.mo_footer{display:none}
+
+@media screen and (max-width:900px){
+  .letter_section{padding:19.2vw 0}
+  .letter_section h3{font-size:9.6vw;margin-bottom:4.2vw}
+  .letter_section p{font-size:4.8vw;margin-bottom:3.2vw;word-break:keep-all}
+  .letter_section span{font-size:3.7333333333vw;line-height:1.6;word-break:keep-all}
+  .letter_section a{width:72vw;height:12.8vw;font-size:4vw;margin-top:8.5vw}
+
+  #footer{padding:10.6666666667vw 5.3333333333vw;z-index:49}
+  #footer .inner{display:none}
+  #footer .mo_footer{display:block}
+  #footer .mo_footer h1{margin-bottom:10.6666666667vw}
+  #footer .mo_footer h1 a{width:23.4666666667vw;display:block}
+  #footer .mo_footer h1 img{width:100%;height:auto;display:block}
+  #footer .mo_footer .info{padding-bottom:8.5333333333vw;border-bottom:1px solid #393939}
+  #footer .mo_footer .info div{display:flex;align-items:center}
+  #footer .mo_footer .info div:first-child{margin-bottom:4.2666666667vw}
+  #footer .mo_footer .info div a{font-size:3.7333333333vw;font-weight:500;color:#ccc}
+  #footer .mo_footer .info div a:first-child{margin-right:4.2666666667vw;padding-right:4.2666666667vw;position:relative}
+  #footer .mo_footer .info div a:first-child::after{position:absolute;content:"";width:1px;height:2.6666666667vw;top:50%;transform:translateY(-50%);right:0;background:#ccc}
+  #footer .mo_footer .adress{padding-top:8.5333333333vw;margin-bottom:10.6666666667vw}
+  #footer .mo_footer .adress div{display:flex;align-items:center}
+  #footer .mo_footer .adress div:not(:last-child){margin-bottom:2.4vw}
+  #footer .mo_footer .adress div p{font-size:3.2vw;color:#fffcf8;margin-right:2.1333333333vw;flex-shrink:0}
+  #footer .mo_footer .adress div span{font-size:3.2vw;color:#bebebe}
+  #footer .mo_footer .adress div span a{color:#bebebe}
+  #footer .mo_footer .adress .copy{font-size:3.4666666667vw;font-weight:500;color:#fff;opacity:.43;margin-top:6.4vw}
+  #footer .mo_footer .sns{display:flex;flex-wrap:wrap;width:80%}
+  #footer .mo_footer .sns a{font-size:3.7333333333vw;font-weight:500;color:#fff;margin-right:8vw;margin-bottom:5.3333333333vw}
+}
+
 /* ===== GRIDS ===== */
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -434,18 +537,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .sub-form{display:flex;gap:10px;max-width:520px;margin:0 auto}
 .sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
 
-/* FOOTER */
-.footer{background:var(--bg-white);padding:72px 0 0;color:var(--text-gray);border-top:1px solid var(--border-light)}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px;padding-bottom:48px;border-bottom:1px solid var(--border-light)}
-.footer-brand-name{font-size:24px;font-weight:800;color:var(--text-black);margin-bottom:16px;letter-spacing:-.03em}
-.footer-info{font-size:13px;line-height:2;color:var(--text-gray)}
-.footer-col-title{font-size:14px;font-weight:700;color:var(--text-black);margin-bottom:16px}
-.footer-col a{display:block;font-size:13px;color:var(--text-gray);margin-bottom:10px}
-.footer-bottom{padding:24px 0;display:flex;justify-content:space-between;font-size:13px;color:var(--text-light);flex-wrap:wrap;gap:12px}
-.footer-bottom nav{display:flex;gap:20px}
-.footer-sns{display:flex;gap:12px;margin-top:20px}
-.footer-sns a{width:36px;height:36px;border:1px solid var(--border-default);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-dark)}
-.footer-sns svg{width:16px;height:16px}
 
 /* TOP */
 .top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
@@ -458,7 +549,8 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   #header .dropdown_menu{display:none !important}
   .mo_header{position:fixed;left:0;top:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 5.3333333333vw;height:16vw;background:rgba(0,0,0,.55);z-index:200;transition:background .4s}
   .mo_header.on{background:transparent}
-  .mo_header h1 > a{display:flex;align-items:center;height:calc(100vw * (30/375));font-size:5.6vw;font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1}
+  .mo_header h1 > a{display:flex;align-items:center;height:calc(100vw * (30/375))}
+  .mo_header h1 img{height:100%;width:auto;display:block}
   .mo_header .mo_icon{display:flex;align-items:center;gap:5.3333333333vw}
   .mo_header .mo_icon a,.mo_header .mo_icon button{width:6.4vw;height:6.4vw;color:#fff;display:flex;align-items:center;justify-content:center}
   .mo_header .mo_icon svg{width:100%;height:100%}
@@ -493,7 +585,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 @media (max-width:1024px){
   .grid-4{grid-template-columns:repeat(2,1fr)}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr 1fr}
 }
 @media (max-width:768px){
   .section{padding:64px 0}
@@ -501,7 +592,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .grid-2,.grid-3,.grid-4,.split,.prod-grid{grid-template-columns:1fr}
   .stepbar{grid-template-columns:1fr}
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
-  .footer-grid{grid-template-columns:1fr 1fr}
   .sub-form{flex-direction:column}
   }
 </style>
@@ -513,7 +603,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   <div class="header on" id="nav">
     <div class="header-wrap">
       <div class="headerBox">
-        <h1 class="logo"><a href="index.html">jia</a></h1>
+        <h1 class="logo"><a href="index.html"><img src="assets/logo-h.svg" alt="지아"></a></h1>
         <ul class="menu" id="gnbMenu">
           <li class="is-active"><a href="index.html">홈</a></li>
           <li>
@@ -602,7 +692,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
   <!-- 모바일 헤더 -->
   <div class="mo_header on" id="moHeader">
-    <h1><a href="index.html">jia</a></h1>
+    <h1><a href="index.html"><img src="assets/logo-h.svg" alt="지아"></a></h1>
     <div class="mo_icon">
       <a href="#" aria-label="검색"><i data-lucide="search"></i></a>
       <button id="moOpen" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
@@ -1189,88 +1279,119 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
 </section>
 
-<!-- ================= 섹션 8 : Store ================= -->
-<section class="section">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Store</p>
-      <h2 class="section-title">수업이 끝나도, 손에 남는 것들</h2>
+<!-- ================= 섹션 8 : Store (유라인 Care 스타일) ================= -->
+<section class="care_section">
+  <div class="title">
+    <h3>JIA Store</h3>
+    <p>수업이 끝나도, 손에 남는 것들</p>
+    <span>수업에서 쓰던 <b>그 도구와 그 루틴</b>을 샵에서도 그대로 이어가실 수 있도록<br class="pc_br">
+      지아가 직접 쓰는 것들만 준비했습니다.</span>
+  </div>
+  <div class="cont">
+    <div class="box">
+      <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
+      <div class="txt">
+        <p>지아 V핀셋</p>
+        <span>V Tweezers 01–05</span>
+        <em>17,000원</em>
+        <i>손 잡는 방식에 맞는 형태로 준비되어 있습니다.</i>
+      </div>
+      <a href="page_04.html" class="more_btn">자세히 보러가기</a>
     </div>
-    <div class="prod-grid">
-      <a class="p-card" href="page_04.html">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="p-body">
-          <p class="p-cat">전문가용 핀셋</p>
-          <p class="p-name">지아 V핀셋</p>
-          <p class="p-price">17,000원</p>
-          <p class="p-desc">지아가 수업과 현장에서 직접 쓰는 핀셋입니다. V01~05, 손 잡는 방식에 맞는 형태로 준비되어 있습니다.</p>
-        </div>
-      </a>
-      <a class="p-card" href="page_04.html">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="p-body">
-          <p class="p-cat">전처리제</p>
-          <p class="p-name">퍼스트 전처리제 (FIRST PRE-TREATMENT)</p>
-          <p class="p-price">13,000원</p>
-          <p class="p-desc">완벽한 결과를 만드는 첫 루틴. 테이핑 후 가모를 얹기 전 사용하는 전문가용 전처리제입니다.</p>
-        </div>
-      </a>
-      <a class="p-card" href="page_05.html">
-        <div class="img-placeholder"><i data-lucide="image"></i></div>
-        <div class="p-body">
-          <p class="p-cat">멤버십</p>
-          <p class="p-name">블로그 유료회원 정기구독</p>
-          <p class="p-price">9,900원 / 월</p>
-          <p class="p-desc">수업에서 다 못 나눈 시술과 운영 이야기를 정기적으로 보내드립니다. 언제든 해지할 수 있습니다.</p>
-        </div>
-      </a>
+    <div class="box">
+      <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
+      <div class="txt">
+        <p>퍼스트 전처리제</p>
+        <span>First Pre-Treatment</span>
+        <em>13,000원</em>
+        <i>테이핑 후 가모를 얹기 전 쓰는 전문가용 전처리제입니다.</i>
+      </div>
+      <a href="page_04.html" class="more_btn">자세히 보러가기</a>
+    </div>
+    <div class="box">
+      <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
+      <div class="txt">
+        <p>블로그 유료회원 정기구독</p>
+        <span>Membership</span>
+        <em>9,900원 / 월</em>
+        <i>수업에서 다 못 나눈 시술과 운영 이야기를 정기적으로 보내드립니다.</i>
+      </div>
+      <a href="page_05.html" class="more_btn">자세히 보러가기</a>
     </div>
   </div>
 </section>
 
-<!-- ================= 최하단 : 유료 뉴스레터 CTA ================= -->
-<section class="section bg-dark">
-  <div class="container text-center">
-    <p class="section-label">지아 뉴스레터</p>
-    <h2 class="section-title">속눈썹 사업에 대한 모든 것을 씁니다</h2>
-    <p class="section-desc">시술과 제품, 고객 응대와 샵 운영까지. 현장에서 부딪히며 알게 된 것들을 정기적으로 보내드립니다.</p>
-    <a href="page_05.html" class="btn btn-primary">뉴스레터 살펴보기</a>
+<!-- ================= 최하단 : 유료 뉴스레터 CTA (유라인 톤앤매너) ================= -->
+<section class="letter_section">
+  <div class="letter-inner">
+    <h3>Keep Going</h3>
+    <p>속눈썹 사업에 대한 모든 것을 씁니다</p>
+    <span>시술과 제품, 고객 응대와 샵 운영까지.<br class="mo_br">
+      현장에서 부딪히며 알게 된 것들을 정기적으로 보내드립니다.</span>
+    <a href="page_05.html">뉴스레터 살펴보기 →</a>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <p class="footer-brand-name">jia</p>
-        <div class="footer-info">
-          상호 지아 &nbsp;|&nbsp; 대표 임희진<br>
-          사업자등록번호 [클라이언트 확인 필요]<br>
-          통신판매업신고번호 [클라이언트 확인 필요]<br>
-          주소 [클라이언트 확인 필요]<br>
-          전화 [클라이언트 확인 필요] &nbsp;|&nbsp; 이메일 [클라이언트 확인 필요]<br>
-          개인정보관리책임자 [클라이언트 확인 필요]
+<!-- ================= FOOTER (유라인 푸터 스타일) ================= -->
+<footer id="footer">
+  <div class="inner">
+    <div class="logo"><a href="index.html"><img src="assets/logo-h.svg" alt="지아"></a></div>
+    <div class="cont">
+      <div class="top">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">환불 및 취소 규정</a>
+        <a href="#">이메일 무단수집거부</a>
+      </div>
+      <div class="info">
+        <div class="left">
+          <div><p>상호</p><span>지아</span></div>
+          <div><p>대표자</p><span>임희진</span></div>
+          <div><p>사업자등록번호</p><span>[클라이언트 확인 필요]</span></div>
         </div>
-        <div class="footer-sns">
-          <a href="#"><i data-lucide="camera"></i></a>
-          <a href="#"><i data-lucide="message-circle"></i></a>
+        <div class="right">
+          <div><p>통신판매업신고번호</p><span>[클라이언트 확인 필요]</span></div>
+          <div><p>개인정보관리책임자</p><span>[클라이언트 확인 필요]</span></div>
+          <div><p>주소</p><span>[클라이언트 확인 필요]</span></div>
+          <div><p>전화번호</p><span>[클라이언트 확인 필요]</span></div>
+          <div><p>E-mail</p><span><a href="#">[클라이언트 확인 필요]</a></span></div>
+          <div class="copy">
+            <p>Copyright © 2026 JIA. All Rights Reserved</p>
+            <div class="sns">
+              <a href="#" target="_blank">Instagram</a>
+              <a href="#" target="_blank">Kakao</a>
+              <a href="#" target="_blank">Blog</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-col"><p class="footer-col-title">클래스</p><a href="page_02.html">경력자 클래스</a><a href="page_12.html">창업반 클래스</a></div>
-      <div class="footer-col"><p class="footer-col-title">Store</p><a href="page_04.html">제품</a><a href="page_05.html">유료 뉴스레터 멤버십</a></div>
-      <div class="footer-col"><p class="footer-col-title">블로그</p><a href="page_07.html">무료회원 뉴스레터</a><a href="page_08.html">유료회원 뉴스레터</a></div>
-      <div class="footer-col"><p class="footer-col-title">고객센터</p><a href="page_09.html">공지사항</a><a href="page_10.html">자주 묻는 질문</a><a href="page_11.html">1:1 문의</a></div>
     </div>
-    <div class="footer-bottom">
-      <span>© jia. All rights reserved.</span>
-      <nav><a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">환불 및 취소 규정</a></nav>
+  </div>
+
+  <div class="mo_footer">
+    <h1><a href="index.html"><img src="assets/logo-h.svg" alt="지아"></a></h1>
+    <div class="info">
+      <div><a href="#">개인정보처리방침</a><a href="#">이용약관</a></div>
+      <div><a href="#">환불 및 취소 규정</a><a href="#">이메일 무단수집거부</a></div>
+    </div>
+    <div class="adress">
+      <div><p>상호</p><span>지아</span></div>
+      <div><p>대표자</p><span>임희진</span></div>
+      <div><p>사업자등록번호</p><span>[클라이언트 확인 필요]</span></div>
+      <div><p>통신판매업신고번호</p><span>[클라이언트 확인 필요]</span></div>
+      <div><p>개인정보관리책임자</p><span>[클라이언트 확인 필요]</span></div>
+      <div><p>주소</p><span>[클라이언트 확인 필요]</span></div>
+      <div><p>전화번호</p><span>[클라이언트 확인 필요]</span></div>
+      <div><p>E-mail</p><span><a href="#">[클라이언트 확인 필요]</a></span></div>
+      <p class="copy">Copyright © 2026 JIA. All Rights Reserved</p>
+    </div>
+    <div class="sns">
+      <a href="#" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Kakao</a>
+      <a href="#" target="_blank">Blog</a>
     </div>
   </div>
 </footer>
-
-<!-- TOP -->
-<button class="top-btn" id="topBtn"><i data-lucide="arrow-up"></i></button>
 
 <!-- ================= 후기 모달 ================= -->
 <div class="rv-modal" id="rvModal" hidden>
