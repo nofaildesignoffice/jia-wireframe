@@ -221,10 +221,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 
 /* ===== VALUE — 유라인 가치 소개 스타일 ===== */
 .value_section{background-color:#FFFBF0}
-.value_section .content{position:relative;height:24.3229166667vw;min-height:340px}
-.value_section .content .value-ph{position:absolute;inset:0;background:#F3EEE2;display:flex;align-items:center;justify-content:center;color:#C7BCA6;border-bottom:1px solid rgba(0,0,0,.05)}
-.value_section .content .value-ph svg{width:48px;height:48px}
-.value_section .content .value-ph span{position:absolute;bottom:20px;font-size:13px}
+.value_section .content{position:relative;height:24.3229166667vw;min-height:340px;background:url(assets/bg-value.png) no-repeat center center/cover}
 .value_section .content .text{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding-top:5.9375vw;color:var(--ul-ink)}
 .value_section .content .text h3{font-size:3.4375vw;font-weight:400;font-family:"Erode","Pretendard",serif;line-height:1;letter-spacing:-.02em}
 .value_section .content .text p{font-size:1.0416666667vw;font-weight:600;margin:.7291666667vw 0 2.6041666667vw}
@@ -238,7 +235,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .value-points .vp p{font-size:.9375vw;font-weight:400;line-height:1.8;color:#6B6660}
 
 @media screen and (max-width:900px){
-  .value_section .content{height:106.6666666667vw;min-height:0}
+  .value_section .content{height:106.6666666667vw;min-height:0;background:url(assets/bg-value-m.png) no-repeat center center/cover}
   .value_section .content .text{padding-top:26.4vw}
   .value_section .content .text h3{font-size:9.6vw}
   .value_section .content .text p{font-size:4.2666666667vw;margin:3.2vw 0 8.5333333333vw}
@@ -253,8 +250,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 
 /* ===== 경력자 클래스 — 유라인 프로모션 스타일 ===== */
 .promotion_section{background:var(--ul-cream);padding:2.6041666667vw 0 0}
-.promotion_section .bar{position:relative;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;height:15.1041666667vw;min-height:210px;padding-left:6.25vw}
-.promotion_section .bar .bar-ph{position:absolute;inset:0;background:#F1E9DC;display:flex;align-items:flex-end;justify-content:flex-end;padding:14px 20px;color:#BCAA8E;font-size:13px}
+.promotion_section .bar{position:relative;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;height:15.1041666667vw;min-height:210px;padding-left:6.25vw;background:url(assets/bg-promo-bar.png) no-repeat center center/cover}
 .promotion_section .bar .bar-text{position:relative;z-index:2}
 .promotion_section .bar h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:var(--ul-brown);line-height:1;letter-spacing:-.02em}
 .promotion_section .bar p{font-size:1.0416666667vw;font-weight:600;color:var(--ul-brown);letter-spacing:-.02em}
@@ -270,7 +266,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .pm-track{display:flex;gap:26px;transition:transform .4s ease}
 .pm-slide{flex:0 0 calc((100% - 78px)/4);color:#000;display:block}
 .pm-slide .img{overflow:hidden}
-.pm-slide .img .img-ph{width:100%;aspect-ratio:1/1.15;background:#EDE5D8;display:flex;align-items:center;justify-content:center;color:#C4B69E;transition:border-radius .3s}
+.pm-slide .img .img-ph{width:100%;aspect-ratio:1/1.15;background:#F8F1E5;display:flex;align-items:center;justify-content:center;color:#B2B2B2;transition:border-radius .3s}
 .pm-slide:hover .img .img-ph{border-radius:10.4166666667vw}
 .pm-slide .img .img-ph svg{width:40px;height:40px}
 .pm-slide .text{margin-top:1.1979166667vw}
@@ -288,7 +284,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 
 @media screen and (max-width:900px){
   .promotion_section{padding:0}
-  .promotion_section .bar{height:39.4666666667vw;min-height:0;padding-left:5.3333333333vw}
+  .promotion_section .bar{height:39.4666666667vw;min-height:0;padding-left:5.3333333333vw;background:url(assets/bg-promo-bar-m.png) no-repeat center center/cover}
   .promotion_section .bar h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .promotion_section .bar p{font-size:4vw;word-break:keep-all;padding-right:5.3vw}
   .promotion_section .slide_contain{padding:13.3333333333vw 5.3333333333vw 21.3333333333vw}
@@ -324,7 +320,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .signature_section .clinic .left .more_btn div{width:1.5625vw;height:1.5625vw;display:flex;align-items:center;justify-content:center;color:var(--ul-brown)}
 .signature_section .clinic .left .more_btn div svg{width:100%;height:100%}
 .signature_section .clinic .right{z-index:11;border-bottom:1px solid #b2b2b2;align-self:flex-end}
-.signature_section .clinic .right .sig-ph{width:46.875vw;height:47.2vw;background:#EDE5D8;display:flex;align-items:center;justify-content:center;color:#C4B69E;position:relative}
+.signature_section .clinic .right .sig-ph{width:46.875vw;height:47.2vw;background:#F8F1E5;display:flex;align-items:center;justify-content:center;color:#B2B2B2;position:relative}
 .signature_section .clinic .right .sig-ph svg{width:56px;height:56px}
 .signature_section .clinic .right .sig-ph span{position:absolute;bottom:24px;font-size:13px}
 
@@ -347,7 +343,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 }
 
 /* ===== 후기 — 유라인 TV 영상 스타일 ===== */
-.tv_section{background-color:#F8F1E5;padding-bottom:5.2vw}
+.tv_section{background-color:#F8F1E5;background-image:url(assets/bg-tv.png);background-repeat:no-repeat;background-position:center center;background-size:cover;padding-bottom:5.2vw}
 .tv_section .title{padding-top:4.53125vw;text-align:center}
 .tv_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#463E32;line-height:1;letter-spacing:-.02em}
 .tv_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;line-height:1.7;letter-spacing:-.02em}
@@ -357,7 +353,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .tv_section .rv-card{flex:0 0 calc((100% - 2 * 3.6vw)/3);background:none;border:none;border-radius:0;overflow:visible;cursor:pointer}
 .tv_section .rv-track{gap:3.6vw}
 .tv_section .rv-media{position:relative;overflow:hidden}
-.tv_section .rv-img{width:100%;aspect-ratio:17.7/20.8;object-fit:cover;object-position:center top;border-radius:0;background:#E7DCC9}
+.tv_section .rv-img{width:100%;aspect-ratio:17.7/20.8;object-fit:cover;object-position:center top;border-radius:0;background:#F8F1E5}
 .tv_section .rv-filter{position:absolute;inset:0;background:#000;opacity:.3;transition:opacity .4s}
 .tv_section .rv-card.is-focus .rv-filter{opacity:0}
 .tv_section .rv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100vw * (44/1920));height:calc(100vw * (44/1920));min-width:34px;min-height:34px;border-radius:50%;border:1px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;pointer-events:none}
@@ -375,7 +371,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
   .tv_section .rv-card{flex:0 0 calc((100% - 3.6vw)/2)}
 }
 @media screen and (max-width:900px){
-  .tv_section{padding-bottom:16vw}
+  .tv_section{background-image:url(assets/bg-tv-m.png);padding-bottom:16vw}
   .tv_section .title{padding-top:16vw}
   .tv_section .title h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .tv_section .title p{font-size:4vw;word-break:keep-all;padding:0 5.3333333333vw}
@@ -721,7 +717,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <!-- ================= 섹션 1-1 : ABOUT (유라인 가치 소개 스타일) ================= -->
 <section class="value_section">
   <div class="content">
-    <div class="value-ph"><i data-lucide="image"></i><span>[배경 이미지 · 지아 클래스 전경 · 1920×475 · 밝은 톤]</span></div>
     <div class="text">
       <h3>JIA’s Value</h3>
       <p>지아가 하는 일</p>
@@ -752,7 +747,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <!-- ================= 섹션 3 : 경력자 클래스 (유라인 프로모션 스타일) ================= -->
 <section class="promotion_section">
   <div class="bar">
-    <div class="bar-ph"><span>[배경 이미지 · 시술 클로즈업 · 1920×290 · 크림 톤]</span></div>
     <div class="bar-text">
       <h3>CLASS</h3>
       <p>지금 어디에서 막혀 있는지에 따라, 시작점이 다릅니다</p>
