@@ -189,7 +189,7 @@
 
 /* ===== 창업반 클래스 — 유라인 클리닉 시그니처 스타일 ===== */
 .signature_section{background:var(--ul-cream)}
-.signature_section .clinic{border-bottom:1px solid #b2b2b2;display:flex;align-items:center;justify-content:space-between;padding:0 3.125vw}
+.signature_section .clinic{border-top:1px solid #b2b2b2;border-bottom:1px solid #b2b2b2;display:flex;align-items:center;justify-content:space-between;padding:0 3.125vw}
 .signature_section .clinic .left{padding-left:3.125vw;border-left:1px solid #b2b2b2;padding-top:10.4vw;padding-bottom:10.4vw;width:50%;align-self:stretch}
 .signature_section .clinic .left h3{font-family:"Erode","Pretendard",serif;font-size:6.5625vw;font-weight:400;line-height:.9;color:#463E32;margin-bottom:2.4479166667vw;letter-spacing:-.02em}
 .signature_section .clinic .left h3 b{margin-left:4.1666666667vw;font-weight:400;position:relative}
