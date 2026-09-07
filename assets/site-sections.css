@@ -12,7 +12,7 @@
 }
 
 /* ===== 후기 — 유라인 TV 영상 스타일 ===== */
-.tv_section{background-color:#F8F1E5;background-image:url(assets/bg-tv.png);background-repeat:no-repeat;background-position:center center;background-size:cover;padding-bottom:5.2vw}
+.tv_section{background-color:#F8F1E5;background-image:url(assets/bg-tv.png?v=e99f3f60);background-repeat:no-repeat;background-position:center center;background-size:cover;padding-bottom:5.2vw}
 .tv_section .title{padding-top:4.53125vw;text-align:center}
 .tv_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#463E32;line-height:1;letter-spacing:-.02em}
 .tv_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;line-height:1.7;letter-spacing:-.02em}
@@ -41,7 +41,7 @@
   .tv_section .rv-card{flex:0 0 calc((100% - 3.6vw)/2)}
 }
 @media screen and (max-width:900px){
-  .tv_section{background-image:url(assets/bg-tv-m.png);padding-bottom:16vw}
+  .tv_section{background-image:url(assets/bg-tv-m.png?v=3cb5b9ee);padding-bottom:16vw}
   .tv_section .title{padding-top:16vw}
   .tv_section .title h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .tv_section .title p{font-size:4vw;word-break:keep-all;padding:0 5.3333333333vw}
@@ -115,8 +115,8 @@
 
 
 /* ===== VALUE — 유라인 가치 소개 스타일 ===== */
-.value_section{background-color:#FFFBF0}
-.value_section .content{position:relative;height:24.3229166667vw;min-height:340px;background:url(assets/bg-value.png) no-repeat center center/cover}
+.value_section{background-color:var(--ul-cream)}
+.value_section .content{position:relative;height:24.3229166667vw;min-height:340px;background:url(assets/bg-value.png?v=cff5b353) no-repeat center center/cover}
 .value_section .content .text{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding-top:5.9375vw;color:var(--ul-ink)}
 .value_section .content .text h3{font-size:3.4375vw;font-weight:400;font-family:"Erode","Pretendard",serif;line-height:1;letter-spacing:-.02em}
 .value_section .content .text p{font-size:1.0416666667vw;font-weight:600;margin:.7291666667vw 0 2.6041666667vw}
@@ -130,7 +130,7 @@
 .value-points .vp p{font-size:.9375vw;font-weight:400;line-height:1.8;color:#6B6660}
 
 @media screen and (max-width:900px){
-  .value_section .content{height:106.6666666667vw;min-height:0;background:url(assets/bg-value-m.png) no-repeat center center/cover}
+  .value_section .content{height:106.6666666667vw;min-height:0;background:url(assets/bg-value-m.png?v=e59a3534) no-repeat center center/cover}
   .value_section .content .text{padding-top:26.4vw}
   .value_section .content .text h3{font-size:9.6vw}
   .value_section .content .text p{font-size:4.2666666667vw;margin:3.2vw 0 8.5333333333vw}
