@@ -10,7 +10,8 @@
   --ul-sidebar:#444542;    /* 모바일 사이드바 */
   --ul-stone:#6F6D69;      /* 서브메뉴 카드 */
   --ul-sub:#ADADAD;        /* 서브 텍스트 */
-  --ul-cream:#FFFCF7;      /* 크림 배경 */
+  --ul-cream:#FFFCF7;      /* 크림 배경 (섹션 배경 1) */
+  --ul-cream-2:#F8F1E5;    /* 진한 크림 (섹션 배경 2) */
   --ul-taupe:#968067;      /* 브랜드 토프 */
   --ul-brown:#71543E;      /* 딥 브라운 */
   --ul-line:#E5E1DB;       /* 크림 위 보더 */
