@@ -9,6 +9,7 @@
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css" rel="stylesheet">
+<link href="assets/site-sections.css" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 
@@ -190,7 +191,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .hero p{font-size:15px}
   .hero-arrow{display:none}
   .grid-2,.grid-3,.grid-4,.split{grid-template-columns:1fr}
-  .cause-sec h3{font-size:22px}
   .stepbar{grid-template-columns:1fr}
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
   .sub-form{flex-direction:column}
@@ -512,22 +512,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
 .split.rev>*:first-child{order:2}
 @media (max-width:768px){.split.rev>*:first-child{order:0}}
-.cause-sec .text-center{margin-bottom:30px}
-.cause-sec .num{font-size:13px;font-weight:800;color:var(--text-light);margin-bottom:14px;letter-spacing:.06em}
-.cause-sec h3{font-size:28px;font-weight:700;color:var(--text-black);margin-bottom:16px;line-height:1.35;letter-spacing:-.02em}
-.cause-sec .body{font-size:16px;color:var(--text-gray);line-height:1.8}
-.cause-sec .img-placeholder{aspect-ratio:4/3}
 .shot{font-size:13px;color:var(--text-light);text-align:center;margin-top:14px;padding:0 24px;max-width:340px}
 .img-placeholder.has-shot{flex-direction:column}
 .answer-box{margin-top:64px;text-align:center}
 .answer-box p{font-size:22px;color:var(--text-black);line-height:1.75;letter-spacing:-.01em}
 .answer-box strong{font-weight:800}
-
-.sol-sec .tag{display:inline-block;font-size:12px;font-weight:800;color:#FFF;background:var(--text-black);border-radius:99px;padding:6px 13px;margin-bottom:18px}
-.sol-sec h3{font-size:28px;font-weight:700;color:var(--text-black);margin-bottom:16px;line-height:1.35;letter-spacing:-.02em}
-.sol-sec .body{font-size:16px;color:var(--text-gray);line-height:1.8}
-.sol-sec .basis{font-size:13px;color:var(--text-light);border-top:1px solid var(--border-light);padding-top:16px;margin-top:20px}
-.sol-sec .img-placeholder{aspect-ratio:4/3}
 
 .dark-quote{margin:48px 0;text-align:center}
 .dark-quote .qmark{color:var(--text-muted);margin-bottom:16px}
@@ -579,7 +568,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   .hero-class{padding:64px 0}
   .hero-class h1{font-size:30px}
   .answer-box p{font-size:18px}
-  .sol-sec h3{font-size:22px}
   .core-split{grid-template-columns:1fr;gap:32px}
   .dark-quote p{font-size:17px}
   .eff-line{font-size:16px}
@@ -636,18 +624,22 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 </section>
 
 <!-- ================= 섹션 7.5 : Stories ================= -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Stories</p>
-      <h2 class="section-title">처음부터 왔었어야 했다고, 그렇게들 말씀하십니다</h2>
-      <p class="section-desc">이미 배워보셨던 원장님들이 수강 중과 수료 후에 직접 보내주신 메시지입니다.</p>
-    </div>
+<section class="tv_section">
+  <div class="title">
+    <h3>JIA STORIES</h3>
+    <p>처음부터 왔었어야 했다고, 그렇게들 말씀하십니다<br class="mo_br">
+      이미 배워보셨던 원장님들이 수강 중과 수료 후에 직접 보내주신 메시지입니다.</p>
+  </div>
+  <div class="slide_contain">
 <div class="rv">
   <div class="rv-vp">
     <div class="rv-track">
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-01.png" alt="수강생이 보내온 후기 메시지 캡처 1">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-01.png" alt="수강생이 보내온 후기 메시지 캡처 1">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">그냥 처음부터 왔었어야 했다 싶었어요</p>
         <p class="rv-text">오늘수업 완전 재미있었어요 원장님!! 오늘 제 손 보시면서 막 하나씩 핀셋 꺼내면서 설명해주시는데 아.. 진짜 뭔가 눈물부터 나더라구요. 무슨 마음인진 모르겠지만 그냥 처음부터 왔었어야 했다 싶었어요ㅜㅜ 시간이랑 돈버린게 너무 아깝지만 지금부터라도 열심히 잘 배워볼게요오! 저녁에 과제 해서 제출하겠습니닷 앞으로 잘 부탁드려요ㅎㅎ</p>
@@ -662,7 +654,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>이제부터 진짜 시작입니다. 시작점이 어떠하든! 지아에 오신 이상 결국 원하는 도착지에 도착하게 될 거예요.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-03.png" alt="수강생이 보내온 후기 메시지 캡처 3">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-03.png" alt="수강생이 보내온 후기 메시지 캡처 3">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">제가 몇 번을 돌았지만 단언코 최고입니다</p>
         <p class="rv-text">밀착이 너무 안되서 이게 맞나 싶은 마음으로 했었는데 이게 왠걸 그냥.. 너무 잘되서 쭉쭉 달라붙으니까 재미가 있는거에용!!!! 아까 원장님이 그러셨잖아요. 시술 재밌으면 노래 틀어놓고 그 노래 속으로 부른다고. 오늘 제가 딱 그랬어요ㅎㅎㅎ 원장님 수업은 증말 제가 몇번을 돌았지만 단언코 최고입니다</p>
@@ -676,7 +672,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>속눈썹연장이 재미있어졌다, 라는 말을 들을 때의 기분이란. 이게 재미가 붙으면 누가 말려도 계속 하게 되거든요.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-04.png" alt="수강생이 보내온 후기 메시지 캡처 4">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-04.png" alt="수강생이 보내온 후기 메시지 캡처 4">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">기술뿐 아니라 일에 대한 자세와 마음가짐까지 배웠어요</p>
         <p class="rv-text">원장님, 그동안 정말 감사했습니다. 처음에는 많이 서툴고 긴장도 많이 했는데, 항상 따뜻하게 알려주시고 아낌없이 노하우를 전해주셔서 큰 힘이 되었습니다. 기술뿐 아니라 일에 대한 자세와 마음가짐까지 많이 배우는 소중한 시간이었어요. 앞으로도 원장님께 배운 것을 잊지 않고 꾸준히 노력해서 좋은 결과로 보답하도록 노력할께요.^^</p>
@@ -690,7 +690,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>받은 마음보다 더 크게 돌려드릴 수 있는 사람이 되어야지. 그러니 우리 평생 봅시다잉.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-05.png" alt="수강생이 보내온 후기 메시지 캡처 5">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-05.png" alt="수강생이 보내온 후기 메시지 캡처 5">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">고객님들도 알아보실 만큼 달라졌어요</p>
         <p class="rv-text">원장님 저 진짜 많이 달라졌죠 ㅎㅎ 고객님들도 알아보실만큼 달라져서 진짜.. 너무 원장님 수업은 그저 저에게 빛이에요 오늘 고객님 다녀가시고 바로 소개도 해주셔서 예약도 잡히구 연장 재밌어질려해요. 원장님 스토리 볼 때마다 나도 빨리 저렇게 되고싶다 했는데 알려주신대로 하니까 되네요 많이많이!!!! 아주많이 감사해요</p>
@@ -705,7 +709,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>우리만의 속도대로 나아갑시다. 천천히 가도 괜찮아요. 포기하지 않는다면 무조건 도착합니다.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-06.png" alt="수강생이 보내온 후기 메시지 캡처 6">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-06.png" alt="수강생이 보내온 후기 메시지 캡처 6">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">유지력이 복불복이던 이유를 이제 알았어요</p>
         <p class="rv-text">유지력이 솔직히 그냥 글루 많이 쓰고 잘만 붙이면 끝인줄 알았는데 계속 복불복이 생기니까 이유도 모르고 너무 답답했거든요ㅜㅜ 근데 원장님 수업 들으니 다르다는걸 느꼈어요ㅎㅎ 뭔가 배우면서도 아 더 많이 더 깊숙히 배워야겠구나, 몰랐던 내용이 너무 많았구나 라는 것을 알게되었습니다 앞으로도 더 많이 배우고싶다 라는 생각까지 들었어요 원장님 말씀처럼 글루를 가지고 놀 수 있는 사람이 될 수 있게 열심히 해보겠습니다</p>
@@ -720,7 +728,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>시술자로서 성장하는 길에 부족한 점 없이 다 알려드리겠습니다.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-07.png" alt="수강생이 보내온 후기 메시지 캡처 7">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-07.png" alt="수강생이 보내온 후기 메시지 캡처 7">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">저 느린 거 아는데 끝까지 다 알려주셨어요</p>
         <p class="rv-text">원장님 저 느린거 아는데 하나하나 끝까지 다 알려주시고 이렇게 해보자 저렇게 해보자 해주시고 피드백도 제 마음을 읽으셨나요 울뻔했어요 진짜 열심히 해볼게요. 지아에 온게 너무 다행이다 싶어요. 감사해요 원장님 꼭 제껄로 만들어서 다음 실습 멋지게 해보겠습니다아!!!!!</p>
@@ -734,7 +746,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>결과가 아닌 과정을 보는 피드백으로, 다음 시술에서 바로 개선할 수 있는 그런 피드백입니다.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-08.png" alt="수강생이 보내온 후기 메시지 캡처 8">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-08.png" alt="수강생이 보내온 후기 메시지 캡처 8">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">제 선택이 틀리지 않았다는 생각이 들어요</p>
         <p class="rv-text">원장니임 오늘 피드백도 감사합니다! 저 답답할텐데도 늘 진심으로 챙겨주셔서 감사해요 수강하는 곳이 많았지만 인스타만 보고 선택하는 게 쉽지 않았거든요ㅠㅠ 그런데 지금은 수강도 수강이지만 넘 좋은 분을 만난 것 같아 제 선택이 틀리지 않았다는 생각이 들어요. 열심히 할게요</p>
@@ -748,7 +764,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>답답하지 않아요. 각자의 속도대로 아주 잘 가고 계신겁니다. 손만 놓지 마셔요.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-10.png" alt="수강생이 보내온 후기 메시지 캡처 10">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-10.png" alt="수강생이 보내온 후기 메시지 캡처 10">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">리터치 연락도, 컴플레인도 없어졌어요</p>
         <p class="rv-text">원장님 진짜 원데이를 돌만큼 다 돌아봐도 유지력은 안잡히고 LED연장이 아무래도 더 비싸다보니 컴플레인도 더 잘 걸렸는데 원장님 수업듣고 나서 고객님들 리터치 연락 절대 안오고 컴플레인도 없어졌어요 원장님 수업 들은게 신의 한수에요 아는 원장님들한테도 말하기 싫을만큼 저만 알고싶을 정도에요ㅋㅋㅋ 감사합니다 원장님. 부산쪽으로 절하고 잘께요 오늘</p>
@@ -763,7 +783,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>우리 원장님, 이제 유지력 꽉 잡고 훨훨 날아다닙시다요.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-12.png" alt="수강생이 보내온 후기 메시지 캡처 12">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-12.png" alt="수강생이 보내온 후기 메시지 캡처 12">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">마음잡고 재수강반을 들었는데 정말 잘한 선택 같아요</p>
         <p class="rv-text">원장님 수업을 들을때마다 느끼지만 안되는 이유를 너무 명확하게 알려주시니 한 회차마다 속이 너무 시원한 수업입니다 정규수강 듣고 좀 안되는 것 같을때마다 원데이를 돌다가 이러다 안될것같아서 마음잡고 재수강반을 들었는데 정말 잘한 선택같아요 원장님 말씀처럼 기본기부터 다시 쌓으니 시술에 자신감도 생기고 원장님 수업듣길 참 잘했다는 생각이 많이 들어요 감사합니다 원장님. 남은 회차도 끝까지 잘 따라가볼게요</p>
@@ -778,7 +802,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>처음 오실 때만 해도 할 수 있을까 라는 걱정으로 가득했지만, 이제는 자신감이 붙으셨네요.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-14.png" alt="수강생이 보내온 후기 메시지 캡처 14">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-14.png" alt="수강생이 보내온 후기 메시지 캡처 14">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">일주일 뒤에 물어봤는데 한 가닥도 안 떨어졌대요</p>
         <p class="rv-text">원장님 저 펌포 만만하게 생각했었는데 그게 아니었어요ㅠㅠㅎㅎ 유지력이 너무 안나와서 스트레스 진짜 많이 받았거든요. 그래서 고객님들한테 그냥 리터치 안내를 미리 드렸었는데 아ㅜㅜㅜ 드디어 이제 그러지 않아도 되겠어요 모델분 시술하고 일주일있다가 물어봤는데 한가닥도 안떨어졌데요 진짜 원장님한테 간게 신의한수에요.. 유지력 잡히니까 빨랑 시술하고싶어요</p>
@@ -794,7 +822,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>리터치 안내가 무슨 필요있나요!! 이제 유지력 두 달은 그냥 나올텐데요.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-16.png" alt="수강생이 보내온 후기 메시지 캡처 16">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-16.png" alt="수강생이 보내온 후기 메시지 캡처 16">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">컬 잡는 것도 훨씬 안정적이고 시술 자신감이 생겼어요</p>
         <p class="rv-text">발목때문에 쉬었다가 6월부터 제대로 운영했는데 점점 재방문 고객님들도 많아지구 신규 고객님들도 계속 늘어나고 있어용 특히 원장님한테 언더연장이랑 속눈썹펌 수강받고 나서 고객님들이 속펌 유지력이 진짜 좋다, 예쁘게 오래간다, 전에 했던 곳보다 훨씬 만족스럽다 이런 말씀을 많이 해주셔서 너무 뿌듯해용ㅠㅠ 강의 듣고 나서 컬 잡는 것도 훨씬 안정적이구 시술 자신감도 많이 생긴 것 같아용 진짜 원장님 덕분에 실력이 조금씩 좋아지고 있는 게 느껴져서 더 열심히 하고 싶어용!! 항상 꼼꼼하게 알려주시고 피드백도 아낌없이 해주셔서 너무 감사해용</p>
@@ -810,7 +842,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>결과도 중요하죠. 하지만 저는 이 결과를 들을 때면 우리의 과정들이 생각나서 더 울컥하네요.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-17.png" alt="수강생이 보내온 후기 메시지 캡처 17">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-17.png" alt="수강생이 보내온 후기 메시지 캡처 17">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">이미 다른 원장님들한테 추천하는 중이에요</p>
         <p class="rv-text">원장님 .... 원장님 수업은 진짜 찐!!!! 널리널리 소문내고싶어요 (이미 다른 원장님들한테 추천하는중ㅎ) 원데이로 다녀갔지만 이렇게 피드백도 자세히 해주시고 늘 감사한 마음입니다ㅠㅠㅠㅠ 다 표현이 안되네요 항상 감사드리구 원장님두 화이팅이에요</p>
@@ -824,7 +860,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>같은 수강자의 입장에서 무언가를 덜 알려주고 교육 내용을 배제시키는 것이 아닌, 더 알려주어 이 기술로 인해 어딘가 힘들어하는 원장님들이 한 분이라도 나아지길 바라는 마음이다.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-18.png" alt="수강생이 보내온 후기 메시지 캡처 18">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-18.png" alt="수강생이 보내온 후기 메시지 캡처 18">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">수강 끝나면 끝인 줄 알았는데, 언제든 물어보면 영상 피드백을 주세요</p>
         <p class="rv-text">넵!!! 감사합니다 그리고 그때 몬스터 젤 큰 거 하라고 하신 분 진짜. 7번 아니었음 닿을뻔한거 있죠. 원장님 최고!!!!! 감사합니다 제가 지아 수강생인게 너무너무 좋아요. 수강 끝나면 끝인줄 알았지만 언제든 물어보면 영상피드백 주시고 긴급요청하면 바로 답변주시고 제가 지아를 선택했던건 진짜 최고의 선택이었던것 같아요~~ 원장님처럼 열심히 살아야겠단 생각들어요!!!! 항상 감사합니다</p>
@@ -838,7 +878,11 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       <div class="rv-note" hidden>저는 언제나 같은 자리에 있습니다. 마음 편할 수 있는 그런 곳, 한 곳쯤은 있어야죠.</div>
     </article>
     <article class="rv-card">
-      <img class="rv-img" src="assets/review-19.png" alt="수강생이 보내온 후기 메시지 캡처 19">
+      <div class="rv-media">
+        <img class="rv-img" src="assets/review-19.png" alt="수강생이 보내온 후기 메시지 캡처 19">
+        <div class="rv-filter"></div>
+        <div class="rv-play"><i data-lucide="play"></i></div>
+      </div>
       <div class="rv-body">
         <p class="rv-head">이렇게 쉽게 이해하고 배울 수 있구나, 희망이 보이는 날이었어요</p>
         <p class="rv-text">원장님 안녕하세요:) 수강 종료하고 집에 가니까 밤 12시가 다되서 미처 인사도 제대로 못드렸네용 아직 숙제 내주신 연습은 제대로 못하고, 오늘 모델 연습하면서 차분히 천천히를 되뇌이며 말씀해주신 자세나 핀셋위치, 가모 각도등 유의해서 시술해봤는데 완벽하진 않지만 자신없던 아기모도 조금씩 더 잘보이고, 가모도 일자로 철썩붙는데 뭔가 달라진게 느껴져서 얼마나 기분이 좋던지!!! 이렇게 쉽게 이해하고 배울 수 있구나도 알게되었고 더 많이 연습해서 앞으로 더 어떻게 발전해 나갈지 희망이 보이는 날 이었어요 정말 감사해요. 원데이라 많이 답답하기도 하셨을텐데 끝까지 포기하지않고 옆에서 지켜보고 믿어봐주신 덕분에 그 감각이 아직도 새록새록 생생해요 알려주신 연습도 꾸준히 해보고 자주 연락드릴께용!!!!</p>
@@ -910,124 +954,153 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
 </section>
 
-<!-- ================= Cause 1 : 원인 01 ================= -->
-<section class="section cause-sec">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Cause</p>
-      <h2 class="section-title">문제는 손이 아니라, 기준이 없다는 것입니다</h2>
-    </div>
-    <div class="split">
-      <div>
-        <div class="img-placeholder has-shot"><i data-lucide="image"></i>
-          <p class="shot">[촬영 필요: 핀셋 파지 클로즈업 — 힘이 들어간 손과 안정된 손 대비]</p>
+<!-- ================= Cause : 원인 01~03 (유라인 라인설계 스토리 스타일) ================= -->
+<section class="story_section" data-story>
+  <div class="title">
+    <h3>Cause</h3>
+    <p>문제는 손이 아니라, 기준이 없다는 것입니다</p>
+    <span>같은 수업을 들어도 결과가 갈리는 이유는 세 가지로 좁혀집니다.<br class="pc_br">
+      지아는 그 세 지점을 각각 다르게 다룹니다.</span>
+  </div>
+
+  <div class="story_slide">
+    <div class="st-track">
+      <div class="st-slide is-active">
+        <div class="flexCont">
+          <p class="imgBox"><span class="st-ph"><i data-lucide="image"></i><em>[촬영 필요: 핀셋 파지 클로즈업 — 힘이 들어간 손과 안정된 손 대비]</em></span></p>
+          <div class="textBox">
+            <div class="top">
+              <h4>기본기를 건너뛴 채 실무부터 배웠다</h4>
+              <span>Cause 01</span>
+            </div>
+            <div class="txtBox">
+              <p class="txt">핀셋 잡는 힘이 아직 불안한데 다음 단계로 넘어가면,<br>그 위에 쌓는 모든 동작이 흔들립니다.</p>
+              <p class="txt">손이 자리를 못 잡은 상태에서 배운 기술은<br>현장에 나가면 가장 먼저 무너집니다.</p>
+            </div>
+            <ul><li>기본기</li><li>핀셋 파지</li><li>손의 안정</li></ul>
+          </div>
         </div>
       </div>
-      <div>
-        <p class="num">원인 01</p>
-        <h3>기본기를 건너뛴 채 실무부터 배웠다</h3>
-        <p class="body">핀셋 잡는 힘이 아직 불안한데 다음 단계로 넘어가면, 그 위에 쌓는 모든 동작이 흔들립니다. 손이 자리를 못 잡은 상태에서 배운 기술은 현장에 나가면 가장 먼저 무너집니다.</p>
+      <div class="st-slide">
+        <div class="flexCont">
+          <p class="imgBox"><span class="st-ph"><i data-lucide="image"></i><em>[촬영 필요: 화면 영상 피드백 캡처 — 시술 사진 위에 선을 그어 원인을 짚는 장면]</em></span></p>
+          <div class="textBox">
+            <div class="top">
+              <h4>결과만 듣고 원인을 못 배웠다</h4>
+              <span>Cause 02</span>
+            </div>
+            <div class="txtBox">
+              <p class="txt">“각도가 잘못됐다”는 말만으로는 고칠 수 없습니다.</p>
+              <p class="txt">어느 장면에서 무너졌는지, 손목과 손가락을 어떻게 써야 하는지를<br>화면으로 봐야 다음 시술에서 달라집니다.</p>
+            </div>
+            <ul><li>원인 진단</li><li>영상 피드백</li><li>동작 교정</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="st-slide">
+        <div class="flexCont">
+          <p class="imgBox"><span class="st-ph"><i data-lucide="image"></i><em>[촬영 필요: 1:1 수업 장면 — 원장이 수강생 손 옆에서 함께 보는 컷]</em></span></p>
+          <div class="textBox">
+            <div class="top">
+              <h4>모두가 같은 진도로 배웠다</h4>
+              <span>Cause 03</span>
+            </div>
+            <div class="txtBox">
+              <p class="txt">어려워하는 지점은 사람마다 다릅니다.</p>
+              <p class="txt">진도에 사람을 맞추면 막힌 곳은 막힌 채로 수료하게 되고,<br>결국 현장에서 같은 자리에서 다시 걸립니다.</p>
+            </div>
+            <ul><li>맞춤 진도</li><li>1:1</li><li>개인별 과제</li></ul>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="st-progress"><span class="is-active"></span><span></span><span></span></div>
+
+    <div class="bottom">
+      <button class="arrows st-prev" aria-label="이전"><i data-lucide="chevron-left"></i></button>
+      <p class="name">기본기를 건너뛴 채 실무부터 배웠다</p>
+      <p class="num"><span>01</span> / 03</p>
+      <button class="arrows st-next" aria-label="다음"><i data-lucide="chevron-right"></i></button>
+    </div>
+  </div>
+
+  <div class="answer-box">
+    <p>그래서 지아는 <strong>사전과제로 기본기를 먼저 잡고</strong>,<br class="pc_br">
+      <strong>화면으로 원인을 짚고</strong>, <strong>개인별로 다음 과제를 정합니다.</strong></p>
   </div>
 </section>
 
-<!-- ================= Cause 2 : 원인 02 ================= -->
-<section class="section cause-sec">
-  <div class="container">
-    <div class="split rev">
-      <div>
-        <div class="img-placeholder has-shot"><i data-lucide="image"></i>
-          <p class="shot">[촬영 필요: 화면 영상 피드백 캡처 — 시술 사진 위에 선을 그어 원인을 짚는 장면]</p>
-        </div>
-      </div>
-      <div>
-        <p class="num">원인 02</p>
-        <h3>결과만 듣고 원인을 못 배웠다</h3>
-        <p class="body">“각도가 잘못됐다”는 말만으로는 고칠 수 없습니다. 어느 장면에서 무너졌는지, 손목과 손가락을 어떻게 써야 하는지를 화면으로 봐야 다음 시술에서 달라집니다.</p>
-      </div>
-    </div>
+<!-- ================= Solution : 솔루션 1~3 (유라인 라인설계 스토리 스타일) ================= -->
+<section class="story_section alt" data-story>
+  <div class="title">
+    <h3>Solution</h3>
+    <p>원인마다, 대응이 따로 있습니다</p>
+    <span>세 가지 원인에 각각 다른 방식으로 대응합니다.<br class="pc_br">
+      모든 과정에 공통으로 적용되는 지아의 운영 방식입니다.</span>
   </div>
-</section>
 
-<!-- ================= Cause 3 : 원인 03 ================= -->
-<section class="section cause-sec">
-  <div class="container">
-    <div class="split">
-      <div>
-        <div class="img-placeholder has-shot"><i data-lucide="image"></i>
-          <p class="shot">[촬영 필요: 1:1 수업 장면 — 원장이 수강생 손 옆에서 함께 보는 컷]</p>
+  <div class="story_slide">
+    <div class="st-track">
+      <div class="st-slide is-active">
+        <div class="flexCont">
+          <p class="imgBox"><span class="st-ph"><i data-lucide="image"></i><em>[촬영 필요: 사전과제 실습 컷 — 페이퍼·마네킹 연습 장면]</em></span></p>
+          <div class="textBox">
+            <div class="top">
+              <h4>대면 전 2주, 기본기부터 교정합니다</h4>
+              <span>Solution 01</span>
+            </div>
+            <div class="txtBox">
+              <p class="txt">핀셋 잡기 → 가모 파지 → 가모 진입 → 마네킹 → 테이핑.</p>
+              <p class="txt">영상 시청 → 과제 촬영 → 제출 → 1:1 영상 피드백 → 보완 과제를<br><strong>매일</strong> 반복합니다.</p>
+              <p class="basis">근거 — 클래식 연장 단과반 사전과제 2주 운영</p>
+            </div>
+            <ul><li>사전과제 2주</li><li>매일 피드백</li></ul>
+          </div>
         </div>
       </div>
-      <div>
-        <p class="num">원인 03</p>
-        <h3>모두가 같은 진도로 배웠다</h3>
-        <p class="body">어려워하는 지점은 사람마다 다릅니다. 진도에 사람을 맞추면 막힌 곳은 막힌 채로 수료하게 되고, 결국 현장에서 같은 자리에서 다시 걸립니다.</p>
-      </div>
-    </div>
-    <div class="answer-box">
-      <p>그래서 지아는 <strong>사전과제로 기본기를 먼저 잡고</strong>,<br><strong>화면으로 원인을 짚고</strong>, <strong>개인별로 다음 과제를 정합니다.</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= Solution 1 : 솔루션 1 ================= -->
-<section class="section sol-sec bg-light">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Solution</p>
-      <h2 class="section-title">원인마다, 대응이 따로 있습니다</h2>
-    </div>
-    <div class="split">
-      <div>
-        <div class="img-placeholder has-shot"><i data-lucide="image"></i>
-          <p class="shot">[촬영 필요: 사전과제 실습 컷 — 페이퍼·마네킹 연습 장면]</p>
+      <div class="st-slide">
+        <div class="flexCont">
+          <p class="imgBox"><span class="st-ph"><i data-lucide="image"></i><em>[촬영 필요: 영상 피드백 녹화 화면 캡처]</em></span></p>
+          <div class="textBox">
+            <div class="top">
+              <h4>결과가 아니라 원인을 화면으로 짚습니다</h4>
+              <span>Solution 02</span>
+            </div>
+            <div class="txtBox">
+              <p class="txt">제출한 영상을 화면에 띄워 어느 장면에서 각도가 무너졌는지,<br>손목과 손가락을 어떻게 움직여야 하는지를 목소리로 설명합니다.</p>
+              <p class="basis">근거 — 전 과정 공통 영상 피드백</p>
+            </div>
+            <ul><li>화면 피드백</li><li>음성 설명</li></ul>
+          </div>
         </div>
       </div>
-      <div>
-        <span class="tag">솔루션 1</span>
-        <h3>대면 전 2주, 기본기부터 교정합니다</h3>
-        <p class="body">핀셋 잡기 → 가모 파지 → 가모 진입 → 마네킹 → 테이핑. 영상 시청 → 과제 촬영 → 제출 → 1:1 영상 피드백 → 보완 과제를 <strong style="color:var(--text-black)">매일</strong> 반복합니다.</p>
-        <p class="basis">근거 — 클래식 연장 단과반 사전과제 2주 운영</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= Solution 2 : 솔루션 2 ================= -->
-<section class="section sol-sec bg-light">
-  <div class="container">
-    <div class="split rev">
-      <div>
-        <div class="img-placeholder has-shot"><i data-lucide="image"></i>
-          <p class="shot">[촬영 필요: 영상 피드백 녹화 화면 캡처]</p>
+      <div class="st-slide">
+        <div class="flexCont">
+          <p class="imgBox"><span class="st-ph"><i data-lucide="image"></i><em>[촬영 필요: 수강생별 과제·피드백 기록 화면]</em></span></p>
+          <div class="textBox">
+            <div class="top">
+              <h4>다음 과제는 사람마다 다르게 나갑니다</h4>
+              <span>Solution 03</span>
+            </div>
+            <div class="txtBox">
+              <p class="txt">핀셋 잡는 힘이 불안하면 다음 영상을 보내지 않고<br>힘 조절을 먼저 보완합니다.</p>
+              <p class="txt">진입 각도에서 막히면 그 문제를 교정할 과제가 추가됩니다.</p>
+              <p class="basis">근거 — 전 과정 맞춤 진도 운영</p>
+            </div>
+            <ul><li>맞춤 진도</li><li>보완 과제</li></ul>
+          </div>
         </div>
       </div>
-      <div>
-        <span class="tag">솔루션 2</span>
-        <h3>결과가 아니라 원인을 화면으로 짚습니다</h3>
-        <p class="body">제출한 영상을 화면에 띄워 어느 장면에서 각도가 무너졌는지, 손목과 손가락을 어떻게 움직여야 하는지를 목소리로 설명합니다.</p>
-        <p class="basis">근거 — 전 과정 공통 영상 피드백</p>
-      </div>
     </div>
-  </div>
-</section>
 
-<!-- ================= Solution 3 : 솔루션 3 ================= -->
-<section class="section sol-sec bg-light">
-  <div class="container">
-    <div class="split">
-      <div>
-        <div class="img-placeholder has-shot"><i data-lucide="image"></i>
-          <p class="shot">[촬영 필요: 수강생별 과제·피드백 기록 화면]</p>
-        </div>
-      </div>
-      <div>
-        <span class="tag">솔루션 3</span>
-        <h3>다음 과제는 사람마다 다르게 나갑니다</h3>
-        <p class="body">핀셋 잡는 힘이 불안하면 다음 영상을 보내지 않고 힘 조절을 먼저 보완합니다. 진입 각도에서 막히면 그 문제를 교정할 과제가 추가됩니다.</p>
-        <p class="basis">근거 — 전 과정 맞춤 진도 운영</p>
-      </div>
+    <div class="st-progress"><span class="is-active"></span><span></span><span></span></div>
+
+    <div class="bottom">
+      <button class="arrows st-prev" aria-label="이전"><i data-lucide="chevron-left"></i></button>
+      <p class="name">대면 전 2주, 기본기부터 교정합니다</p>
+      <p class="num"><span>01</span> / 03</p>
+      <button class="arrows st-next" aria-label="다음"><i data-lucide="chevron-right"></i></button>
     </div>
   </div>
 </section>
@@ -1434,13 +1507,20 @@ document.querySelectorAll('.rv').forEach(function(rv){
       cards=track.querySelectorAll('.rv-card'),
       prev=rv.querySelector('.rv-prev'), next=rv.querySelector('.rv-next'),
       idx=0;
-  function perView(){var w=window.innerWidth; return w<=768?1:(w<=1024?2:3)}
+  function perView(){var w=window.innerWidth; return w<=900?1:(w<=1024?2:3)}
+  function gap(){
+    var cs=getComputedStyle(track);
+    return parseFloat(cs.columnGap||cs.gap)||24;
+  }
   function maxIdx(){return Math.max(0, cards.length-perView())}
   function render(){
     if(idx>maxIdx()) idx=maxIdx();
-    var step=cards[0].getBoundingClientRect().width+24;
+    var step=cards[0].getBoundingClientRect().width+gap();
     track.style.transform='translateX('+(-idx*step)+'px)';
     prev.disabled=(idx<=0); next.disabled=(idx>=maxIdx());
+    /* 가운데 카드만 밝게 (유라인 TV 코버플로우) */
+    var center=idx+Math.floor(perView()/2);
+    cards.forEach(function(c,i){c.classList.toggle('is-focus', i===center)});
   }
   prev.onclick=function(){idx=Math.max(0,idx-1);render()};
   next.onclick=function(){idx=Math.min(maxIdx(),idx+1);render()};
@@ -1497,6 +1577,10 @@ window.addEventListener('resize', rvClampAll);
   document.querySelectorAll('.rv-more').forEach(function(b){
     b.onclick=function(){open(b.closest('.rv-card'))};
   });
+  /* 유라인 TV 스타일 섹션에서는 카드 전체가 클릭 영역 */
+  document.querySelectorAll('.tv_section .rv-card').forEach(function(c){
+    c.onclick=function(){open(c)};
+  });
   modal.querySelectorAll('[data-rv-close]').forEach(function(x){x.onclick=close});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden) close()});
 })();
@@ -1519,6 +1603,7 @@ window.addEventListener('resize', rvClampAll);
 })();
 </script>
 
+<script src="assets/site-sections.js"></script>
 <script src="assets/site-chrome.js"></script>
 </body>
 </html>

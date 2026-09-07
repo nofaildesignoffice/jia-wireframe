@@ -8,6 +8,7 @@
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css" rel="stylesheet">
+<link href="assets/site-sections.css" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 :root{
@@ -266,48 +267,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
   .signature_section .clinic .right .sig-ph{width:100%;height:65.3333333333vw}
 }
 
-/* ===== 후기 — 유라인 TV 영상 스타일 ===== */
-.tv_section{background-color:#F8F1E5;background-image:url(assets/bg-tv.png);background-repeat:no-repeat;background-position:center center;background-size:cover;padding-bottom:5.2vw}
-.tv_section .title{padding-top:4.53125vw;text-align:center}
-.tv_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#463E32;line-height:1;letter-spacing:-.02em}
-.tv_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;line-height:1.7;letter-spacing:-.02em}
-.tv_section .slide_contain{margin-top:4.0104166667vw;position:relative;padding:0 6.25vw}
-
-/* 카드: 상자 대신 이미지 + 하단 텍스트, 가운데 카드만 밝게 */
-.tv_section .rv-card{flex:0 0 calc((100% - 2 * 3.6vw)/3);background:none;border:none;border-radius:0;overflow:visible;cursor:pointer}
-.tv_section .rv-track{gap:3.6vw}
-.tv_section .rv-media{position:relative;overflow:hidden}
-.tv_section .rv-img{width:100%;aspect-ratio:17.7/20.8;object-fit:cover;object-position:center top;border-radius:0;background:#F8F1E5}
-.tv_section .rv-filter{position:absolute;inset:0;background:#000;opacity:.3;transition:opacity .4s}
-.tv_section .rv-card.is-focus .rv-filter{opacity:0}
-.tv_section .rv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100vw * (44/1920));height:calc(100vw * (44/1920));min-width:34px;min-height:34px;border-radius:50%;border:1px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;pointer-events:none}
-.tv_section .rv-play svg{width:50%;height:50%}
-.tv_section .rv-card.is-focus .rv-play{opacity:.8}
-.tv_section .rv-body{padding:0;margin-top:.9375vw;flex:none}
-.tv_section .rv-head{font-size:1.1458333333vw;font-weight:600;color:#676157;margin-bottom:.4166666667vw;min-height:0;line-height:1.4;letter-spacing:-.02em;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
-.tv_section .rv-text{font-size:.9375vw;font-weight:500;color:#656460;line-height:1.5;min-height:0}
-.tv_section .rv-foot{display:none}
-/* 좌우 버튼: 슬라이더 트랙 바깥(섹션 좌우 여백)에 두고, 카드 기준 세로 정중앙 */
-.tv_section .rv-nav{width:3.5416666667vw;height:3.5416666667vw;min-width:40px;min-height:40px;background:transparent;border:1px solid #A99B85;color:#7A6B54;box-shadow:none;top:50%;transform:translateY(-50%)}
-.tv_section .rv-prev{left:auto;right:calc(100% + 1.3vw)}
-.tv_section .rv-next{right:auto;left:calc(100% + 1.3vw)}
-
-@media screen and (max-width:1024px){
-  .tv_section .rv-card{flex:0 0 calc((100% - 3.6vw)/2)}
-}
-@media screen and (max-width:900px){
-  .tv_section{background-image:url(assets/bg-tv-m.png);padding-bottom:16vw}
-  .tv_section .title{padding-top:16vw}
-  .tv_section .title h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
-  .tv_section .title p{font-size:4vw;word-break:keep-all;padding:0 5.3333333333vw}
-  .tv_section .slide_contain{margin-top:10.6666666667vw;padding:0 5.3333333333vw}
-  .tv_section .rv-card{flex:0 0 100%}
-  .tv_section .rv-nav{display:none}
-  .tv_section .rv-body{margin-top:4.2vw}
-  .tv_section .rv-head{font-size:4.5333333333vw;margin-bottom:2vw}
-  .tv_section .rv-text{font-size:3.7333333333vw}
-  .tv_section .rv-filter{opacity:0}
-}
 
 /* ===== Store — 유라인 Care 스타일 ===== */
 .care_section{background:var(--ul-cream);padding:9.375vw 0 0}
