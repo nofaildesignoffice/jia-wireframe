@@ -415,7 +415,6 @@
 .core-quote p{font-size:1.0416666667vw;line-height:2;color:#fff;letter-spacing:-.02em}
 
 /* Apply — care_section 재사용 + 보조 */
-.care_section .apply-note{max-width:1000px;margin:2.6vw auto 0;padding:0 24px;text-align:center;font-size:.8333333333vw;color:#8A857D;line-height:1.7;word-break:keep-all}
 
 /* 아코디언 래퍼 */
 .acc-wrap{max-width:900px;margin:0 auto;padding:0 24px}
@@ -473,7 +472,6 @@
   .core-quote{margin:8vw 5.3333333333vw 0;padding:9vw 5vw}
   .core-quote .qm{margin-bottom:4vw}
   .core-quote p{font-size:4vw;line-height:1.9}
-  .care_section .apply-note{font-size:3.2vw;margin-top:8vw}
   .acc-wrap{padding:0 5.3333333333vw}
 
   .tabclass_section{padding:16vw 0 18vw}
