@@ -169,3 +169,35 @@ body{padding-top:var(--nav-h)}
   #footer .mo_footer .sns{display:flex;flex-wrap:wrap;width:80%}
   #footer .mo_footer .sns a{font-size:3.7333333333vw;font-weight:500;color:#fff;margin-right:8vw;margin-bottom:5.3333333333vw}
 }
+
+/* ==========================================================================
+   밝은 배경 페이지 (Store · 블로그 하위 · 고객센터 하위)
+   - 페이지 배경을 크림으로 통일
+   - 최상단에서는 GNB 배경 투명 + 로고/메뉴/유틸을 검정으로
+   - 스크롤하면 기존 다크 반투명 바로 복귀
+   ========================================================================== */
+body.gnb-light{background:var(--ul-cream)}
+body.gnb-light .section,
+body.gnb-light .page-head,
+body.gnb-light .bg-light{background:var(--ul-cream)}
+body.gnb-light .page-head{border-bottom:1px solid var(--ul-line)}
+
+/* 최상단: 투명 배경 + 검정 요소 */
+body.gnb-light #header .header.on{background:transparent}
+body.gnb-light #header .header.on .logo img{filter:brightness(0)}
+body.gnb-light #header .header.on .menu li a,
+body.gnb-light #header .header.on .menu li a.signature p,
+body.gnb-light #header .header.on .info .btn_group a,
+body.gnb-light #header .header.on .info .icon_group a{color:#000}
+body.gnb-light #header .header.on .info .btn_group a:first-child::after{background:#000;opacity:.25}
+body.gnb-light #header .header.on .menu li.is-active > a::after{background:#000}
+
+/* 모바일 헤더도 동일 처리 */
+body.gnb-light .mo_header.on{background:transparent}
+body.gnb-light .mo_header.on h1 img{filter:brightness(0)}
+body.gnb-light .mo_header.on .mo_icon a,
+body.gnb-light .mo_header.on .mo_icon button{color:#000}
+
+/* 뉴스레터 카드 — 라운딩 제거 */
+.post-card{border-radius:0}
+.post-body .tag{border-radius:0}

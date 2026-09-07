@@ -10,7 +10,9 @@ var nav=document.getElementById('nav'),
     dropdown=document.getElementById('dropdownMenu'),
     gnbMenu=document.getElementById('gnbMenu'),
     menuButton=document.getElementById('menuButton'),
-    hasHero=!!document.querySelector('.mainVisual, .hero');
+    /* 히어로가 헤더를 덮는 페이지, 또는 밝은 배경 페이지(gnb-light)는 최상단에서 투명 헤더 */
+    hasHero=!!document.querySelector('.mainVisual, .hero') ||
+            document.body.classList.contains('gnb-light');
 
 function syncHeader(){
   var y=window.scrollY, top=hasHero && y<40 && !(dropdown && dropdown.classList.contains('on'));
