@@ -76,11 +76,15 @@ body{padding-top:var(--nav-h)}
 .side_dim{display:none}
 /* ===== FOOTER — 유라인 푸터 스타일 ===== */
 #footer{background:var(--ul-cream);border-top:1px solid var(--ul-line);padding:1.5625vw 3.125vw 1.1979166667vw 6.25vw;z-index:98;position:relative}
-#footer .inner{display:flex;align-items:flex-start}
-#footer .inner .logo{width:5.7291666667vw;margin-right:5.5729166667vw;flex-shrink:0}
+#footer .inner{display:grid;grid-template-columns:auto 1fr;column-gap:5.5729166667vw;align-items:start}
+#footer .inner .cont{display:contents}
+#footer .inner .logo{grid-column:1;grid-row:2}
+#footer .inner .cont .top{grid-column:2;grid-row:1}
+#footer .inner .cont .info{grid-column:2;grid-row:2}
+#footer .inner .logo{width:5.7291666667vw}
 #footer .inner .logo a{display:block}
 #footer .inner .logo img{width:100%;height:auto;display:block;filter:brightness(0)}
-#footer .inner .cont{width:100%}
+
 #footer .inner .cont .top{display:flex;align-items:center;padding-bottom:1.0416666667vw;border-bottom:1px solid var(--ul-line);margin-bottom:1.71875vw}
 #footer .inner .cont .top a{font-size:.7291666667vw;font-weight:500;color:#4A453F}
 #footer .inner .cont .top a:not(:last-child){margin-right:2.0833333333vw}

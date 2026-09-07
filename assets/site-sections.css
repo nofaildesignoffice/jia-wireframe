@@ -711,10 +711,7 @@
 .faq_section .head{margin-bottom:4vw}
 .faq_section .head h1{font-family:"Erode","Pretendard",serif;font-size:2.6041666667vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em;margin-bottom:1.1vw}
 .faq_section .head p{font-size:.8333333333vw;color:#4A453F;line-height:1.6}
-.faq_section .search-box{display:flex;gap:.5vw;max-width:520px;margin:0 0 3.2vw}
-.faq_section .search-box input{flex:1;padding:.75vw 1vw;font-size:.8333333333vw;border:1px solid #c6c2ba;border-radius:0;font-family:inherit;background:#fff;color:var(--ul-ink)}
-.faq_section .search-box .btn{display:flex;align-items:center;justify-content:center;padding:0 1.6vw;font-size:.8333333333vw;border:1px solid var(--ul-brown);background:var(--ul-brown);color:#fff;border-radius:0}
-.faq_section .tabs{display:flex;gap:.5208333333vw;flex-wrap:wrap;border-bottom:1px solid #d1d1d1;padding-bottom:1.6vw;margin-bottom:2.6vw}
+.faq_section .tabs{display:flex;gap:.5208333333vw;flex-wrap:wrap;margin-bottom:2.6vw}
 .faq_section .tabs button{padding:.6vw 1.4vw;font-size:.8333333333vw;font-weight:500;color:#6B6660;border:1px solid #c6c2ba;background:none;font-family:inherit;border-radius:0;letter-spacing:-.02em;transition:all .25s}
 .faq_section .tabs button:hover{color:var(--ul-ink)}
 .faq_section .tabs button.is-active{background:var(--ul-brown);border-color:var(--ul-brown);color:#fff}
@@ -734,10 +731,7 @@
   .faq_section .head{margin-bottom:8.5vw}
   .faq_section .head h1{font-size:9.6vw;margin-bottom:3.2vw}
   .faq_section .head p{font-size:3.7333333333vw}
-  .faq_section .search-box{gap:2vw;margin-bottom:8vw;max-width:none}
-  .faq_section .search-box input{padding:3.2vw 4vw;font-size:3.7333333333vw}
-  .faq_section .search-box .btn{padding:0 5.3vw;font-size:3.7333333333vw}
-  .faq_section .tabs{gap:2vw;padding-bottom:5.3vw;margin-bottom:8vw}
+  .faq_section .tabs{gap:2vw;margin-bottom:8vw}
   .faq_section .tabs button{padding:2.4vw 3.6vw;font-size:3.4666666667vw}
   .faq_section .acc-q{padding:4.8vw 3.2vw;font-size:4vw;gap:4vw}
   .faq_section .acc-q .mk{font-size:5.3vw}
