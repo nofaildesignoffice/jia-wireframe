@@ -250,10 +250,10 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 
 /* ===== 경력자 클래스 — 유라인 프로모션 스타일 ===== */
 .promotion_section{background:var(--ul-cream);padding:2.6041666667vw 0 0}
-.promotion_section .bar{position:relative;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;height:15.1041666667vw;min-height:210px;padding-left:6.25vw;background:url(assets/bg-promo-bar.png) no-repeat center center/cover}
+.promotion_section .bar{position:relative;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;height:15.1041666667vw;min-height:210px;padding-left:6.25vw}
 .promotion_section .bar .bar-text{position:relative;z-index:2}
 .promotion_section .bar h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:var(--ul-brown);line-height:1;letter-spacing:-.02em}
-.promotion_section .bar p{font-size:1.0416666667vw;font-weight:600;color:var(--ul-brown);letter-spacing:-.02em}
+.promotion_section .bar p{font-size:1.0416666667vw;font-weight:600;color:#000;letter-spacing:-.02em}
 
 .promotion_section .slide_contain{padding:2.6041666667vw 6.25vw 5.6770833333vw;border-bottom:1px solid #b2b2b2;position:relative}
 .promotion_section .promotion_arrow button{position:absolute;width:3.125vw;height:3.125vw;min-width:38px;min-height:38px;top:32%;z-index:6;border-radius:50%;border:1px solid #b2b2b2;background:var(--ul-cream);display:flex;align-items:center;justify-content:center;color:var(--ul-brown);transition:opacity .2s}
@@ -270,10 +270,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .pm-slide:hover .img .img-ph{border-radius:10.4166666667vw}
 .pm-slide .img .img-ph svg{width:40px;height:40px}
 .pm-slide .text{margin-top:1.1979166667vw}
-.pm-slide .text .tit{display:flex;align-items:center;justify-content:space-between}
-.pm-slide .text .tit h3{font-family:"Erode","Pretendard",serif;font-size:2.0833333333vw;font-weight:400;line-height:1;letter-spacing:-.02em}
-.pm-slide .text .tit p{font-size:1.875vw;font-weight:500;color:#FE6300;line-height:1}
-.pm-slide .text > p{margin:1.5104166667vw 0 .625vw;font-size:1.3541666667vw;font-weight:700;letter-spacing:-.02em}
+.pm-slide .text > p{margin:0 0 .625vw;font-size:1.3541666667vw;font-weight:700;letter-spacing:-.02em}
 .pm-slide .text > span{font-size:.9375vw;font-weight:500;line-height:1.65;display:block;color:#4A453F;word-break:keep-all}
 .pm-slide .text .hash{display:flex;margin-top:1.3020833333vw}
 .pm-slide .text .hash span{display:flex;align-items:center;justify-content:center;padding:.46875vw .8333333333vw;font-size:.9375vw;font-weight:400;border:1px solid #000}
@@ -284,7 +281,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 
 @media screen and (max-width:900px){
   .promotion_section{padding:0}
-  .promotion_section .bar{height:39.4666666667vw;min-height:0;padding-left:5.3333333333vw;background:url(assets/bg-promo-bar-m.png) no-repeat center center/cover}
+  .promotion_section .bar{height:39.4666666667vw;min-height:0;padding-left:5.3333333333vw}
   .promotion_section .bar h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .promotion_section .bar p{font-size:4vw;word-break:keep-all;padding-right:5.3vw}
   .promotion_section .slide_contain{padding:13.3333333333vw 5.3333333333vw 21.3333333333vw}
@@ -292,9 +289,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
   .pm-slide{flex:0 0 66vw}
   .pm-slide:hover .img .img-ph{border-radius:0}
   .pm-slide .text{margin-top:6.4vw}
-  .pm-slide .text .tit h3{font-size:6.4vw}
-  .pm-slide .text .tit p{font-size:5.8666666667vw}
-  .pm-slide .text > p{margin:5.3333333333vw 0 2.1333333333vw;font-size:4.8vw}
+  .pm-slide .text > p{margin:0 0 2.1333333333vw;font-size:4.8vw}
   .pm-slide .text > span{font-size:3.7333333333vw}
   .pm-slide .text .hash{margin-top:6.4vw}
   .pm-slide .text .hash span{padding:1.6vw 3.2vw;font-size:3.7333333333vw}
@@ -363,9 +358,10 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .tv_section .rv-head{font-size:1.1458333333vw;font-weight:600;color:#676157;margin-bottom:.4166666667vw;min-height:0;line-height:1.4;letter-spacing:-.02em;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
 .tv_section .rv-text{font-size:.9375vw;font-weight:500;color:#656460;line-height:1.5;min-height:0}
 .tv_section .rv-foot{display:none}
-.tv_section .rv-nav{width:3.5416666667vw;height:3.5416666667vw;min-width:40px;min-height:40px;background:transparent;border:1px solid #A99B85;color:#7A6B54;box-shadow:none;top:33%}
-.tv_section .rv-prev{left:2vw}
-.tv_section .rv-next{right:2vw}
+/* 좌우 버튼: 슬라이더 트랙 바깥(섹션 좌우 여백)에 두고, 카드 기준 세로 정중앙 */
+.tv_section .rv-nav{width:3.5416666667vw;height:3.5416666667vw;min-width:40px;min-height:40px;background:transparent;border:1px solid #A99B85;color:#7A6B54;box-shadow:none;top:50%;transform:translateY(-50%)}
+.tv_section .rv-prev{left:auto;right:calc(100% + 1.3vw)}
+.tv_section .rv-next{right:auto;left:calc(100% + 1.3vw)}
 
 @media screen and (max-width:1024px){
   .tv_section .rv-card{flex:0 0 calc((100% - 3.6vw)/2)}
@@ -762,7 +758,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
         <a href="page_03.html" class="pm-slide">
           <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
           <div class="text">
-            <div class="tit"><h3>CLASS<span>1</span></h3><p>5DAY</p></div>
             <p>1:1 속눈썹 펌 단과반</p>
             <span>펌의 기준을 처음부터 잡고 싶은 분. 사전 온라인 이론부터 현장 시연, 모델 실습까지.</span>
             <div class="hash"><span>펌</span><span>280만원</span></div>
@@ -771,7 +766,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
         <a href="page_03.html" class="pm-slide">
           <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
           <div class="text">
-            <div class="tit"><h3>CLASS<span>2</span></h3><p>6회</p></div>
             <p>클래식 연장 단과반</p>
             <span>배웠지만 혼자 시술이 불안한 원장님. 사전과제로 기본기를 먼저 교정합니다.</span>
             <div class="hash"><span>연장</span><span>280만원</span></div>
@@ -780,7 +774,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
         <a href="page_03.html" class="pm-slide">
           <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
           <div class="text">
-            <div class="tit"><h3>CLASS<span>3</span></h3><p>6회</p></div>
             <p>펌포인트 연장 단과반</p>
             <span>펌 고객에게 제안할 고단가 메뉴가 필요한 분. LED 연장 이론과 1:1 실습 6회.</span>
             <div class="hash"><span>고단가</span><span>300만원</span></div>
@@ -789,7 +782,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
         <a href="page_03.html" class="pm-slide">
           <div class="img"><div class="img-ph"><i data-lucide="image"></i></div></div>
           <div class="text">
-            <div class="tit"><h3>CLASS<span>4</span></h3><p>1DAY</p></div>
             <p>원데이</p>
             <span>지금 시술에서 한 지점이 반복해 막히는 분. 사전 화상 상담으로 원인부터 진단합니다.</span>
             <div class="hash"><span>단기</span><span>80만원</span></div>
