@@ -298,7 +298,7 @@
 .subhero_section .label{font-family:"Erode","Pretendard",serif;font-size:1.0416666667vw;color:var(--ul-sub);letter-spacing:.06em;margin-bottom:1.1vw}
 .subhero_section h1{font-size:2.6041666667vw;font-weight:700;color:#fff;line-height:1.38;letter-spacing:-.03em;margin-bottom:1.4vw;word-break:keep-all}
 .subhero_section .lead{font-size:.9375vw;color:var(--ul-sub);line-height:1.8;word-break:keep-all}
-.subhero_section .stats{display:flex;justify-content:center;margin-top:3.6vw;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.subhero_section .stats{display:flex;justify-content:center;margin-top:3.6vw}
 .subhero_section .stats > div{padding:2.1vw 3.6vw;position:relative;min-width:12vw}
 .subhero_section .stats > div:not(:last-child)::after{content:"";position:absolute;right:0;top:22%;height:56%;width:1px;background:rgba(255,255,255,.14)}
 .subhero_section .stats .k{font-size:.8333333333vw;color:var(--ul-sub);margin-bottom:.6vw}
