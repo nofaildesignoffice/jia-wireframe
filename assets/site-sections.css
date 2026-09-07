@@ -597,3 +597,59 @@
 @media screen and (max-width:900px){
   .promotion_section .pm-note{font-size:3.2vw;margin-top:8vw;padding:0 2vw}
 }
+
+/* ==========================================================================
+   창업반 페이지용 변형
+   ========================================================================== */
+
+/* 프리미엄 시스템 5열 변형 */
+.premium_section .cont.c5 .box{width:15.9vw}
+.premium_section .cont.c5 .box .pm-img{height:18.35vw}
+
+/* 탭 없는 단일 상품 구성 (창업반) */
+.tabclass_section .cls-intro{text-align:center;margin-bottom:2.4vw}
+.tabclass_section .cls-intro h4{font-size:1.6666666667vw;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;margin-bottom:.7vw}
+.tabclass_section .cls-intro .one{font-size:.9375vw;color:#4A453F;line-height:1.7;word-break:keep-all}
+
+/* Evidence — 교재 카드 그리드 */
+.bookline{border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1;display:flex;flex-wrap:wrap}
+.bookline .bk{width:25%;padding:1.7vw 1.2vw;text-align:center;font-size:.9375vw;font-weight:600;color:var(--ul-ink);letter-spacing:-.02em;position:relative;word-break:keep-all}
+.bookline .bk:not(:nth-child(4n))::after{content:"";position:absolute;right:0;top:20%;height:60%;width:1px;background:#e3e0da}
+.bookline .bk:nth-child(-n+4){border-bottom:1px solid #ecebe8}
+.gridline_section .block-title{max-width:1200px;margin:0 auto 1.2vw;padding:0 6.25vw;font-family:"Erode","Pretendard",serif;font-size:1.0416666667vw;color:var(--ul-taupe);letter-spacing:.02em}
+.gridline_section .block-title.mt{margin-top:3.6vw}
+.gridline_section .acc-wrap{max-width:1200px;margin:0 auto;padding:0 6.25vw}
+
+/* 하단 고정 CTA — 유라인 톤 */
+.fixcta{position:fixed;left:0;right:0;bottom:24px;z-index:95;padding:0 24px;display:none}
+.fixcta.is-show{display:block}
+.fixcta-inner{max-width:1000px;margin:0 auto;background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink));display:flex;align-items:center;justify-content:space-between;gap:2vw;padding:1.25vw 1.8vw}
+.fixcta .copy{font-size:1.0416666667vw;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.4}
+.fixcta .copy span{display:block;font-size:.8333333333vw;font-weight:400;color:var(--ul-sub);margin-top:.4vw}
+.fixcta-inner > a{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:16vw;height:3.125vw;min-height:44px;border:1px solid #fff;color:#fff;font-size:.9375vw;letter-spacing:-.03em;transition:background .3s,color .3s}
+.fixcta-inner > a:hover{background:#fff;color:var(--ul-ink)}
+
+@media screen and (max-width:900px){
+  .premium_section .cont.c5 .box{width:100%}
+  .premium_section .cont.c5 .box .pm-img{height:59.7333333333vw}
+
+  .tabclass_section .cls-intro{margin-bottom:8vw}
+  .tabclass_section .cls-intro h4{font-size:5.8666666667vw;margin-bottom:2.6vw}
+  .tabclass_section .cls-intro .one{font-size:3.7333333333vw}
+
+  .bookline .bk{width:50%;padding:5.3vw 3.2vw;font-size:3.7333333333vw}
+  .bookline .bk:not(:nth-child(4n))::after{display:none}
+  .bookline .bk:not(:nth-child(2n))::after{content:"";position:absolute;right:0;top:20%;height:60%;width:1px;background:#e3e0da}
+  .bookline .bk:nth-child(-n+4){border-bottom:none}
+  .bookline .bk:not(:nth-last-child(-n+2)){border-bottom:1px solid #ecebe8}
+  .gridline_section .block-title{font-size:4vw;padding:0 5.3333333333vw;margin-bottom:4vw}
+  .gridline_section .block-title.mt{margin-top:10.6vw}
+  .gridline_section .acc-wrap{padding:0 5.3333333333vw}
+
+  .fixcta{bottom:12px;padding:0 12px}
+  .fixcta-inner{flex-direction:column;align-items:stretch;gap:3.7vw;padding:5vw 5.3vw;text-align:center}
+  .fixcta .copy{font-size:4vw}
+  .fixcta .copy span{font-size:3.4666666667vw;margin-top:1.6vw}
+  .fixcta-inner > a{width:100%;height:12.8vw;font-size:4vw}
+  body.has-fixcta .top-btn{bottom:170px}
+}
