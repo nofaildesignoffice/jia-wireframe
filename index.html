@@ -7,6 +7,7 @@
 <title>지아 | 속눈썹 연장·펌 전 과정 1:1 교육</title>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
+<link href="assets/site-chrome.css" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 :root{
@@ -17,22 +18,10 @@
   --radius-sm:8px; --radius-md:12px;
   --shadow-sm:0 1px 3px rgba(0,0,0,0.08); --shadow-md:0 4px 12px rgba(0,0,0,0.1);
 
-  /* ── 유라인 레퍼런스 디자인 토큰 ── */
-  --ul-ink:#1F1B1B;        /* 최심층 다크 */
-  --ul-ink-2:#31302D;      /* 드롭다운 그라데이션 상단 */
-  --ul-sidebar:#444542;    /* 모바일 사이드바 */
-  --ul-stone:#6F6D69;      /* 서브메뉴 카드 */
-  --ul-sub:#ADADAD;        /* 서브 텍스트 */
-  --ul-cream:#FFFCF7;      /* 크림 배경 */
-  --ul-taupe:#968067;      /* 브랜드 토프 */
-  --ul-brown:#71543E;      /* 딥 브라운 */
-  --ul-line:#E5E1DB;       /* 크림 위 보더 */
-  --ul-accent:#FF8133;     /* 포인트 오렌지 */
-  --nav-h:5.2083333333vw;  /* 1920 기준 100px */
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.6;background:var(--bg-white)}
+body{padding-top:0;font-family:'Pretendard',sans-serif;color:var(--text-gray);line-height:1.6;background:var(--bg-white)}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 button{cursor:pointer;border:none;font-family:inherit;background:none}
@@ -107,64 +96,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 @media (max-width:768px){
   .rv-card{flex:0 0 100%}
 }
-
-/* ===== NAV (유라인 GNB 스타일) ===== */
-#header .header{position:fixed;left:0;top:0;width:100%;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,.55);padding:0 3.125vw;transition:background .6s;z-index:100}
-#header .header.on{background:transparent}
-#header .header .header-wrap{display:flex;align-items:center;justify-content:space-between;width:100%;height:100%}
-#header .header .header-wrap .headerBox{display:flex;align-items:center;height:100%}
-
-#header .header .header-wrap .logo{margin-right:4.1666666667vw;z-index:100}
-#header .header .header-wrap .logo a{display:flex;align-items:center;height:2.0833333333vw}
-#header .header .header-wrap .logo img{height:100%;width:auto;display:block}
-
-#header .header .header-wrap .menu{display:flex;align-items:center;opacity:1;transition:opacity .6s;height:100%}
-#header .header .header-wrap .menu.off{opacity:0;pointer-events:none}
-#header .header .header-wrap .menu li{height:100%;position:relative}
-#header .header .header-wrap .menu li:not(:last-child){margin-right:2.5vw}
-#header .header .header-wrap .menu li a{height:100%;font-size:.9375vw;font-weight:500;color:#fff;display:flex;align-items:center;white-space:nowrap}
-#header .header .header-wrap .menu li.is-active > a{position:relative}
-#header .header .header-wrap .menu li.is-active > a::after{position:absolute;content:"";left:0;right:0;bottom:1.3vw;height:1px;background:#fff}
-
-#header .header .header-wrap .menu li .sub_menu{border-radius:8px;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:8.90625vw;display:none;overflow:hidden;padding-top:0}
-#header .header .header-wrap .menu li:hover .sub_menu{display:block}
-#header .header .header-wrap .menu li .sub_menu ul{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;padding:28px 0;background:var(--ul-stone);border-radius:8px;margin-top:12px}
-#header .header .header-wrap .menu li .sub_menu ul li{margin-right:0;height:auto}
-#header .header .header-wrap .menu li .sub_menu ul li:not(:last-child){margin-bottom:1.0416666667vw}
-#header .header .header-wrap .menu li .sub_menu ul li a{font-size:.8333333333vw;font-weight:500;color:var(--ul-sub);display:block;height:auto}
-#header .header .header-wrap .menu li .sub_menu ul li a:hover{color:#fff}
-
-#header .header .header-wrap .info{display:flex;align-items:center;z-index:100}
-#header .header .header-wrap .info .btn_group{display:flex;align-items:center}
-#header .header .header-wrap .info .btn_group a{font-size:1.0416666667vw;font-weight:400;color:#fff;display:inline-block;line-height:1}
-#header .header .header-wrap .info .btn_group a:first-child{position:relative;margin-right:.7291666667vw;padding-right:.7291666667vw}
-#header .header .header-wrap .info .btn_group a:first-child::after{position:absolute;content:"";right:0;top:50%;transform:translateY(-50%);background:#fff;opacity:.3;width:1px;height:.5208333333vw}
-#header .header .header-wrap .info .icon_group{display:flex;align-items:center}
-#header .header .header-wrap .info .icon_group a{width:1.25vw;height:1.25vw;color:#fff;display:flex;align-items:center;justify-content:center}
-#header .header .header-wrap .info .icon_group a svg{width:100%;height:100%}
-#header .header .header-wrap .info .icon_group a:not(:first-child){margin-left:1.5625vw}
-
-/* 전체메뉴 드롭다운 */
-#header .dropdown_menu{width:100%;height:0;-webkit-backdrop-filter:blur(.9375vw);backdrop-filter:blur(.9375vw);background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink));position:fixed;left:0;top:0;transition:all .6s;opacity:0;overflow:hidden;z-index:99}
-#header .dropdown_menu.on{height:28vw;opacity:1}
-#header .dropdown_menu .drop_wrap{display:flex;align-items:flex-start;justify-content:space-between;padding:6.7708333333vw 3.125vw 0}
-#header .dropdown_menu .drop_wrap .nav_wrap{width:74.1666666667vw}
-#header .dropdown_menu .drop_wrap .nav_wrap > div{display:flex;align-items:flex-start;flex-wrap:wrap;justify-content:flex-start;gap:0 3.6vw;width:100%}
-#header .dropdown_menu .drop_wrap .nav_wrap .nav_box{width:12.4479166667vw}
-#header .dropdown_menu .drop_wrap .nav_wrap .nav_box li.nav_title{font-size:.9375vw;font-weight:600;color:#fff;padding-bottom:.6770833333vw;margin-bottom:.7291666667vw;border-bottom:1px solid rgba(255,255,255,.14)}
-#header .dropdown_menu .drop_wrap .nav_wrap .nav_box li.nav_menu a{font-size:.8333333333vw;font-weight:500;color:var(--ul-sub);display:block;padding:.28vw 0}
-#header .dropdown_menu .drop_wrap .nav_wrap .nav_box li.nav_menu a:hover{color:#fff}
-#header .dropdown_menu .drop_wrap .banner_wrap{width:16.4583333333vw}
-#header .dropdown_menu .drop_wrap .banner_wrap a{height:4.5833333333vw;display:block;position:relative;background:var(--ul-taupe);border-radius:8px;overflow:hidden}
-#header .dropdown_menu .drop_wrap .banner_wrap a:not(:last-child){margin-bottom:.5208333333vw}
-#header .dropdown_menu .drop_wrap .banner_wrap a .text{position:absolute;top:50%;transform:translateY(-50%);left:1.4583333333vw;color:#fff}
-#header .dropdown_menu .drop_wrap .banner_wrap a .text p{font-size:.8854166667vw;line-height:1.4;font-weight:400}
-#header .dropdown_menu .drop_wrap .banner_wrap a .text p b{font-weight:600}
-
-/* 모바일 헤더 · 사이드바 */
-.mo_header{display:none}
-.side_bar{display:none}
-.side_dim{display:none}
 
 /* ===== HERO — 유라인 메인 비주얼 스타일 ===== */
 .mainVisual{height:100vh;position:relative;background:var(--ul-ink)}
@@ -426,29 +357,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .letter_section a{width:280px;height:55px;font-size:1.0416666667vw;letter-spacing:-.05em;margin:2.6vw auto 0;display:flex;align-items:center;justify-content:center;border:1px solid #fff;color:#fff;transition:background .3s,color .3s}
 .letter_section a:hover{background:#fff;color:var(--ul-ink)}
 
-/* ===== FOOTER — 유라인 푸터 스타일 ===== */
-#footer{background:#1a1a1a;padding:1.5625vw 3.125vw 1.1979166667vw 6.25vw;z-index:98;position:relative}
-#footer .inner{display:flex;align-items:flex-start}
-#footer .inner .logo{width:5.7291666667vw;margin-right:5.5729166667vw;flex-shrink:0}
-#footer .inner .logo a{display:block}
-#footer .inner .logo img{width:100%;height:auto;display:block}
-#footer .inner .cont{width:100%}
-#footer .inner .cont .top{display:flex;align-items:center;padding-bottom:1.0416666667vw;border-bottom:1px solid #393939;margin-bottom:1.71875vw}
-#footer .inner .cont .top a{font-size:.7291666667vw;font-weight:500;color:#ccc}
-#footer .inner .cont .top a:not(:last-child){margin-right:2.0833333333vw}
-#footer .inner .cont .info{display:flex;align-items:flex-start}
-#footer .inner .cont .info > div{width:100%}
-#footer .inner .cont .info > div.left{width:18.2291666667vw;flex-shrink:0}
-#footer .inner .cont .info > div > div{display:flex}
-#footer .inner .cont .info > div > div:not(:last-child){margin-bottom:.5208333333vw}
-#footer .inner .cont .info > div > div > p{font-size:.6770833333vw;font-weight:400;color:#fffcf8;margin-right:.5208333333vw;flex-shrink:0}
-#footer .inner .cont .info > div > div span{font-size:.6770833333vw;font-weight:400;color:#bebebe}
-#footer .inner .cont .info > div > div span a{color:#bebebe}
-#footer .inner .cont .info > div .copy{margin-top:1.71875vw;justify-content:space-between;align-items:center}
-#footer .inner .cont .info > div .copy p{font-size:.7291666667vw;font-weight:500;color:#fffcf8;margin-right:0}
-#footer .inner .cont .info > div .copy .sns a{font-size:.6770833333vw;font-weight:500;color:#fffcf8}
-#footer .inner .cont .info > div .copy .sns a:not(:first-child){margin-left:1.5625vw}
-.mo_footer{display:none}
+
 
 @media screen and (max-width:900px){
   .letter_section{padding:19.2vw 0}
@@ -456,28 +365,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
   .letter_section p{font-size:4.8vw;margin-bottom:3.2vw;word-break:keep-all}
   .letter_section span{font-size:3.7333333333vw;line-height:1.6;word-break:keep-all}
   .letter_section a{width:72vw;height:12.8vw;font-size:4vw;margin-top:8.5vw}
-
-  #footer{padding:10.6666666667vw 5.3333333333vw;z-index:49}
-  #footer .inner{display:none}
-  #footer .mo_footer{display:block}
-  #footer .mo_footer h1{margin-bottom:10.6666666667vw}
-  #footer .mo_footer h1 a{width:23.4666666667vw;display:block}
-  #footer .mo_footer h1 img{width:100%;height:auto;display:block}
-  #footer .mo_footer .info{padding-bottom:8.5333333333vw;border-bottom:1px solid #393939}
-  #footer .mo_footer .info div{display:flex;align-items:center}
-  #footer .mo_footer .info div:first-child{margin-bottom:4.2666666667vw}
-  #footer .mo_footer .info div a{font-size:3.7333333333vw;font-weight:500;color:#ccc}
-  #footer .mo_footer .info div a:first-child{margin-right:4.2666666667vw;padding-right:4.2666666667vw;position:relative}
-  #footer .mo_footer .info div a:first-child::after{position:absolute;content:"";width:1px;height:2.6666666667vw;top:50%;transform:translateY(-50%);right:0;background:#ccc}
-  #footer .mo_footer .adress{padding-top:8.5333333333vw;margin-bottom:10.6666666667vw}
-  #footer .mo_footer .adress div{display:flex;align-items:center}
-  #footer .mo_footer .adress div:not(:last-child){margin-bottom:2.4vw}
-  #footer .mo_footer .adress div p{font-size:3.2vw;color:#fffcf8;margin-right:2.1333333333vw;flex-shrink:0}
-  #footer .mo_footer .adress div span{font-size:3.2vw;color:#bebebe}
-  #footer .mo_footer .adress div span a{color:#bebebe}
-  #footer .mo_footer .adress .copy{font-size:3.4666666667vw;font-weight:500;color:#fff;opacity:.43;margin-top:6.4vw}
-  #footer .mo_footer .sns{display:flex;flex-wrap:wrap;width:80%}
-  #footer .mo_footer .sns a{font-size:3.7333333333vw;font-weight:500;color:#fff;margin-right:8vw;margin-bottom:5.3333333333vw}
 }
 
 /* ===== GRIDS ===== */
@@ -535,49 +422,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .sub-form input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit;background:#FFF;color:var(--text-black)}
 
 
-/* TOP */
-.top-btn{position:fixed;right:24px;bottom:32px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--text-black);color:#FFF;display:none;align-items:center;justify-content:center}
-.top-btn.is-show{display:flex}
-.top-btn svg{width:20px;height:20px}
 
-/* ===== 모바일 GNB (유라인 사이드바 스타일) ===== */
-@media screen and (max-width:900px){
-  #header .header{display:none !important}
-  #header .dropdown_menu{display:none !important}
-  .mo_header{position:fixed;left:0;top:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 5.3333333333vw;height:16vw;background:rgba(0,0,0,.55);z-index:200;transition:background .4s}
-  .mo_header.on{background:transparent}
-  .mo_header h1 > a{display:flex;align-items:center;height:calc(100vw * (30/375))}
-  .mo_header h1 img{height:100%;width:auto;display:block}
-  .mo_header .mo_icon{display:flex;align-items:center;gap:5.3333333333vw}
-  .mo_header .mo_icon a,.mo_header .mo_icon button{width:6.4vw;height:6.4vw;color:#fff;display:flex;align-items:center;justify-content:center}
-  .mo_header .mo_icon svg{width:100%;height:100%}
-
-  .side_dim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:opacity .3s;z-index:201}
-  .side_dim.active{opacity:1;visibility:visible}
-
-  .side_bar{position:fixed;width:86%;max-width:420px;height:100%;top:0;left:0;transform:translateX(-100%);transition:transform .3s;background:var(--ul-sidebar);z-index:202;padding:5.3333333333vw 5.3333333333vw 29.3333333333vw;display:block;overflow:hidden}
-  .side_bar.active{transform:translateX(0)}
-  .side_bar .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14.9333333333vw}
-  .side_bar .top .info{display:flex;align-items:center}
-  .side_bar .top .info a{font-size:4.8vw;color:#fff}
-  .side_bar .top .info a:first-child{margin-right:5.3333333333vw;padding-right:5.3333333333vw;position:relative}
-  .side_bar .top .info a:first-child::after{position:absolute;content:"";width:1px;height:3.2vw;background:#fff;opacity:.3;right:0;top:50%;transform:translateY(-50%)}
-  .side_bar .top .icon{display:flex;align-items:center}
-  .side_bar .top .icon button{width:6.4vw;height:6.4vw;color:#fff;display:flex;align-items:center;justify-content:center}
-  .side_bar .top .icon button svg{width:100%;height:100%}
-  .side_bar #mo_nav{overflow-y:auto;height:100%}
-  .side_bar #mo_nav ul.menu:not(:last-child){margin-bottom:9.8666666667vw}
-  .side_bar #mo_nav ul.menu li{position:relative;width:100%}
-  .side_bar #mo_nav ul.menu li.active > a,.side_bar #mo_nav ul.menu li.active > button{color:#fff}
-  .side_bar #mo_nav ul.menu li.active .arrow{transform:rotate(180deg)}
-  .side_bar #mo_nav ul.menu li > a,.side_bar #mo_nav ul.menu li > button{font-size:4.2666666667vw;color:var(--ul-sub);display:flex;align-items:center;width:100%;text-align:left;padding:0;font-family:inherit}
-  .side_bar #mo_nav ul.menu li .arrow{width:5.3333333333vw;height:5.3333333333vw;position:absolute;right:0;top:0;transition:transform .3s;color:var(--ul-sub);pointer-events:none}
-  .side_bar #mo_nav ul.menu li .arrow svg{width:100%;height:100%}
-  .side_bar #mo_nav ul.menu li .sub{display:none;margin-top:7.4666666667vw;margin-left:5.6vw}
-  .side_bar #mo_nav ul.menu li.active .sub{display:block}
-  .side_bar #mo_nav ul.menu li .sub li:not(:last-child){margin-bottom:6.4vw}
-  .side_bar #mo_nav ul.menu li .sub li a{color:#fff;font-size:4vw}
-}
 
 @media (max-width:1024px){
   .grid-4{grid-template-columns:repeat(2,1fr)}
@@ -1412,57 +1257,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <script>
 lucide.createIcons();
 
-/* ===== 헤더 (유라인 GNB) ===== */
-var nav=document.getElementById('nav'),
-    moHeader=document.getElementById('moHeader'),
-    topBtn=document.getElementById('topBtn'),
-    dropdown=document.getElementById('dropdownMenu'),
-    gnbMenu=document.getElementById('gnbMenu'),
-    menuButton=document.getElementById('menuButton'),
-    hasHero=!!document.querySelector('.mainVisual, .hero');
-
-function syncHeader(){
-  var y=window.scrollY, top=hasHero && y<40 && !(dropdown && dropdown.classList.contains('on'));
-  if(nav) nav.classList.toggle('on', top);
-  if(moHeader) moHeader.classList.toggle('on', hasHero && y<40);
-  if(topBtn) topBtn.classList.toggle('is-show', y>400);
-}
-window.addEventListener('scroll', syncHeader);
-syncHeader();
-if(topBtn) topBtn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
-
-/* 전체메뉴 열기/닫기 — 열리면 GNB 메뉴는 페이드아웃 */
-function closeDropdown(){
-  if(!dropdown) return;
-  dropdown.classList.remove('on');
-  if(gnbMenu) gnbMenu.classList.remove('off');
-  syncHeader();
-}
-if(menuButton && dropdown) menuButton.onclick=function(){
-  var open=!dropdown.classList.contains('on');
-  dropdown.classList.toggle('on', open);
-  if(gnbMenu) gnbMenu.classList.toggle('off', open);
-  if(open){ if(nav) nav.classList.remove('on'); } else syncHeader();
-};
-var headerEl=document.getElementById('header');
-if(headerEl) headerEl.addEventListener('mouseleave', closeDropdown);
-document.addEventListener('keydown',function(e){if(e.key==='Escape') closeDropdown()});
-
-/* 모바일 사이드바 */
-var sideBar=document.getElementById('sideBar'), sideDim=document.getElementById('sideDim');
-function sideToggle(on){
-  if(sideBar) sideBar.classList.toggle('active', on);
-  if(sideDim) sideDim.classList.toggle('active', on);
-  document.body.style.overflow = on ? 'hidden' : '';
-}
-var moOpen=document.getElementById('moOpen'), moClose=document.getElementById('moClose');
-if(moOpen) moOpen.onclick=function(){sideToggle(true)};
-if(moClose) moClose.onclick=function(){sideToggle(false)};
-if(sideDim) sideDim.onclick=function(){sideToggle(false)};
-document.querySelectorAll('#mo_nav ul.menu > li > button').forEach(function(b){
-  b.onclick=function(){b.parentElement.classList.toggle('active')};
-});
-
 /* 히어로 캐러셀 — 페이드 전환 (유라인 메인 비주얼) */
 var slides=document.querySelectorAll('.mv-slide'),
     dots=document.querySelectorAll('#hDots .mv-bullet'), hi=0, timer;
@@ -1589,5 +1383,6 @@ window.addEventListener('resize', rvClampAll);
 })();
 </script>
 
+<script src="assets/site-chrome.js"></script>
 </body>
 </html>
