@@ -1,0 +1,70 @@
+/* ==========================================================================
+   지아 인트로 애니메이션 — 첫 진입 시 로고가 그려지고 사라지는 오버레이
+   네임스페이스: ji-  (충돌 방지)
+
+   기본값은 "숨김". JS 가 .is-on 을 붙여야만 보인다.
+   → 스크립트가 실패하거나 JS 가 꺼져 있어도 화면이 가려지는 일이 없다.
+   ========================================================================== */
+.ji-intro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:var(--ul-ink,#1F1B1B);
+}
+.ji-intro.is-on{display:flex}
+
+/* 페이드아웃 */
+.ji-intro.is-out{
+  opacity:0;
+  transition:opacity .7s ease-out;
+  pointer-events:none;
+}
+
+.ji-intro-inner{padding:0 24px}
+
+.ji-logo{
+  width:22vw;
+  min-width:220px;
+  max-width:420px;
+  height:auto;
+  display:block;
+  overflow:visible;
+}
+.ji-logo path{fill:#fff}
+
+/* ── 시작 상태 ── */
+/* 심볼: 살짝 작게 + 아래에서 */
+.ji-mark{
+  opacity:0;
+  transform:translateY(10px) scale(.92);
+  transform-origin:14% 50%;
+  transition:opacity .9s ease-out, transform .9s cubic-bezier(.25,.46,.45,.94);
+}
+/* J · I · A: 아래에서 순차적으로 */
+.ji-ch{
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .7s ease-out, transform .7s cubic-bezier(.25,.46,.45,.94);
+}
+.ji-ch1{transition-delay:.45s}
+.ji-ch2{transition-delay:.6s}
+.ji-ch3{transition-delay:.75s}
+
+/* ── 재생 상태 ── */
+.ji-intro.is-play .ji-mark,
+.ji-intro.is-play .ji-ch{
+  opacity:1;
+  transform:none;
+}
+
+@media screen and (max-width:900px){
+  .ji-logo{width:56vw;min-width:0;max-width:none}
+}
+
+/* 모션을 줄이도록 설정한 사용자는 애니메이션 없이 바로 통과 */
+@media (prefers-reduced-motion:reduce){
+  .ji-intro{display:none !important}
+}
