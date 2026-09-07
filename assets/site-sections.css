@@ -151,11 +151,6 @@
 .promotion_section .bar p{font-size:1.0416666667vw;font-weight:600;color:#000;letter-spacing:-.02em}
 
 .promotion_section .slide_contain{padding:2.6041666667vw 6.25vw 5.6770833333vw;border-bottom:1px solid #b2b2b2;position:relative}
-.promotion_section .promotion_arrow button{position:absolute;width:3.125vw;height:3.125vw;min-width:38px;min-height:38px;top:32%;z-index:6;border-radius:50%;border:1px solid #b2b2b2;background:var(--ul-cream);display:flex;align-items:center;justify-content:center;color:var(--ul-brown);transition:opacity .2s}
-.promotion_section .promotion_arrow button svg{width:45%;height:45%}
-.promotion_section .promotion_arrow button:disabled{opacity:.25;cursor:default}
-.promotion_section .promotion_arrow .pm-prev{left:2.0833333333vw}
-.promotion_section .promotion_arrow .pm-next{right:2.0833333333vw}
 
 .pm-viewport{overflow:hidden}
 .pm-track{display:flex;gap:26px;transition:transform .4s ease}
@@ -180,7 +175,6 @@
   .promotion_section .bar h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .promotion_section .bar p{font-size:4vw;word-break:keep-all;padding-right:5.3vw}
   .promotion_section .slide_contain{padding:13.3333333333vw 5.3333333333vw 21.3333333333vw}
-  .promotion_section .promotion_arrow{display:none}
   .pm-slide{flex:0 0 66vw}
   .pm-slide:hover .img .img-ph{border-radius:0}
   .pm-slide .text{margin-top:6.4vw}
