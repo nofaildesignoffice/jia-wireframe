@@ -597,3 +597,9 @@
 @media screen and (max-width:900px){
   .special_section .cont .box:nth-child(3) .img{height:46.6133333333vw;margin-top:-1.1733333333vw;margin-bottom:6.2933333333vw}
 }
+
+/* 프로모션 슬라이더 하단 안내 문구 */
+.promotion_section .pm-note{max-width:1000px;margin:2.2vw auto 0;text-align:center;font-size:.8333333333vw;color:#8A857D;line-height:1.7;word-break:keep-all}
+@media screen and (max-width:900px){
+  .promotion_section .pm-note{font-size:3.2vw;margin-top:8vw;padding:0 2vw}
+}

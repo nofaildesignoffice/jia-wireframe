@@ -8,7 +8,7 @@
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css?v=9b1908a3" rel="stylesheet">
-<link href="assets/site-sections.css?v=5eb646f7" rel="stylesheet">
+<link href="assets/site-sections.css?v=1e815f07" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 :root{
@@ -1061,33 +1061,6 @@ dots.forEach(function(d,i){d.onclick=function(){go(i);reset()}});
 play();
 
 
-/* ===== 경력자 클래스 카드 슬라이더 (유라인 프로모션) ===== */
-document.querySelectorAll('.slide_contain').forEach(function(sc){
-  var track=sc.querySelector('.pm-track'),
-      vp=sc.querySelector('.pm-viewport'),
-      prev=sc.querySelector('.pm-prev'), next=sc.querySelector('.pm-next'),
-      idx=0;
-  if(!track||!vp) return;
-  function step(){
-    var first=track.querySelector('.pm-slide');
-    return first ? first.getBoundingClientRect().width + 26 : 0;
-  }
-  function maxIdx(){
-    var total=track.scrollWidth, view=vp.clientWidth, s=step();
-    return s ? Math.max(0, Math.ceil((total-view)/s)) : 0;
-  }
-  function render(){
-    idx=Math.min(idx, maxIdx());
-    track.style.transform='translateX('+(-idx*step())+'px)';
-    if(prev) prev.disabled = idx<=0;
-    if(next) next.disabled = idx>=maxIdx();
-  }
-  if(prev) prev.onclick=function(){idx--;render()};
-  if(next) next.onclick=function(){idx++;render()};
-  window.addEventListener('resize',render);
-  render();
-});
-
 /* ===== 후기 카드 슬라이더 ===== */
 document.querySelectorAll('.rv').forEach(function(rv){
   var track=rv.querySelector('.rv-track'),
@@ -1173,6 +1146,7 @@ window.addEventListener('resize', rvClampAll);
 })();
 </script>
 
+<script src="assets/site-sections.js?v=3bf348b0"></script>
 <script src="assets/site-chrome.js?v=061b54b6"></script>
 </body>
 </html>
