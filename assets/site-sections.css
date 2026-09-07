@@ -653,3 +653,6 @@
   .fixcta-inner > a{width:100%;height:12.8vw;font-size:4vw}
   body.has-fixcta .top-btn{bottom:170px}
 }
+
+/* Care 그리드 — 실제 제품 이미지 (박스에 꽉 채우고 넘치는 부분은 잘라냄) */
+.care_section .cont .box .img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
