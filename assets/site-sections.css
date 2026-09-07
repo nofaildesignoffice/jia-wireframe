@@ -656,3 +656,90 @@
 
 /* Care 그리드 — 실제 제품 이미지 (박스에 꽉 채우고 넘치는 부분은 잘라냄) */
 .care_section .cont .box .img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+
+/* ==========================================================================
+   게시판 리스트 — 유라인 NOTICE 스타일
+   크림 배경 + Erode 대형 타이틀 + 헤어라인 표 + 원형 페이지네이션
+   ========================================================================== */
+.board_section{background:var(--ul-cream);padding:7.8vw 0 8.8vw}
+.board_section .inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.board_section .head{margin-bottom:5.2vw}
+.board_section .head h1{font-family:"Erode","Pretendard",serif;font-size:2.6041666667vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em;margin-bottom:1.1vw}
+.board_section .head p{font-size:.8333333333vw;color:#4A453F;line-height:1.6}
+
+.board{width:100%;border-collapse:collapse;font-size:.8333333333vw;background:none;border-top:1px solid #d1d1d1}
+.board th,.board td{border:none;padding:1.15vw .8vw;text-align:center;vertical-align:middle}
+.board thead th{background:none;font-size:.8333333333vw;font-weight:400;color:#8A857D;border-top:none;border-bottom:none;padding-top:1.4vw;padding-bottom:1.4vw}
+.board tbody tr{transition:background .2s}
+.board tbody tr:hover{background:rgba(0,0,0,.025)}
+.board td{color:#4A453F}
+.board td.subj{text-align:left;color:var(--ul-ink);font-weight:400}
+.board td.subj a{display:block}
+.board tbody tr:hover td.subj{color:#000}
+/* 상단 고정 공지 행 */
+.board tr.pin td,.board tr.pin td.subj{color:var(--ul-accent);font-weight:400}
+.board tr.pin .no{font-weight:400}
+
+/* 원형 페이지네이션 */
+.pager{display:flex;gap:.55vw;justify-content:center;align-items:center;margin-top:5.2vw}
+.pager a{width:2.0833333333vw;height:2.0833333333vw;min-width:32px;min-height:32px;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8333333333vw;color:#4A453F;background:none;transition:background .2s,color .2s}
+.pager a:hover{background:rgba(0,0,0,.04)}
+.pager a.is-active{background:var(--ul-accent);color:#fff}
+.pager a.pg-nav{background:#EAE7E1;color:#8A857D;font-size:.7291666667vw}
+.pager a.pg-nav:hover{background:#E0DCD4}
+
+@media screen and (max-width:900px){
+  .board_section{padding:18vw 0 20vw}
+  .board_section .inner{padding:0 5.3333333333vw}
+  .board_section .head{margin-bottom:10.6vw}
+  .board_section .head h1{font-size:9.6vw;margin-bottom:3.2vw}
+  .board_section .head p{font-size:3.7333333333vw}
+  .board{font-size:3.7333333333vw}
+  .board th,.board td{padding:4.2vw 1.6vw}
+  .board thead th{font-size:3.4666666667vw}
+  /* 모바일에서는 번호 열을 숨기고 제목 + 날짜만 */
+  .board th:first-child,.board td:first-child{display:none}
+  .board td.subj{word-break:keep-all;line-height:1.5}
+  .pager{gap:2vw;margin-top:12vw}
+  .pager a{width:9.6vw;height:9.6vw;font-size:3.7333333333vw}
+  .pager a.pg-nav{font-size:3.2vw}
+}
+
+/* FAQ — 크림 배경 + 헤어라인 아코디언 */
+.faq_section{background:var(--ul-cream);padding:7.8vw 0 8.8vw}
+.faq_section .inner{max-width:1000px;margin:0 auto;padding:0 24px}
+.faq_section .head{margin-bottom:4vw}
+.faq_section .head h1{font-family:"Erode","Pretendard",serif;font-size:2.6041666667vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em;margin-bottom:1.1vw}
+.faq_section .head p{font-size:.8333333333vw;color:#4A453F;line-height:1.6}
+.faq_section .search-box{display:flex;gap:.5vw;max-width:520px;margin:0 0 3.2vw}
+.faq_section .search-box input{flex:1;padding:.75vw 1vw;font-size:.8333333333vw;border:1px solid #c6c2ba;border-radius:0;font-family:inherit;background:#fff;color:var(--ul-ink)}
+.faq_section .search-box .btn{display:flex;align-items:center;justify-content:center;padding:0 1.6vw;font-size:.8333333333vw;border:1px solid var(--ul-brown);background:var(--ul-brown);color:#fff;border-radius:0}
+.faq_section .tabs{display:flex;gap:.5208333333vw;flex-wrap:wrap;border-bottom:1px solid #d1d1d1;padding-bottom:1.6vw;margin-bottom:2.6vw}
+.faq_section .tabs button{padding:.6vw 1.4vw;font-size:.8333333333vw;font-weight:500;color:#6B6660;border:1px solid #c6c2ba;background:none;font-family:inherit;border-radius:0;letter-spacing:-.02em;transition:all .25s}
+.faq_section .tabs button:hover{color:var(--ul-ink)}
+.faq_section .tabs button.is-active{background:var(--ul-brown);border-color:var(--ul-brown);color:#fff}
+.faq_section .tabpanel{display:none}
+.faq_section .tabpanel.is-active{display:block}
+.faq_section .acc{border:none;border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1;border-radius:0;background:none;overflow:visible}
+.faq_section .acc-item+.acc-item{border-top:1px solid #ecebe8}
+.faq_section .acc-q{padding:1.4vw 1vw;font-size:.9375vw;font-weight:600;color:var(--ul-ink);gap:1.2vw;letter-spacing:-.02em;background:none}
+.faq_section .acc-q .mk{font-size:1.15vw;color:var(--ul-brown);transition:transform .3s}
+.faq_section .acc-item.is-open .acc-q .mk{transform:rotate(45deg)}
+.faq_section .acc-a{padding:0 1vw 1.6vw;font-size:.8333333333vw;color:#4A453F;line-height:1.85;word-break:keep-all}
+.faq_section .acc-a strong{color:var(--ul-brown);font-weight:700}
+
+@media screen and (max-width:900px){
+  .faq_section{padding:18vw 0 20vw}
+  .faq_section .inner{padding:0 5.3333333333vw}
+  .faq_section .head{margin-bottom:8.5vw}
+  .faq_section .head h1{font-size:9.6vw;margin-bottom:3.2vw}
+  .faq_section .head p{font-size:3.7333333333vw}
+  .faq_section .search-box{gap:2vw;margin-bottom:8vw;max-width:none}
+  .faq_section .search-box input{padding:3.2vw 4vw;font-size:3.7333333333vw}
+  .faq_section .search-box .btn{padding:0 5.3vw;font-size:3.7333333333vw}
+  .faq_section .tabs{gap:2vw;padding-bottom:5.3vw;margin-bottom:8vw}
+  .faq_section .tabs button{padding:2.4vw 3.6vw;font-size:3.4666666667vw}
+  .faq_section .acc-q{padding:4.8vw 3.2vw;font-size:4vw;gap:4vw}
+  .faq_section .acc-q .mk{font-size:5.3vw}
+  .faq_section .acc-a{padding:0 3.2vw 5vw;font-size:3.7333333333vw}
+}
