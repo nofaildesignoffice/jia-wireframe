@@ -28,31 +28,13 @@ a{text-decoration:none;color:inherit}
 ul{list-style:none}
 button{cursor:pointer;border:none;font-family:inherit;background:none}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
-.section{padding:100px 0}
-.bg-light{background:var(--bg-light)}
-.bg-dark{background:var(--bg-dark)}
-.text-center{text-align:center}
-.section-label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px}
-.section-title{font-size:36px;font-weight:700;color:var(--text-black);line-height:1.35;margin-bottom:16px;letter-spacing:-.02em}
-.section-desc{font-size:16px;color:var(--text-gray);max-width:640px;margin-bottom:48px}
-.text-center .section-desc{margin-left:auto;margin-right:auto}
-.bg-dark .section-title{color:#FFF}
-.bg-dark .section-desc{color:rgba(255,255,255,.6)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-sm);border:1px solid transparent;transition:opacity .2s;font-family:inherit}
 .btn:hover{opacity:.85}
 .btn-primary{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
 .btn-secondary{background:transparent;color:var(--text-black);border-color:var(--text-black)}
 .bg-dark .btn-primary,.hero .btn-primary{background:#FFF;color:var(--text-black);border-color:#FFF}
-.bg-dark .btn-secondary,.hero .btn-secondary{color:#FFF;border-color:rgba(255,255,255,.35)}
 .btn-sm{padding:10px 18px;font-size:14px}
 .btn-block{width:100%}
-.img-placeholder{background:var(--placeholder-bg);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--placeholder-icon)}
-.img-placeholder svg{width:32px;height:32px}
-.icon-box{width:48px;height:48px;background:var(--bg-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--text-dark);flex-shrink:0}
-.icon-box svg{width:22px;height:22px}
-.icon-circle{width:64px;height:64px;border-radius:50%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-dark);margin-bottom:24px}
-.icon-circle svg{width:26px;height:26px}
-.micro{font-size:13px;color:var(--text-light);margin-top:12px}
 .review-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:var(--radius-md);display:block;background:var(--placeholder-bg)}
 
 /* ===== 후기 카드 슬라이더 + 모달 ===== */
@@ -119,20 +101,10 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .hero-arrow.next{right:36px}
 
 /* ===== GRIDS ===== */
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:28px;background:#FFF}
-.card h3{font-size:18px;font-weight:700;color:var(--text-black);margin-bottom:10px}
-.card p{font-size:15px;color:var(--text-gray)}
-.pain-card{display:flex;gap:16px;align-items:flex-start;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px;background:#FFF}
-.pain-card p{font-size:15px;color:var(--text-dark);padding-top:12px}
 
 /* class cards */
 .class-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
-.class-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
 .class-card-body{padding:24px;display:flex;flex-direction:column;flex:1}
-.badge{display:inline-block;font-size:12px;font-weight:700;color:var(--text-black);background:var(--bg-light);border-radius:99px;padding:5px 12px;margin-bottom:14px;align-self:flex-start}
 .class-card h3{font-size:19px;font-weight:700;color:var(--text-black);margin-bottom:8px}
 .class-target{font-size:13px;color:var(--text-light);margin-bottom:14px}
 .class-points{margin-bottom:22px;flex:1}
@@ -140,7 +112,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .class-points li::before{content:"";position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--text-muted)}
 
 /* split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .steps-v li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border-light)}
 .steps-v li:last-child{border-bottom:none}
 .step-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-default);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--text-black);flex-shrink:0}
@@ -159,7 +130,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 
 /* store cards */
 .store-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
-.store-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
 .store-card-body{padding:32px}
 .store-card h3{font-size:22px;font-weight:700;color:var(--text-black);margin-bottom:10px}
 .store-card p{font-size:15px;margin-bottom:24px}
@@ -181,16 +151,12 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .top-btn svg{width:20px;height:20px}
 
 @media (max-width:1024px){
-  .grid-4{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:768px){
-  .section{padding:64px 0}
-  .section-title{font-size:26px}
   .hero{height:520px}
   .hero h1{font-size:30px}
   .hero p{font-size:15px}
   .hero-arrow{display:none}
-  .grid-2,.grid-3,.grid-4,.split{grid-template-columns:1fr}
   .stepbar{grid-template-columns:1fr}
   .stepbar>div{border-right:none;border-bottom:1px solid var(--border-light)}
   .sub-form{flex-direction:column}
@@ -209,7 +175,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .tbl tbody th{background:var(--bg-light);font-weight:700;color:var(--text-black);width:150px}
 .tbl td{color:var(--text-gray)}
 .tbl .strong{color:var(--text-black);font-weight:700}
-.tbl-scroll{overflow-x:auto}
 .acc{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
 .acc-item+.acc-item{border-top:1px solid var(--border-light)}
 .acc-q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;font-size:16px;font-weight:600;color:var(--text-black);text-align:left}
@@ -223,7 +188,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .tabpanel{display:none}
 .tabpanel.is-active{display:block}
 .prod-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF;display:flex;flex-direction:column}
-.prod-card .img-placeholder{border-radius:0;aspect-ratio:4/3}
 .prod-body{padding:26px;display:flex;flex-direction:column;flex:1}
 .prod-body h3{font-size:19px;font-weight:700;color:var(--text-black);margin:0 0 10px}
 .prod-body p.sum{font-size:14px;color:var(--text-gray);margin-bottom:16px;flex:1}
@@ -250,19 +214,15 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .board th,.board td{border-bottom:1px solid var(--border-light);padding:18px 14px;text-align:center}
 .board thead th{background:var(--bg-light);font-size:14px;font-weight:700;color:var(--text-black);border-top:1px solid var(--border-default)}
 .board td.subj{text-align:left;color:var(--text-black);font-weight:600}
-.board .tag{display:inline-block;font-size:12px;font-weight:700;border:1px solid var(--border-default);border-radius:99px;padding:4px 10px;color:var(--text-dark)}
 .pager{display:flex;gap:6px;justify-content:center;margin-top:40px}
 .pager a{width:38px;height:38px;border:1px solid var(--border-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-gray)}
 .pager a.is-active{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
 .notice-pin{border:1px solid var(--text-black);border-radius:var(--radius-md);padding:26px;background:#FFF;margin-bottom:24px}
-.notice-pin .tag{background:var(--text-black);color:#FFF;border-color:var(--text-black)}
 .notice-pin h3{font-size:18px;font-weight:700;color:var(--text-black);margin:12px 0 8px}
 .search-box{display:flex;gap:8px;max-width:520px;margin:0 auto}
 .search-box input{flex:1;padding:14px 18px;font-size:15px;border:1px solid var(--border-default);border-radius:var(--radius-sm);font-family:inherit}
 .post-card{border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;background:#FFF}
-.post-card .img-placeholder{border-radius:0;aspect-ratio:16/9}
 .post-body{padding:22px}
-.post-body .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--text-dark);background:var(--bg-light);border-radius:99px;padding:4px 10px;margin-bottom:12px}
 .post-body h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px;line-height:1.45}
 .post-body p{font-size:14px;color:var(--text-gray);margin-bottom:14px}
 .post-body time{font-size:13px;color:var(--text-light)}
@@ -283,7 +243,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .cart-group>h3{font-size:15px;font-weight:700;color:var(--text-black);padding:18px 24px;background:var(--bg-light);border-bottom:1px solid var(--border-light)}
 .cart-item{display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:1px solid var(--border-light)}
 .cart-item:last-of-type{border-bottom:none}
-.cart-item .img-placeholder{width:88px;height:88px;flex-shrink:0}
 .cart-item .info{flex:1}
 .cart-item .info h4{font-size:16px;font-weight:700;color:var(--text-black);margin-bottom:6px}
 .cart-item .info p{font-size:13px;color:var(--text-light)}
@@ -302,12 +261,10 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 .empty{text-align:center;padding:80px 20px;border:1px solid var(--border-light);border-radius:var(--radius-md);background:#FFF}
 .empty p{font-size:16px;color:var(--text-light);margin:20px 0 28px}
 .done{text-align:center;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:64px 32px;background:#FFF}
-.done .icon-circle{margin:0 auto 24px}
 .done h2{font-size:26px;font-weight:800;color:var(--text-black);margin-bottom:10px}
 .done .ordno{font-size:15px;color:var(--text-gray);margin-bottom:28px}
 .done .box{border:1px solid var(--border-light);border-radius:var(--radius-sm);background:var(--bg-light);padding:24px;text-align:left;font-size:14px;color:var(--text-gray);line-height:1.9;margin-bottom:28px}
 .channel-card{border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px;background:#FFF;text-align:center}
-.channel-card .icon-circle{margin:0 auto 20px}
 .channel-card h3{font-size:17px;font-weight:700;color:var(--text-black);margin-bottom:8px}
 .channel-card p{font-size:14px;color:var(--text-gray);margin-bottom:20px}
 .badge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
@@ -580,45 +537,47 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 </style>
 
 <!-- ================= 섹션 1 : Hero ================= -->
-<section class="hero-class">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">경력자 클래스</p>
-      <h1>배운 적은 있지만,<br>고객에게 시술하기는 불안하신가요</h1>
-      <p class="lead">기술을 몰라서가 아닙니다. 내 손에 맞는 기준이 없어서입니다.<br>지아는 그 기준을 만드는 1:1 속눈썹 클래스입니다.</p>
-    </div>
-    <div class="grid-3" style="margin-top:64px">
-      <div class="stat"><p class="label">현장 경력</p><p class="value">7년</p></div>
-      <div class="stat"><p class="label">누적 수강생</p><p class="value">100명+</p></div>
-      <div class="stat"><p class="label">수강생 만족도</p><p class="value">5.0</p></div>
+<section class="subhero_section">
+  <div class="inner">
+    <p class="label">Experienced Class</p>
+    <h1>배운 적은 있지만,<br>고객에게 시술하기는 불안하신가요</h1>
+    <p class="lead">기술을 몰라서가 아닙니다. 내 손에 맞는 기준이 없어서입니다.<br class="pc_br">
+      지아는 그 기준을 만드는 1:1 속눈썹 클래스입니다.</p>
+    <div class="stats">
+      <div><p class="k">현장 경력</p><p class="v">7년</p></div>
+      <div><p class="k">누적 수강생</p><p class="v">100명+</p></div>
+      <div><p class="k">수강생 만족도</p><p class="v">5.0</p></div>
     </div>
   </div>
 </section>
 
 <!-- ================= 섹션 2-1 : 공통 진행 방식 ================= -->
-<section class="section">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">How</p>
-      <h2 class="section-title">모든 경력자 클래스는 이렇게 진행돼요</h2>
+<section class="gridline_section">
+  <div class="title">
+    <h3>How It Works</h3>
+    <p>모든 경력자 클래스는 이렇게 진행돼요</p>
+    <span>과정은 달라도, 아래 네 가지는 모든 경력자 클래스에 똑같이 적용됩니다.</span>
+  </div>
+  <div class="cont c4">
+    <div class="box">
+      <div class="ic"><i data-lucide="user-check"></i></div>
+      <h4>전 과정 1:1</h4>
+      <p>다른 수강생과 진도를 맞추지 않고, 처음부터 끝까지 혼자 배웁니다.</p>
     </div>
-    <div class="grid-4">
-      <div class="card text-center">
-        <div class="icon-circle" style="margin:0 auto 20px"><i data-lucide="user-check"></i></div>
-        <h3>전 과정 1:1</h3>
-      </div>
-      <div class="card text-center">
-        <div class="icon-circle" style="margin:0 auto 20px"><i data-lucide="list-checks"></i></div>
-        <h3>맞춤 과제</h3>
-      </div>
-      <div class="card text-center">
-        <div class="icon-circle" style="margin:0 auto 20px"><i data-lucide="monitor-play"></i></div>
-        <h3>화면 영상 피드백</h3>
-      </div>
-      <div class="card text-center">
-        <div class="icon-circle" style="margin:0 auto 20px"><i data-lucide="infinity"></i></div>
-        <h3>사후 피드백 기간 제한 없음</h3>
-      </div>
+    <div class="box">
+      <div class="ic"><i data-lucide="list-checks"></i></div>
+      <h4>맞춤 과제</h4>
+      <p>지금 막혀 있는 지점에 맞춰 다음 과제가 새로 정해집니다.</p>
+    </div>
+    <div class="box">
+      <div class="ic"><i data-lucide="monitor-play"></i></div>
+      <h4>화면 영상 피드백</h4>
+      <p>내 과제 화면을 띄워놓고 목소리로 원인을 짚어드립니다.</p>
+    </div>
+    <div class="box">
+      <div class="ic"><i data-lucide="infinity"></i></div>
+      <h4>사후 피드백 기간 제한 없음</h4>
+      <p>수료 후 실제 시술에 대해서도 계속 피드백을 받습니다.</p>
     </div>
   </div>
 </section>
@@ -906,50 +865,43 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 </section>
 
 <!-- ================= 섹션 3 : Problem ================= -->
-<section class="section">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Problem</p>
-      <h2 class="section-title">이 중에 하나라도 해당되시나요</h2>
-      <p class="section-desc">하나라도 해당되신다면, 지금 막혀 있는 그 지점부터 다시 잡습니다.</p>
-    </div>
-    <div class="grid-2">
-      <div class="pain-card"><div class="icon-box"><i data-lucide="activity"></i></div>
-        <p><strong>“유지력이 복불복이에요.”</strong> 글루 많이 쓰고 잘 붙이면 되는 줄 알았는데, 왜 어떤 날은 되고 어떤 날은 안 되는지 이유를 모르겠어요.</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="hand"></i></div>
-        <p><strong>“밀착이 안 돼요.”</strong> 이게 맞나 싶은 마음으로 계속 하고 있는데, 맞게 하고 있는 건지 확인해 줄 사람이 없어요.</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="repeat"></i></div>
-        <p><strong>“원데이는 돌 만큼 다 돌아봤어요.”</strong> 그런데도 유지력은 안 잡히고, 컴플레인은 그대로예요.</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="message-circle"></i></div>
-        <p><strong>“고객님께 리터치 안내를 미리 드려요.”</strong> 오래 못 갈 걸 아니까, 시작하기 전에 먼저 말씀드리게 되더라구요.</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="copy"></i></div>
-        <p><strong>“자세를 따라 해도 제 손에서는 안 돼요.”</strong> 보고 그대로 했는데 왜 저는 안 되는지, 뭐가 다른 건지 모르겠어요.</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="eye"></i></div>
-        <p><strong>“고객이 원하는 걸 말 안 해주실 때가 제일 어려워요.”</strong> 고객이 말하는 자연스러움이랑 제가 생각하는 자연스러움이 다를 텐데, 그 기준을 어떻게 잡아야 할지 모르겠어요.</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="align-left"></i></div>
-        <p><strong>“적게 심으면 가지런한데, 많이 심으면 라인이 무너져요.”</strong> 개수를 채우려고 하면 결국 X자가 나요.</p></div>
-      <div class="pain-card"><div class="icon-box"><i data-lucide="clock"></i></div>
-        <p><strong>“오래 쉬었더니 다시 시작하기가 막막해요.”</strong> 배우긴 배웠는데, 지금 제 실력이 어디쯤인지도 모르겠어요.</p></div>
-    </div>
+<section class="gridline_section alt">
+  <div class="title">
+    <h3>Problem</h3>
+    <p>이 중에 하나라도 해당되시나요</p>
+    <span>하나라도 해당되신다면, 지금 막혀 있는 그 지점부터 다시 잡습니다.</span>
+  </div>
+  <div class="quoteline">
+    <div class="q"><strong>“유지력이 복불복이에요.”</strong><span>글루 많이 쓰고 잘 붙이면 되는 줄 알았는데, 왜 어떤 날은 되고 어떤 날은 안 되는지 이유를 모르겠어요.</span></div>
+    <div class="q"><strong>“밀착이 안 돼요.”</strong><span>이게 맞나 싶은 마음으로 계속 하고 있는데, 맞게 하고 있는 건지 확인해 줄 사람이 없어요.</span></div>
+    <div class="q"><strong>“원데이는 돌 만큼 다 돌아봤어요.”</strong><span>그런데도 유지력은 안 잡히고, 컴플레인은 그대로예요.</span></div>
+    <div class="q"><strong>“고객님께 리터치 안내를 미리 드려요.”</strong><span>오래 못 갈 걸 아니까, 시작하기 전에 먼저 말씀드리게 되더라구요.</span></div>
+    <div class="q"><strong>“자세를 따라 해도 제 손에서는 안 돼요.”</strong><span>보고 그대로 했는데 왜 저는 안 되는지, 뭐가 다른 건지 모르겠어요.</span></div>
+    <div class="q"><strong>“고객이 원하는 걸 말 안 해주실 때가 제일 어려워요.”</strong><span>고객이 말하는 자연스러움이랑 제가 생각하는 자연스러움이 다를 텐데, 그 기준을 어떻게 잡아야 할지 모르겠어요.</span></div>
   </div>
 </section>
 
 <!-- ================= 섹션 4 : Empathy ================= -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="split">
-      <div class="img-placeholder" style="aspect-ratio:3/2"><i data-lucide="image"></i></div>
-      <div>
-        <p class="section-label">Empathy</p>
-        <h2 class="section-title">실력이 없어서가 아닙니다</h2>
-        <blockquote style="margin:0 0 28px">
-          “남을 따라 하는 기술을 배우면, 샵에 가서 그 기술 자체를 잃어버려요.”
-          <cite>— 지아 원장 임희진</cite>
-        </blockquote>
-        <p style="font-size:15px;margin-bottom:16px">수업에서는 됐는데 샵에서는 안 되는 경험. 그건 실력이 부족해서가 아니라, 그 동작이 <strong style="color:var(--text-black)">내 손의 것이 아니었기</strong> 때문입니다.</p>
-        <p style="font-size:15px;margin-bottom:16px">손 모양도, 힘도, 핀셋 잡는 습관도 사람마다 다릅니다. 그래서 같은 자세를 그대로 복사하면 반드시 어딘가에서 무너집니다.</p>
-        <p style="font-size:15px;color:var(--text-black);font-weight:700">지아는 정해진 자세를 따라 하게 하지 않습니다. 지금 그 손에서 출발해, 혼자서도 반복할 수 있는 기준을 하나씩 세웁니다.</p>
-      </div>
+<section class="signature_section">
+  <div class="clinic">
+    <div class="left">
+      <h3>Your<br><b>Own Hands</b></h3>
+      <p>실력이 없어서가 아닙니다</p>
+      <span>“남을 따라 하는 기술을 배우면, 샵에 가서 그 기술 자체를 잃어버려요.”<br>
+        — 지아 원장 임희진</span>
+      <ul class="sig-points">
+        <li>수업에서는 됐는데 샵에서는 안 되는 경험. 그건 그 동작이 내 손의 것이 아니었기 때문입니다.</li>
+        <li>손 모양도, 힘도, 핀셋 잡는 습관도 사람마다 다릅니다.</li>
+        <li>같은 자세를 그대로 복사하면 반드시 어딘가에서 무너집니다.</li>
+        <li>지아는 지금 그 손에서 출발해, 혼자서도 반복할 수 있는 기준을 세웁니다.</li>
+      </ul>
+      <a href="#classes" class="more_btn">
+        <p>과정 살펴보기</p>
+        <div><i data-lucide="arrow-right"></i></div>
+      </a>
+    </div>
+    <div class="right">
+      <div class="sig-ph"><i data-lucide="image"></i><span>[촬영 필요: 원장이 수강생 손 옆에서 함께 보는 1:1 수업 컷 · 세로형]</span></div>
     </div>
   </div>
 </section>
@@ -1046,56 +998,74 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 </section>
 
 <!-- ================= 섹션 6-1 : 핵심 — 영상 피드백 ================= -->
-<section class="section">
-  <div class="container">
-    <div class="core-split">
-      <div>
-        <div class="core-head">
-          <p class="section-label">Core</p>
-          <h2 class="section-title">카톡 한 줄이 아닌, 다시 한 번 듣는 수업</h2>
-          <p class="section-desc">과제를 제출하면, 원장이 그 사진과 영상을 직접 화면에 띄워 확인하고<br>목소리를 담은 녹화 영상으로 피드백합니다.</p>
-        </div>
-        <div class="img-placeholder" style="aspect-ratio:16/9"><i data-lucide="play-circle"></i></div>
-        <p class="micro text-center">실제 수강생 피드백 영상입니다 · [클라이언트 확인 필요: 편집본 1편]</p>
-      </div>
-      <div class="stepbar">
-        <div><p class="n">STEP 01</p><h4>과제 제출</h4><p>연습 영상이나 시술 사진을 카카오톡으로 보냅니다</p></div>
-        <div><p class="n">STEP 02</p><h4>화면 피드백 녹화</h4><p>원장이 그 영상을 띄워놓고 짚어가며 설명합니다</p></div>
-        <div><p class="n">STEP 03</p><h4>반복 시청</h4><p>놓친 설명은 내 속도로 몇 번이든 다시 봅니다</p></div>
-        <div><p class="n">STEP 04</p><h4>맞춤 보완 과제</h4><p>막힌 지점에 맞춰 다음 과제가 새로 정해집니다</p></div>
-      </div>
+<section class="gridline_section deep">
+  <div class="title">
+    <h3>Core</h3>
+    <p>카톡 한 줄이 아닌, 다시 한 번 듣는 수업</p>
+    <span>과제를 제출하면, 원장이 그 사진과 영상을 직접 화면에 띄워 확인하고<br class="pc_br">
+      목소리를 담은 녹화 영상으로 피드백합니다.</span>
+  </div>
+
+  <div class="core-media">
+    <div class="core-ph"><i data-lucide="play-circle"></i><span>[클라이언트 확인 필요: 실제 수강생 피드백 영상 편집본 1편 · 16:9]</span></div>
+  </div>
+
+  <div class="cont c4">
+    <div class="box">
+      <p class="n">STEP 01</p>
+      <h4>과제 제출</h4>
+      <p>연습 영상이나 시술 사진을 카카오톡으로 보냅니다</p>
     </div>
-    <div class="dark-quote">
-      <p class="qmark"><i data-lucide="quote"></i></p>
-      <p>어느 장면에서 각도가 무너졌는지<br>왜 그 동작이 어려운지<br>손목과 손가락을 어떻게 움직여야 하는지<br>다음 과제에서 무엇을 연습해야 하는지</p>
+    <div class="box">
+      <p class="n">STEP 02</p>
+      <h4>화면 피드백 녹화</h4>
+      <p>원장이 그 영상을 띄워놓고 짚어가며 설명합니다</p>
     </div>
+    <div class="box">
+      <p class="n">STEP 03</p>
+      <h4>반복 시청</h4>
+      <p>놓친 설명은 내 속도로 몇 번이든 다시 봅니다</p>
+    </div>
+    <div class="box">
+      <p class="n">STEP 04</p>
+      <h4>맞춤 보완 과제</h4>
+      <p>막힌 지점에 맞춰 다음 과제가 새로 정해집니다</p>
+    </div>
+  </div>
+
+  <div class="core-quote">
+    <p class="qm"><i data-lucide="quote"></i></p>
+    <p>어느 장면에서 각도가 무너졌는지<br>왜 그 동작이 어려운지<br>손목과 손가락을 어떻게 움직여야 하는지<br>다음 과제에서 무엇을 연습해야 하는지</p>
   </div>
 </section>
 
 <!-- ================= Core 2 : 피드백 비교 ================= -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="tbl-scroll" style="max-width:860px;margin:0 auto 40px">
-      <table class="tbl">
-        <thead><tr><th style="width:130px"></th><th>일반적인 피드백</th><th>지아의 영상 피드백</th></tr></thead>
-        <tbody>
-          <tr><th>형태</th><td>카카오톡 텍스트 한두 줄</td><td class="strong">내 과제 화면 + 음성 설명 녹화</td></tr>
-          <tr><th>이해</th><td>글을 다시 해석해야 함</td><td class="strong">문제 지점을 눈으로 바로 확인</td></tr>
-          <tr><th>복습</th><td>지나가면 끝</td><td class="strong">내 속도로 몇 번이든 다시 시청</td></tr>
-          <tr><th>다음</th><td>동일한 진도</td><td class="strong">내 문제에 맞춘 보완 과제</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="eff-line">지아 클래스를 듣고 난 뒤에는 <strong>이해가 빨라지고, 개선이 빨라지고,<br>시행착오가 줄어들고, 혼자 점검하는 눈이 생깁니다.</strong></p>
+<section class="compare_section">
+  <div class="title">
+    <h3>Difference</h3>
+    <p>같은 피드백이라도, 남는 것이 다릅니다</p>
   </div>
+  <div class="cmp-wrap">
+    <table class="cmp">
+      <thead><tr><th style="width:9vw"></th><th>일반적인 피드백</th><th>지아의 영상 피드백</th></tr></thead>
+      <tbody>
+        <tr><th>형태</th><td>카카오톡 텍스트 한두 줄</td><td class="on">내 과제 화면 + 음성 설명 녹화</td></tr>
+        <tr><th>이해</th><td>글을 다시 해석해야 함</td><td class="on">문제 지점을 눈으로 바로 확인</td></tr>
+        <tr><th>복습</th><td>지나가면 끝</td><td class="on">내 속도로 몇 번이든 다시 시청</td></tr>
+        <tr><th>다음</th><td>동일한 진도</td><td class="on">내 문제에 맞춘 보완 과제</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="eff">지아 클래스를 듣고 난 뒤에는 <strong>이해가 빨라지고, 개선이 빨라지고,<br class="pc_br">
+    시행착오가 줄어들고, 혼자 점검하는 눈이 생깁니다.</strong></p>
 </section>
 
-<section class="section" id="classes">
+<section class="tabclass_section" id="classes">
   <div class="container">
-    <div class="text-center">
-      <p class="section-label">Class</p>
-      <h2 class="section-title">지금 어디에서 막혀 있는지에 따라, 시작점이 다릅니다</h2>
-      <p class="section-desc">네 과정 모두 전 과정 1:1로만 진행합니다.</p>
+    <div class="title">
+      <h3>Class</h3>
+      <p>지금 어디에서 막혀 있는지에 따라, 시작점이 다릅니다</p>
+      <span>네 과정 모두 전 과정 1:1로만 진행합니다.</span>
     </div>
 
     <div class="tabs" data-tabs style="justify-content:center">
@@ -1232,106 +1202,95 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 </section>
 
 <!-- ================= 섹션 6-3 : 진행 방식 ================= -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Process</p>
-      <h2 class="section-title">신청하시면 이렇게 진행됩니다</h2>
-    </div>
-    <div class="stepbar" style="grid-template-columns:repeat(5,1fr)">
-      <div><p class="n">STEP 01</p><h4>상담지 작성</h4><p>경력, 희망 과정, 지금 가장 큰 고민을 적습니다</p></div>
-      <div><p class="n">STEP 02</p><h4>1차 화면 상담 영상</h4><p>원장이 시술 사진과 계정을 살펴본 뒤 진단 영상을 보냅니다</p></div>
-      <div><p class="n">STEP 03</p><h4>2차 카카오톡 상담</h4><p>영상을 보고 생긴 질문을 이어서 나눕니다</p></div>
-      <div><p class="n">STEP 04</p><h4>등록 · 교재 배송</h4><p>등록이 확정되면 온라인 이론에 필요한 교재를 보내드립니다</p></div>
-      <div><p class="n">STEP 05</p><h4>수업 시작</h4><p>사전과제(해당 과정) → 대면 수업 → 과제와 피드백</p></div>
-    </div>
-    <div class="card text-center" style="max-width:760px;margin:32px auto 0;border-color:var(--text-black)">
-      <p style="font-size:15px;color:var(--text-black)"><strong>TIP</strong> — 상담 단계에서 ‘이런 것까지 물어봐도 되나’ 싶은 것도 편하게 물어보셔도 됩니다.</p>
-    </div>
+<section class="gridline_section alt">
+  <div class="title">
+    <h3>Process</h3>
+    <p>신청하시면 이렇게 진행됩니다</p>
+    <span>상담부터 수업 시작까지, 다섯 단계로 진행됩니다.</span>
   </div>
+  <div class="cont c5">
+    <div class="box"><p class="n">STEP 01</p><h4>상담지 작성</h4><p>경력, 희망 과정, 지금 가장 큰 고민을 적습니다</p></div>
+    <div class="box"><p class="n">STEP 02</p><h4>1차 화면 상담 영상</h4><p>원장이 시술 사진과 계정을 살펴본 뒤 진단 영상을 보냅니다</p></div>
+    <div class="box"><p class="n">STEP 03</p><h4>2차 카카오톡 상담</h4><p>영상을 보고 생긴 질문을 이어서 나눕니다</p></div>
+    <div class="box"><p class="n">STEP 04</p><h4>등록 · 교재 배송</h4><p>등록이 확정되면 온라인 이론에 필요한 교재를 보내드립니다</p></div>
+    <div class="box"><p class="n">STEP 05</p><h4>수업 시작</h4><p>사전과제(해당 과정) → 대면 수업 → 과제와 피드백</p></div>
+  </div>
+  <p class="foot-note"><strong>TIP</strong> — 상담 단계에서 ‘이런 것까지 물어봐도 되나’ 싶은 것도 편하게 물어보셔도 됩니다.</p>
 </section>
 
 <!-- ================= 섹션 8 : CTA ================= -->
-<section class="section">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Apply</p>
-      <h2 class="section-title">어떤 과정이 맞는지 모르셔도 괜찮습니다</h2>
-      <p class="section-desc">상담지만 남겨주시면, 어디가 막혀 있는지부터 저희가 찾아보겠습니다.</p>
-    </div>
-    <div class="grid-4">
-      <div class="price-card">
-        <span class="badge">5DAY</span>
-        <h3>1:1 속눈썹 펌 단과반</h3>
-        <p class="amount">280만원<small>부가세 별도 여부 확인</small></p>
-        <ul>
-          <li>사전 온라인 이론 + 현장 시연 + 모델 실습</li>
-          <li>매 수업 과제 및 개별 피드백</li>
-          <li>수료 후 실습 결과 피드백</li>
-        </ul>
-        <a href="page_11.html?class=perm" class="btn btn-primary btn-block">상담 신청하기</a>
-      </div>
-      <div class="price-card">
-        <span class="badge">사전 2주 + 대면 6회</span>
-        <h3>클래식 연장 단과반</h3>
-        <p class="amount">280만원<small>부가세 별도 여부 확인</small></p>
-        <ul>
-          <li>사전과제 2주 매일 영상 피드백</li>
-          <li>1:1 대면 수업 6회</li>
-          <li>졸업 후 지속 피드백</li>
-        </ul>
-        <a href="page_11.html?class=classic" class="btn btn-primary btn-block">상담 신청하기</a>
-      </div>
-      <div class="price-card">
-        <span class="badge">사전 2주 + 대면 6회</span>
-        <h3>펌포인트 연장 단과반</h3>
-        <p class="amount">300만원<small>부가세 별도 여부 확인</small></p>
-        <ul>
-          <li>사전과제 2주 + LED 연장 온라인 이론</li>
-          <li>1:1 모델 실습 6회</li>
-          <li>실제 시술 영상 맞춤 피드백</li>
-        </ul>
-        <a href="page_11.html?class=permpoint" class="btn btn-primary btn-block">상담 신청하기</a>
-      </div>
-      <div class="price-card">
-        <span class="badge">하루 6시간</span>
-        <h3>원데이</h3>
-        <p class="amount">80만원<small>부가세 별도 여부 확인</small></p>
-        <ul>
-          <li>사전 화상 상담으로 원인 선진단</li>
-          <li>모델 2명 실습</li>
-          <li>수업 후 교정 내용 정리본 전달</li>
-        </ul>
-        <a href="page_11.html?class=oneday" class="btn btn-primary btn-block">상담 신청하기</a>
-      </div>
-    </div>
-    <p class="micro text-center">상담은 무료이며, 신청 후 진단 영상을 보내드립니다.</p>
+<section class="care_section">
+  <div class="title">
+    <h3>Apply</h3>
+    <p>어떤 과정이 맞는지 모르셔도 괜찮습니다</p>
+    <span>상담지만 남겨주시면, <b>어디가 막혀 있는지부터</b> 저희가 찾아보겠습니다.</span>
   </div>
+  <div class="cont">
+    <div class="box">
+      <div class="txt">
+        <p>1:1 속눈썹 펌 단과반</p>
+        <span>5DAY</span>
+        <em>280만원</em>
+        <i>사전 온라인 이론 + 현장 시연 + 모델 실습.<br>매 수업 과제 및 개별 피드백, 수료 후 실습 결과 피드백.</i>
+      </div>
+      <a href="page_11.html?class=perm" class="more_btn">상담 신청하기</a>
+    </div>
+    <div class="box">
+      <div class="txt">
+        <p>클래식 연장 단과반</p>
+        <span>사전 2주 + 대면 6회</span>
+        <em>280만원</em>
+        <i>사전과제 2주 매일 영상 피드백.<br>1:1 대면 수업 6회, 졸업 후 지속 피드백.</i>
+      </div>
+      <a href="page_11.html?class=classic" class="more_btn">상담 신청하기</a>
+    </div>
+    <div class="box">
+      <div class="txt">
+        <p>펌포인트 연장 단과반</p>
+        <span>사전 2주 + 대면 6회</span>
+        <em>300만원</em>
+        <i>사전과제 2주 + LED 연장 온라인 이론.<br>1:1 모델 실습 6회, 실제 시술 영상 맞춤 피드백.</i>
+      </div>
+      <a href="page_11.html?class=permpoint" class="more_btn">상담 신청하기</a>
+    </div>
+    <div class="box">
+      <div class="txt">
+        <p>원데이</p>
+        <span>하루 6시간</span>
+        <em>80만원</em>
+        <i>사전 화상 상담으로 원인 선진단.<br>모델 2명 실습, 수업 후 교정 내용 정리본 전달.</i>
+      </div>
+      <a href="page_11.html?class=oneday" class="more_btn">상담 신청하기</a>
+    </div>
+  </div>
+  <p class="apply-note">모든 과정 부가세 별도 여부는 상담 시 안내드립니다 · 상담은 무료이며, 신청 후 진단 영상을 보내드립니다.</p>
 </section>
 
 <!-- ================= 섹션 9 : 수강 안내 및 환불 규정 (법정 필수) ================= -->
-<section class="section bg-light">
-  <div class="container" style="max-width:900px">
-    <div class="text-center">
-      <h2 class="section-title" style="font-size:26px">수강 안내 및 환불 규정</h2>
-    </div>
-    <div class="acc">
-      <div class="acc-item"><button class="acc-q">강의 정보<span class="mk">+</span></button><div class="acc-a">과정명 / 총 교육 시간·회차 / 진행 방식(대면·온라인) / 교육 장소 / 제공 교재 및 재료<br>[클라이언트 확인 필요]</div></div>
-      <div class="acc-item"><button class="acc-q">수강 대상 및 자격<span class="mk">+</span></button><div class="acc-a">과정별 요구 경력 — 원데이는 경력 6개월 이상 권장<br>[클라이언트 확인 필요: 그 외 과정 자격 요건]</div></div>
-      <div class="acc-item"><button class="acc-q">결제 및 수강 기간<span class="mk">+</span></button><div class="acc-a">결제 수단 / 수강 시작일 / 유효 기간<br>[클라이언트 확인 필요]</div></div>
-      <div class="acc-item"><button class="acc-q">환불 및 취소 규정<span class="mk">+</span></button><div class="acc-a">수강 시작 전 취소 / 수강 중 환불 기준(진행 회차 기준 산정) / 교재·재료 개봉 시 처리 / 환불 신청 방법 및 처리 기간<br><strong>[클라이언트 확인 필요 — 전자상거래법상 필수 기재]</strong></div></div>
-      <div class="acc-item"><button class="acc-q">판매자 정보<span class="mk">+</span></button><div class="acc-a">상호 지아 / 대표 임희진 / 사업자등록번호 [확인 필요] / 통신판매업신고번호 [확인 필요] / 주소 [확인 필요] / 연락처 [확인 필요] / 이메일 [확인 필요]</div></div>
+<section class="gridline_section">
+  <div class="title">
+    <h3>Notice</h3>
+    <p>수강 안내 및 환불 규정</p>
+  </div>
+  <div class="acc-wrap">
+    <div class="accline">
+      <div class="item"><button class="q acc-q">강의 정보<span class="mk">+</span></button><div class="a acc-a">과정명 / 총 교육 시간·회차 / 진행 방식(대면·온라인) / 교육 장소 / 제공 교재 및 재료<br>[클라이언트 확인 필요]</div></div>
+      <div class="item"><button class="q acc-q">수강 대상 및 자격<span class="mk">+</span></button><div class="a acc-a">과정별 요구 경력 — 원데이는 경력 6개월 이상 권장<br>[클라이언트 확인 필요: 그 외 과정 자격 요건]</div></div>
+      <div class="item"><button class="q acc-q">결제 및 수강 기간<span class="mk">+</span></button><div class="a acc-a">결제 수단 / 수강 시작일 / 유효 기간<br>[클라이언트 확인 필요]</div></div>
+      <div class="item"><button class="q acc-q">환불 및 취소 규정<span class="mk">+</span></button><div class="a acc-a">수강 시작 전 취소 / 수강 중 환불 기준(진행 회차 기준 산정) / 교재·재료 개봉 시 처리 / 환불 신청 방법 및 처리 기간<br><strong>[클라이언트 확인 필요 — 전자상거래법상 필수 기재]</strong></div></div>
+      <div class="item"><button class="q acc-q">판매자 정보<span class="mk">+</span></button><div class="a acc-a">상호 지아 / 대표 임희진 / 사업자등록번호 [확인 필요] / 통신판매업신고번호 [확인 필요] / 주소 [확인 필요] / 연락처 [확인 필요] / 이메일 [확인 필요]</div></div>
     </div>
   </div>
 </section>
 
-<!-- 최하단 : Contact Us -->
-<section class="section bg-dark">
-  <div class="container text-center">
-    <p class="section-label">창업반 클래스</p>
-    <h2 class="section-title">속눈썹 창업에 고민중이라면!</h2>
-    <p class="section-desc">기초 이론부터 시술, 샵 운영 노하우, 그리고 창업을 위해 준비해야 하는<br>초기재료 세팅까지. 초보 원장님을 위한 속눈썹 창업 클래스</p>
-    <a href="page_12.html" class="btn btn-primary">더 알아보기</a>
+<!-- 최하단 : 창업반 클래스 안내 -->
+<section class="letter_section">
+  <div class="letter-inner">
+    <h3>Start From Zero</h3>
+    <p>속눈썹 창업에 고민중이라면</p>
+    <span>기초 이론부터 시술, 샵 운영 노하우, 그리고 창업을 위해 준비해야 하는<br class="pc_br">
+      초기재료 세팅까지. 초보 원장님을 위한 속눈썹 창업 클래스.</span>
+    <a href="page_12.html">창업반 클래스 더 알아보기 →</a>
   </div>
 </section>
 
