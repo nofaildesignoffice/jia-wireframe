@@ -707,7 +707,7 @@
 
 /* FAQ — 크림 배경 + 헤어라인 아코디언 */
 .faq_section{background:var(--ul-cream);padding:7.8vw 0 8.8vw}
-.faq_section .inner{max-width:1000px;margin:0 auto;padding:0 24px}
+.faq_section .inner{max-width:1200px;margin:0 auto;padding:0 24px}
 .faq_section .head{margin-bottom:4vw}
 .faq_section .head h1{font-family:"Erode","Pretendard",serif;font-size:2.6041666667vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em;margin-bottom:1.1vw}
 .faq_section .head p{font-size:.8333333333vw;color:#4A453F;line-height:1.6}
