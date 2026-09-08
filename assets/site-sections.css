@@ -116,13 +116,13 @@
 
 /* ===== VALUE — 유라인 가치 소개 스타일 ===== */
 .value_section{background-color:var(--ul-cream)}
-.value_section .content{position:relative;height:24.3229166667vw;min-height:340px;background:url(assets/bg-value.png?v=cff5b353) no-repeat center center/cover}
-.value_section .content .text{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding-top:5.9375vw;color:var(--ul-ink)}
+.value_section .content{position:relative;padding:5.2vw 24px 0;background:url(assets/bg-value.png?v=cff5b353) no-repeat center top/100% auto}
+.value_section .content .text{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:var(--ul-ink)}
 .value_section .content .text h3{font-size:3.4375vw;font-weight:400;font-family:"Erode","Pretendard",serif;line-height:1;letter-spacing:-.02em}
 .value_section .content .text p{font-size:1.0416666667vw;font-weight:600;margin:.7291666667vw 0 2.6041666667vw}
 .value_section .content .text span{font-size:1.0416666667vw;font-weight:400;line-height:1.8}
 
-.value-points{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1200px;margin:0 auto;padding:5.2vw 24px 6.2vw}
+.value-points{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1200px;margin:0 auto;padding:3.6vw 24px 6.2vw}
 .value-points .vp{padding:0 3.2vw;text-align:center;position:relative}
 .value-points .vp:not(:last-child)::after{content:"";position:absolute;right:0;top:8%;height:84%;width:1px;background:rgba(0,0,0,.08)}
 .value-points .vp em{display:block;font-family:"Erode","Pretendard",serif;font-style:normal;font-size:1.5625vw;color:var(--ul-taupe);letter-spacing:-.02em;margin-bottom:1.1vw}
@@ -130,12 +130,12 @@
 .value-points .vp p{font-size:.9375vw;font-weight:400;line-height:1.8;color:#6B6660}
 
 @media screen and (max-width:900px){
-  .value_section .content{height:106.6666666667vw;min-height:0;background:url(assets/bg-value-m.png?v=e59a3534) no-repeat center center/cover}
-  .value_section .content .text{padding-top:26.4vw}
+  .value_section .content{padding:14vw 24px 0;background:url(assets/bg-value-m.png?v=e59a3534) no-repeat center top/100% auto}
+  .value_section .content .text{padding-top:0}
   .value_section .content .text h3{font-size:9.6vw}
   .value_section .content .text p{font-size:4.2666666667vw;margin:3.2vw 0 8.5333333333vw}
   .value_section .content .text span{font-size:4.2666666667vw;line-height:1.5}
-  .value-points{grid-template-columns:1fr;padding:12vw 24px 14vw;gap:11vw}
+  .value-points{grid-template-columns:1fr;padding:9vw 24px 14vw;gap:11vw}
   .value-points .vp{padding:0}
   .value-points .vp:not(:last-child)::after{display:none}
   .value-points .vp em{font-size:6.4vw;margin-bottom:3.2vw}
