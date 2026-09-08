@@ -932,3 +932,91 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .pagehead_section .head h1{font-size:9.6vw;margin-bottom:3.2vw}
   .pagehead_section .head p{font-size:3.7333333333vw}
 }
+
+/* ==========================================================================
+   문의 폼 — 1:1 문의
+   좌: 블록 제목(넘버링) / 우: 입력 필드. 헤어라인으로 블록을 나눈다.
+   입력은 밑줄만 — 박스·라운딩 없음.
+   ========================================================================== */
+.form_section{background:var(--ul-cream);padding:5.2vw 0 8.8vw}
+.form_section .inner{max-width:1200px;margin:0 auto;padding:0 24px}
+
+.fm-block{display:grid;grid-template-columns:18.75vw 1fr;column-gap:5.2vw;border-top:1px solid #d1d1d1;padding:3.1vw 0}
+.fm-block:last-of-type{border-bottom:1px solid #d1d1d1}
+.fm-head .n{display:block;font-family:"Erode","Pretendard",serif;font-size:1.0416666667vw;font-weight:600;color:var(--ul-taupe);letter-spacing:.02em;margin-bottom:.8vw}
+.fm-head h3{font-size:1.25vw;font-weight:600;color:#090909;letter-spacing:-.02em;line-height:1.3;margin-bottom:.6vw}
+.fm-head .note{font-size:.7812vw;color:var(--ul-stone);line-height:1.6;word-break:keep-all}
+
+.fm-body{display:grid;grid-template-columns:repeat(2,1fr);column-gap:2.6vw;row-gap:2.2vw;align-content:start}
+.field.full{grid-column:1/-1}
+.field label{display:block;font-size:.7812vw;font-weight:600;color:#4A453F;letter-spacing:-.02em;margin-bottom:.7vw}
+.field .req{color:var(--ul-brown)}
+.field input,.field select,.field textarea{
+  width:100%;padding:.85vw 0;font-family:inherit;font-size:.8333333333vw;color:var(--ul-ink);
+  background:none;border:none;border-bottom:1px solid #c6c2ba;border-radius:0;
+  letter-spacing:-.02em;transition:border-color .25s;-webkit-appearance:none;appearance:none}
+.field input::placeholder,.field textarea::placeholder{color:#A9A49B}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ul-brown)}
+.field select{
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%236F6D69' stroke-width='1.4'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right .2vw center;background-size:.625vw auto;padding-right:1.4vw;cursor:pointer}
+.field textarea{resize:vertical;min-height:8.5vw;line-height:1.7;border:1px solid #c6c2ba;padding:1vw 1.1vw}
+.field textarea:focus{border-color:var(--ul-brown)}
+.field .help{font-size:.7291666667vw;color:var(--ul-stone);margin-top:.6vw;line-height:1.6;word-break:keep-all}
+.field .help strong{color:var(--ul-brown);font-weight:700}
+
+.upload{border:1px solid #c6c2ba;border-radius:0;background:none;padding:2.2vw;text-align:center;color:var(--ul-stone);transition:border-color .25s;cursor:pointer}
+.upload:hover{border-color:var(--ul-brown)}
+.upload svg{width:1.25vw;height:1.25vw;color:var(--ul-brown)}
+.upload p{font-size:.7812vw;letter-spacing:-.02em;margin-top:.6vw!important}
+
+.fm-foot{grid-column:2;padding:3.1vw 0 0}
+.fm-block .fm-foot{padding-top:0}
+.form_section .fm > .fm-foot{display:grid;grid-template-columns:18.75vw 1fr;column-gap:5.2vw}
+.form_section .fm > .fm-foot > *{grid-column:2}
+.agree{margin-bottom:1.8vw}
+.agree label{display:flex;align-items:flex-start;gap:.6vw;font-size:.7812vw;color:#4A453F;line-height:1.6;letter-spacing:-.02em;cursor:pointer}
+.agree label + label{margin-top:.8vw}
+.agree input[type=checkbox]{
+  -webkit-appearance:none;appearance:none;flex-shrink:0;
+  width:.8333333333vw;height:.8333333333vw;min-width:14px;min-height:14px;
+  border:1px solid #b3aea5;border-radius:0;background:none;margin-top:.15vw;cursor:pointer;transition:all .2s}
+.agree input[type=checkbox]:checked{
+  background:var(--ul-brown);border-color:var(--ul-brown);
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8' fill='none' stroke='%23ffffff' stroke-width='1.6'%3E%3Cpath d='M1 4 3.6 6.6 9 1.2'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;background-size:60% auto}
+.agree label a{color:var(--ul-brown);text-decoration:underline;text-underline-offset:3px}
+
+.fm-submit{display:flex;align-items:center;justify-content:center;width:100%;height:3.4375vw;min-height:48px;
+  background:var(--ul-brown);border:1px solid var(--ul-brown);color:#fff;border-radius:0;
+  font-family:inherit;font-size:.9375vw;font-weight:600;letter-spacing:-.03em;cursor:pointer;transition:background .3s,border-color .3s}
+.fm-submit:hover{background:var(--ul-ink);border-color:var(--ul-ink)}
+.fm-note{font-size:.7291666667vw;color:var(--ul-stone);margin-top:1vw;line-height:1.7;letter-spacing:-.02em}
+.fm-note a{color:var(--ul-ink);text-decoration:underline;text-underline-offset:3px}
+
+@media screen and (max-width:900px){
+  .form_section{padding:10.6vw 0 20vw}
+  .form_section .inner{padding:0 5.3333333333vw}
+  .fm-block{grid-template-columns:1fr;row-gap:6.4vw;padding:8vw 0}
+  .fm-head .n{font-size:4.2666666667vw;margin-bottom:2.4vw}
+  .fm-head h3{font-size:5.3333333333vw;margin-bottom:2vw}
+  .fm-head .note{font-size:3.4666666667vw}
+  .fm-body{grid-template-columns:1fr;row-gap:6.4vw}
+  .field label{font-size:3.7333333333vw;margin-bottom:2.4vw}
+  .field input,.field select,.field textarea{font-size:4vw;padding:3.2vw 0}
+  .field select{background-position:right 0 center;background-size:3.2vw auto;padding-right:6.4vw}
+  .field textarea{min-height:40vw;padding:4vw 4.2vw}
+  .field .help{font-size:3.2vw;margin-top:2.4vw}
+  .upload{padding:9.6vw 5.3vw}
+  .upload svg{width:6.4vw;height:6.4vw}
+  .upload p{font-size:3.4666666667vw;margin-top:2.4vw!important}
+  .form_section .fm > .fm-foot{grid-template-columns:1fr}
+  .form_section .fm > .fm-foot > *{grid-column:1}
+  .fm-foot{padding-top:8vw}
+  .agree{margin-bottom:6.4vw}
+  .agree label{font-size:3.4666666667vw;gap:2.4vw}
+  .agree label + label{margin-top:3.2vw}
+  .agree input[type=checkbox]{width:4.2666666667vw;height:4.2666666667vw;margin-top:.5vw}
+  .fm-submit{height:14vw;font-size:4vw}
+  .fm-note{font-size:3.2vw;margin-top:4vw}
+}
