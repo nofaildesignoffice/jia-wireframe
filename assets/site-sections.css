@@ -228,6 +228,8 @@
 
 /* ===== Store — 유라인 Care 스타일 ===== */
 .care_section{background:var(--ul-cream);padding:9.375vw 0 0}
+/* 스토어 페이지에서는 care_section 이 마지막 섹션 — 푸터와 붙지 않도록 하단 여백 100px */
+body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .care_section .title{text-align:center;margin-bottom:3.59375vw;padding:0 24px}
 .care_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;color:#463E32;line-height:1;letter-spacing:-.02em}
 .care_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;margin:.4166666667vw 0 1.5625vw;letter-spacing:-.02em}
@@ -915,4 +917,18 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .gridline_section .cont.circles .box .n{font-size:4.2666666667vw;margin-bottom:2.1333333333vw}
   .gridline_section .cont.circles .box h4{font-size:4.2666666667vw;margin-bottom:2vw}
   .gridline_section .cont.circles .box p{font-size:3.4666666667vw;line-height:1.5}
+}
+
+/* ==========================================================================
+   페이지 헤더 — 공지사항/FAQ 첫 섹션과 동일한 제목 조판
+   ========================================================================== */
+.pagehead_section{background:var(--ul-cream);padding:7.8vw 0 0}
+.pagehead_section .inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.pagehead_section .head h1{font-family:"Erode","Pretendard",serif;font-size:2.6041666667vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em;margin-bottom:1.1vw}
+.pagehead_section .head p{font-size:.8333333333vw;color:#4A453F;line-height:1.6}
+@media screen and (max-width:900px){
+  .pagehead_section{padding:18vw 0 0}
+  .pagehead_section .inner{padding:0 5.3333333333vw}
+  .pagehead_section .head h1{font-size:9.6vw;margin-bottom:3.2vw}
+  .pagehead_section .head p{font-size:3.7333333333vw}
 }
