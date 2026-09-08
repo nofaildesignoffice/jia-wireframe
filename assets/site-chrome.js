@@ -11,7 +11,7 @@ var nav=document.getElementById('nav'),
     gnbMenu=document.getElementById('gnbMenu'),
     menuButton=document.getElementById('menuButton'),
     /* 히어로가 헤더를 덮는 페이지, 또는 밝은 배경 페이지(gnb-light)는 최상단에서 투명 헤더 */
-    hasHero=!!document.querySelector('.mainVisual, .hero') ||
+    hasHero=!!document.querySelector('.mainVisual, .hero, .subhero_section') ||
             document.body.classList.contains('gnb-light');
 
 function syncHeader(){
