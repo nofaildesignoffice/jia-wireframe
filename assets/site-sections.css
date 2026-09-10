@@ -1039,3 +1039,15 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .quoteline.cards .q:not(:last-child){border-bottom:1px solid #E2DDD5}
   .quoteline.cards .q strong{font-size:4.2666666667vw;margin-bottom:2.4vw}
 }
+
+/* ==========================================================================
+   메인 히어로 슬라이드 배경 이미지
+   흰 텍스트 가독성을 위해 이미지 위에 어두운 스크림을 덮는다.
+   ========================================================================== */
+.mainVisual .hero-img{position:absolute;inset:0;background-repeat:no-repeat;background-position:center center;background-size:cover}
+.mainVisual .hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,17,17,.34) 0%,rgba(20,17,17,.48) 55%,rgba(20,17,17,.58) 100%)}
+.mainVisual .hero-img.h1{background-image:url(assets/hero-01.jpg?v=3cd36300)}
+.mainVisual .hero-img.h2{background-image:url(assets/hero-02.jpg?v=cc59c505)}
+.mainVisual .hero-img.h3{background-image:url(assets/hero-03.jpg?v=cba4dfcb)}
+.mainVisual .hero-img.h4{background-image:url(assets/hero-04.jpg?v=47212d33)}

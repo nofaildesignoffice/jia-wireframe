@@ -9,7 +9,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css?v=8aaa9c53" rel="stylesheet">
 <link href="assets/site-intro.css?v=96b91366" rel="stylesheet">
-<link href="assets/site-sections.css?v=833ede19" rel="stylesheet">
+<link href="assets/site-sections.css?v=9b992680" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 :root{
@@ -106,10 +106,6 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .mv-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1s ease}
 .mv-slide.is-active{opacity:1;visibility:visible}
 .mainVisual .videoBox{position:relative;height:100%}
-/* 촬영 전 임시 플레이스홀더 (실제 영상 교체 지점) */
-.mainVisual .hero-ph{position:absolute;inset:0;background:var(--ul-ink);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.22);border:1px dashed rgba(255,255,255,.16)}
-.mainVisual .hero-ph svg{width:56px;height:56px}
-.mainVisual .hero-ph span{position:absolute;bottom:32px;font-size:13px;letter-spacing:-.01em}
 
 .mainVisual .slideText{color:#090909;width:100%;height:auto;position:absolute;left:50%;top:50%;text-align:center;transform:translate(-50%,-50%);opacity:0;transition:opacity 1.5s linear;z-index:5;padding:0 24px}
 .mainVisual .mv-slide.is-active .slideText{opacity:1}
@@ -394,7 +390,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 <section class="mainVisual" id="hero">
   <div class="mainVisualSlide">
     <div class="mv-slide is-active">
-      <div class="videoBox"><div class="hero-ph"><i data-lucide="image"></i><span>[히어로 영상 1 · 경력자 클래스 · 1920×1080]</span></div></div>
+      <div class="videoBox"><div class="hero-img h1"></div></div>
       <div class="slideText white">
         <dl>
           <dt>Restart Your Hands</dt>
@@ -404,7 +400,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       </div>
     </div>
     <div class="mv-slide">
-      <div class="videoBox"><div class="hero-ph"><i data-lucide="image"></i><span>[히어로 영상 2 · 창업반 클래스 · 1920×1080]</span></div></div>
+      <div class="videoBox"><div class="hero-img h2"></div></div>
       <div class="slideText white">
         <dl>
           <dt>Open Your Own</dt>
@@ -414,7 +410,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       </div>
     </div>
     <div class="mv-slide">
-      <div class="videoBox"><div class="hero-ph"><i data-lucide="image"></i><span>[히어로 영상 3 · 전문가용 핀셋 · 1920×1080]</span></div></div>
+      <div class="videoBox"><div class="hero-img h3"></div></div>
       <div class="slideText white">
         <dl>
           <dt>Tools That Fit</dt>
@@ -424,7 +420,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       </div>
     </div>
     <div class="mv-slide">
-      <div class="videoBox"><div class="hero-ph"><i data-lucide="image"></i><span>[히어로 영상 4 · 퍼스트 전처리제 · 1920×1080]</span></div></div>
+      <div class="videoBox"><div class="hero-img h4"></div></div>
       <div class="slideText white">
         <dl>
           <dt>The First Routine</dt>
