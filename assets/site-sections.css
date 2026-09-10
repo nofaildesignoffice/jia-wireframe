@@ -25,9 +25,6 @@
 .tv_section .rv-img{width:100%;aspect-ratio:17.7/20.8;object-fit:cover;object-position:center top;border-radius:0;background:#FFFAE2}
 .tv_section .rv-filter{position:absolute;inset:0;background:#000;opacity:.3;transition:opacity .4s}
 .tv_section .rv-card.is-focus .rv-filter{opacity:0}
-.tv_section .rv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100vw * (44/1920));height:calc(100vw * (44/1920));min-width:34px;min-height:34px;border-radius:50%;border:1px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;pointer-events:none}
-.tv_section .rv-play svg{width:50%;height:50%}
-.tv_section .rv-card.is-focus .rv-play{opacity:.8}
 .tv_section .rv-body{padding:0;margin-top:.9375vw;flex:none}
 .tv_section .rv-head{font-size:1.1458333333vw;font-weight:600;color:#676157;margin-bottom:.4166666667vw;min-height:0;line-height:1.4;letter-spacing:-.02em;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
 .tv_section .rv-text{font-size:.9375vw;font-weight:500;color:#656460;line-height:1.5;min-height:0}
@@ -1061,3 +1058,48 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .mainVisual .hero-img.h2{background-image:url(../assets/hero-02.jpg?v=cc59c505)}
 .mainVisual .hero-img.h3{background-image:url(../assets/hero-03.jpg?v=cba4dfcb)}
 .mainVisual .hero-img.h4{background-image:url(../assets/hero-04.jpg?v=47212d33)}
+
+/* ==========================================================================
+   후기 상세 모달 — 사이트 톤앤매너
+   라운딩 없음, 헤어라인, 크림 배경, 브라운 액센트.
+   ========================================================================== */
+.rv-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:40px 24px}
+.rv-modal[hidden]{display:none}
+.rv-back{position:absolute;inset:0;background:rgba(20,17,17,.62)}
+.rv-box{position:relative;background:var(--ul-cream);border:1px solid #d1d1d1;border-radius:0;
+  width:100%;max-width:960px;max-height:calc(100vh - 80px);overflow:auto;
+  box-shadow:0 24px 60px rgba(20,17,17,.24)}
+
+.rv-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:0;
+  background:var(--ul-cream);border:1px solid #c6c2ba;display:flex;align-items:center;justify-content:center;
+  color:var(--ul-ink);z-index:2;transition:background .25s,border-color .25s,color .25s;cursor:pointer}
+.rv-close:hover{background:var(--ul-brown);border-color:var(--ul-brown);color:#fff}
+.rv-close svg{width:17px;height:17px}
+
+.rv-grid{display:grid;grid-template-columns:400px 1fr}
+.rv-shot{background:var(--ul-cream-2);padding:32px;display:flex;align-items:flex-start;justify-content:center;
+  border-right:1px solid #E2DDD5}
+.rv-shot img{width:100%;border-radius:0;display:block}
+
+.rv-detail{padding:56px 44px 44px}
+.rv-detail .rv-dhead{font-size:22px;font-weight:600;color:var(--ul-ink);line-height:1.5;
+  margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid #d1d1d1;letter-spacing:-.02em;word-break:keep-all}
+.rv-detail p.rv-p{font-size:15px;line-height:1.85;color:#4A453F;margin-bottom:14px;letter-spacing:-.02em;word-break:keep-all}
+
+.rv-dnote{margin-top:30px;padding:22px 24px;background:var(--ul-cream-2);border-radius:0;
+  border-left:2px solid var(--ul-brown)}
+.rv-dnote span{display:block;font-family:"Erode","Pretendard",serif;font-size:12px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ul-taupe);margin-bottom:9px}
+.rv-dnote p{font-size:14px;line-height:1.8;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
+
+@media (max-width:1024px){
+  .rv-grid{grid-template-columns:1fr}
+  .rv-shot{border-right:none;border-bottom:1px solid #E2DDD5}
+  .rv-detail{padding:32px 28px 40px}
+}
+@media (max-width:900px){
+  .rv-modal{padding:20px 16px}
+  .rv-box{max-height:calc(100vh - 40px)}
+  .rv-close{top:12px;right:12px;width:34px;height:34px}
+  .rv-detail .rv-dhead{font-size:19px}
+}
