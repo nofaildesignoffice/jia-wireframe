@@ -277,8 +277,8 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 
 /* ===== 뉴스레터 CTA — 유라인 톤앤매너 ===== */
 .letter_section{background:url(../assets/cta-letter.jpg?v=c5d57068) no-repeat center center/cover;padding:7.8vw 0;text-align:center;position:relative}
-/* 검은색 30% 오버레이 */
-.letter_section::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.3);pointer-events:none}
+/* 검은색 45% 오버레이 */
+.letter_section::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);pointer-events:none}
 .letter_section .letter-inner{padding:0 24px;position:relative;z-index:1}
 .letter_section h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;color:#fff;line-height:1;letter-spacing:-.02em;margin-bottom:1.3vw}
 .letter_section p{font-size:1.6666666667vw;font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:.83vw}
