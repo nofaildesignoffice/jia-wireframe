@@ -205,6 +205,8 @@
 .signature_section .clinic .left .more_btn div svg{width:100%;height:100%}
 .signature_section .clinic .right{z-index:11;border-bottom:1px solid #b2b2b2;align-self:flex-end}
 .signature_section .clinic .right .sig-ph{width:46.875vw;height:47.2vw;background:#F8F1E5;display:flex;align-items:center;justify-content:center;color:#B2B2B2;position:relative}
+.signature_section .clinic .right .sig-img{width:46.875vw;height:47.2vw;background:#F8F1E5;overflow:hidden;position:relative}
+.signature_section .clinic .right .sig-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .signature_section .clinic .right .sig-ph svg{width:56px;height:56px}
 .signature_section .clinic .right .sig-ph span{position:absolute;bottom:24px;font-size:13px}
 
@@ -224,6 +226,7 @@
   .signature_section .clinic .left .more_btn div{width:5.3333333333vw;height:5.3333333333vw}
   .signature_section .clinic .right{border-left:1px solid #b2b2b2;border-right:1px solid #b2b2b2;width:100%;align-self:auto}
   .signature_section .clinic .right .sig-ph{width:100%;height:65.3333333333vw}
+  .signature_section .clinic .right .sig-img{width:100%;height:65.3333333333vw}
 }
 
 /* ===== Store — 유라인 Care 스타일 ===== */
