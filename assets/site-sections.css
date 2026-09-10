@@ -117,8 +117,8 @@
 /* ===== VALUE — 유라인 가치 소개 스타일 ===== */
 .value_section{background-color:var(--ul-cream);position:relative;overflow:hidden}
 /* 우측 장식 그래픽 — 투명도 60% */
-.value_section .value-deco{position:absolute;right:9.375vw;top:50%;transform:translateY(-50%);width:20.28vw;opacity:.3;pointer-events:none;z-index:1}
-.value_section .value-deco img{width:100%;height:auto;display:block}
+.value_section .value-deco{position:absolute;right:9.375vw;top:0;height:100%;width:auto;opacity:.3;pointer-events:none;z-index:1}
+.value_section .value-deco img{height:100%;width:auto;display:block}
 .value_section .content{position:relative;z-index:2;padding:5.2vw 24px 0}
 .value_section .value-points{position:relative;z-index:2}
 .value_section .content .text{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:var(--ul-ink)}
