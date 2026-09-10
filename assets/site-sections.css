@@ -14,7 +14,7 @@
 /* ===== 후기 — 유라인 TV 영상 스타일 ===== */
 .tv_section{background-color:var(--ul-cream-2);background-image:url(../assets/bg-tv.png?v=e99f3f60);background-repeat:no-repeat;background-position:center center;background-size:cover;padding-bottom:5.2vw}
 .tv_section .title{padding-top:4.53125vw;text-align:center}
-.tv_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#463E32;line-height:1;letter-spacing:-.02em}
+.tv_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#090909;line-height:1;letter-spacing:-.02em}
 .tv_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;line-height:1.7;letter-spacing:-.02em}
 .tv_section .slide_contain{margin-top:4.0104166667vw;position:relative;padding:0 6.25vw}
 
@@ -22,7 +22,7 @@
 .tv_section .rv-card{flex:0 0 calc((100% - 2 * 3.6vw)/3);background:none;border:none;border-radius:0;overflow:visible;cursor:pointer}
 .tv_section .rv-track{gap:3.6vw}
 .tv_section .rv-media{position:relative;overflow:hidden}
-.tv_section .rv-img{width:100%;aspect-ratio:17.7/20.8;object-fit:cover;object-position:center top;border-radius:0;background:#F8F1E5}
+.tv_section .rv-img{width:100%;aspect-ratio:17.7/20.8;object-fit:cover;object-position:center top;border-radius:0;background:#FFFAE2}
 .tv_section .rv-filter{position:absolute;inset:0;background:#000;opacity:.3;transition:opacity .4s}
 .tv_section .rv-card.is-focus .rv-filter{opacity:0}
 .tv_section .rv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(100vw * (44/1920));height:calc(100vw * (44/1920));min-width:34px;min-height:34px;border-radius:50%;border:1px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;pointer-events:none}
@@ -156,7 +156,7 @@
 .pm-track{display:flex;gap:26px;transition:transform .4s ease}
 .pm-slide{flex:0 0 calc((100% - 78px)/4);color:#000;display:block}
 .pm-slide .img{overflow:hidden}
-.pm-slide .img .img-ph{width:100%;aspect-ratio:1/1.15;background:#F8F1E5;display:flex;align-items:center;justify-content:center;color:#B2B2B2;transition:border-radius .3s}
+.pm-slide .img .img-ph{width:100%;aspect-ratio:1/1.15;background:#FFFAE2;display:flex;align-items:center;justify-content:center;color:#B2B2B2;transition:border-radius .3s}
 .pm-slide:hover .img .img-ph{border-radius:10.4166666667vw}
 .pm-slide .img .img-ph svg{width:40px;height:40px}
 .pm-slide .text{margin-top:1.1979166667vw}
@@ -191,7 +191,7 @@
 .signature_section{background:var(--ul-cream)}
 .signature_section .clinic{border-top:1px solid #b2b2b2;border-bottom:1px solid #b2b2b2;display:flex;align-items:center;justify-content:space-between;padding:0 3.125vw}
 .signature_section .clinic .left{padding-left:3.125vw;border-left:1px solid #b2b2b2;padding-top:10.4vw;padding-bottom:10.4vw;width:50%;align-self:stretch}
-.signature_section .clinic .left h3{font-family:"Erode","Pretendard",serif;font-size:6.5625vw;font-weight:400;line-height:.9;color:#463E32;margin-bottom:2.4479166667vw;letter-spacing:-.02em}
+.signature_section .clinic .left h3{font-family:"Erode","Pretendard",serif;font-size:6.5625vw;font-weight:400;line-height:.9;color:#090909;margin-bottom:2.4479166667vw;letter-spacing:-.02em}
 .signature_section .clinic .left h3 b{margin-left:4.1666666667vw;font-weight:400;position:relative}
 .signature_section .clinic .left h3 b::after{position:absolute;content:"";width:6.25vw;height:1px;background:#b2b2b2;left:-7.2916666667vw;top:55%;transform:translateY(-50%)}
 .signature_section .clinic .left > p{font-size:1.6666666667vw;font-weight:700;margin-bottom:.6770833333vw;color:var(--ul-ink);letter-spacing:-.02em;word-break:keep-all}
@@ -204,8 +204,8 @@
 .signature_section .clinic .left .more_btn div{width:1.5625vw;height:1.5625vw;display:flex;align-items:center;justify-content:center;color:var(--ul-brown)}
 .signature_section .clinic .left .more_btn div svg{width:100%;height:100%}
 .signature_section .clinic .right{z-index:11;border-bottom:1px solid #b2b2b2;align-self:flex-end}
-.signature_section .clinic .right .sig-ph{width:46.875vw;height:47.2vw;background:#F8F1E5;display:flex;align-items:center;justify-content:center;color:#B2B2B2;position:relative}
-.signature_section .clinic .right .sig-img{width:46.875vw;height:47.2vw;background:#F8F1E5;overflow:hidden;position:relative}
+.signature_section .clinic .right .sig-ph{width:46.875vw;height:47.2vw;background:#FFFAE2;display:flex;align-items:center;justify-content:center;color:#B2B2B2;position:relative}
+.signature_section .clinic .right .sig-img{width:46.875vw;height:47.2vw;background:#FFFAE2;overflow:hidden;position:relative}
 .signature_section .clinic .right .sig-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .signature_section .clinic .right .sig-ph svg{width:56px;height:56px}
 .signature_section .clinic .right .sig-ph span{position:absolute;bottom:24px;font-size:13px}
@@ -234,7 +234,7 @@
 /* 스토어 페이지에서는 care_section 이 마지막 섹션 — 푸터와 붙지 않도록 하단 여백 100px */
 body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .care_section .title{text-align:center;margin-bottom:3.59375vw;padding:0 24px}
-.care_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;color:#463E32;line-height:1;letter-spacing:-.02em}
+.care_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em}
 .care_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;margin:.4166666667vw 0 1.5625vw;letter-spacing:-.02em}
 .care_section .title span{font-size:.9375vw;font-weight:400;line-height:1.6;color:#4A453F;display:block}
 .care_section .title span b{font-weight:600}
@@ -242,7 +242,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .care_section .cont .box{padding:2.0833333333vw 1.0416666667vw 1.7708333333vw;text-align:center;width:33.3333%;display:flex;flex-direction:column}
 .care_section .cont .box:not(:last-child){border-right:1px solid #d1d1d1}
 .care_section .cont .box .img{width:15vw;height:17.96875vw;margin:0 auto}
-.care_section .cont .box .img .img-ph{width:100%;height:100%;background:#F8F1E5;display:flex;align-items:center;justify-content:center;color:#B2B2B2}
+.care_section .cont .box .img .img-ph{width:100%;height:100%;background:#FFFAE2;display:flex;align-items:center;justify-content:center;color:#B2B2B2}
 .care_section .cont .box .img .img-ph svg{width:40px;height:40px}
 .care_section .cont .box .txt{margin:1.4vw 0 1.3020833333vw;text-align:center;flex:1}
 .care_section .cont .box .txt p{font-size:.9375vw;font-weight:600;margin-bottom:.2083333333vw;color:var(--ul-ink);letter-spacing:-.02em}
@@ -308,7 +308,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .gridline_section.alt{background:var(--ul-cream-2)}
 .gridline_section.deep{background:var(--ul-cream-2)}
 .gridline_section .title{text-align:center;margin-bottom:3.59375vw;padding:0 24px}
-.gridline_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#463E32;line-height:1;letter-spacing:-.02em}
+.gridline_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em}
 .gridline_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;margin:.4166666667vw 0 1.5625vw;letter-spacing:-.02em;word-break:keep-all}
 .gridline_section .title span{font-size:.9375vw;font-weight:400;line-height:1.6;color:#4A453F;display:block;word-break:keep-all}
 .gridline_section .cont{border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1;display:flex;flex-wrap:wrap}
@@ -336,7 +336,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 /* 비교 표 */
 .compare_section{background:var(--ul-cream-2);padding:6.7708333333vw 0 7.2vw}
 .compare_section .title{text-align:center;margin-bottom:3.2vw;padding:0 24px}
-.compare_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#463E32;line-height:1;letter-spacing:-.02em}
+.compare_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em}
 .compare_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;margin-top:.4166666667vw;letter-spacing:-.02em}
 .cmp-wrap{max-width:1000px;margin:0 auto;padding:0 24px}
 .cmp{width:100%;border-collapse:collapse;background:#fff;border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1}
@@ -428,7 +428,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .tabclass_section{background:var(--ul-cream);padding:6.7708333333vw 0 7.2vw}
 .tabclass_section .container{max-width:1200px;margin:0 auto;padding:0 24px}
 .tabclass_section .title{text-align:center;margin-bottom:3.2vw}
-.tabclass_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#463E32;line-height:1;letter-spacing:-.02em}
+.tabclass_section .title h3{font-family:"Erode","Pretendard",serif;font-size:3.6458333333vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em}
 .tabclass_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;margin:.4166666667vw 0 1.5625vw;letter-spacing:-.02em;word-break:keep-all}
 .tabclass_section .title span{font-size:.9375vw;font-weight:400;line-height:1.6;color:#4A453F;display:block}
 
@@ -538,7 +538,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
   .premium_section .cont .box{width:100%}
   .premium_section .cont .box:not(:last-child){margin-bottom:5.3333333333vw}
   .premium_section .cont .box p{font-size:4.2666666667vw;margin-bottom:2.1333333333vw}
-  .premium_section .cont .box span{font-size:3.7333333333vw;color:#463e32;line-height:1.44;margin-bottom:2.0833333333vw}
+  .premium_section .cont .box span{font-size:3.7333333333vw;color:#090909;line-height:1.44;margin-bottom:2.0833333333vw}
   .premium_section .cont .box .pm-img{height:59.7333333333vw;margin-bottom:4.2666666667vw;padding:6vw}
   .premium_section .cont .box .pm-img em{font-size:3.2vw;margin-top:4vw}
 }
@@ -817,8 +817,8 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 
 /* ==========================================================================
    섹션 배경 톤 — 사이트 전체에서 두 가지만 사용
-   tone-a = var(--ul-cream)   #FFFCF7
-   tone-b = var(--ul-cream-2) #F8F1E5
+   tone-a = var(--ul-cream)   #FFFEF8
+   tone-b = var(--ul-cream-2) #FFFAE2
    페이지마다 인접 섹션이 번갈아 오도록 마크업에서 지정한다.
    ========================================================================== */
 section.tone-a{background-color:var(--ul-cream)}
