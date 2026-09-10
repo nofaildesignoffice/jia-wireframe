@@ -115,8 +115,12 @@
 
 
 /* ===== VALUE — 유라인 가치 소개 스타일 ===== */
-.value_section{background-color:var(--ul-cream)}
-.value_section .content{position:relative;padding:5.2vw 24px 0}
+.value_section{background-color:var(--ul-cream);position:relative;overflow:hidden}
+/* 우측 장식 그래픽 — 투명도 60% */
+.value_section .value-deco{position:absolute;right:3.125vw;top:50%;transform:translateY(-50%);width:15.6vw;opacity:.6;pointer-events:none;z-index:1}
+.value_section .value-deco img{width:100%;height:auto;display:block}
+.value_section .content{position:relative;z-index:2;padding:5.2vw 24px 0}
+.value_section .value-points{position:relative;z-index:2}
 .value_section .content .text{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:var(--ul-ink)}
 .value_section .content .text h3{font-size:3.4375vw;font-weight:400;font-family:"Erode","Pretendard",serif;line-height:1;letter-spacing:-.02em}
 .value_section .content .text p{font-size:1.0416666667vw;font-weight:600;margin:.7291666667vw 0 2.6041666667vw}
@@ -130,6 +134,7 @@
 .value-points .vp p{font-size:.9375vw;font-weight:400;line-height:1.8;color:#6B6660}
 
 @media screen and (max-width:900px){
+  .value_section .value-deco{display:none}
   .value_section .content{padding:14vw 24px 0}
   .value_section .content .text{padding-top:0}
   .value_section .content .text h3{font-size:9.6vw}
