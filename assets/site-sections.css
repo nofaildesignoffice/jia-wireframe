@@ -1086,8 +1086,7 @@ section.tone-b{background-color:var(--ul-cream-2)}
   margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid #d1d1d1;letter-spacing:-.02em;word-break:keep-all}
 .rv-detail p.rv-p{font-size:15px;line-height:1.85;color:#4A453F;margin-bottom:14px;letter-spacing:-.02em;word-break:keep-all}
 
-.rv-dnote{margin-top:30px;padding:22px 24px;background:var(--ul-cream-2);border-radius:0;
-  border-left:2px solid var(--ul-brown)}
+.rv-dnote{margin-top:30px;padding:22px 24px;background:var(--ul-cream-2);border-radius:0}
 .rv-dnote span{display:block;font-family:"Erode","Pretendard",serif;font-size:12px;font-weight:600;
   letter-spacing:.08em;text-transform:uppercase;color:var(--ul-taupe);margin-bottom:9px}
 .rv-dnote p{font-size:14px;line-height:1.8;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
