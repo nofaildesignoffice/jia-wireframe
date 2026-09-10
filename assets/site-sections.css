@@ -1021,3 +1021,21 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .fm-submit{height:14vw;font-size:4vw}
   .fm-note{font-size:3.2vw;margin-top:4vw}
 }
+
+/* ==========================================================================
+   quoteline.cards — 고객 문제를 카드로. 데스크탑 3열 x 2행
+   ========================================================================== */
+.quoteline.cards{border:none;grid-template-columns:repeat(3,1fr);column-gap:1.25vw;row-gap:1.25vw}
+.quoteline.cards .q{background:#fff;border:1px solid #E2DDD5;padding:2.1vw 1.9vw 2.2vw;display:flex;flex-direction:column;transition:border-color .25s}
+.quoteline.cards .q::after{display:none}
+.quoteline.cards .q:not(:nth-last-child(-n+2)){border-bottom:1px solid #E2DDD5}
+.quoteline.cards .q:hover{border-color:var(--ul-brown)}
+.quoteline.cards .q strong{font-size:1.0416666667vw;margin-bottom:.85vw}
+.quoteline.cards .q span{flex:1}
+
+@media screen and (max-width:900px){
+  .quoteline.cards{grid-template-columns:1fr;column-gap:0;row-gap:3.2vw}
+  .quoteline.cards .q{padding:6.4vw 5.3333333333vw}
+  .quoteline.cards .q:not(:last-child){border-bottom:1px solid #E2DDD5}
+  .quoteline.cards .q strong{font-size:4.2666666667vw;margin-bottom:2.4vw}
+}
