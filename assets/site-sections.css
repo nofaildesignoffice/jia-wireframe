@@ -155,7 +155,7 @@
 .promotion_section .bar h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:var(--ul-brown);line-height:1;letter-spacing:-.02em}
 .promotion_section .bar p{font-size:1.0416666667vw;font-weight:600;color:#000;letter-spacing:-.02em}
 
-.promotion_section .slide_contain{padding:2.6041666667vw 6.25vw 5.6770833333vw;border-bottom:1px solid #b2b2b2;position:relative}
+.promotion_section .slide_contain{padding:2.6041666667vw 6.25vw 5.6770833333vw;position:relative}
 
 .pm-viewport{overflow:hidden}
 .pm-track{display:flex;gap:26px;transition:transform .4s ease}
