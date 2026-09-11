@@ -242,8 +242,7 @@
 /* ===== Store — 유라인 Care 스타일 ===== */
 .care_section{background:var(--ul-cream);padding:5.625vw 0 0}
 /* 스토어 페이지에서는 care_section 이 마지막 섹션 — 푸터와 붙지 않도록 하단 여백 100px */
-/* 스토어 페이지는 헤더 아래 여백이 필요해 기존 상단 값을 유지 */
-body.gnb-light .care_section{padding-top:9.375vw;padding-bottom:5.2083333333vw}
+body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .care_section .title{text-align:center;margin-bottom:3.59375vw;padding:0 24px}
 .care_section .title h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;color:#090909;line-height:1;letter-spacing:-.02em}
 .care_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;margin:.4166666667vw 0 1.5625vw;letter-spacing:-.02em}
@@ -265,7 +264,6 @@ body.gnb-light .care_section{padding-top:9.375vw;padding-bottom:5.2083333333vw}
 
 @media screen and (max-width:900px){
   .care_section{padding:11.715vw 0 0}
-  body.gnb-light .care_section{padding-top:19.525vw}
   .care_section .title{margin-bottom:6.4vw}
   .care_section .title h3{font-size:9.6vw}
   .care_section .title p{font-size:4.2666666667vw;margin:2.1333333333vw 0 4.2666666667vw}
