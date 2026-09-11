@@ -207,7 +207,7 @@
 .signature_section .clinic .left .more_btn p{font-size:.9375vw;font-weight:400;margin-right:.3125vw;color:var(--ul-ink)}
 .signature_section .clinic .left .more_btn div{width:1.5625vw;height:1.5625vw;display:flex;align-items:center;justify-content:center;color:var(--ul-brown)}
 .signature_section .clinic .left .more_btn div svg{width:100%;height:100%}
-.signature_section .clinic .right{z-index:11;border-bottom:1px solid #b2b2b2;align-self:flex-end}
+.signature_section .clinic .right{z-index:11;align-self:flex-end}
 .signature_section .clinic .right .sig-ph{width:46.875vw;height:47.2vw;background:#FFFAE2;display:flex;align-items:center;justify-content:center;color:#B2B2B2;position:relative}
 .signature_section .clinic .right .sig-img{width:46.875vw;height:47.2vw;background:#FFFAE2;overflow:hidden;position:relative}
 .signature_section .clinic .right .sig-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
@@ -298,8 +298,15 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
    ========================================================================== */
 
 /* 서브 히어로 — 다크 그라데이션 + Erode */
-.subhero_section{background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink));padding:12.4vw 0 6.2vw;text-align:center}
-.subhero_section .inner{padding:0 24px;max-width:1200px;margin:0 auto}
+.subhero_section{background:var(--ul-ink) no-repeat center center/cover;padding:12.4vw 0 6.2vw;text-align:center;position:relative}
+/* 사진 위 스크림 — 메인 히어로와 동일 */
+.subhero_section::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(20,17,17,.34) 0%,rgba(20,17,17,.48) 55%,rgba(20,17,17,.58) 100%)}
+/* 사진이 없는 경우 기존 다크 그라데이션 유지 */
+.subhero_section:not([class*="bg-"]){background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink))}
+.subhero_section.bg-exp{background-image:url(../assets/hero-01.jpg?v=3cd36300)}
+.subhero_section.bg-startup{background-image:url(../assets/hero-02.jpg?v=cc59c505)}
+.subhero_section .inner{padding:0 24px;max-width:1200px;margin:0 auto;position:relative;z-index:1}
 .subhero_section .label{font-family:"Erode","Pretendard",serif;font-size:1.0416666667vw;color:var(--ul-sub);letter-spacing:.06em;margin-bottom:1.1vw}
 .subhero_section h1{font-size:2.6041666667vw;font-weight:700;color:#fff;line-height:1.38;letter-spacing:-.03em;margin-bottom:1.4vw;word-break:keep-all}
 .subhero_section .lead{font-size:.9375vw;color:var(--ul-sub);line-height:1.8;word-break:keep-all}
