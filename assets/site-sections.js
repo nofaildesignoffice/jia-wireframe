@@ -30,3 +30,44 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
   render();
 });
 })();
+
+/* ==========================================================================
+   클래스 상세 모달 — APPLY 카드를 누르면 Class 탭 패널 내용을 그대로 띄운다.
+   내용을 복제해 쓰므로 카피가 한 곳(#classes)에만 존재한다.
+   ========================================================================== */
+(function(){
+  var modal=document.getElementById('clsModal');
+  if(!modal) return;
+  var body=modal.querySelector('.cls-modal-body');
+  if(!body) return;
+
+  function open(id){
+    var src=document.getElementById(id);
+    if(!src) return;
+    body.innerHTML=src.innerHTML;
+    /* 복제본에는 이벤트가 따라오지 않으므로 아코디언을 다시 묶는다 */
+    body.querySelectorAll('.acc-q').forEach(function(q){
+      q.onclick=function(){q.parentElement.classList.toggle('is-open')};
+    });
+    modal.hidden=false;
+    document.body.style.overflow='hidden';
+    var box=modal.querySelector('.rv-box');
+    if(box) box.scrollTop=0;
+    if(window.lucide) lucide.createIcons();
+  }
+  function close(){
+    modal.hidden=true;
+    document.body.style.overflow='';
+    body.innerHTML='';
+  }
+
+  document.querySelectorAll('.pm-slide[data-cls]').forEach(function(c){
+    c.onclick=function(){open(c.getAttribute('data-cls'))};
+  });
+  modal.querySelectorAll('[data-cls-close]').forEach(function(x){
+    x.onclick=function(e){e.stopPropagation(); close()};
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && !modal.hidden) close();
+  });
+})();

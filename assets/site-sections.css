@@ -1119,3 +1119,25 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .rv-close{top:12px;right:12px;width:34px;height:34px}
   .rv-detail .rv-dhead{font-size:19px}
 }
+
+/* ==========================================================================
+   클래스 상세 모달 — 후기 모달과 같은 껍데기를 쓰고,
+   내용은 .tabclass_section 스타일을 그대로 물려받는다(본문에 같은 클래스를 부여).
+   ========================================================================== */
+.rv-box.cls-box{max-width:1100px}
+.cls-modal-body{background:none;padding:3.1vw 2.4vw 2.4vw}
+.cls-modal-body .cls-head{margin-bottom:2vw}
+
+/* APPLY 카드 — 클릭 가능 + 자세히 보기 */
+.pm-slide[data-cls]{cursor:pointer}
+.pm-slide .more{display:inline-flex;align-items:center;margin-top:1.1vw;padding:0;border:none;background:none;
+  font-family:inherit;font-size:.8333333333vw;font-weight:600;letter-spacing:-.02em;color:var(--ul-brown);
+  border-bottom:1px solid transparent;transition:color .25s,border-color .25s;cursor:pointer}
+.pm-slide:hover .more{border-bottom-color:var(--ul-brown)}
+
+@media (max-width:1024px){
+  .cls-modal-body{padding:32px 28px 40px}
+}
+@media screen and (max-width:900px){
+  .pm-slide .more{margin-top:3.2vw;font-size:3.4666666667vw}
+}
