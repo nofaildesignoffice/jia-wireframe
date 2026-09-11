@@ -149,7 +149,7 @@
 .promotion_section{background:var(--ul-cream);padding:2.6041666667vw 0 0}
 .promotion_section .bar{position:relative;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;height:15.1041666667vw;min-height:210px;padding-left:6.25vw}
 .promotion_section .bar .bar-text{position:relative;z-index:2}
-.promotion_section .bar h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:var(--ul-brown);line-height:1;letter-spacing:-.02em}
+.promotion_section .bar h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#090909;line-height:1;letter-spacing:-.02em}
 .promotion_section .bar p{font-size:1.0416666667vw;font-weight:600;color:#000;letter-spacing:-.02em}
 
 .promotion_section .slide_contain{padding:2.6041666667vw 6.25vw 5.6770833333vw;position:relative}
