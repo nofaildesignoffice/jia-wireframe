@@ -71,3 +71,27 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
     if(e.key==='Escape' && !modal.hidden) close();
   });
 })();
+
+/* 후기 슬라이더 — 모바일 스와이프.
+   슬라이더 본체는 각 페이지 인라인 스크립트가 담당하므로 좌우 버튼을 대신 눌러준다. */
+document.querySelectorAll('.rv').forEach(function(rv){
+  var vp=rv.querySelector('.rv-vp'),
+      prev=rv.querySelector('.rv-prev'),
+      next=rv.querySelector('.rv-next');
+  if(!vp || !prev || !next) return;
+  var x0=null, y0=null, horiz=false;
+  vp.addEventListener('touchstart',function(e){
+    var t=e.touches[0]; x0=t.clientX; y0=t.clientY; horiz=false;
+  },{passive:true});
+  vp.addEventListener('touchmove',function(e){
+    if(x0===null) return;
+    var t=e.touches[0];
+    if(!horiz && Math.abs(t.clientX-x0) > Math.abs(t.clientY-y0)+6) horiz=true;
+  },{passive:true});
+  vp.addEventListener('touchend',function(e){
+    if(x0===null) return;
+    var dx=e.changedTouches[0].clientX - x0;
+    if(horiz && Math.abs(dx) > 40) (dx < 0 ? next : prev).click();
+    x0=null;
+  },{passive:true});
+});

@@ -1139,3 +1139,71 @@ section.tone-b{background-color:var(--ul-cream-2)}
 @media screen and (max-width:900px){
   .pm-slide .more{margin-top:3.2vw;font-size:3.4666666667vw}
 }
+
+/* ==========================================================================
+   비교 표 — 유라인 "One And Only" 스타일
+   테두리를 걷어내고 가운데 정렬, 비교 대상 열 하나만 톤으로 강조한다.
+   ========================================================================== */
+.cmp{background:none;border:none}
+.cmp th,.cmp td{padding:1.45vw 1.2vw;text-align:center;border:none;vertical-align:middle;word-break:keep-all}
+.cmp thead th{font-size:.8854166667vw;font-weight:600;color:var(--ul-stone);background:none;
+  padding-bottom:1.5vw;border-bottom:1px solid #d8d3ca}
+.cmp thead th:last-child{color:var(--ul-ink)}
+.cmp tbody th{width:8.5vw;font-size:.78125vw;font-weight:500;color:var(--ul-stone);text-align:left;background:none}
+.cmp tbody td{font-size:.9375vw;color:#6B6660}
+.cmp tbody tr + tr th,.cmp tbody tr + tr td{border-top:1px solid #ece8e1}
+/* 지아 열 강조 */
+.cmp thead th:last-child,.cmp tbody td:last-child{background:rgba(150,128,103,.10)}
+.cmp thead th:last-child{box-shadow:inset 0 2px 0 var(--ul-brown)}
+.cmp tbody td.on{color:var(--ul-ink);font-weight:600}
+.cmp tbody tr:last-child td:last-child{box-shadow:inset 0 -2px 0 rgba(113,84,62,.28)}
+
+/* APPLY 섹션 위아래 여백 */
+.promotion_section#apply{padding-top:5.2vw;padding-bottom:5.2vw}
+
+@media screen and (max-width:900px){
+  .promotion_section#apply{padding-top:13.3333333333vw;padding-bottom:13.3333333333vw}
+
+  /* --- How It Works — 2 x 2 그리드 --- */
+  .premium_section .cont{flex-direction:row;flex-wrap:wrap;column-gap:4.2666666667vw;row-gap:8vw;padding-top:6.4vw}
+  .premium_section .cont .box{width:calc((100% - 4.2666666667vw)/2)}
+  .premium_section .cont .box:not(:last-child){margin-bottom:0}
+  .premium_section .cont .box p{font-size:3.7333333333vw;margin-bottom:1.6vw;line-height:1.4}
+  .premium_section .cont .box span{font-size:3.2vw;line-height:1.5;margin-bottom:3.2vw}
+  .premium_section .cont .box .pm-img{height:44vw;margin-bottom:0;padding:3vw}
+  .premium_section .cont .box .pm-img svg{width:28px;height:28px}
+  .premium_section .cont .box .pm-img em{font-size:2.6vw;margin-top:2.4vw}
+
+  /* --- Cause / Solution — 가로 스크롤 해제, 이미지 위 · 텍스트 아래로 세로 나열 --- */
+  .linestory_section .titleContList{display:block;width:100%;overflow:visible;margin-top:10.1334vw}
+  .linestory_section .title_cont{flex-direction:column;width:100%;flex-shrink:1;margin:0;padding:10.6666666667vw 5.3333333333vw}
+  .linestory_section .title_cont:not(:last-child){border-bottom:1px solid #ecebe8}
+  .linestory_section .title_cont .img,
+  .linestory_section .title_cont:nth-child(odd) .img,
+  .linestory_section .title_cont:nth-child(even) .img{width:100%;order:0}
+  .linestory_section .title_cont .txt,
+  .linestory_section .title_cont:nth-child(even) .txt{width:100%;order:1;text-align:left;padding:0;margin:8.5333333333vw 0 0}
+
+  /* --- Process of JIA — 가로 스크롤 해제, 세로 나열 --- */
+  .special_section .cont{flex-direction:column;width:100%;overflow:visible;
+    padding:0 5.3333333333vw;row-gap:12vw}
+  .special_section .cont .box{width:100%;flex-shrink:1;margin-right:0}
+  .special_section .cont .box:last-child{margin-right:0}
+  .special_section .cont .box .img{width:100%;height:72vw;margin-bottom:6.4vw;padding:6vw}
+  .special_section .cont .box .img em{font-size:3.2vw;margin-top:4vw}
+
+  /* --- 후기 슬라이더 — 1.2장 노출 --- */
+  .tv_section .rv-track{gap:4.2666666667vw}
+  .tv_section .rv-card{flex:0 0 78%}
+
+  /* --- 모달 — 모바일 화면 밖으로 나가지 않게 --- */
+  .rv-modal{padding:16px 12px;align-items:flex-end}
+  .rv-box{max-height:88dvh;max-width:100%}
+  .rv-shot{padding:20px}
+  .rv-detail{padding:24px 20px 28px}
+  .rv-detail .rv-dhead{font-size:17px;margin-bottom:18px;padding-bottom:16px}
+  .rv-detail p.rv-p{font-size:14px;line-height:1.8}
+  .rv-dnote{margin-top:22px;padding:16px 18px}
+  .rv-dnote p{font-size:13px}
+  .cls-modal-body{padding:24px 20px 28px}
+}
