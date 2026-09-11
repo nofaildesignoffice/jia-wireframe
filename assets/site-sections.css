@@ -147,7 +147,7 @@
 
 /* ===== 경력자 클래스 — 유라인 프로모션 스타일 ===== */
 .promotion_section{background:var(--ul-cream);padding:2.6041666667vw 0 0}
-.promotion_section .bar{position:relative;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;height:15.1041666667vw;min-height:210px;padding-left:6.25vw}
+.promotion_section .bar{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:2vw;padding:0 6.25vw}
 .promotion_section .bar .bar-text{position:relative;z-index:2}
 .promotion_section .bar h3{font-family:"Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#090909;line-height:1;letter-spacing:-.02em}
 .promotion_section .bar p{font-size:1.0416666667vw;font-weight:600;color:#000;letter-spacing:-.02em}
@@ -169,13 +169,18 @@
 .pm-slide .text .hash{display:flex;margin-top:1.3020833333vw}
 .pm-slide .text .hash span{display:flex;align-items:center;justify-content:center;padding:.46875vw .8333333333vw;font-size:.9375vw;font-weight:400;border:1px solid #000}
 .pm-slide .text .hash span:not(:last-child){margin-right:.5208333333vw}
-.pm-cta{margin-top:3.4vw;display:flex;justify-content:center}
-.pm-cta a{display:flex;align-items:center;justify-content:center;width:280px;height:55px;font-size:1.0416666667vw;letter-spacing:-.05em;border:1px solid var(--ul-brown);color:var(--ul-brown);transition:background .3s,color .3s}
-.pm-cta a:hover{background:var(--ul-brown);color:#fff}
+.pm-cta{display:flex;justify-content:center;flex-shrink:0}
+.slide_contain > .pm-cta{margin-top:3.4vw}
+/* 바 안에 놓일 때는 본문 마지막 줄과 같은 높이에서 오른쪽 정렬 */
+.bar > .pm-cta{justify-content:flex-end;padding-bottom:.1vw}
+.pm-cta a{display:inline-flex;align-items:center;width:auto;height:auto;padding:0;border:none;background:none;
+  font-size:1.0416666667vw;font-weight:600;letter-spacing:-.02em;color:var(--ul-brown);
+  border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+.pm-cta a:hover{color:var(--ul-ink);border-bottom-color:var(--ul-ink)}
 
 @media screen and (max-width:900px){
   .promotion_section{padding:0}
-  .promotion_section .bar{height:39.4666666667vw;min-height:0;padding-left:5.3333333333vw}
+  .promotion_section .bar{flex-direction:column;align-items:flex-start;gap:6.4vw;padding:0 5.3333333333vw}
   .promotion_section .bar h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .promotion_section .bar p{font-size:4vw;word-break:keep-all;padding-right:5.3vw}
   .promotion_section .slide_contain{padding:13.3333333333vw 5.3333333333vw 21.3333333333vw}
@@ -187,8 +192,9 @@
   .pm-slide .text .hash{margin-top:6.4vw}
   .pm-slide .text .hash span{padding:1.6vw 3.2vw;font-size:3.7333333333vw}
   .pm-slide .text .hash span:not(:last-child){margin-right:2.1333333333vw}
-  .pm-cta{margin-top:10.6vw}
-  .pm-cta a{width:72vw;height:12.8vw;font-size:4vw}
+  .slide_contain > .pm-cta{margin-top:10.6vw}
+  .bar > .pm-cta{justify-content:flex-start;padding-bottom:0}
+  .pm-cta a{font-size:4vw}
 }
 
 /* ===== 창업반 클래스 — 유라인 클리닉 시그니처 스타일 ===== */

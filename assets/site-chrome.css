@@ -44,7 +44,7 @@ body.hero-top{padding-top:0}
 
 #header .header .header-wrap .menu li .sub_menu{border-radius:8px;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:8.90625vw;display:none;overflow:hidden;padding-top:0}
 #header .header .header-wrap .menu li:hover .sub_menu{display:block}
-#header .header .header-wrap .menu li .sub_menu ul{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;padding:28px 0;background:var(--ul-stone);border-radius:8px;margin-top:12px}
+#header .header .header-wrap .menu li .sub_menu ul{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;padding:28px 0;background:rgba(0,0,0,.5);-webkit-backdrop-filter:blur(.9375vw);backdrop-filter:blur(.9375vw);border-radius:8px;margin-top:12px}
 #header .header .header-wrap .menu li .sub_menu ul li{margin-right:0;height:auto}
 #header .header .header-wrap .menu li .sub_menu ul li:not(:last-child){margin-bottom:1.0416666667vw}
 #header .header .header-wrap .menu li .sub_menu ul li a{font-size:.8333333333vw;font-weight:500;color:var(--ul-sub);display:block;height:auto}
@@ -57,7 +57,7 @@ body.hero-top{padding-top:0}
 #header .header .header-wrap .info .btn_group a:not(:last-child)::after{position:absolute;content:"";right:0;top:50%;transform:translateY(-50%);background:#fff;opacity:.3;width:1px;height:.5208333333vw}
 
 /* 전체메뉴 드롭다운 */
-#header .dropdown_menu{width:100%;height:0;-webkit-backdrop-filter:blur(.9375vw);backdrop-filter:blur(.9375vw);background:rgba(0,0,0,.5);position:fixed;left:0;top:0;transition:all .6s;opacity:0;overflow:hidden;z-index:99}
+#header .dropdown_menu{width:100%;height:0;-webkit-backdrop-filter:blur(.9375vw);backdrop-filter:blur(.9375vw);background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink));position:fixed;left:0;top:0;transition:all .6s;opacity:0;overflow:hidden;z-index:99}
 #header .dropdown_menu.on{height:28vw;opacity:1}
 #header .dropdown_menu .drop_wrap{display:flex;align-items:flex-start;justify-content:space-between;padding:6.7708333333vw 3.125vw 0}
 #header .dropdown_menu .drop_wrap .nav_wrap{width:74.1666666667vw}
