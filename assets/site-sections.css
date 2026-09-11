@@ -431,14 +431,12 @@ body.gnb-light .care_section{padding-top:9.375vw;padding-bottom:5.2083333333vw}
    ========================================================================== */
 
 /* Core 영상 자리 + 인용 */
-.core-media{max-width:1000px;margin:0 auto 3.6vw;padding:0 24px}
+.core-media{width:60vw;max-width:none;margin:0 auto 3.6vw;padding:0}
 .core-ph{width:100%;aspect-ratio:16/9;background:#EFE7DA;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#B2B2B2}
 .core-ph svg{width:56px;height:56px}
 .core-ph span{font-size:.7291666667vw;margin-top:1vw;letter-spacing:-.01em}
-.core-quote{max-width:1000px;margin:3.6vw auto 0;padding:2.8vw 2vw;background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink));text-align:center}
-.core-quote .qm{color:var(--ul-taupe);margin-bottom:1.2vw}
-.core-quote .qm svg{width:1.8vw;height:1.8vw;min-width:26px;min-height:26px}
-.core-quote p{font-size:1.0416666667vw;line-height:2;color:#fff;letter-spacing:-.02em}
+.core-quote{max-width:1000px;margin:3.6vw auto 0;padding:0 24px;text-align:center}
+.core-quote p{font-size:1.0416666667vw;line-height:2;color:var(--ul-ink);letter-spacing:-.02em}
 
 /* Apply — care_section 재사용 + 보조 */
 
@@ -493,10 +491,9 @@ body.gnb-light .care_section{padding-top:9.375vw;padding-bottom:5.2083333333vw}
 .tabclass_section .stepbar p{font-size:.8333333333vw;line-height:1.65;color:#6B6660;word-break:keep-all}
 
 @media screen and (max-width:900px){
-  .core-media{margin-bottom:8vw;padding:0 5.3333333333vw}
+  .core-media{width:auto;margin-bottom:8vw;padding:0 5.3333333333vw}
   .core-ph span{font-size:3.2vw;margin-top:4vw;text-align:center;padding:0 5vw}
-  .core-quote{margin:8vw 5.3333333333vw 0;padding:9vw 5vw}
-  .core-quote .qm{margin-bottom:4vw}
+  .core-quote{margin:8vw auto 0;padding:0 5.3333333333vw}
   .core-quote p{font-size:4vw;line-height:1.9}
   .acc-wrap{padding:0 5.3333333333vw}
 
@@ -852,13 +849,15 @@ section.tone-b{background-color:var(--ul-cream-2)}
    ========================================================================== */
 .gridline_section .cont.circles{
   position:relative;
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns:repeat(2,auto);
+  justify-content:center;
   align-items:center;
-  width:66.6666666667vw;
-  margin:0 auto;
+  column-gap:10.4166666667vw;
+  row-gap:7.2916666667vw;
+  width:100%;                        /* 섹션이 전폭이라 곧 브라우저 가로폭 */
+  margin:0;
   border:none;                       /* 기존 헤어라인 그리드 테두리 해제 */
-  flex-wrap:nowrap;
 }
 /* 원들을 가로지르는 선 */
 .gridline_section .cont.circles::after{
@@ -918,6 +917,7 @@ section.tone-b{background-color:var(--ul-cream-2)}
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
+    gap:0;
     width:100%;
     border-top:1px solid #cbcbcb;
   }
