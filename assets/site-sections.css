@@ -1221,13 +1221,13 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .cls-modal-body .cls-head .chip{padding:5px 11px;font-size:12px;line-height:1;border-radius:0;
   background:#F7D02F;color:var(--ul-ink);font-weight:500}
 
-.cls-modal-body .cm-info{border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1}
-.cls-modal-body .cm-row{display:flex;gap:14px;padding:12px 0;align-items:baseline}
-.cls-modal-body .cm-row + .cm-row{border-top:1px solid #ece8e1}
-.cls-modal-body .cm-row .k{flex:0 0 72px;font-size:12px;font-weight:600;color:var(--ul-stone);letter-spacing:-.02em}
-.cls-modal-body .cm-row .v{flex:1;font-size:14px;line-height:1.65;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
-.cls-modal-body .cm-row .v.strong{font-size:17px;font-weight:700;color:var(--ul-ink);
-  box-shadow:inset 0 -8px 0 rgba(247,208,47,.45)}
+/* 정보는 표가 아니라 그냥 텍스트 — 테두리·구분선 없음 */
+.cls-modal-body .cm-info{border:none;margin-top:4px}
+.cls-modal-body .cm-row{display:block;border:none;padding:0;margin-top:14px}
+.cls-modal-body .cm-row:first-child{margin-top:0}
+.cls-modal-body .cm-row .k{display:block;font-size:12px;font-weight:600;color:var(--ul-stone);letter-spacing:-.02em;margin-bottom:3px}
+.cls-modal-body .cm-row .v{display:block;font-size:14px;line-height:1.65;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
+.cls-modal-body .cm-row .v.strong{font-weight:700;color:var(--ul-ink)}
 
 .cls-modal-body .cls-cta{margin-top:22px}
 .cls-modal-body .cls-cta a{width:100%;height:50px;min-height:0;border-radius:0;
