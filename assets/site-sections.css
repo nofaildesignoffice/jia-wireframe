@@ -78,6 +78,8 @@
 
 /* 촬영 전 임시 이미지 자리 */
 .linestory_section .ls-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:20.8333333333vw;background:#EFE7DA;color:#B2B2B2;padding:2vw;text-align:center}
+.linestory_section .ls-img{display:block;width:100%;height:20.8333333333vw;overflow:hidden;background:#EFE7DA}
+.linestory_section .ls-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .linestory_section .ls-ph svg{width:44px;height:44px}
 .linestory_section .ls-ph em{font-style:normal;font-size:.7291666667vw;line-height:1.5;margin-top:1vw;word-break:keep-all}
 
@@ -105,6 +107,7 @@
   .linestory_section .title_cont .txt span{font-size:4vw;line-height:1.4075;letter-spacing:-.03em}
   .linestory_section .title_cont .txt .basis{font-size:3.2vw;margin-top:4vw}
   .linestory_section .ls-ph{height:62.6666666667vw;padding:6vw}
+  .linestory_section .ls-img{height:62.6666666667vw}
   .linestory_section .ls-ph em{font-size:3.2vw;margin-top:4vw}
   .linestory_section .answer-box{margin:12vw auto 0;padding:0 5.3333333333vw}
   .linestory_section .answer-box p{font-size:4vw;word-break:keep-all}
