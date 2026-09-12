@@ -50,7 +50,11 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
     var left=document.createElement('div'); left.className='cm-left';
     var right=document.createElement('div'); right.className='cm-right';
 
-    if(head) left.appendChild(head);
+    if(head){
+      var chips=head.querySelector('.chips');
+      if(chips) chips.parentNode.removeChild(chips);
+      left.appendChild(head);
+    }
 
     var tbl=cols.querySelector('.tbl');
     if(tbl){
