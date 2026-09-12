@@ -1207,3 +1207,57 @@ section.tone-b{background-color:var(--ul-cream-2)}
   /* Process 3번째 카드 이미지도 같은 높이로 (데스크탑 모양 규칙이 더 구체적이라 재선언) */
   .special_section .cont .box:nth-child(3) .img{height:72vw;margin-top:0;margin-bottom:6.4vw}
 }
+
+/* ==========================================================================
+   클래스 상세 모달 — 좌 정보 / 우 커리큘럼 2단, 액센트는 브랜드 옐로우
+   ========================================================================== */
+.cls-modal-body .cm-split{display:grid;grid-template-columns:minmax(280px,36%) 1fr;gap:36px;align-items:start}
+
+/* --- 좌측 --- */
+.cls-modal-body .cls-head{text-align:left;margin-bottom:18px}
+.cls-modal-body .cls-head h3{font-size:22px;line-height:1.4;margin-bottom:8px}
+.cls-modal-body .cls-head .one{font-size:14px;line-height:1.65}
+.cls-modal-body .cls-head .chips{justify-content:flex-start;gap:6px;margin-top:14px}
+.cls-modal-body .cls-head .chip{padding:5px 11px;font-size:12px;line-height:1;border-radius:0;
+  background:#F7D02F;color:var(--ul-ink);font-weight:500}
+
+.cls-modal-body .cm-info{border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1}
+.cls-modal-body .cm-row{display:flex;gap:14px;padding:12px 0;align-items:baseline}
+.cls-modal-body .cm-row + .cm-row{border-top:1px solid #ece8e1}
+.cls-modal-body .cm-row .k{flex:0 0 72px;font-size:12px;font-weight:600;color:var(--ul-stone);letter-spacing:-.02em}
+.cls-modal-body .cm-row .v{flex:1;font-size:14px;line-height:1.65;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
+.cls-modal-body .cm-row .v.strong{font-size:17px;font-weight:700;color:var(--ul-ink);
+  box-shadow:inset 0 -8px 0 rgba(247,208,47,.45)}
+
+.cls-modal-body .cls-cta{margin-top:22px}
+.cls-modal-body .cls-cta a{width:100%;height:50px;min-height:0;border-radius:0;
+  background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);
+  font-size:14px;font-weight:600;letter-spacing:-.02em;transition:background .25s,border-color .25s}
+.cls-modal-body .cls-cta a:hover{background:var(--ul-ink);border-color:var(--ul-ink);color:#fff}
+
+/* --- 우측: 커리큘럼을 드롭다운 없이 박스 블록으로 --- */
+.cls-modal-body .cm-right .acc{border:none;display:grid;gap:10px}
+.cls-modal-body .cm-right .acc-item{border:1px solid #E2DDD5;background:#fff;padding:16px 18px}
+.cls-modal-body .cm-right .acc-item:not(:last-child){border-bottom:1px solid #E2DDD5}
+.cls-modal-body .cm-right .acc-q{padding:0 0 8px;font-size:14px;cursor:default;pointer-events:none;
+  border-left:3px solid #F7D02F;padding-left:10px}
+.cls-modal-body .cm-right .acc-a{display:block;padding:0 0 0 13px;font-size:13px;line-height:1.8}
+.cls-modal-body .cm-right .acc-a strong{color:var(--ul-ink);font-weight:700;
+  box-shadow:inset 0 -7px 0 rgba(247,208,47,.45)}
+.cls-modal-body .cm-right .stepbar{grid-template-columns:1fr;border:1px solid #E2DDD5;margin-top:0;background:#fff}
+.cls-modal-body .cm-right .stepbar > div{padding:14px 18px}
+.cls-modal-body .cm-right .stepbar > div:not(:last-child){border-bottom:1px solid #ece8e1}
+.cls-modal-body .cm-right .stepbar > div::after{display:none}
+.cls-modal-body .cm-right .stepbar .n{font-size:12px;color:#8A7400;margin-bottom:6px}
+.cls-modal-body .cm-right .stepbar h4{font-size:14px;margin-bottom:5px}
+
+/* 닫기 버튼도 옐로우 */
+.rv-close:hover{background:#F7D02F;border-color:#F7D02F;color:var(--ul-ink)}
+
+@media screen and (max-width:900px){
+  .cls-modal-body .cm-split{grid-template-columns:1fr;gap:24px}
+  .cls-modal-body .cls-head h3{font-size:19px}
+  .cls-modal-body .cm-row .k{flex:0 0 62px}
+  .cls-modal-body .cls-cta a{height:46px}
+  .cls-modal-body .cm-right .acc-item{padding:14px 15px}
+}

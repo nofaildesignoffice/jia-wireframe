@@ -41,14 +41,61 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
   var body=modal.querySelector('.cls-modal-body');
   if(!body) return;
 
+  /* 복제한 탭 패널을 모달용 2단 구조로 재조립한다.
+     좌: 제목·칩·정보·신청 버튼 / 우: 커리큘럼(드롭다운 없이 전부 펼침) */
+  function restructure(){
+    var head=body.querySelector('.cls-head'),
+        cols=body.querySelector('.cls-cols');
+    if(!cols) return;
+    var left=document.createElement('div'); left.className='cm-left';
+    var right=document.createElement('div'); right.className='cm-right';
+
+    if(head) left.appendChild(head);
+
+    var tbl=cols.querySelector('.tbl');
+    if(tbl){
+      var info=document.createElement('div'); info.className='cm-info';
+      tbl.querySelectorAll('tr').forEach(function(tr){
+        var th=tr.querySelector('th'), td=tr.querySelector('td');
+        if(!th || !td) return;
+        var row=document.createElement('div'); row.className='cm-row';
+        var k=document.createElement('span'); k.className='k'; k.textContent=th.textContent.trim();
+        var v=document.createElement('span'); v.className='v'; v.innerHTML=td.innerHTML;
+        if(td.classList.contains('strong')) v.classList.add('strong');
+        row.appendChild(k); row.appendChild(v);
+        info.appendChild(row);
+      });
+      left.appendChild(info);
+      tbl.parentNode.removeChild(tbl);
+    }
+    var cta=cols.querySelector('.cls-cta');
+    if(cta) left.appendChild(cta);
+
+    /* 남은 것(커리큘럼 아코디언·스텝바)은 오른쪽으로. 빈 래퍼는 내용만 꺼낸다. */
+    while(cols.firstChild){
+      var n=cols.firstChild;
+      cols.removeChild(n);
+      if(n.nodeType!==1) continue;
+      if(n.classList.contains('acc') || n.classList.contains('stepbar')) right.appendChild(n);
+      else while(n.firstChild){
+        var c=n.firstChild; n.removeChild(c);
+        if(c.nodeType===1) right.appendChild(c);
+      }
+    }
+    /* 아코디언을 전부 펼치고 토글 마커를 없앤다 */
+    right.querySelectorAll('.acc-item').forEach(function(it){ it.classList.add('is-open') });
+    right.querySelectorAll('.acc-q .mk').forEach(function(m){ m.parentNode.removeChild(m) });
+
+    cols.className='cm-split';
+    cols.appendChild(left);
+    cols.appendChild(right);
+  }
+
   function open(id){
     var src=document.getElementById(id);
     if(!src) return;
     body.innerHTML=src.innerHTML;
-    /* 복제본에는 이벤트가 따라오지 않으므로 아코디언을 다시 묶는다 */
-    body.querySelectorAll('.acc-q').forEach(function(q){
-      q.onclick=function(){q.parentElement.classList.toggle('is-open')};
-    });
+    restructure();
     modal.hidden=false;
     document.body.style.overflow='hidden';
     var box=modal.querySelector('.rv-box');
