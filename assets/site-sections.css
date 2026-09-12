@@ -1206,4 +1206,13 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .rv-dnote{margin-top:22px;padding:16px 18px}
   .rv-dnote p{font-size:13px}
   .cls-modal-body{padding:24px 20px 28px}
+
+  /* --- 비교표 모바일 (위의 새 표 규칙이 기존 모바일 값을 덮어쓰므로 다시 선언) --- */
+  .cmp th,.cmp td{padding:4vw 3.2vw}
+  .cmp thead th{font-size:3.2vw;padding-bottom:4vw}
+  .cmp tbody th{width:22vw;font-size:3.2vw}
+  .cmp tbody td{font-size:3.4666666667vw}
+
+  /* Process 3번째 카드 이미지도 같은 높이로 (데스크탑 모양 규칙이 더 구체적이라 재선언) */
+  .special_section .cont .box:nth-child(3) .img{height:72vw;margin-top:0;margin-bottom:6.4vw}
 }
