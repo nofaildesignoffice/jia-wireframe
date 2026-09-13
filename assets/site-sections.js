@@ -58,7 +58,8 @@ function jiaClassParts(id){
   });
   var head=tmp.querySelector('.cls-head');
   var cta=tmp.querySelector('.cls-cta a');
-  return {rows:rows, items:items, head:head, cta:cta};
+  var quote=tmp.querySelector('.cls-quote');
+  return {rows:rows, items:items, head:head, cta:cta, quote:quote};
 }
 function jiaEsc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
@@ -105,8 +106,9 @@ function jiaRenderClass(target, id, opts){
     if(chips) chips.parentNode.removeChild(chips);
     if(d.head.children.length) target.appendChild(d.head);
   }
-  if(d.rows.length){
-    target.insertAdjacentHTML('beforeend','<div class="cm-info">'+d.rows.map(function(r){
+  var infoRows=d.rows.filter(function(r){ return !r.strong });  /* 수강료는 왼쪽 결제 금액에 있으므로 제외 */
+  if(infoRows.length){
+    target.insertAdjacentHTML('beforeend','<div class="cm-info">'+infoRows.map(function(r){
       return '<div class="cm-row"><span class="k">'+jiaEsc(r.k)+'</span><span class="v'+(r.strong?' strong':'')+'">'+r.v+'</span></div>';
     }).join('')+'</div>');
   }
@@ -114,7 +116,7 @@ function jiaRenderClass(target, id, opts){
     target.insertAdjacentHTML('beforeend','<div class="cm-right"><div class="acc">'+d.items.map(function(it){
       return '<div class="acc-item is-open"><button class="acc-q">'+jiaEsc(it.q)+'</button><div class="acc-a">'+it.a+'</div></div>';
     }).join('')+'</div></div>');
-  }
+  }  if(d.quote) target.insertAdjacentHTML('beforeend','<p class="cls-quote">'+d.quote.innerHTML+'</p>');
 }
 
 document.querySelectorAll('[data-cls-src]').forEach(function(el){

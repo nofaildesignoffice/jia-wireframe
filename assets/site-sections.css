@@ -1428,3 +1428,8 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .partner_cta .label{color:rgba(255,255,255,.75)}
 .partner_cta h3{color:#fff}
 .partner_cta p{color:rgba(255,255,255,.85)}
+
+/* 결제 모달 상세 — 정보 항목을 한 박스로, 소개문·마무리 인용 */
+.pay-detail .cls-head .desc{margin-top:10px;font-size:13px;line-height:1.75;color:#6B6660;letter-spacing:-.02em;word-break:keep-all}
+.pay-detail .cm-info{border:1px solid #E2DDD5;background:#fff;padding:18px 20px;margin:0 0 18px}
+.pay-detail .cls-quote{margin-top:18px;padding-top:16px;border-top:1px solid #E2DDD5;font-size:14px;font-weight:600;color:var(--ul-ink);line-height:1.6;letter-spacing:-.02em}
