@@ -1331,3 +1331,7 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .core-clinic .clinic .right{display:block}
   .core-clinic .clinic .right .sig-ph{width:100%;height:auto;aspect-ratio:16/9}
 }
+
+/* How It Works 카드 사진 */
+.premium_section .cont .box .pm-img.has-photo{padding:0;overflow:hidden}
+.premium_section .cont .box .pm-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
