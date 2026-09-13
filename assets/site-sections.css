@@ -1220,7 +1220,8 @@ section.tone-b{background-color:var(--ul-cream-2)}
 /* ==========================================================================
    결제 클래스 선택 모달
    ========================================================================== */
-.rv-box.pay-box{max-width:1040px;max-height:86dvh;overflow:hidden;display:flex;flex-direction:column}
+#payModal{padding:20px 24px}
+.rv-box.pay-box{max-width:1040px;height:92dvh;max-height:92dvh;overflow:hidden;display:flex;flex-direction:column}
 .pay-split{display:grid;grid-template-columns:minmax(300px,36%) 1fr;align-items:stretch;flex:1;min-height:0}
 .pay-side{padding:40px 32px 36px;border-right:1px solid #E2DDD5;min-height:0;overflow-y:auto}
 .pay-side h3{font-size:20px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;margin-bottom:8px}
@@ -1276,7 +1277,8 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .pay-btn.is-disabled:hover{background:#ECE8E1;border-color:#ECE8E1;color:#A9A49B}
 
 @media screen and (max-width:900px){
-  .rv-box.pay-box{display:block;max-height:88dvh;overflow-y:auto}
+  #payModal{padding:12px}
+  .rv-box.pay-box{display:block;height:auto;max-height:94dvh;overflow-y:auto}
   .pay-split{display:block}
   .pay-side{padding:28px 22px 26px;border-right:none;border-bottom:1px solid #E2DDD5;overflow:visible}
   .pay-side h3{font-size:18px}
