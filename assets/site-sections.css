@@ -1314,3 +1314,15 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .core-clinic .clinic .right .sig-ph svg{width:12vw;height:12vw}
   .core-clinic .clinic .right .sig-ph span{font-size:3.2vw;bottom:5vw}
 }
+
+/* Core(clinic) — 좌측 세로선 없이, 영상과 20px 간격, 영상은 16:9 */
+.core-clinic .clinic{justify-content:flex-start;gap:20px;align-items:center}
+.core-clinic .clinic .left{border-left:none;padding-left:0;width:auto;flex:1;min-width:0}
+.core-clinic .clinic .right{align-self:center;flex:0 0 auto}
+.core-clinic .clinic .right .sig-ph{width:46.875vw;height:auto;aspect-ratio:16/9}
+
+@media screen and (max-width:900px){
+  .core-clinic .clinic{gap:0}
+  .core-clinic .clinic .left{flex:none;width:100%}
+  .core-clinic .clinic .right .sig-ph{width:100%;height:auto;aspect-ratio:16/9}
+}
