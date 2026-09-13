@@ -16,6 +16,8 @@
 .tv_section .title{padding-top:4.53125vw;text-align:center}
 .tv_section .title h3{font-family:"JiaNum","Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#090909;line-height:1;letter-spacing:-.02em}
 .tv_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;line-height:1.7;letter-spacing:-.02em}
+/* 제목 아래 설명 문장 — 다른 섹션(.title span)과 같은 규칙 */
+.tv_section .title span{font-size:.9375vw;font-weight:400;line-height:1.6;color:#4A453F;display:block;word-break:keep-all;margin-top:.4166666667vw;letter-spacing:-.02em}
 .tv_section .slide_contain{margin-top:4.0104166667vw;position:relative;padding:0 6.25vw}
 
 /* 카드: 상자 대신 이미지 + 하단 텍스트, 가운데 카드만 밝게 */
@@ -42,6 +44,8 @@
   .tv_section .title{padding-top:16vw}
   .tv_section .title h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .tv_section .title p{font-size:4vw;word-break:keep-all;padding:0 5.3333333333vw}
+  .tv_section .title:has(> span) p{font-size:4.2666666667vw;line-height:1.5}
+  .tv_section .title span{font-size:3.4666666667vw;margin-top:2.1333333333vw;padding:0 5.3333333333vw}
   .tv_section .slide_contain{margin-top:10.6666666667vw;padding:0 5.3333333333vw}
   .tv_section .rv-card{flex:0 0 100%}
   .tv_section .rv-nav{display:none}
@@ -667,12 +671,15 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
   .gridline_section .acc-wrap{padding:0 5.3333333333vw}
 
   .fixcta{bottom:0;padding:0}
-  .fixcta-inner{width:100%;flex-direction:column;align-items:stretch;gap:3.7vw;padding:5vw 5.3vw;text-align:center}
-  .fixcta .copy{font-size:4vw}
-  .fixcta .copy span{font-size:3.4666666667vw;margin-top:1.6vw}
-  .fixcta-inner > a{width:100%;height:12.8vw;font-size:4vw}
-  body.has-fixcta .top-btn{bottom:170px}
+  /* 모바일: 텍스트 왼쪽, 버튼 오른쪽 한 줄 바 */
+  .fixcta-inner{width:100%;flex-direction:row;align-items:center;gap:3.2vw;padding:3.2vw 5.3333333333vw;text-align:left}
+  .fixcta .copy{flex:1;min-width:0;font-size:3.4666666667vw;line-height:1.35;word-break:keep-all}
+  .fixcta .copy span{font-size:2.9333333333vw;margin-top:.8vw}
+  .fixcta-inner > a{width:auto;min-height:0;height:10.6666666667vw;padding:0 4.8vw;font-size:3.4666666667vw}
+  .fixcta-inner > a .fc-full{display:none}
+  body.has-fixcta .top-btn{bottom:calc(16vw + 16px)}
 }
+.fixcta-inner > a .fc-full{white-space:pre}
 
 /* Care 그리드 — 실제 제품 이미지 (박스에 꽉 채우고 넘치는 부분은 잘라냄) */
 .care_section .cont .box .img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
