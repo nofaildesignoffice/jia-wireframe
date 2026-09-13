@@ -641,7 +641,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .gridline_section .acc-wrap{max-width:1200px;margin:0 auto;padding:0 6.25vw}
 
 /* 하단 고정 CTA — 유라인 톤 */
-.fixcta{position:fixed;left:0;right:0;bottom:24px;z-index:95;padding:0 24px;display:none}
+.fixcta{position:fixed;left:0;right:0;bottom:24px;z-index:98;padding:0 24px;display:none}
 .fixcta.is-show{display:block}
 .fixcta-inner{width:60vw;max-width:none;margin:0 auto;background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink));display:flex;align-items:center;justify-content:space-between;gap:2vw;padding:1.25vw 1.8vw}
 .fixcta .copy{font-size:1.0416666667vw;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.4}

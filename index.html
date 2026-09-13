@@ -9,7 +9,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css?v=64629ba8" rel="stylesheet">
 <link href="assets/site-intro.css?v=96b91366" rel="stylesheet">
-<link href="assets/site-sections.css?v=fbe2972b" rel="stylesheet">
+<link href="assets/site-sections.css?v=f3c20bc7" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 :root{
@@ -103,10 +103,11 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .mv-bullet{width:100%;height:0;opacity:1;outline:none;position:relative;display:block;text-align:left;padding:0}
 .mv-bullet:nth-child(n+2){margin-top:10px}
 .mv-bullet > p{width:0;display:flex;font-family:"Erode","Pretendard",serif;font-size:1.3020833333vw;color:#090909;letter-spacing:-.025em;padding-left:14px;position:relative;white-space:nowrap;transition:padding-left .4s}
-.mv-bullet > p span{display:none;padding-left:17px}
+/* 비활성 슬라이드명도 노출 — 작게, 반투명 */
+.mv-bullet > p span{display:block;padding-left:12px;font-size:.7291666667vw;opacity:.45;transition:opacity .4s,font-size .4s,padding-left .4s}
 .mv-bullet::before{width:25px;height:1px;transform:translateY(-50%);background:#090909;left:0;bottom:-32px;content:'';position:absolute;transition:width .4s}
 .mv-bullet.is-active > p{width:auto;padding-left:38px}
-.mv-bullet.is-active > p span{display:block}
+.mv-bullet.is-active > p span{padding-left:17px;font-size:1.3020833333vw;opacity:1}
 .mv-bullet.is-active::before{width:50px}
 .mv-bullet.white > p{color:#fff}
 .mv-bullet.white::before{background:#fff}
