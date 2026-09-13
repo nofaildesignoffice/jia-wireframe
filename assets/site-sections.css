@@ -12,7 +12,7 @@
 }
 
 /* ===== 후기 — 유라인 TV 영상 스타일 ===== */
-.tv_section{background-color:var(--ul-cream-2);background-image:url(../assets/bg-tv.png?v=e99f3f60);background-repeat:no-repeat;background-position:center center;background-size:cover;padding-bottom:5.2vw}
+.tv_section{background-color:var(--ul-cream-2);background-image:url(../assets/bg-tv.webp?v=26128fb7);background-repeat:no-repeat;background-position:center center;background-size:cover;padding-bottom:5.2vw}
 .tv_section .title{padding-top:4.53125vw;text-align:center}
 .tv_section .title h3{font-family:"JiaNum","Erode","Pretendard",serif;font-size:4.1666666667vw;font-weight:400;margin-bottom:.4166666667vw;color:#090909;line-height:1;letter-spacing:-.02em}
 .tv_section .title p{font-size:1.0416666667vw;font-weight:600;color:#000;line-height:1.7;letter-spacing:-.02em}
@@ -38,7 +38,7 @@
   .tv_section .rv-card{flex:0 0 calc((100% - 3.6vw)/2)}
 }
 @media screen and (max-width:900px){
-  .tv_section{background-image:url(../assets/bg-tv-m.png?v=3cb5b9ee);padding-bottom:16vw}
+  .tv_section{background-image:url(../assets/bg-tv-m.webp?v=7e475bc1);padding-bottom:16vw}
   .tv_section .title{padding-top:16vw}
   .tv_section .title h3{font-size:9.6vw;margin-bottom:2.1333333333vw}
   .tv_section .title p{font-size:4vw;word-break:keep-all;padding:0 5.3333333333vw}
@@ -284,7 +284,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 }
 
 /* ===== 뉴스레터 CTA — 유라인 톤앤매너 ===== */
-.letter_section{background:url(../assets/cta-letter.jpg?v=c5d57068) no-repeat center center/cover;padding:7.8vw 0;text-align:center;position:relative}
+.letter_section{background:url(../assets/cta-letter.webp?v=e5b051d0) no-repeat center center/cover;padding:7.8vw 0;text-align:center;position:relative}
 /* 검은색 45% 오버레이 */
 .letter_section::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);pointer-events:none}
 .letter_section .letter-inner{padding:0 24px;position:relative;z-index:1}
@@ -313,8 +313,8 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
   background:linear-gradient(180deg,rgba(20,17,17,.34) 0%,rgba(20,17,17,.48) 55%,rgba(20,17,17,.58) 100%)}
 /* 사진이 없는 경우 기존 다크 그라데이션 유지 */
 .subhero_section:not([class*="bg-"]){background-image:linear-gradient(to bottom,var(--ul-ink-2),var(--ul-ink))}
-.subhero_section.bg-exp{background-image:url(../assets/hero-01.jpg?v=3cd36300)}
-.subhero_section.bg-startup{background-image:url(../assets/hero-02.jpg?v=cc59c505)}
+.subhero_section.bg-exp{background-image:url(../assets/hero-01.webp?v=fe02d011)}
+.subhero_section.bg-startup{background-image:url(../assets/hero-02.webp?v=71811ffa)}
 .subhero_section .inner{padding:0 24px;max-width:1200px;margin:0 auto;position:relative;z-index:1}
 .subhero_section .label{font-family:"JiaNum","Erode","Pretendard",serif;font-size:1.0416666667vw;color:var(--ul-sub);letter-spacing:.06em;margin-bottom:1.1vw}
 .subhero_section h1{font-size:2.6041666667vw;font-weight:700;color:#fff;line-height:1.38;letter-spacing:-.03em;margin-bottom:1.4vw;word-break:keep-all}
@@ -1067,10 +1067,10 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .mainVisual .hero-img{position:absolute;inset:0;background-repeat:no-repeat;background-position:center center;background-size:cover}
 .mainVisual .hero-img::after{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(20,17,17,.34) 0%,rgba(20,17,17,.48) 55%,rgba(20,17,17,.58) 100%)}
-.mainVisual .hero-img.h1{background-image:url(../assets/hero-01.jpg?v=3cd36300)}
-.mainVisual .hero-img.h2{background-image:url(../assets/hero-02.jpg?v=cc59c505)}
-.mainVisual .hero-img.h3{background-image:url(../assets/hero-03.jpg?v=cba4dfcb)}
-.mainVisual .hero-img.h4{background-image:url(../assets/hero-04.jpg?v=47212d33)}
+.mainVisual .hero-img.h1{background-image:url(../assets/hero-01.webp?v=fe02d011)}
+.mainVisual .hero-img.h2{background-image:url(../assets/hero-02.webp?v=71811ffa)}
+.mainVisual .hero-img.h3{background-image:url(../assets/hero-03.webp?v=910209ed)}
+.mainVisual .hero-img.h4{background-image:url(../assets/hero-04.webp?v=97690a95)}
 
 /* ==========================================================================
    후기 상세 모달 — 사이트 톤앤매너
@@ -1422,7 +1422,7 @@ section.tone-b{background-color:var(--ul-cream-2)}
 }
 
 /* 파트너 스토어 CTA — 배경 사진 + 검정 반투명 오버레이 */
-.letterbanner_section.partner_cta{position:relative;background:#1F1B1B url(../assets/cta-hbt.jpg?v=4b0abd65) no-repeat center bottom/cover}
+.letterbanner_section.partner_cta{position:relative;background:#1F1B1B url(../assets/cta-hbt.webp?v=7eda93d7) no-repeat center bottom/cover}
 .partner_cta::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none}
 .partner_cta .inner{position:relative;z-index:1}
 .partner_cta .label{color:rgba(255,255,255,.75)}
