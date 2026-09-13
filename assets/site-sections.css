@@ -1305,3 +1305,48 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .core-split .cont.steps .box h4{font-size:3.7333333333vw;margin-bottom:2.4vw}
   .core-split .cont.steps .box p{font-size:3.2vw}
 }
+
+/* 고정 CTA 버튼 — 라운딩 없는 옐로우 */
+.fixcta-inner > a{border-radius:0;background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);font-weight:600}
+.fixcta-inner > a:hover{background:#fff;border-color:#fff;color:var(--ul-ink)}
+
+/* ==========================================================================
+   결제 클래스 선택 모달
+   ========================================================================== */
+.rv-box.pay-box{max-width:520px}
+.pay-body{padding:40px 36px 36px}
+.pay-body h3{font-size:20px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;margin-bottom:8px}
+.pay-body .pay-lead{font-size:14px;color:var(--ul-stone);line-height:1.6;margin-bottom:22px}
+
+.pay-list{display:grid;gap:8px}
+.pay-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid #d8d3ca;background:#fff;
+  cursor:pointer;transition:border-color .2s,background .2s}
+.pay-opt:hover{border-color:var(--ul-ink)}
+.pay-opt.is-on{border-color:#F7D02F;background:rgba(247,208,47,.14)}
+.pay-opt input{-webkit-appearance:none;appearance:none;flex-shrink:0;width:16px;height:16px;border-radius:50%;
+  border:1px solid #b3aea5;background:#fff;cursor:pointer;transition:all .2s}
+.pay-opt.is-on input{border:5px solid #F7D02F}
+.pay-opt .txt{flex:1;display:flex;flex-direction:column;gap:3px}
+.pay-opt .nm{font-size:14px;font-weight:600;color:var(--ul-ink);letter-spacing:-.02em}
+.pay-opt .sub{font-size:12px;color:var(--ul-stone)}
+.pay-opt .pr{font-size:14px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;flex-shrink:0}
+
+.pay-total{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  margin-top:22px;padding-top:18px;border-top:1px solid #d1d1d1}
+.pay-total .k{font-size:13px;font-weight:600;color:var(--ul-stone)}
+.pay-total .v{font-size:22px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em}
+.pay-total .v:not(:empty){text-align:right}
+
+.pay-btn{display:flex;align-items:center;justify-content:center;width:100%;height:52px;margin-top:18px;
+  border-radius:0;background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);
+  font-size:15px;font-weight:700;letter-spacing:-.02em;transition:background .25s,border-color .25s,color .25s}
+.pay-btn:hover{background:var(--ul-ink);border-color:var(--ul-ink);color:#fff}
+.pay-btn.is-disabled{background:#ECE8E1;border-color:#ECE8E1;color:#A9A49B;cursor:not-allowed;pointer-events:auto}
+.pay-btn.is-disabled:hover{background:#ECE8E1;border-color:#ECE8E1;color:#A9A49B}
+
+@media screen and (max-width:900px){
+  .pay-body{padding:28px 22px 26px}
+  .pay-body h3{font-size:18px}
+  .pay-total .v{font-size:19px}
+  .pay-btn{height:48px;font-size:14px}
+}

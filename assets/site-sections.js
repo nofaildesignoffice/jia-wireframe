@@ -146,3 +146,54 @@ document.querySelectorAll('.rv').forEach(function(rv){
     x0=null;
   },{passive:true});
 });
+
+/* ==========================================================================
+   결제 클래스 선택 모달 — 과정을 고르면 금액이 뜨고 결제 버튼이 열린다.
+   ========================================================================== */
+(function(){
+  var modal=document.getElementById('payModal');
+  if(!modal) return;
+  var priceEl=modal.querySelector('#payPrice'),
+      btn=modal.querySelector('#payBtn');
+
+  function open(){
+    modal.hidden=false;
+    document.body.style.overflow='hidden';
+    if(window.lucide) lucide.createIcons();
+  }
+  function close(){
+    modal.hidden=true;
+    document.body.style.overflow='';
+  }
+  function reset(){
+    modal.querySelectorAll('input[name="payClass"]').forEach(function(r){ r.checked=false });
+    modal.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('is-on') });
+    if(priceEl) priceEl.textContent='과정을 선택해주세요';
+    if(btn){ btn.classList.add('is-disabled'); btn.setAttribute('aria-disabled','true'); btn.setAttribute('href','#'); }
+  }
+
+  document.querySelectorAll('[data-pay-open]').forEach(function(b){
+    b.onclick=function(e){ e.preventDefault(); reset(); open(); };
+  });
+  modal.querySelectorAll('[data-pay-close]').forEach(function(x){
+    x.onclick=function(e){ e.stopPropagation(); close(); };
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && !modal.hidden) close();
+  });
+
+  modal.querySelectorAll('input[name="payClass"]').forEach(function(r){
+    r.onchange=function(){
+      modal.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('is-on') });
+      var opt=r.closest('.pay-opt');
+      if(opt) opt.classList.add('is-on');
+      if(priceEl) priceEl.textContent=r.getAttribute('data-price');
+      if(btn){
+        btn.classList.remove('is-disabled');
+        btn.removeAttribute('aria-disabled');
+        btn.setAttribute('href','page_11.html?class='+r.value);
+      }
+    };
+  });
+  if(btn) btn.onclick=function(e){ if(btn.classList.contains('is-disabled')) e.preventDefault(); };
+})();
