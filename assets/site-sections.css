@@ -1121,16 +1121,18 @@ section.tone-b{background-color:var(--ul-cream-2)}
 
 /* APPLY 카드 — 클릭 가능 + 자세히 보기 */
 .pm-slide[data-cls]{cursor:pointer}
-.pm-slide .more{display:inline-flex;align-items:center;margin-top:1.1vw;padding:0;border:none;background:none;
-  font-family:inherit;font-size:.8333333333vw;font-weight:600;letter-spacing:-.02em;color:var(--ul-brown);
-  border-bottom:1px solid transparent;transition:color .25s,border-color .25s;cursor:pointer}
-.pm-slide:hover .more{border-bottom-color:var(--ul-brown)}
+/* 자세히 보기 — 이미지와 같은 가로폭의 네모 박스 버튼 */
+.pm-slide .more{display:flex;align-items:center;justify-content:center;width:100%;height:2.8125vw;min-height:42px;
+  margin-top:1.25vw;padding:0;border-radius:0;border:1px solid #c6c2ba;background:none;
+  font-family:inherit;font-size:.8333333333vw;font-weight:600;letter-spacing:-.02em;color:var(--ul-ink);
+  transition:background .25s,border-color .25s;cursor:pointer}
+.pm-slide:hover .more,.pm-slide .more:hover{background:#F7D02F;border-color:#F7D02F}
 
 @media (max-width:1024px){
   .cls-modal-body{padding:32px 28px 40px}
 }
 @media screen and (max-width:900px){
-  .pm-slide .more{margin-top:3.2vw;font-size:3.4666666667vw}
+  .pm-slide .more{margin-top:4.2666666667vw;height:12vw;font-size:3.4666666667vw}
 }
 
 /* ==========================================================================
@@ -1258,4 +1260,48 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .cls-modal-body .cm-row .k{flex:0 0 62px}
   .cls-modal-body .cls-cta a{height:46px}
   .cls-modal-body .cm-right .acc-item{padding:14px 15px}
+}
+
+/* ==========================================================================
+   Core — 좌 영상 / 우 텍스트 2단 (전폭 분할)
+   ========================================================================== */
+.gridline_section.core-split{padding:0;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+
+/* 좌: 영상 패널이 섹션 높이를 꽉 채운다 */
+.core-split .core-media{grid-column:1;grid-row:1 / span 2;width:auto;max-width:none;margin:0;padding:0;background:#EFE7DA}
+.core-split .core-ph{width:100%;height:100%;aspect-ratio:auto;background:#EFE7DA;gap:1.4vw}
+.core-split .core-ph svg{width:3.3vw;height:3.3vw;min-width:44px;min-height:44px;opacity:.55}
+.core-split .core-ph span{font-size:.7291666667vw;margin-top:0}
+
+/* 우: 타이틀 + 스텝 */
+.core-split .title{grid-column:2;grid-row:1;text-align:left;margin:0;
+  padding:5.2vw 6.25vw 0 4.6875vw;align-self:end}
+.core-split .title h3{font-size:4.1666666667vw;margin-bottom:1.2vw}
+.core-split .title p{font-size:1.0416666667vw;font-weight:700;color:var(--ul-ink);margin:0 0 1.4vw}
+.core-split .title span{font-size:.8854166667vw;line-height:1.9;color:#4A453F}
+
+.core-split .cont.steps{grid-column:2;grid-row:2;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.6vw;align-items:start;border:none;width:auto;margin:0;
+  padding:4.2vw 6.25vw 5.2vw 4.6875vw}
+.core-split .cont.steps .box{width:auto;padding:0;text-align:center;border:none;background:none}
+.core-split .cont.steps .box::after{display:none}
+.core-split .cont.steps .box .n{font-size:.9375vw;font-weight:700;color:var(--ul-ink);letter-spacing:.02em;margin-bottom:.9vw}
+.core-split .cont.steps .box h4{font-size:.8854166667vw;font-weight:700;color:var(--ul-ink);margin-bottom:.9vw;letter-spacing:-.02em}
+.core-split .cont.steps .box p{font-size:.78125vw;line-height:1.6;color:#6B6660;word-break:keep-all}
+
+@media screen and (max-width:900px){
+  .gridline_section.core-split{grid-template-columns:1fr}
+  .core-split .core-media{grid-column:1;grid-row:1}
+  .core-split .core-ph{aspect-ratio:16/9;height:auto}
+  .core-split .core-ph svg{width:12vw;height:12vw}
+  .core-split .core-ph span{font-size:3.2vw;padding:0 6vw}
+  .core-split .title{grid-column:1;grid-row:2;padding:12vw 5.3333333333vw 0}
+  .core-split .title h3{font-size:9.6vw;margin-bottom:3.2vw}
+  .core-split .title p{font-size:4.2666666667vw;margin-bottom:3.2vw}
+  .core-split .title span{font-size:3.4666666667vw;line-height:1.7}
+  .core-split .cont.steps{grid-column:1;grid-row:3;grid-template-columns:repeat(2,1fr);
+    gap:8vw 5.3333333333vw;padding:10.6666666667vw 5.3333333333vw 16vw}
+  .core-split .cont.steps .box .n{font-size:3.7333333333vw;margin-bottom:2.4vw}
+  .core-split .cont.steps .box h4{font-size:3.7333333333vw;margin-bottom:2.4vw}
+  .core-split .cont.steps .box p{font-size:3.2vw}
 }
