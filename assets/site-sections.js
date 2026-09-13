@@ -88,11 +88,20 @@ function jiaRenderClass(target, id, opts){
   keep.querySelectorAll('.acc-q .mk').forEach(function(m){ m.parentNode.removeChild(m) });
   cols.parentNode.replaceChild(keep, cols);
   if(opts.keepCta && cta) target.appendChild(cta);
+
+  /* part 로 일부만 남긴다 — 'info'(정보+CTA) / 'curriculum'(커리큘럼) */
+  if(opts.part==='info'){
+    var k=target.querySelector('.cm-right');
+    if(k) k.parentNode.removeChild(k);
+  } else if(opts.part==='curriculum'){
+    target.querySelectorAll('.cls-head,.cm-info,.cls-cta').forEach(function(x){ x.parentNode.removeChild(x) });
+  }
 }
 
 /* 정적 상세 섹션 (창업반 Class 섹션) */
 document.querySelectorAll('[data-cls-src]').forEach(function(el){
-  jiaRenderClass(el, el.getAttribute('data-cls-src'), {keepCta:true});
+  var part=el.getAttribute('data-cls-part') || '';
+  jiaRenderClass(el, el.getAttribute('data-cls-src'), {keepCta:part!=='curriculum', part:part});
 });
 
 (function(){

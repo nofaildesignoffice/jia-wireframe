@@ -1375,3 +1375,31 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .clsview .cls-view .cm-right .acc-q{font-size:4vw;padding-bottom:2.4vw}
   .clsview .cls-view .cm-right .acc-a{font-size:3.4666666667vw}
 }
+
+/* 창업반 Class 섹션 — 좌 정보 / 우 교재·초기재료 */
+.clsview .cls-view .cv-info{grid-column:1}
+.clsview .cls-view .cv-extra{grid-column:2}
+.clsview .cls-view .cv-extra .block-title{max-width:none;margin:0 0 1vw;padding:0}
+.clsview .cls-view .cv-extra .block-title.mt{margin-top:2.6vw}
+.clsview .cls-view .cv-extra .acc-wrap{max-width:none;margin:0;padding:0}
+.clsview .cls-view .cv-extra .bookline .bk{width:25%}
+
+/* 커리큘럼 섹션 */
+.gridline_section.curriculum{background:var(--ul-cream-2)}
+.curriculum .curr-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.curriculum .curr-wrap .cm-right .acc{border:none;border-radius:0;overflow:visible;background:none;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:.9vw}
+.curriculum .curr-wrap .cm-right .acc-item{border:1px solid #E2DDD5;background:#fff;padding:1.3vw 1.4vw}
+.curriculum .curr-wrap .cm-right .acc-q{padding:0 0 .5vw;font-size:.9375vw;cursor:default;pointer-events:none;border:none}
+.curriculum .curr-wrap .cm-right .acc-a{display:block;padding:0;font-size:.8333333333vw;line-height:1.8}
+
+@media screen and (max-width:900px){
+  .clsview .cls-view .cv-info,
+  .clsview .cls-view .cv-extra{grid-column:1}
+  .clsview .cls-view .cv-extra .block-title.mt{margin-top:8vw}
+  .curriculum .curr-wrap{padding:0 5.3333333333vw}
+  .curriculum .curr-wrap .cm-right .acc{grid-template-columns:1fr;gap:3.2vw}
+  .curriculum .curr-wrap .cm-right .acc-item{padding:4.8vw 4.2vw}
+  .curriculum .curr-wrap .cm-right .acc-q{font-size:4vw;padding-bottom:2.4vw}
+  .curriculum .curr-wrap .cm-right .acc-a{font-size:3.4666666667vw}
+}
