@@ -1262,49 +1262,8 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .cls-modal-body .cm-right .acc-item{padding:14px 15px}
 }
 
-/* ==========================================================================
-   Core — 좌 영상 / 우 텍스트 2단 (전폭 분할)
-   ========================================================================== */
-.gridline_section.core-split{padding:0;display:grid;grid-template-columns:44% 1fr;grid-template-rows:auto auto;align-items:stretch;align-content:start}
 
-/* 좌: 영상 패널이 섹션 높이를 꽉 채운다 */
-.core-split .core-media{grid-column:2;grid-row:1 / span 2;width:auto;max-width:none;margin:0;padding:0;background:#EFE7DA}
-.core-split .core-ph{width:100%;height:100%;aspect-ratio:auto;background:#EFE7DA;gap:1.4vw}
-.core-split .core-ph svg{width:3.3vw;height:3.3vw;min-width:44px;min-height:44px;opacity:.55}
-.core-split .core-ph span{font-size:.7291666667vw;margin-top:0}
 
-/* 우: 타이틀 + 스텝 */
-.core-split .title{grid-column:1;grid-row:1;text-align:left;margin:0;
-  padding:4.2vw 1.6vw .6vw 6.25vw;align-self:start}
-.core-split .title h3{font-size:4.1666666667vw;margin-bottom:1.2vw}
-.core-split .title p{font-size:1.0416666667vw;font-weight:700;color:var(--ul-ink);margin:0 0 1.4vw}
-.core-split .title span{font-size:.8854166667vw;line-height:1.9;color:#4A453F}
-
-.core-split .cont.steps{grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1.6vw;align-items:start;border:none;width:auto;margin:0;
-  padding:0 1.6vw 4.2vw 6.25vw;align-self:start}
-.core-split .cont.steps .box{width:auto;padding:0;text-align:center;border:none;background:none}
-.core-split .cont.steps .box::after{display:none}
-.core-split .cont.steps .box .n{font-size:.9375vw;font-weight:700;color:var(--ul-ink);letter-spacing:.02em;margin-bottom:.9vw}
-.core-split .cont.steps .box h4{font-size:.8854166667vw;font-weight:700;color:var(--ul-ink);margin-bottom:.9vw;letter-spacing:-.02em}
-.core-split .cont.steps .box p{font-size:.78125vw;line-height:1.6;color:#6B6660;word-break:keep-all}
-
-@media screen and (max-width:900px){
-  .gridline_section.core-split{grid-template-columns:1fr}
-  .core-split .core-media{grid-column:1;grid-row:1}
-  .core-split .core-ph{aspect-ratio:16/9;height:auto}
-  .core-split .core-ph svg{width:12vw;height:12vw}
-  .core-split .core-ph span{font-size:3.2vw;padding:0 6vw}
-  .core-split .title{grid-column:1;grid-row:2;padding:12vw 5.3333333333vw 0}
-  .core-split .title h3{font-size:9.6vw;margin-bottom:3.2vw}
-  .core-split .title p{font-size:4.2666666667vw;margin-bottom:3.2vw}
-  .core-split .title span{font-size:3.4666666667vw;line-height:1.7}
-  .core-split .cont.steps{grid-column:1;grid-row:3;grid-template-columns:repeat(2,1fr);
-    gap:8vw 5.3333333333vw;padding:10.6666666667vw 5.3333333333vw 16vw}
-  .core-split .cont.steps .box .n{font-size:3.7333333333vw;margin-bottom:2.4vw}
-  .core-split .cont.steps .box h4{font-size:3.7333333333vw;margin-bottom:2.4vw}
-  .core-split .cont.steps .box p{font-size:3.2vw}
-}
 
 /* 고정 CTA 버튼 — 라운딩 없는 옐로우 */
 .fixcta-inner > a{border-radius:0;background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);font-weight:600}
@@ -1349,4 +1308,35 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .pay-body h3{font-size:18px}
   .pay-total .v{font-size:19px}
   .pay-btn{height:48px;font-size:14px}
+}
+
+/* ==========================================================================
+   Core — Signature(clinic) 레이아웃 차용. 좌 텍스트 / 우 영상.
+   ========================================================================== */
+.signature_section.core-clinic .clinic .left h3{margin-bottom:1.8vw}
+.signature_section.core-clinic .clinic .left > span{margin-top:.9vw}
+
+/* STEP 목록 — 번호 + 제목 + 설명 */
+.core-clinic .step-points{margin-top:2.6vw;border-top:1px solid #e3e0da}
+.core-clinic .step-points li{padding:1.15vw 0 1.15vw 0;border-bottom:1px solid #e3e0da;line-height:1.6}
+.core-clinic .step-points li::before{display:none}
+.core-clinic .step-points li em{display:inline-block;font-style:normal;font-family:"Erode","Pretendard",serif;
+  font-size:.8333333333vw;font-weight:600;color:var(--ul-taupe);letter-spacing:.02em;
+  width:5.2vw;vertical-align:top}
+.core-clinic .step-points li b{display:inline-block;font-size:.9375vw;font-weight:700;color:var(--ul-ink);
+  letter-spacing:-.02em;margin-right:.8vw}
+.core-clinic .step-points li{font-size:.8854166667vw;color:#4A453F}
+
+/* 우측 영상 자리 */
+.core-clinic .clinic .right .sig-ph{background:#EFE7DA}
+.core-clinic .clinic .right .sig-ph svg{width:3.3vw;height:3.3vw;min-width:48px;min-height:48px;opacity:.5}
+.core-clinic .clinic .right .sig-ph span{bottom:2vw;font-size:.7291666667vw;color:#B2B2B2;padding:0 2vw;text-align:center}
+
+@media screen and (max-width:900px){
+  .core-clinic .step-points{margin-top:8vw}
+  .core-clinic .step-points li{padding:4.8vw 0;font-size:3.4666666667vw}
+  .core-clinic .step-points li em{display:block;width:auto;font-size:3.4666666667vw;margin-bottom:1.6vw}
+  .core-clinic .step-points li b{display:block;font-size:4vw;margin:0 0 1.2vw}
+  .core-clinic .clinic .right .sig-ph svg{width:12vw;height:12vw}
+  .core-clinic .clinic .right .sig-ph span{font-size:3.2vw;bottom:5vw}
 }
