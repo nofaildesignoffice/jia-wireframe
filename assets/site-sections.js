@@ -35,73 +35,79 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
    클래스 선택 · 상세 · 결제 모달
    좌: 과정 선택 / 우: 선택한 과정의 상세(#clsSource 패널을 복제해 재조립)
    ========================================================================== */
-/* 탭 패널 마크업을 상세 표시용 한 단 구조로 재조립 — 모달과 정적 섹션이 공유 */
+/* 원본 탭 패널(#clsSource)에서 필요한 부분만 꺼내 기존 섹션 패턴으로 그려준다.
+   as:'grid'    — .cont.c3 헤어라인 그리드 (정보)
+   as:'accline' — .accline 아코디언 라인 (커리큘럼)
+   기본        — 모달용 한 단(정보 텍스트 + 커리큘럼 박스) */
+function jiaClassParts(id){
+  var src=document.getElementById(id);
+  if(!src) return null;
+  var tmp=document.createElement('div');
+  tmp.innerHTML=src.innerHTML;
+  var rows=[];
+  tmp.querySelectorAll('.tbl tr').forEach(function(tr){
+    var th=tr.querySelector('th'), td=tr.querySelector('td');
+    if(th && td) rows.push({k:th.textContent.trim(), v:td.innerHTML, strong:td.classList.contains('strong')});
+  });
+  var items=[];
+  tmp.querySelectorAll('.acc-item').forEach(function(it){
+    var q=it.querySelector('.acc-q'), a=it.querySelector('.acc-a');
+    if(!q || !a) return;
+    var mk=q.querySelector('.mk'); if(mk) mk.parentNode.removeChild(mk);
+    items.push({q:q.textContent.trim(), a:a.innerHTML});
+  });
+  var head=tmp.querySelector('.cls-head');
+  var cta=tmp.querySelector('.cls-cta a');
+  return {rows:rows, items:items, head:head, cta:cta};
+}
+function jiaEsc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
 function jiaRenderClass(target, id, opts){
   opts=opts||{};
-  var src=document.getElementById(id);
-  if(!target) return;
-  if(!src){ target.innerHTML=''; return; }
-  target.innerHTML=src.innerHTML;
+  var d=jiaClassParts(id);
+  if(!target || !d){ if(target) target.innerHTML=''; return; }
 
-  var head=target.querySelector('.cls-head');
-  if(head){
-    var chips=head.querySelector('.chips');
-    if(chips) chips.parentNode.removeChild(chips);
-    if(!head.children.length) head.parentNode.removeChild(head);
+  if(opts.as==='grid'){
+    target.className='cont c3';
+    target.innerHTML=d.rows.map(function(r){
+      return '<div class="box"><p class="n">'+jiaEsc(r.k)+'</p><h4'+(r.strong?' class="fee"':'')+'>'+r.v+'</h4></div>';
+    }).join('');
+    return;
   }
-  var cols=target.querySelector('.cls-cols');
-  if(!cols) return;
-
-  var tbl=cols.querySelector('.tbl');
-  if(tbl){
-    var info=document.createElement('div'); info.className='cm-info';
-    tbl.querySelectorAll('tr').forEach(function(tr){
-      var th=tr.querySelector('th'), td=tr.querySelector('td');
-      if(!th || !td) return;
-      var row=document.createElement('div'); row.className='cm-row';
-      var k=document.createElement('span'); k.className='k'; k.textContent=th.textContent.trim();
-      var v=document.createElement('span'); v.className='v'; v.innerHTML=td.innerHTML;
-      if(td.classList.contains('strong')) v.classList.add('strong');
-      row.appendChild(k); row.appendChild(v);
-      info.appendChild(row);
+  if(opts.as==='accline'){
+    target.innerHTML='<div class="accline">'+d.items.map(function(it,i){
+      return '<div class="item'+(i===0?' is-open':'')+'">'
+        +'<button class="q acc-q">'+jiaEsc(it.q)+'<span class="mk">+</span></button>'
+        +'<div class="a acc-a">'+it.a+'</div></div>';
+    }).join('')+'</div>';
+    /* 이 스크립트는 페이지 인라인 스크립트 뒤에 실행되므로 직접 묶어준다 */
+    target.querySelectorAll('.acc-q').forEach(function(q){
+      q.onclick=function(){ q.parentElement.classList.toggle('is-open') };
     });
-    cols.parentNode.insertBefore(info, cols);
-    tbl.parentNode.removeChild(tbl);
-  }
-  var cta=cols.querySelector('.cls-cta');
-  if(cta){
-    if(opts.keepCta) target.appendChild(cta);
-    else cta.parentNode.removeChild(cta);
+    return;
   }
 
-  var keep=document.createElement('div'); keep.className='cm-right';
-  while(cols.firstChild){
-    var n=cols.firstChild; cols.removeChild(n);
-    if(n.nodeType!==1) continue;
-    if(n.classList.contains('acc') || n.classList.contains('stepbar')) keep.appendChild(n);
-    else while(n.firstChild){
-      var c=n.firstChild; n.removeChild(c);
-      if(c.nodeType===1) keep.appendChild(c);
-    }
+  /* 기본 — 모달 상세 */
+  target.innerHTML='';
+  if(d.head && d.head.children.length){
+    var chips=d.head.querySelector('.chips');
+    if(chips) chips.parentNode.removeChild(chips);
+    if(d.head.children.length) target.appendChild(d.head);
   }
-  keep.querySelectorAll('.acc-item').forEach(function(it){ it.classList.add('is-open') });
-  keep.querySelectorAll('.acc-q .mk').forEach(function(m){ m.parentNode.removeChild(m) });
-  cols.parentNode.replaceChild(keep, cols);
-  if(opts.keepCta && cta) target.appendChild(cta);
-
-  /* part 로 일부만 남긴다 — 'info'(정보+CTA) / 'curriculum'(커리큘럼) */
-  if(opts.part==='info'){
-    var k=target.querySelector('.cm-right');
-    if(k) k.parentNode.removeChild(k);
-  } else if(opts.part==='curriculum'){
-    target.querySelectorAll('.cls-head,.cm-info,.cls-cta').forEach(function(x){ x.parentNode.removeChild(x) });
+  if(d.rows.length){
+    target.insertAdjacentHTML('beforeend','<div class="cm-info">'+d.rows.map(function(r){
+      return '<div class="cm-row"><span class="k">'+jiaEsc(r.k)+'</span><span class="v'+(r.strong?' strong':'')+'">'+r.v+'</span></div>';
+    }).join('')+'</div>');
+  }
+  if(d.items.length){
+    target.insertAdjacentHTML('beforeend','<div class="cm-right"><div class="acc">'+d.items.map(function(it){
+      return '<div class="acc-item is-open"><button class="acc-q">'+jiaEsc(it.q)+'</button><div class="acc-a">'+it.a+'</div></div>';
+    }).join('')+'</div></div>');
   }
 }
 
-/* 정적 상세 섹션 (창업반 Class 섹션) */
 document.querySelectorAll('[data-cls-src]').forEach(function(el){
-  var part=el.getAttribute('data-cls-part') || '';
-  jiaRenderClass(el, el.getAttribute('data-cls-src'), {keepCta:part!=='curriculum', part:part});
+  jiaRenderClass(el, el.getAttribute('data-cls-src'), {as: el.getAttribute('data-cls-as') || ''});
 });
 
 (function(){

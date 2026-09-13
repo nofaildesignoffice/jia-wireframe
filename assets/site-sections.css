@@ -1341,65 +1341,17 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .premium_section .cont .box .pm-img.has-photo{padding:0;overflow:hidden}
 .premium_section .cont .box .pm-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 
-/* ==========================================================================
-   창업반 Class 섹션 — 결제 모달의 상세 디자인을 그대로 (좌 정보 / 우 커리큘럼)
-   ========================================================================== */
-.tabclass_section.clsview .cls-view{display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:2.6vw;align-items:start}
-.clsview .cls-view .cls-head{grid-column:1;text-align:left;margin-bottom:0}
-.clsview .cls-view .cm-info{grid-column:1;border:none;margin:0}
-.clsview .cls-view .cm-row{display:block;border:none;padding:0;margin-top:1.05vw}
-.clsview .cls-view .cm-row:first-child{margin-top:0}
-.clsview .cls-view .cm-row .k{display:block;font-size:.7812vw;font-weight:600;color:var(--ul-stone);letter-spacing:-.02em;margin-bottom:.2vw}
-.clsview .cls-view .cm-row .v{display:block;font-size:.8854166667vw;line-height:1.65;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
-.clsview .cls-view .cm-row .v.strong{font-weight:700;color:var(--ul-ink)}
-.clsview .cls-view .cls-cta{grid-column:1;margin-top:1.8vw}
-.clsview .cls-view .cls-cta a{width:100%;height:3.125vw;min-height:46px;border-radius:0;
-  background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);font-weight:600;transition:background .25s,border-color .25s,color .25s}
-.clsview .cls-view .cls-cta a:hover{background:var(--ul-ink);border-color:var(--ul-ink);color:#fff}
-.clsview .cls-view .cm-right{grid-column:2;grid-row:1 / span 4}
-.clsview .cls-view .cm-right .acc{border:none;border-radius:0;overflow:visible;background:none;display:grid;gap:.55vw}
-.clsview .cls-view .cm-right .acc-item{border:1px solid #E2DDD5;background:#fff;padding:1.05vw 1.15vw}
-.clsview .cls-view .cm-right .acc-q{padding:0 0 .45vw;font-size:.9375vw;cursor:default;pointer-events:none;border:none}
-.clsview .cls-view .cm-right .acc-a{display:block;padding:0;font-size:.8333333333vw;line-height:1.8}
-.clsview .cls-view .cm-right .acc-a strong{color:var(--ul-ink);font-weight:700;box-shadow:inset 0 -7px 0 rgba(247,208,47,.45)}
+
+/* 정보 그리드 안의 수강료 강조 + 섹션 중앙 CTA (기존 그리드/버튼 규칙 위에 최소 추가) */
+.gridline_section .cont .box h4.fee{font-size:1.4583333333vw;font-weight:700}
+.gridline_section .cta-center{display:flex;justify-content:center;margin-top:3.2vw}
+.gridline_section .cta-center a{display:flex;align-items:center;justify-content:center;width:20.8333333333vw;min-width:260px;
+  height:3.125vw;min-height:46px;background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);
+  font-size:.9375vw;font-weight:600;letter-spacing:-.03em;transition:background .3s,border-color .3s,color .3s}
+.gridline_section .cta-center a:hover{background:var(--ul-ink);border-color:var(--ul-ink);color:#fff}
 
 @media screen and (max-width:900px){
-  .tabclass_section.clsview .cls-view{grid-template-columns:1fr;gap:8vw}
-  .clsview .cls-view .cm-right{grid-column:1;grid-row:auto}
-  .clsview .cls-view .cm-row{margin-top:4.2vw}
-  .clsview .cls-view .cm-row .k{font-size:3.2vw;margin-bottom:1.2vw}
-  .clsview .cls-view .cm-row .v{font-size:3.7333333333vw}
-  .clsview .cls-view .cls-cta a{height:12.8vw;font-size:4vw}
-  .clsview .cls-view .cm-right .acc{gap:3.2vw}
-  .clsview .cls-view .cm-right .acc-item{padding:4.8vw 4.2vw}
-  .clsview .cls-view .cm-right .acc-q{font-size:4vw;padding-bottom:2.4vw}
-  .clsview .cls-view .cm-right .acc-a{font-size:3.4666666667vw}
-}
-
-/* 창업반 Class 섹션 — 좌 정보 / 우 교재·초기재료 */
-.clsview .cls-view .cv-info{grid-column:1}
-.clsview .cls-view .cv-extra{grid-column:2}
-.clsview .cls-view .cv-extra .block-title{max-width:none;margin:0 0 1vw;padding:0}
-.clsview .cls-view .cv-extra .block-title.mt{margin-top:2.6vw}
-.clsview .cls-view .cv-extra .acc-wrap{max-width:none;margin:0;padding:0}
-.clsview .cls-view .cv-extra .bookline .bk{width:25%}
-
-/* 커리큘럼 섹션 */
-.gridline_section.curriculum{background:var(--ul-cream-2)}
-.curriculum .curr-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-.curriculum .curr-wrap .cm-right .acc{border:none;border-radius:0;overflow:visible;background:none;
-  display:grid;grid-template-columns:repeat(2,1fr);gap:.9vw}
-.curriculum .curr-wrap .cm-right .acc-item{border:1px solid #E2DDD5;background:#fff;padding:1.3vw 1.4vw}
-.curriculum .curr-wrap .cm-right .acc-q{padding:0 0 .5vw;font-size:.9375vw;cursor:default;pointer-events:none;border:none}
-.curriculum .curr-wrap .cm-right .acc-a{display:block;padding:0;font-size:.8333333333vw;line-height:1.8}
-
-@media screen and (max-width:900px){
-  .clsview .cls-view .cv-info,
-  .clsview .cls-view .cv-extra{grid-column:1}
-  .clsview .cls-view .cv-extra .block-title.mt{margin-top:8vw}
-  .curriculum .curr-wrap{padding:0 5.3333333333vw}
-  .curriculum .curr-wrap .cm-right .acc{grid-template-columns:1fr;gap:3.2vw}
-  .curriculum .curr-wrap .cm-right .acc-item{padding:4.8vw 4.2vw}
-  .curriculum .curr-wrap .cm-right .acc-q{font-size:4vw;padding-bottom:2.4vw}
-  .curriculum .curr-wrap .cm-right .acc-a{font-size:3.4666666667vw}
+  .gridline_section .cont .box h4.fee{font-size:5.3333333333vw}
+  .gridline_section .cta-center{margin-top:8vw;padding:0 5.3333333333vw}
+  .gridline_section .cta-center a{width:100%;min-width:0;height:12.8vw;font-size:4vw}
 }
