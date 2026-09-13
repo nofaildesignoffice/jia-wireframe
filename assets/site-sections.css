@@ -697,14 +697,18 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
 .board td.subj a{display:block}
 .board tbody tr:hover td.subj{color:#000}
 /* 상단 고정 공지 행 */
-.board tr.pin td,.board tr.pin td.subj{color:var(--ul-accent);font-weight:400}
+.board tr.pin td,.board tr.pin td.subj{color:#090909;font-weight:400}
 .board tr.pin .no{font-weight:400}
+/* 공지 뱃지 — 노란 테두리·배경의 알약형 */
+.board tr.pin .no .badge{display:inline-flex;align-items:center;justify-content:center;
+  min-width:3.4vw;padding:.34vw 1vw;border:1px solid #F7D02F;background:rgba(247,208,47,.35);
+  border-radius:999px;font-size:.7812vw;font-weight:600;color:#090909;line-height:1.5;letter-spacing:-.02em}
 
 /* 원형 페이지네이션 */
 .pager{display:flex;gap:.55vw;justify-content:center;align-items:center;margin-top:5.2vw}
 .pager a{width:2.0833333333vw;height:2.0833333333vw;min-width:32px;min-height:32px;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8333333333vw;color:#4A453F;background:none;transition:background .2s,color .2s}
 .pager a:hover{background:rgba(0,0,0,.04)}
-.pager a.is-active{background:var(--ul-accent);color:#fff}
+.pager a.is-active{background:#090909;color:#fff}
 .pager a.pg-nav{background:#EAE7E1;color:#8A857D;font-size:.7291666667vw}
 .pager a.pg-nav:hover{background:#E0DCD4}
 
@@ -721,6 +725,7 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
   .board th:first-child,.board td:first-child{display:none}
   .board td.subj{word-break:keep-all;line-height:1.5}
   .pager{gap:2vw;margin-top:12vw}
+  .board tr.pin .no .badge{min-width:0;padding:1.2vw 3.2vw;font-size:3.2vw}
   .pager a{width:9.6vw;height:9.6vw;font-size:3.7333333333vw}
   .pager a.pg-nav{font-size:3.2vw}
 }
