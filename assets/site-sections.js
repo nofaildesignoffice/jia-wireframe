@@ -32,30 +32,32 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
 })();
 
 /* ==========================================================================
-   클래스 상세 모달 — APPLY 카드를 누르면 Class 탭 패널 내용을 그대로 띄운다.
-   내용을 복제해 쓰므로 카피가 한 곳(#classes)에만 존재한다.
+   클래스 선택 · 상세 · 결제 모달
+   좌: 과정 선택 / 우: 선택한 과정의 상세(#clsSource 패널을 복제해 재조립)
    ========================================================================== */
 (function(){
-  var modal=document.getElementById('clsModal');
+  var modal=document.getElementById('payModal');
   if(!modal) return;
-  var body=modal.querySelector('.cls-modal-body');
-  if(!body) return;
+  var detail=modal.querySelector('#payDetail'),
+      priceEl=modal.querySelector('#payPrice'),
+      btn=modal.querySelector('#payBtn'),
+      empty='<p class="pay-empty">왼쪽에서 과정을 선택하시면 상세 내용이 표시됩니다.</p>';
 
-  /* 복제한 탭 패널을 모달용 2단 구조로 재조립한다.
-     좌: 제목·칩·정보·신청 버튼 / 우: 커리큘럼(드롭다운 없이 전부 펼침) */
-  function restructure(){
-    var head=body.querySelector('.cls-head'),
-        cols=body.querySelector('.cls-cols');
-    if(!cols) return;
-    var left=document.createElement('div'); left.className='cm-left';
-    var right=document.createElement('div'); right.className='cm-right';
+  /* 탭 패널 마크업을 상세 패널용 한 단 구조로 재조립 */
+  function build(id){
+    var src=document.getElementById(id);
+    if(!src){ detail.innerHTML=empty; return; }
+    detail.innerHTML=src.innerHTML;
 
+    var head=detail.querySelector('.cls-head');
     if(head){
       var chips=head.querySelector('.chips');
       if(chips) chips.parentNode.removeChild(chips);
-      left.appendChild(head);
     }
+    var cols=detail.querySelector('.cls-cols');
+    if(!cols) return;
 
+    /* 표 -> 텍스트 목록 */
     var tbl=cols.querySelector('.tbl');
     if(tbl){
       var info=document.createElement('div'); info.className='cm-info';
@@ -69,131 +71,78 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
         row.appendChild(k); row.appendChild(v);
         info.appendChild(row);
       });
-      left.appendChild(info);
+      cols.parentNode.insertBefore(info, cols);
       tbl.parentNode.removeChild(tbl);
     }
+    /* 결제 버튼이 왼쪽에 있으므로 패널 안의 신청 버튼은 제거 */
     var cta=cols.querySelector('.cls-cta');
-    if(cta) left.appendChild(cta);
+    if(cta) cta.parentNode.removeChild(cta);
 
-    /* 남은 것(커리큘럼 아코디언·스텝바)은 오른쪽으로. 빈 래퍼는 내용만 꺼낸다. */
+    /* 커리큘럼만 남겨 한 단으로 */
+    var keep=document.createElement('div'); keep.className='cm-right';
     while(cols.firstChild){
-      var n=cols.firstChild;
-      cols.removeChild(n);
+      var n=cols.firstChild; cols.removeChild(n);
       if(n.nodeType!==1) continue;
-      if(n.classList.contains('acc') || n.classList.contains('stepbar')) right.appendChild(n);
+      if(n.classList.contains('acc') || n.classList.contains('stepbar')) keep.appendChild(n);
       else while(n.firstChild){
         var c=n.firstChild; n.removeChild(c);
-        if(c.nodeType===1) right.appendChild(c);
+        if(c.nodeType===1) keep.appendChild(c);
       }
     }
-    /* 아코디언을 전부 펼치고 토글 마커를 없앤다 */
-    right.querySelectorAll('.acc-item').forEach(function(it){ it.classList.add('is-open') });
-    right.querySelectorAll('.acc-q .mk').forEach(function(m){ m.parentNode.removeChild(m) });
-
-    cols.className='cm-split';
-    cols.appendChild(left);
-    cols.appendChild(right);
+    keep.querySelectorAll('.acc-item').forEach(function(it){ it.classList.add('is-open') });
+    keep.querySelectorAll('.acc-q .mk').forEach(function(m){ m.parentNode.removeChild(m) });
+    cols.parentNode.replaceChild(keep, cols);
   }
 
-  function open(id){
-    var src=document.getElementById(id);
-    if(!src) return;
-    body.innerHTML=src.innerHTML;
-    restructure();
-    modal.hidden=false;
-    document.body.style.overflow='hidden';
-    var box=modal.querySelector('.rv-box');
-    if(box) box.scrollTop=0;
+  function select(r){
+    modal.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('is-on') });
+    var opt=r.closest('.pay-opt');
+    if(opt) opt.classList.add('is-on');
+    r.checked=true;
+    build(r.getAttribute('data-cls'));
+    if(priceEl) priceEl.textContent=r.getAttribute('data-price');
+    if(btn){
+      btn.classList.remove('is-disabled');
+      btn.removeAttribute('aria-disabled');
+      btn.setAttribute('href','page_11.html?class='+r.value);
+    }
     if(window.lucide) lucide.createIcons();
-  }
-  function close(){
-    modal.hidden=true;
-    document.body.style.overflow='';
-    body.innerHTML='';
-  }
-
-  document.querySelectorAll('.pm-slide[data-cls]').forEach(function(c){
-    c.onclick=function(){open(c.getAttribute('data-cls'))};
-  });
-  modal.querySelectorAll('[data-cls-close]').forEach(function(x){
-    x.onclick=function(e){e.stopPropagation(); close()};
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape' && !modal.hidden) close();
-  });
-})();
-
-/* 후기 슬라이더 — 모바일 스와이프.
-   슬라이더 본체는 각 페이지 인라인 스크립트가 담당하므로 좌우 버튼을 대신 눌러준다. */
-document.querySelectorAll('.rv').forEach(function(rv){
-  var vp=rv.querySelector('.rv-vp'),
-      prev=rv.querySelector('.rv-prev'),
-      next=rv.querySelector('.rv-next');
-  if(!vp || !prev || !next) return;
-  var x0=null, y0=null, horiz=false;
-  vp.addEventListener('touchstart',function(e){
-    var t=e.touches[0]; x0=t.clientX; y0=t.clientY; horiz=false;
-  },{passive:true});
-  vp.addEventListener('touchmove',function(e){
-    if(x0===null) return;
-    var t=e.touches[0];
-    if(!horiz && Math.abs(t.clientX-x0) > Math.abs(t.clientY-y0)+6) horiz=true;
-  },{passive:true});
-  vp.addEventListener('touchend',function(e){
-    if(x0===null) return;
-    var dx=e.changedTouches[0].clientX - x0;
-    if(horiz && Math.abs(dx) > 40) (dx < 0 ? next : prev).click();
-    x0=null;
-  },{passive:true});
-});
-
-/* ==========================================================================
-   결제 클래스 선택 모달 — 과정을 고르면 금액이 뜨고 결제 버튼이 열린다.
-   ========================================================================== */
-(function(){
-  var modal=document.getElementById('payModal');
-  if(!modal) return;
-  var priceEl=modal.querySelector('#payPrice'),
-      btn=modal.querySelector('#payBtn');
-
-  function open(){
-    modal.hidden=false;
-    document.body.style.overflow='hidden';
-    if(window.lucide) lucide.createIcons();
-  }
-  function close(){
-    modal.hidden=true;
-    document.body.style.overflow='';
+    if(detail) detail.scrollTop=0;
   }
   function reset(){
     modal.querySelectorAll('input[name="payClass"]').forEach(function(r){ r.checked=false });
     modal.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('is-on') });
+    if(detail) detail.innerHTML=empty;
     if(priceEl) priceEl.textContent='과정을 선택해주세요';
     if(btn){ btn.classList.add('is-disabled'); btn.setAttribute('aria-disabled','true'); btn.setAttribute('href','#'); }
   }
+  function open(cls){
+    reset();
+    if(cls){
+      var r=modal.querySelector('input[name="payClass"][data-cls="'+cls+'"]');
+      if(r) select(r);
+    }
+    modal.hidden=false;
+    document.body.style.overflow='hidden';
+    if(window.lucide) lucide.createIcons();
+  }
+  function close(){ modal.hidden=true; document.body.style.overflow=''; }
 
+  /* 고정 CTA — 선택 없이 열기 */
   document.querySelectorAll('[data-pay-open]').forEach(function(b){
-    b.onclick=function(e){ e.preventDefault(); reset(); open(); };
+    b.onclick=function(e){ e.preventDefault(); open(null); };
   });
+  /* 카드의 자세히 보기 — 해당 과정을 선택한 채로 열기 */
+  document.querySelectorAll('.pm-slide[data-cls]').forEach(function(c){
+    c.onclick=function(){ open(c.getAttribute('data-cls')); };
+  });
+
   modal.querySelectorAll('[data-pay-close]').forEach(function(x){
     x.onclick=function(e){ e.stopPropagation(); close(); };
   });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape' && !modal.hidden) close();
-  });
-
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
   modal.querySelectorAll('input[name="payClass"]').forEach(function(r){
-    r.onchange=function(){
-      modal.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('is-on') });
-      var opt=r.closest('.pay-opt');
-      if(opt) opt.classList.add('is-on');
-      if(priceEl) priceEl.textContent=r.getAttribute('data-price');
-      if(btn){
-        btn.classList.remove('is-disabled');
-        btn.removeAttribute('aria-disabled');
-        btn.setAttribute('href','page_11.html?class='+r.value);
-      }
-    };
+    r.onchange=function(){ select(r) };
   });
   if(btn) btn.onclick=function(e){ if(btn.classList.contains('is-disabled')) e.preventDefault(); };
 })();

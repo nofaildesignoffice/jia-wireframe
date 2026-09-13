@@ -1115,9 +1115,6 @@ section.tone-b{background-color:var(--ul-cream-2)}
    클래스 상세 모달 — 후기 모달과 같은 껍데기를 쓰고,
    내용은 .tabclass_section 스타일을 그대로 물려받는다(본문에 같은 클래스를 부여).
    ========================================================================== */
-.rv-box.cls-box{max-width:1100px}
-.cls-modal-body{background:none;padding:3.1vw 2.4vw 2.4vw}
-.cls-modal-body .cls-head{margin-bottom:2vw}
 
 /* APPLY 카드 — 클릭 가능 + 자세히 보기 */
 .pm-slide[data-cls]{cursor:pointer}
@@ -1129,7 +1126,6 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .pm-slide:hover .more,.pm-slide .more:hover{background:#F7D02F;border-color:#F7D02F}
 
 @media (max-width:1024px){
-  .cls-modal-body{padding:32px 28px 40px}
 }
 @media screen and (max-width:900px){
   .pm-slide .more{margin-top:4.2666666667vw;height:12vw;font-size:3.4666666667vw}
@@ -1200,7 +1196,6 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .rv-detail p.rv-p{font-size:14px;line-height:1.8}
   .rv-dnote{margin-top:22px;padding:16px 18px}
   .rv-dnote p{font-size:13px}
-  .cls-modal-body{padding:24px 20px 28px}
 
   /* --- 비교표 모바일 (위의 새 표 규칙이 기존 모바일 값을 덮어쓰므로 다시 선언) --- */
   .cmp th,.cmp td{padding:4vw 3.2vw}
@@ -1212,55 +1207,8 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .special_section .cont .box:nth-child(3) .img{height:72vw;margin-top:0;margin-bottom:6.4vw}
 }
 
-/* ==========================================================================
-   클래스 상세 모달 — 좌 정보 / 우 커리큘럼 2단, 액센트는 브랜드 옐로우
-   ========================================================================== */
-.cls-modal-body .cm-split{display:grid;grid-template-columns:minmax(280px,36%) 1fr;gap:36px;align-items:start}
-
-/* --- 좌측 --- */
-.cls-modal-body .cls-head{text-align:left;margin-bottom:18px}
-.cls-modal-body .cls-head h3{font-size:22px;line-height:1.4;margin-bottom:8px}
-.cls-modal-body .cls-head .one{font-size:14px;line-height:1.65}
-
-/* 정보는 표가 아니라 그냥 텍스트 — 테두리·구분선 없음 */
-.cls-modal-body .cm-info{border:none;margin-top:4px}
-.cls-modal-body .cm-row{display:block;border:none;padding:0;margin-top:14px}
-.cls-modal-body .cm-row:first-child{margin-top:0}
-.cls-modal-body .cm-row .k{display:block;font-size:12px;font-weight:600;color:var(--ul-stone);letter-spacing:-.02em;margin-bottom:3px}
-.cls-modal-body .cm-row .v{display:block;font-size:14px;line-height:1.65;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
-.cls-modal-body .cm-row .v.strong{font-weight:700;color:var(--ul-ink)}
-
-.cls-modal-body .cls-cta{margin-top:22px}
-.cls-modal-body .cls-cta a{width:100%;height:50px;min-height:0;border-radius:0;
-  background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);
-  font-size:14px;font-weight:600;letter-spacing:-.02em;transition:background .25s,border-color .25s}
-.cls-modal-body .cls-cta a:hover{background:var(--ul-ink);border-color:var(--ul-ink);color:#fff}
-
-/* --- 우측: 커리큘럼을 드롭다운 없이 박스 블록으로 --- */
-.cls-modal-body .cm-right .acc{border:none;border-radius:0;overflow:visible;background:none;display:grid;gap:10px}
-.cls-modal-body .cm-right .acc-item{border:1px solid #E2DDD5;background:#fff;padding:16px 18px}
-.cls-modal-body .cm-right .acc-item:not(:last-child){border-bottom:1px solid #E2DDD5}
-.cls-modal-body .cm-right .acc-q{padding:0 0 8px;font-size:14px;cursor:default;pointer-events:none;border:none}
-.cls-modal-body .cm-right .acc-a{display:block;padding:0;font-size:13px;line-height:1.8}
-.cls-modal-body .cm-right .acc-a strong{color:var(--ul-ink);font-weight:700;
-  box-shadow:inset 0 -7px 0 rgba(247,208,47,.45)}
-.cls-modal-body .cm-right .stepbar{grid-template-columns:1fr;border:1px solid #E2DDD5;margin-top:0;background:#fff}
-.cls-modal-body .cm-right .stepbar > div{padding:14px 18px}
-.cls-modal-body .cm-right .stepbar > div:not(:last-child){border-bottom:1px solid #ece8e1}
-.cls-modal-body .cm-right .stepbar > div::after{display:none}
-.cls-modal-body .cm-right .stepbar .n{font-size:12px;color:#8A7400;margin-bottom:6px}
-.cls-modal-body .cm-right .stepbar h4{font-size:14px;margin-bottom:5px}
-
-/* 닫기 버튼도 옐로우 */
+/* 닫기 버튼 hover — 옐로우 */
 .rv-close:hover{background:#F7D02F;border-color:#F7D02F;color:var(--ul-ink)}
-
-@media screen and (max-width:900px){
-  .cls-modal-body .cm-split{grid-template-columns:1fr;gap:24px}
-  .cls-modal-body .cls-head h3{font-size:19px}
-  .cls-modal-body .cm-row .k{flex:0 0 62px}
-  .cls-modal-body .cls-cta a{height:46px}
-  .cls-modal-body .cm-right .acc-item{padding:14px 15px}
-}
 
 
 
@@ -1272,10 +1220,34 @@ section.tone-b{background-color:var(--ul-cream-2)}
 /* ==========================================================================
    결제 클래스 선택 모달
    ========================================================================== */
-.rv-box.pay-box{max-width:520px}
-.pay-body{padding:40px 36px 36px}
-.pay-body h3{font-size:20px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;margin-bottom:8px}
-.pay-body .pay-lead{font-size:14px;color:var(--ul-stone);line-height:1.6;margin-bottom:22px}
+.rv-box.pay-box{max-width:1040px}
+.pay-split{display:grid;grid-template-columns:minmax(300px,36%) 1fr;align-items:stretch}
+.pay-side{padding:40px 32px 36px;border-right:1px solid #E2DDD5}
+.pay-side h3{font-size:20px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;margin-bottom:8px}
+.pay-side .pay-lead{font-size:13px;color:var(--ul-stone);line-height:1.6;margin-bottom:20px}
+/* 우측 상세 — tabclass 스타일을 물려받되 섹션 배경·여백은 해제 */
+.pay-detail{background:none;padding:40px 34px 36px;max-height:78dvh;overflow-y:auto}
+.pay-detail .pay-empty{font-size:14px;color:#A9A49B;line-height:1.7}
+.pay-detail .cls-head{text-align:left;margin-bottom:18px}
+.pay-detail .cls-head h3{font-size:21px;line-height:1.4;margin-bottom:8px}
+.pay-detail .cls-head .one{font-size:14px;line-height:1.65}
+.pay-detail .cm-info{border:none;margin:0 0 22px}
+.pay-detail .cm-row{display:block;border:none;padding:0;margin-top:13px}
+.pay-detail .cm-row:first-child{margin-top:0}
+.pay-detail .cm-row .k{display:block;font-size:12px;font-weight:600;color:var(--ul-stone);letter-spacing:-.02em;margin-bottom:3px}
+.pay-detail .cm-row .v{display:block;font-size:14px;line-height:1.65;color:#4A453F;letter-spacing:-.02em;word-break:keep-all}
+.pay-detail .cm-row .v.strong{font-weight:700;color:var(--ul-ink)}
+.pay-detail .cm-right .acc{border:none;border-radius:0;overflow:visible;background:none;display:grid;gap:10px}
+.pay-detail .cm-right .acc-item{border:1px solid #E2DDD5;background:#fff;padding:16px 18px}
+.pay-detail .cm-right .acc-q{padding:0 0 8px;font-size:14px;cursor:default;pointer-events:none;border:none}
+.pay-detail .cm-right .acc-a{display:block;padding:0;font-size:13px;line-height:1.8}
+.pay-detail .cm-right .acc-a strong{color:var(--ul-ink);font-weight:700;box-shadow:inset 0 -7px 0 rgba(247,208,47,.45)}
+.pay-detail .cm-right .stepbar{grid-template-columns:1fr;border:1px solid #E2DDD5;margin-top:0;background:#fff}
+.pay-detail .cm-right .stepbar > div{padding:14px 18px}
+.pay-detail .cm-right .stepbar > div:not(:last-child){border-bottom:1px solid #ece8e1}
+.pay-detail .cm-right .stepbar > div::after{display:none}
+.pay-detail .cm-right .stepbar .n{font-size:12px;color:#8A7400;margin-bottom:6px}
+.pay-detail .cm-right .stepbar h4{font-size:14px;margin-bottom:5px}
 
 .pay-list{display:grid;gap:8px}
 .pay-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid #d8d3ca;background:#fff;
@@ -1304,8 +1276,10 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .pay-btn.is-disabled:hover{background:#ECE8E1;border-color:#ECE8E1;color:#A9A49B}
 
 @media screen and (max-width:900px){
-  .pay-body{padding:28px 22px 26px}
-  .pay-body h3{font-size:18px}
+  .pay-split{grid-template-columns:1fr}
+  .pay-side{padding:28px 22px 26px;border-right:none;border-bottom:1px solid #E2DDD5}
+  .pay-side h3{font-size:18px}
+  .pay-detail{padding:24px 22px 28px;max-height:none}
   .pay-total .v{font-size:19px}
   .pay-btn{height:48px;font-size:14px}
 }

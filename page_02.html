@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css?v=64629ba8" rel="stylesheet">
-<link href="assets/site-sections.css?v=5b4b4ced" rel="stylesheet">
+<link href="assets/site-sections.css?v=c42a8e4d" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 
@@ -1200,38 +1200,43 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   </div>
 </div>
 
-<!-- 결제 클래스 선택 모달 -->
+<!-- 클래스 선택 · 상세 · 결제 모달 -->
 <div class="rv-modal" id="payModal" hidden>
   <div class="rv-back" data-pay-close></div>
   <div class="rv-box pay-box" role="dialog" aria-modal="true" aria-labelledby="payTitle">
     <button class="rv-close" data-pay-close aria-label="닫기"><i data-lucide="x"></i></button>
-    <div class="pay-body">
-      <h3 id="payTitle">어떤 과정을 신청하실까요</h3>
-      <p class="pay-lead">과정을 선택하시면 결제 금액이 표시됩니다.</p>
-      <div class="pay-list">
-        <label class="pay-opt">
-          <input type="radio" name="payClass" value="perm" data-price="280만원">
-          <span class="txt"><span class="nm">1:1 속눈썹 펌 단과반</span><span class="sub">5DAY</span></span>
-          <span class="pr">280만원</span>
-        </label>
-        <label class="pay-opt">
-          <input type="radio" name="payClass" value="classic" data-price="280만원">
-          <span class="txt"><span class="nm">클래식 연장 단과반</span><span class="sub">사전 2주 + 대면 6회</span></span>
-          <span class="pr">280만원</span>
-        </label>
-        <label class="pay-opt">
-          <input type="radio" name="payClass" value="permpoint" data-price="300만원">
-          <span class="txt"><span class="nm">펌포인트 연장 단과반</span><span class="sub">사전 2주 + 대면 6회</span></span>
-          <span class="pr">300만원</span>
-        </label>
-        <label class="pay-opt">
-          <input type="radio" name="payClass" value="oneday" data-price="80만원">
-          <span class="txt"><span class="nm">원데이</span><span class="sub">하루 6시간</span></span>
-          <span class="pr">80만원</span>
-        </label>
+    <div class="pay-split">
+      <div class="pay-side">
+        <h3 id="payTitle">어떤 과정을 신청하실까요</h3>
+        <p class="pay-lead">과정을 선택하시면 상세 내용과 결제 금액이 표시됩니다.</p>
+        <div class="pay-list">
+          <label class="pay-opt">
+            <input type="radio" name="payClass" value="perm" data-cls="c2" data-price="280만원">
+            <span class="txt"><span class="nm">1:1 속눈썹 펌 단과반</span><span class="sub">5DAY</span></span>
+            <span class="pr">280만원</span>
+          </label>
+          <label class="pay-opt">
+            <input type="radio" name="payClass" value="classic" data-cls="c3" data-price="280만원">
+            <span class="txt"><span class="nm">클래식 연장 단과반</span><span class="sub">사전 2주 + 대면 6회</span></span>
+            <span class="pr">280만원</span>
+          </label>
+          <label class="pay-opt">
+            <input type="radio" name="payClass" value="permpoint" data-cls="c5" data-price="300만원">
+            <span class="txt"><span class="nm">펌포인트 연장 단과반</span><span class="sub">사전 2주 + 대면 6회</span></span>
+            <span class="pr">300만원</span>
+          </label>
+          <label class="pay-opt">
+            <input type="radio" name="payClass" value="oneday" data-cls="c4" data-price="80만원">
+            <span class="txt"><span class="nm">원데이</span><span class="sub">하루 6시간</span></span>
+            <span class="pr">80만원</span>
+          </label>
+        </div>
+        <div class="pay-total"><span class="k">결제 금액</span><span class="v" id="payPrice">과정을 선택해주세요</span></div>
+        <a class="pay-btn is-disabled" id="payBtn" href="#" aria-disabled="true">결제하기</a>
       </div>
-      <div class="pay-total"><span class="k">결제 금액</span><span class="v" id="payPrice">과정을 선택해주세요</span></div>
-      <a class="pay-btn is-disabled" id="payBtn" href="#" aria-disabled="true">결제하기</a>
+      <div class="pay-detail tabclass_section" id="payDetail">
+        <p class="pay-empty">왼쪽에서 과정을 선택하시면 상세 내용이 표시됩니다.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -1378,15 +1383,6 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
     </div>
 </div>
 
-<!-- 클래스 상세 모달 -->
-<div class="rv-modal" id="clsModal" hidden>
-  <div class="rv-back" data-cls-close></div>
-  <div class="rv-box cls-box" role="dialog" aria-modal="true" aria-label="클래스 상세">
-    <button class="rv-close" data-cls-close aria-label="닫기"><i data-lucide="x"></i></button>
-    <div class="cls-modal-body tabclass_section"></div>
-  </div>
-</div>
-
 <script>
 lucide.createIcons();
 
@@ -1505,7 +1501,7 @@ window.addEventListener('resize', rvClampAll);
 })();
 </script>
 
-<script src="assets/site-sections.js?v=2be9e55e"></script>
+<script src="assets/site-sections.js?v=74b7a16a"></script>
 <script src="assets/site-chrome.js?v=3e901050"></script>
 </body>
 </html>
