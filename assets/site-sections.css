@@ -1265,7 +1265,7 @@ section.tone-b{background-color:var(--ul-cream-2)}
 /* ==========================================================================
    Core — 좌 영상 / 우 텍스트 2단 (전폭 분할)
    ========================================================================== */
-.gridline_section.core-split{padding:0;display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.gridline_section.core-split{padding:0;display:grid;grid-template-columns:44% 1fr;grid-template-rows:auto auto;align-items:stretch;align-content:start}
 
 /* 좌: 영상 패널이 섹션 높이를 꽉 채운다 */
 .core-split .core-media{grid-column:2;grid-row:1 / span 2;width:auto;max-width:none;margin:0;padding:0;background:#EFE7DA}
@@ -1275,14 +1275,14 @@ section.tone-b{background-color:var(--ul-cream-2)}
 
 /* 우: 타이틀 + 스텝 */
 .core-split .title{grid-column:1;grid-row:1;text-align:left;margin:0;
-  padding:5.2vw 2.6vw 0 6.25vw;align-self:end}
+  padding:4.2vw 1.6vw .6vw 6.25vw;align-self:start}
 .core-split .title h3{font-size:4.1666666667vw;margin-bottom:1.2vw}
 .core-split .title p{font-size:1.0416666667vw;font-weight:700;color:var(--ul-ink);margin:0 0 1.4vw}
 .core-split .title span{font-size:.8854166667vw;line-height:1.9;color:#4A453F}
 
 .core-split .cont.steps{grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(4,1fr);
   gap:1.6vw;align-items:start;border:none;width:auto;margin:0;
-  padding:2.2vw 2.6vw 5.2vw 6.25vw}
+  padding:0 1.6vw 4.2vw 6.25vw;align-self:start}
 .core-split .cont.steps .box{width:auto;padding:0;text-align:center;border:none;background:none}
 .core-split .cont.steps .box::after{display:none}
 .core-split .cont.steps .box .n{font-size:.9375vw;font-weight:700;color:var(--ul-ink);letter-spacing:.02em;margin-bottom:.9vw}
