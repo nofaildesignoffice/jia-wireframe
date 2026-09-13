@@ -67,17 +67,22 @@ function jiaRenderClass(target, id, opts){
   var d=jiaClassParts(id);
   if(!target || !d){ if(target) target.innerHTML=''; return; }
 
-  if(opts.as==='table'){
-    target.innerHTML='<table class="tbl"><tbody>'+d.rows.map(function(r){
-      return '<tr><th>'+jiaEsc(r.k)+'</th><td'+(r.strong?' class="strong"':'')+'>'+r.v+'</td></tr>';
-    }).join('')+'</tbody></table>';
-    return;
-  }
-  if(opts.as==='grid'){
-    target.className='cont c3';
-    target.innerHTML=d.rows.map(function(r){
-      return '<div class="box"><p class="n">'+jiaEsc(r.k)+'</p><h4'+(r.strong?' class="fee"':'')+'>'+r.v+'</h4></div>';
-    }).join('');
+  /* 강의정보 카드(좌) + 항목 카드·수강료·신청 버튼(우) */
+  if(opts.as==='course'){
+    var price=null, rest=[];
+    d.rows.forEach(function(r){ if(r.strong && !price) price=r; else rest.push(r); });
+    var n=parseInt(opts.left,10); if(isNaN(n)) n=Math.ceil(rest.length/2);
+    var left=rest.slice(0,n), right=rest.slice(n);
+    var ctaLabel=d.cta ? d.cta.textContent.trim() : '수강 신청하기';
+    target.innerHTML=
+      '<div class="course-info"><p class="ci-title">강의정보</p>'+left.map(function(r){
+        return '<div class="ci-block"><p class="ci-label">'+jiaEsc(r.k)+'</p><p class="ci-value">'+r.v+'</p></div>';
+      }).join('')+'</div>'+
+      '<div class="course-right"><div class="course-rows">'+right.map(function(r){
+        return '<div class="course-row"><p class="cr-label">'+jiaEsc(r.k)+'</p><p class="cr-value">'+r.v+'</p></div>';
+      }).join('')+'</div>'+
+      (price ? '<div class="course-price"><p class="k">'+jiaEsc(price.k)+'</p><p class="v">'+price.v+'</p></div>' : '')+
+      '<a href="page_11.html" class="course-cta" data-pay-open>'+jiaEsc(ctaLabel)+'</a></div>';
     return;
   }
   if(opts.as==='accline'){
@@ -113,7 +118,7 @@ function jiaRenderClass(target, id, opts){
 }
 
 document.querySelectorAll('[data-cls-src]').forEach(function(el){
-  jiaRenderClass(el, el.getAttribute('data-cls-src'), {as: el.getAttribute('data-cls-as') || ''});
+  jiaRenderClass(el, el.getAttribute('data-cls-src'), {as: el.getAttribute('data-cls-as') || '', left: el.getAttribute('data-cls-left')});
 });
 
 (function(){
