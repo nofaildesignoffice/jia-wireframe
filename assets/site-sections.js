@@ -67,6 +67,12 @@ function jiaRenderClass(target, id, opts){
   var d=jiaClassParts(id);
   if(!target || !d){ if(target) target.innerHTML=''; return; }
 
+  if(opts.as==='table'){
+    target.innerHTML='<table class="tbl"><tbody>'+d.rows.map(function(r){
+      return '<tr><th>'+jiaEsc(r.k)+'</th><td'+(r.strong?' class="strong"':'')+'>'+r.v+'</td></tr>';
+    }).join('')+'</tbody></table>';
+    return;
+  }
   if(opts.as==='grid'){
     target.className='cont c3';
     target.innerHTML=d.rows.map(function(r){
