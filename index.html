@@ -105,10 +105,11 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .mv-bullet > p{width:0;display:flex;font-family:"Erode","Pretendard",serif;font-size:.7291666667vw;opacity:.45;color:#090909;letter-spacing:-.025em;padding-left:14px;position:relative;white-space:nowrap;transition:padding-left .4s,font-size .4s,opacity .4s}
 /* 비활성 슬라이드명도 노출 — 작게, 반투명 */
 .mv-bullet > p span{display:block;padding-left:12px;font-size:inherit;transition:padding-left .4s}
-.mv-bullet::before{width:25px;height:1px;transform:translateY(-50%);background:#090909;left:0;bottom:-32px;content:'';position:absolute;transition:width .4s}
+.mv-bullet::before{width:25px;height:1px;transform:translateY(-50%);background:#090909;left:0;bottom:calc(-.7291666667vw * 1.6 - 6px);content:'';position:absolute;transition:width .4s,bottom .4s}
 .mv-bullet.is-active > p{width:auto;padding-left:38px;font-size:1.3020833333vw;opacity:1}
 .mv-bullet.is-active > p span{padding-left:17px}
-.mv-bullet.is-active::before{width:50px}
+/* 비활성은 글자가 작아 가로선을 글자 쪽으로 붙이고, 활성은 기존 위치 */
+.mv-bullet.is-active::before{width:50px;bottom:-32px}
 .mv-bullet.white > p{color:#fff}
 .mv-bullet.white::before{background:#fff}
 
