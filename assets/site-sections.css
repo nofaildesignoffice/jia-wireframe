@@ -177,7 +177,7 @@
 /* 바 안에 놓일 때는 본문 마지막 줄과 같은 높이에서 오른쪽 정렬 */
 .bar > .pm-cta{justify-content:flex-end;padding-bottom:.1vw}
 .pm-cta a{display:inline-flex;align-items:center;width:auto;height:auto;padding:0;border:none;background:none;
-  font-size:1.0416666667vw;font-weight:600;letter-spacing:-.02em;color:var(--ul-brown);
+  font-size:1.0416666667vw;font-weight:600;letter-spacing:-.02em;color:#000;
   border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
 .pm-cta a:hover{color:var(--ul-ink);border-bottom-color:var(--ul-ink)}
 
@@ -1478,6 +1478,10 @@ body.gnb-light .letterbanner_section.partner_cta{padding:13.35vw 0}
   .value_section .content{padding:13.3333333333vw 5.3333333333vw 0}
   .value_section .content .text span,.value-points .vp h4,.value-points .vp p{word-break:keep-all}
   .value-points{padding:10.6666666667vw 5.3333333333vw 13.3333333333vw;gap:9.6vw}
+  /* --- 메인 Start From Zero: 모바일에서 이미지를 텍스트 위로 --- */
+  .sig-img-top-m .clinic .right{order:-1}
+
+  .value-points .vp:not(:last-child)::after{display:block;top:auto;right:0;left:0;bottom:-4.8vw;width:auto;height:1px;background:rgba(0,0,0,.08)}
 
   /* --- 프로모션(CLASS) 섹션 여백 --- */
   .promotion_section{padding-top:13.3333333333vw}

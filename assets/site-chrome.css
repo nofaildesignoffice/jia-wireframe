@@ -257,4 +257,12 @@ html.jia-anim .ani-fade.is-in{opacity:1}
   .side_bar #mo_nav ul.menu li.active > a,.side_bar #mo_nav ul.menu li.active > button{color:var(--ul-ink)}
   .side_bar #mo_nav ul.menu li .arrow{color:#6B6660}
   .side_bar #mo_nav ul.menu li .sub li a{color:var(--ul-ink)}
+
+  /* 드롭다운 표시: 아래 화살표 대신 + / − */
+  .side_bar #mo_nav ul.menu li .arrow svg{display:none}
+  .side_bar #mo_nav ul.menu li .arrow::before,.side_bar #mo_nav ul.menu li .arrow::after{content:"";position:absolute;left:50%;top:50%;
+    width:3.2vw;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .3s,opacity .3s}
+  .side_bar #mo_nav ul.menu li .arrow::after{transform:translate(-50%,-50%) rotate(90deg)}
+  .side_bar #mo_nav ul.menu li.active .arrow{transform:none;color:var(--ul-ink)}
+  .side_bar #mo_nav ul.menu li.active .arrow::after{transform:translate(-50%,-50%) rotate(0deg);opacity:0}
 }
