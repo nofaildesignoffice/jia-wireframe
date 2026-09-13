@@ -1223,9 +1223,9 @@ section.tone-b{background-color:var(--ul-cream-2)}
 #payModal{padding:20px 24px}
 .rv-box.pay-box{max-width:1040px;height:92dvh;max-height:92dvh;overflow:hidden;display:flex;flex-direction:column}
 .pay-split{display:grid;grid-template-columns:minmax(300px,36%) 1fr;align-items:stretch;flex:1;min-height:0}
-.pay-side{padding:40px 32px 36px;border-right:1px solid #E2DDD5;min-height:0;overflow-y:auto}
-.pay-side h3{font-size:20px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;margin-bottom:8px}
-.pay-side .pay-lead{font-size:13px;color:var(--ul-stone);line-height:1.6;margin-bottom:20px}
+.pay-side{padding:30px 28px 28px;border-right:1px solid #E2DDD5;min-height:0;overflow-y:auto}
+.pay-side h3{font-size:19px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;margin-bottom:6px}
+.pay-side .pay-lead{font-size:13px;color:var(--ul-stone);line-height:1.55;margin-bottom:14px}
 /* 우측 상세 — tabclass 스타일을 물려받되 섹션 배경·여백은 해제 */
 .pay-detail{background:none;padding:40px 34px 36px;min-height:0;overflow-y:auto}
 .pay-detail .pay-empty{font-size:14px;color:#A9A49B;line-height:1.7}
@@ -1250,9 +1250,8 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .pay-detail .cm-right .stepbar .n{font-size:12px;color:#8A7400;margin-bottom:6px}
 .pay-detail .cm-right .stepbar h4{font-size:14px;margin-bottom:5px}
 
-.pay-list{display:grid;gap:8px}
-.pay-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid #d8d3ca;background:#fff;
-  cursor:pointer;transition:border-color .2s,background .2s}
+.pay-list{display:grid;gap:6px}
+.pay-opt{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1px solid #d8d3ca;background:#fff;cursor:pointer;transition:border-color .2s,background .2s}
 .pay-opt:hover{border-color:var(--ul-ink)}
 .pay-opt.is-on{border-color:#F7D02F;background:rgba(247,208,47,.14)}
 .pay-opt input{-webkit-appearance:none;appearance:none;flex-shrink:0;width:16px;height:16px;border-radius:50%;
@@ -1263,13 +1262,12 @@ section.tone-b{background-color:var(--ul-cream-2)}
 .pay-opt .sub{font-size:12px;color:var(--ul-stone)}
 .pay-opt .pr{font-size:14px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em;flex-shrink:0}
 
-.pay-total{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
-  margin-top:22px;padding-top:18px;border-top:1px solid #d1d1d1}
+.pay-total{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:14px;padding-top:0;border-top:none}
 .pay-total .k{font-size:13px;font-weight:600;color:var(--ul-stone)}
 .pay-total .v{font-size:22px;font-weight:700;color:var(--ul-ink);letter-spacing:-.02em}
 .pay-total .v:not(:empty){text-align:right}
 
-.pay-btn{display:flex;align-items:center;justify-content:center;width:100%;height:52px;margin-top:18px;
+.pay-btn{display:flex;align-items:center;justify-content:center;width:100%;height:50px;margin-top:12px;
   border-radius:0;background:#F7D02F;border:1px solid #F7D02F;color:var(--ul-ink);
   font-size:15px;font-weight:700;letter-spacing:-.02em;transition:background .25s,border-color .25s,color .25s}
 .pay-btn:hover{background:var(--ul-ink);border-color:var(--ul-ink);color:#fff}
