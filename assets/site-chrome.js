@@ -6,6 +6,7 @@
 /* ===== 헤더 (유라인 GNB) ===== */
 var nav=document.getElementById('nav'),
     moHeader=document.getElementById('moHeader'),
+    moQuick=document.getElementById('moQuick'),
     topBtn=document.getElementById('topBtn'),
     dropdown=document.getElementById('dropdownMenu'),
     gnbMenu=document.getElementById('gnbMenu'),
@@ -18,6 +19,8 @@ function syncHeader(){
   var y=window.scrollY, top=hasHero && y<40 && !(dropdown && dropdown.classList.contains('on'));
   if(nav) nav.classList.toggle('on', top);
   if(moHeader) moHeader.classList.toggle('on', hasHero && y<40);
+  /* 모바일: 스크롤을 내리면 2행 메뉴를 보여준다 */
+  if(moQuick) moQuick.classList.toggle('is-show', y>=40);
   if(topBtn) topBtn.classList.toggle('is-show', y>400);
 }
 window.addEventListener('scroll', syncHeader);

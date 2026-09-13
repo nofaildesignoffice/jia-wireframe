@@ -1448,3 +1448,92 @@ body.gnb-light .letterbanner_section.partner_cta{padding:13.35vw 0}
 @media (prefers-reduced-motion:reduce){
   .mainVisual .mv-slide.is-active .hero-img{animation:none}
 }
+
+/* ==========================================================================
+   모바일 전용 정리 — 글자 크기 스케일, 여백, 슬라이더 스와이프
+   (전부 900px 이하에서만 적용. 데스크탑은 변경 없음)
+   ========================================================================== */
+@media screen and (max-width:900px){
+  /* --- 섹션 영문 타이틀 28px --- */
+  .tv_section .title h3,.linestory_section .title h3,.value_section .content .text h3,.promotion_section .bar h3,
+  .care_section .title h3,.letter_section h3,.gridline_section .title h3,.compare_section .title h3,
+  .tabclass_section .title h3,.premium_section .title h3,.special_section .title h3,
+  .board_section .head h1,.faq_section .head h1,.letterlist_section .head h1,.pagehead_section .head h1,
+  .signature_section.core-clinic .clinic .left h3{font-size:7.4666666667vw;line-height:1.15}
+
+  /* --- 대형 헤딩(Your Own Hands 등) 40px, 들여쓰기와 가로선 제거 --- */
+  .signature_section .clinic .left h3{font-size:10.6666666667vw;line-height:1.05;letter-spacing:-.02em;margin-bottom:6.4vw}
+  .signature_section .clinic .left h3 b{margin-left:0}
+  .signature_section .clinic .left h3 b::after{display:none}
+
+  /* --- clinic 레이아웃: 세로 테두리 박스 제거 --- */
+  .signature_section .clinic .left{border-left:none;border-right:none;padding:13.3333333333vw 0 8vw}
+  .signature_section .clinic .right{border-left:none;border-right:none}
+  .signature_section .clinic .left .sig-points li{word-break:keep-all}
+
+  /* --- 입력창 16px (아이폰 자동 확대 방지) --- */
+  .field input,.field select,.field textarea{font-size:4.2666666667vw}
+
+  /* --- JIA Value: 줄바꿈과 여백 --- */
+  .value_section .content{padding:13.3333333333vw 5.3333333333vw 0}
+  .value_section .content .text span,.value-points .vp h4,.value-points .vp p{word-break:keep-all}
+  .value-points{padding:10.6666666667vw 5.3333333333vw 13.3333333333vw;gap:9.6vw}
+
+  /* --- 프로모션(CLASS) 섹션 여백 --- */
+  .promotion_section{padding-top:13.3333333333vw}
+  .promotion_section .slide_contain{padding:8vw 5.3333333333vw 13.3333333333vw}
+  .promotion_section#apply{padding-top:13.3333333333vw;padding-bottom:0}
+
+  /* --- 메인 CLASS: 2 x 2 카드 그리드 --- */
+  .pm-grid-m .pm-viewport{overflow:visible}
+  .pm-grid-m .pm-track{display:grid;grid-template-columns:repeat(2,1fr);gap:8.5333333333vw 3.7333333333vw;transform:none!important}
+  .pm-grid-m .pm-slide{flex:none;width:auto;min-width:0}
+  .pm-grid-m .pm-slide .text{margin-top:3.2vw}
+  .pm-grid-m .pm-slide .text > p{font-size:4vw;margin-bottom:1.6vw;word-break:keep-all}
+  .pm-grid-m .pm-slide .text > span{font-size:3.2vw;line-height:1.55}
+  .pm-grid-m .pm-slide .text .hash{margin-top:2.6666666667vw;flex-wrap:wrap;gap:1.6vw}
+  .pm-grid-m .pm-slide .text .hash span{font-size:3.2vw;padding:1.3333333333vw 2.1333333333vw}
+
+  /* --- 그 밖의 카드 슬라이더(경력자 APPLY): 손가락으로 좌우 스와이프 --- */
+  .promotion_section:not(.pm-grid-m) .pm-viewport{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .promotion_section:not(.pm-grid-m) .pm-viewport::-webkit-scrollbar{display:none}
+  .promotion_section:not(.pm-grid-m) .pm-track{transform:none!important}
+  .promotion_section:not(.pm-grid-m) .pm-slide{scroll-snap-align:start}
+
+  /* --- 후기 슬라이더: 손가락으로 좌우 스와이프 (네이티브 스크롤) --- */
+  .tv_section .rv-vp{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;margin:0 -5.3333333333vw;padding:0 5.3333333333vw;scroll-padding:0 5.3333333333vw}
+  .tv_section .rv-vp::-webkit-scrollbar{display:none}
+  .tv_section .rv-track{transform:none!important}
+  .tv_section .rv-card{scroll-snap-align:start}
+
+  /* --- 서브 히어로 지표: 세로 나열 대신 한 줄에 2~3칸 --- */
+  .subhero_section .stats{display:grid;grid-template-columns:repeat(2,1fr);flex-wrap:nowrap;border-top:1px solid rgba(255,255,255,.14)}
+  .subhero_section .stats:has(> div:nth-child(3):last-child){grid-template-columns:repeat(3,1fr)}
+  .subhero_section .stats > div{width:auto;padding:4.8vw 1vw}
+  .subhero_section .stats > div:not(:last-child)::after{display:none}
+  .subhero_section .stats .k{font-size:3.2vw}
+  .subhero_section .stats .v{font-size:6.4vw}
+
+  /* --- 신청 카드 좌우 여백을 섹션과 통일 --- */
+  .gridline_section .course-grid{padding:0 5.3333333333vw}
+
+  /* --- 비교표: 가로 스크롤 없이 화면 폭에 맞춤 --- */
+  .cmp-wrap{overflow-x:visible}
+  .cmp{min-width:0}
+  .cmp th,.cmp td{padding:3.2vw 1.6vw}
+  .cmp thead th{font-size:3.2vw}
+  .cmp tbody th{width:12vw;font-size:3.2vw}
+  .cmp tbody td{font-size:3.2vw;line-height:1.5}
+}
+
+/* 모바일 추가 정리 */
+@media screen and (max-width:900px){
+  /* 페이지 헤드 설명문 줄바꿈 */
+  .pagehead_section .head p,.letterlist_section .head p,.board_section .head p,.faq_section .head p{word-break:keep-all}
+  /* How It Works 카드 설명의 강제 줄바꿈 해제 */
+  .premium_section .cont .box span br{display:none}
+  /* 신청 카드 항목: 라벨 위 · 값 아래 */
+  .course-grid .course-row{flex-direction:column;align-items:flex-start;gap:1.6vw}
+  .course-grid .cr-value{text-align:left;font-size:3.4666666667vw}
+}

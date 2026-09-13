@@ -8,8 +8,8 @@
 <meta name="description" content="지아 유료회원을 위한 뉴스레터 회차 목록입니다.">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
-<link href="assets/site-chrome.css?v=4a391000" rel="stylesheet">
-<link href="assets/site-sections.css?v=cede39ff" rel="stylesheet">
+<link href="assets/site-chrome.css?v=ef7d9fed" rel="stylesheet">
+<link href="assets/site-sections.css?v=8b91d52b" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 
@@ -344,10 +344,19 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
   <div class="mo_header on" id="moHeader">
     <h1><a href="index.html"><img src="assets/logo-h.svg?v=43778886" alt="지아"></a></h1>
     <div class="mo_icon">
-      <a href="#" aria-label="검색"><i data-lucide="search"></i></a>
       <button id="moOpen" aria-label="메뉴 열기"><i data-lucide="menu"></i></button>
     </div>
   </div>
+
+  <!-- 모바일 스크롤 시 나타나는 2행 메뉴 (좌우 스와이프) -->
+  <nav class="mo_quick" id="moQuick" aria-label="주요 메뉴">
+    <div class="mq-track">
+      <a href="page_02.html">클래스</a>
+      <a href="page_04.html">Store</a>
+      <a href="page_07.html" class="is-active">블로그</a>
+      <a href="page_09.html">고객센터</a>
+    </div>
+  </nav>
 
   <!-- 모바일 사이드바 -->
   <div class="side_dim" id="sideDim"></div>
@@ -577,6 +586,6 @@ document.querySelectorAll('[data-tabs] button').forEach(function(b){
   };
 });
 </script>
-<script src="assets/site-chrome.js?v=4a261773"></script>
+<script src="assets/site-chrome.js?v=b6500623"></script>
 </body>
 </html>

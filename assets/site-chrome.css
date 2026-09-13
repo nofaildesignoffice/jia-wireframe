@@ -225,3 +225,36 @@ html.jia-anim .ani-fade.is-in{opacity:1}
 @media (prefers-reduced-motion:reduce){
   html.jia-anim .ani-text,html.jia-anim .ani-fade{opacity:1;transform:none;filter:none;transition:none}
 }
+
+/* ==========================================================================
+   모바일 GNB — 로고 가운데, 스크롤 시 2행 메뉴, 사이드메뉴 크림 배경
+   (데스크탑에는 영향 없음)
+   ========================================================================== */
+.mo_quick{display:none}
+@media screen and (max-width:900px){
+  .mo_header{justify-content:flex-end}
+  .mo_header h1{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}
+
+  .mo_quick{display:block;position:fixed;left:0;right:0;top:13.3333333333vw;height:11.2vw;z-index:199;
+    background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    border-top:1px solid rgba(255,255,255,.12);
+    transform:translateY(-8px);opacity:0;visibility:hidden;transition:transform .3s,opacity .3s,visibility .3s}
+  .mo_quick.is-show{transform:translateY(0);opacity:1;visibility:visible}
+  .mo_quick .mq-track{display:flex;align-items:center;gap:7.4666666667vw;height:100%;padding:0 5.3333333333vw;
+    overflow-x:auto;overflow-y:hidden;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-snap-type:x proximity}
+  .mo_quick .mq-track::-webkit-scrollbar{display:none}
+  .mo_quick a{flex-shrink:0;position:relative;padding:2.1333333333vw 0;font-size:3.7333333333vw;font-weight:500;
+    color:rgba(255,255,255,.72);letter-spacing:-.02em;scroll-snap-align:start}
+  .mo_quick a.is-active{color:#fff;font-weight:700}
+  .mo_quick a.is-active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#F7D02F}
+
+  /* 사이드 메뉴 — 연한 섹션 배경색 */
+  .side_bar{background:var(--ul-cream)}
+  .side_bar .top .info a{color:var(--ul-ink)}
+  .side_bar .top .info a:first-child::after{background:var(--ul-ink)}
+  .side_bar .top .icon button{color:var(--ul-ink)}
+  .side_bar #mo_nav ul.menu li > a,.side_bar #mo_nav ul.menu li > button{color:#6B6660}
+  .side_bar #mo_nav ul.menu li.active > a,.side_bar #mo_nav ul.menu li.active > button{color:var(--ul-ink)}
+  .side_bar #mo_nav ul.menu li .arrow{color:#6B6660}
+  .side_bar #mo_nav ul.menu li .sub li a{color:var(--ul-ink)}
+}
