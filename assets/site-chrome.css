@@ -1,3 +1,10 @@
+/* 숫자 전용 폰트 — Erode(영문) 스택 앞에 두면 숫자·기호만 Pretendard 로 렌더된다 */
+@font-face{font-family:"JiaNum";src:url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard/packages/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0025,U+002B-002E,U+0030-0039,U+007E}
+@font-face{font-family:"JiaNum";src:url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard/packages/pretendard/dist/web/static/woff2/Pretendard-Medium.woff2) format("woff2");font-weight:500;font-display:swap;unicode-range:U+0025,U+002B-002E,U+0030-0039,U+007E}
+@font-face{font-family:"JiaNum";src:url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard/packages/pretendard/dist/web/static/woff2/Pretendard-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0025,U+002B-002E,U+0030-0039,U+007E}
+@font-face{font-family:"JiaNum";src:url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard/packages/pretendard/dist/web/static/woff2/Pretendard-Bold.woff2) format("woff2");font-weight:700;font-display:swap;unicode-range:U+0025,U+002B-002E,U+0030-0039,U+007E}
+@font-face{font-family:"JiaNum";src:url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard/packages/pretendard/dist/web/static/woff2/Pretendard-ExtraBold.woff2) format("woff2");font-weight:800;font-display:swap;unicode-range:U+0025,U+002B-002E,U+0030-0039,U+007E}
+
 /* ==========================================================================
    지아 공용 사이트 크롬 — GNB · 푸터 · TOP 버튼
    전 페이지 공용. 이 파일만 고치면 사이트 전역에 반영됩니다.
@@ -111,13 +118,13 @@ body.hero-top{padding-top:0}
 
 /* ===== 모바일 GNB (유라인 사이드바 스타일) ===== */
 @media screen and (max-width:900px){
-  body{padding-top:16vw}
+  body{padding-top:13.3333333333vw}
   body.hero-top{padding-top:0}
   #header .header{display:none !important}
   #header .dropdown_menu{display:none !important}
-  .mo_header{position:fixed;left:0;top:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 5.3333333333vw;height:16vw;background:rgba(0,0,0,.55);z-index:200;transition:background .4s}
+  .mo_header{position:fixed;left:0;top:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 5.3333333333vw;height:13.3333333333vw;background:rgba(0,0,0,.55);z-index:200;transition:background .4s}
   .mo_header.on{background:transparent}
-  .mo_header h1 > a{display:flex;align-items:center;height:calc(100vw * (30/375))}
+  .mo_header h1 > a{display:flex;align-items:center;height:calc(100vw * (24/375))}
   .mo_header h1 img{height:100%;width:auto;display:block}
   .mo_header .mo_icon{display:flex;align-items:center;gap:5.3333333333vw}
   .mo_header .mo_icon a,.mo_header .mo_icon button{width:6.4vw;height:6.4vw;color:#fff;display:flex;align-items:center;justify-content:center}
@@ -204,3 +211,17 @@ body.gnb-light .mo_header.on .mo_icon button{color:#000}
 /* 뉴스레터 카드 — 라운딩 제거 */
 .post-card{border-radius:0}
 .post-body .tag{border-radius:0}
+
+/* ==========================================================================
+   스크롤 등장 애니메이션 — 모든 페이지 공통
+   텍스트: 아래→위 + 블러 해제 / 카드·이미지: 페이드 인
+   html.jia-anim 은 JS 가 붙인다 → JS 가 없으면 아무것도 숨겨지지 않는다
+   ========================================================================== */
+html.jia-anim .ani-text{opacity:0;transform:translateY(30px);filter:blur(8px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1),filter .7s ease}
+html.jia-anim .ani-fade{opacity:0;transition:opacity .9s ease}
+html.jia-anim .ani-text.is-in{opacity:1;transform:translateY(0);filter:blur(0)}
+html.jia-anim .ani-fade.is-in{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  html.jia-anim .ani-text,html.jia-anim .ani-fade{opacity:1;transform:none;filter:none;transition:none}
+}

@@ -12,7 +12,7 @@
   display:none;
   align-items:center;
   justify-content:center;
-  background:var(--ul-ink,#1F1B1B);
+  background:#000000;
 }
 .ji-intro.is-on{display:flex}
 
@@ -33,7 +33,7 @@
   display:block;
   overflow:visible;
 }
-.ji-logo path{fill:#fff}
+.ji-logo path{fill:#F7D02F}
 
 /* ── 시작 상태 ── */
 /* 심볼: 살짝 작게 + 아래에서 */
