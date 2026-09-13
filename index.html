@@ -89,7 +89,7 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .mv-slide.is-active{opacity:1;visibility:visible}
 .mainVisual .videoBox{position:relative;height:100%}
 
-.mainVisual .slideText{color:#090909;width:100%;height:auto;position:absolute;left:50%;top:50%;text-align:center;transform:translate(-50%,-50%);opacity:0;transition:opacity 1.5s linear;z-index:5;padding:0 24px}
+.mainVisual .slideText{color:#090909;width:100%;height:auto;position:absolute;left:50%;top:50%;text-align:center;transform:translate(-50%,-50%);opacity:0;z-index:5;padding:0 24px}
 .mainVisual .mv-slide.is-active .slideText{opacity:1}
 .mainVisual .slideText.white{color:#fff}
 .mainVisual .slideText.white a{color:#fff;border-color:#fff}
@@ -97,6 +97,21 @@ button{cursor:pointer;border:none;font-family:inherit;background:none}
 .mainVisual .slideText dl dd{font-size:1.0416666667vw;line-height:1.7;letter-spacing:-.04em;margin-top:.83vw}
 .mainVisual .slideText a{width:280px;height:55px;font-size:1.0416666667vw;letter-spacing:-.05em;margin:2.6vw auto 0;display:flex;align-items:center;justify-content:center;border:1px solid #090909;transition:background .3s,color .3s}
 .mainVisual .slideText.white a:hover{background:#fff;color:var(--ul-ink)}
+/* 슬라이드가 켜질 때마다: 제목·설명은 아래→위 + 블러 해제, CTA 는 위→아래 */
+@keyframes jiaHeroUp{from{opacity:0;transform:translateY(32px);filter:blur(10px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes jiaHeroDown{from{opacity:0;transform:translateY(-28px)}to{opacity:1;transform:translateY(0)}}
+.mainVisual .mv-slide.is-active .slideText dl dt{animation:jiaHeroUp .9s cubic-bezier(.22,.61,.36,1) .25s both}
+.mainVisual .mv-slide.is-active .slideText dl dd{animation:jiaHeroUp .9s cubic-bezier(.22,.61,.36,1) .45s both}
+.mainVisual .mv-slide.is-active .slideText a{animation:jiaHeroDown .8s cubic-bezier(.22,.61,.36,1) .75s both}
+/* 인트로가 재생되는 동안은 멈춰 두었다가 인트로가 걷히면 시작 */
+html.ji-intro-playing .mainVisual .slideText dl dt,
+html.ji-intro-playing .mainVisual .slideText dl dd,
+html.ji-intro-playing .mainVisual .slideText a{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){
+  .mainVisual .mv-slide.is-active .slideText dl dt,
+  .mainVisual .mv-slide.is-active .slideText dl dd,
+  .mainVisual .mv-slide.is-active .slideText a{animation:none}
+}
 
 /* 좌측 세로 페이지네이션 */
 .mv-pagination{width:auto;height:115px;position:absolute;left:3.125vw;top:50%;transform:translateY(-50%);z-index:6;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between}
@@ -222,7 +237,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       </svg>
   </div>
 </div>
-<script src="assets/site-intro.js?v=90e47e21"></script>
+<script src="assets/site-intro.js?v=504f82fd"></script>
 
 <!-- ================= HEADER (유라인 GNB 스타일) ================= -->
 <header id="header">

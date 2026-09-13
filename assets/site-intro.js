@@ -18,6 +18,7 @@
   if (!el) return;
 
   function remove() {
+    document.documentElement.classList.remove('ji-intro-playing');
     if (el && el.parentNode) el.parentNode.removeChild(el);
     document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
@@ -38,6 +39,8 @@
   document.body.style.overflow = 'hidden';
 
   el.classList.add('is-on');
+  // 인트로가 끝날 때까지 히어로 텍스트 등장 애니메이션을 멈춰 둔다
+  document.documentElement.classList.add('ji-intro-playing');
 
   // 안전장치: 무슨 일이 있어도 이 시간 안에는 사라진다
   var failsafe = setTimeout(remove, TIMING.start + TIMING.hold + TIMING.fade + 4000);
@@ -51,6 +54,7 @@
         // 마지막 글자의 transition-delay(.75s) + duration(.7s) 이후 유지 시간
         setTimeout(function () {
           el.classList.add('is-out');
+          document.documentElement.classList.remove('ji-intro-playing');
           setTimeout(function () {
             clearTimeout(failsafe);
             remove();
