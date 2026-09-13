@@ -1420,3 +1420,11 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .partner_cta p{font-size:3.7333333333vw}
   .partner_cta > .inner > a{width:100%}
 }
+
+/* 파트너 스토어 CTA — 배경 사진 + 검정 반투명 오버레이 */
+.letterbanner_section.partner_cta{position:relative;background:#1F1B1B url(../assets/cta-hbt.jpg?v=4b0abd65) no-repeat center bottom/cover}
+.partner_cta::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);pointer-events:none}
+.partner_cta .inner{position:relative;z-index:1}
+.partner_cta .label{color:rgba(255,255,255,.75)}
+.partner_cta h3{color:#fff}
+.partner_cta p{color:rgba(255,255,255,.85)}
