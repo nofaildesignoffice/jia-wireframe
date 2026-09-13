@@ -35,6 +35,66 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
    클래스 선택 · 상세 · 결제 모달
    좌: 과정 선택 / 우: 선택한 과정의 상세(#clsSource 패널을 복제해 재조립)
    ========================================================================== */
+/* 탭 패널 마크업을 상세 표시용 한 단 구조로 재조립 — 모달과 정적 섹션이 공유 */
+function jiaRenderClass(target, id, opts){
+  opts=opts||{};
+  var src=document.getElementById(id);
+  if(!target) return;
+  if(!src){ target.innerHTML=''; return; }
+  target.innerHTML=src.innerHTML;
+
+  var head=target.querySelector('.cls-head');
+  if(head){
+    var chips=head.querySelector('.chips');
+    if(chips) chips.parentNode.removeChild(chips);
+    if(!head.children.length) head.parentNode.removeChild(head);
+  }
+  var cols=target.querySelector('.cls-cols');
+  if(!cols) return;
+
+  var tbl=cols.querySelector('.tbl');
+  if(tbl){
+    var info=document.createElement('div'); info.className='cm-info';
+    tbl.querySelectorAll('tr').forEach(function(tr){
+      var th=tr.querySelector('th'), td=tr.querySelector('td');
+      if(!th || !td) return;
+      var row=document.createElement('div'); row.className='cm-row';
+      var k=document.createElement('span'); k.className='k'; k.textContent=th.textContent.trim();
+      var v=document.createElement('span'); v.className='v'; v.innerHTML=td.innerHTML;
+      if(td.classList.contains('strong')) v.classList.add('strong');
+      row.appendChild(k); row.appendChild(v);
+      info.appendChild(row);
+    });
+    cols.parentNode.insertBefore(info, cols);
+    tbl.parentNode.removeChild(tbl);
+  }
+  var cta=cols.querySelector('.cls-cta');
+  if(cta){
+    if(opts.keepCta) target.appendChild(cta);
+    else cta.parentNode.removeChild(cta);
+  }
+
+  var keep=document.createElement('div'); keep.className='cm-right';
+  while(cols.firstChild){
+    var n=cols.firstChild; cols.removeChild(n);
+    if(n.nodeType!==1) continue;
+    if(n.classList.contains('acc') || n.classList.contains('stepbar')) keep.appendChild(n);
+    else while(n.firstChild){
+      var c=n.firstChild; n.removeChild(c);
+      if(c.nodeType===1) keep.appendChild(c);
+    }
+  }
+  keep.querySelectorAll('.acc-item').forEach(function(it){ it.classList.add('is-open') });
+  keep.querySelectorAll('.acc-q .mk').forEach(function(m){ m.parentNode.removeChild(m) });
+  cols.parentNode.replaceChild(keep, cols);
+  if(opts.keepCta && cta) target.appendChild(cta);
+}
+
+/* 정적 상세 섹션 (창업반 Class 섹션) */
+document.querySelectorAll('[data-cls-src]').forEach(function(el){
+  jiaRenderClass(el, el.getAttribute('data-cls-src'), {keepCta:true});
+});
+
 (function(){
   var modal=document.getElementById('payModal');
   if(!modal) return;
@@ -43,56 +103,7 @@ document.querySelectorAll('.slide_contain').forEach(function(sc){
       btn=modal.querySelector('#payBtn'),
       empty='<p class="pay-empty">왼쪽에서 과정을 선택하시면 상세 내용이 표시됩니다.</p>';
 
-  /* 탭 패널 마크업을 상세 패널용 한 단 구조로 재조립 */
-  function build(id){
-    var src=document.getElementById(id);
-    if(!src){ detail.innerHTML=empty; return; }
-    detail.innerHTML=src.innerHTML;
-
-    var head=detail.querySelector('.cls-head');
-    if(head){
-      var chips=head.querySelector('.chips');
-      if(chips) chips.parentNode.removeChild(chips);
-    }
-    var cols=detail.querySelector('.cls-cols');
-    if(!cols) return;
-
-    /* 표 -> 텍스트 목록 */
-    var tbl=cols.querySelector('.tbl');
-    if(tbl){
-      var info=document.createElement('div'); info.className='cm-info';
-      tbl.querySelectorAll('tr').forEach(function(tr){
-        var th=tr.querySelector('th'), td=tr.querySelector('td');
-        if(!th || !td) return;
-        var row=document.createElement('div'); row.className='cm-row';
-        var k=document.createElement('span'); k.className='k'; k.textContent=th.textContent.trim();
-        var v=document.createElement('span'); v.className='v'; v.innerHTML=td.innerHTML;
-        if(td.classList.contains('strong')) v.classList.add('strong');
-        row.appendChild(k); row.appendChild(v);
-        info.appendChild(row);
-      });
-      cols.parentNode.insertBefore(info, cols);
-      tbl.parentNode.removeChild(tbl);
-    }
-    /* 결제 버튼이 왼쪽에 있으므로 패널 안의 신청 버튼은 제거 */
-    var cta=cols.querySelector('.cls-cta');
-    if(cta) cta.parentNode.removeChild(cta);
-
-    /* 커리큘럼만 남겨 한 단으로 */
-    var keep=document.createElement('div'); keep.className='cm-right';
-    while(cols.firstChild){
-      var n=cols.firstChild; cols.removeChild(n);
-      if(n.nodeType!==1) continue;
-      if(n.classList.contains('acc') || n.classList.contains('stepbar')) keep.appendChild(n);
-      else while(n.firstChild){
-        var c=n.firstChild; n.removeChild(c);
-        if(c.nodeType===1) keep.appendChild(c);
-      }
-    }
-    keep.querySelectorAll('.acc-item').forEach(function(it){ it.classList.add('is-open') });
-    keep.querySelectorAll('.acc-q .mk').forEach(function(m){ m.parentNode.removeChild(m) });
-    cols.parentNode.replaceChild(keep, cols);
-  }
+  function build(id){ jiaRenderClass(detail, id); }
 
   function select(r){
     modal.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('is-on') });
