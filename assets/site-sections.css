@@ -1556,3 +1556,27 @@ body.gnb-light .letterbanner_section.partner_cta{padding:13.35vw 0}
   .course-grid .course-row{flex-direction:column;align-items:flex-start;gap:1.6vw}
   .course-grid .cr-value{text-align:left;font-size:3.4666666667vw}
 }
+
+/* ==========================================================================
+   모바일 Process of JIA 리스트형 (page_02) — 왼쪽 단계명·본문, 오른쪽 4:3 이미지
+   ========================================================================== */
+@media screen and (max-width:900px){
+  .proc-list-m .cont{row-gap:0;text-align:left}
+  .proc-list-m .cont .box{display:grid;grid-template-columns:1fr 36vw;column-gap:4.8vw;
+    grid-template-rows:1fr auto auto auto 1fr;
+    grid-template-areas:". img" "n img" "nm img" "d img" ". img";
+    padding:6.4vw 0;border-bottom:1px solid rgba(0,0,0,.08)}
+  .proc-list-m .cont .box:first-child{border-top:1px solid rgba(0,0,0,.08)}
+  .proc-list-m .cont .box:nth-child(n) .img{grid-area:img;width:100%;height:auto;aspect-ratio:4/3;margin:0;padding:0;border-radius:0;align-self:center}
+  .proc-list-m .cont .box .n{grid-area:n;margin-bottom:1.0666666667vw}
+  .proc-list-m .cont .box .nm{grid-area:nm;font-size:4.5333333333vw}
+  .proc-list-m .cont .box .d{grid-area:d;font-size:3.4666666667vw;margin-top:1.6vw;line-height:1.55}
+}
+
+/* 모바일 CLASS 2x2 — 자세히 보기 버튼을 카드 아래 줄에 맞춤 */
+@media screen and (max-width:900px){
+  .pm-grid-m .pm-slide:has(.more){display:flex;flex-direction:column}
+  .pm-grid-m .pm-slide:has(.more) .text{flex:1;display:flex;flex-direction:column}
+  .pm-grid-m .pm-slide .text .hash{margin-bottom:3.2vw}
+  .pm-grid-m .pm-slide .text .more{margin-top:auto;height:10.6666666667vw;min-height:0;font-size:3.4666666667vw}
+}
