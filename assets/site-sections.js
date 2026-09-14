@@ -192,3 +192,29 @@ document.querySelectorAll('[data-cls-src]').forEach(function(el){
   });
   if(btn) btn.onclick=function(e){ if(btn.classList.contains('is-disabled')) e.preventDefault(); };
 })();
+
+/* Core 영상 — 썸네일 클릭 시 모달로 재생 */
+(function(){
+  var modal=document.getElementById('vidModal');
+  if(!modal) return;
+  var video=modal.querySelector('video');
+  function open(src){
+    if(video.getAttribute('src')!==src) video.setAttribute('src',src);
+    modal.hidden=false;
+    document.body.style.overflow='hidden';
+    if(window.lucide) lucide.createIcons();
+    var p=video.play(); if(p && p.catch) p.catch(function(){});
+  }
+  function close(){
+    video.pause();
+    modal.hidden=true;
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('[data-video-open]').forEach(function(b){
+    b.addEventListener('click',function(){ open(b.getAttribute('data-src')); });
+  });
+  modal.querySelectorAll('[data-video-close]').forEach(function(x){
+    x.addEventListener('click',close);
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
+})();

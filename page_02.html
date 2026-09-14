@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600&display=swap" rel="stylesheet">
 <link href="assets/site-chrome.css?v=36d3d892" rel="stylesheet">
-<link href="assets/site-sections.css?v=10c4365b" rel="stylesheet">
+<link href="assets/site-sections.css?v=f6384d71" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 
@@ -980,7 +980,7 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
       </ul>
     </div>
     <div class="right">
-      <div class="sig-ph has-video"><video src="https://player.vimeo.com/progressive_redirect/playback/1226630548/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&amp;signature=d07438056e16c166e6d74c46ad42d8c1ac163b12195ec712b1826a15e986d8b7#t=0.1" controls playsinline preload="metadata" aria-label="지아 영상 피드백 수업 영상"></video></div>
+      <div class="sig-ph has-video"><button type="button" class="vid-thumb" data-video-open data-src="https://player.vimeo.com/progressive_redirect/playback/1226630548/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&amp;signature=d07438056e16c166e6d74c46ad42d8c1ac163b12195ec712b1826a15e986d8b7#t=0.1" aria-label="영상 재생"><img src="assets/core-video-poster.webp" alt="지아 영상 피드백 수업 영상 썸네일"><span class="vid-play" aria-hidden="true"></span></button></div>
     </div>
   </div>
 </section>
@@ -1205,6 +1205,14 @@ blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--text-li
 </div>
 
 <!-- 클래스 선택 · 상세 · 결제 모달 -->
+<!-- 영상 모달 -->
+<div class="rv-modal vid-modal" id="vidModal" hidden>
+  <div class="rv-back" data-video-close></div>
+  <div class="vid-box" role="dialog" aria-modal="true" aria-label="영상 플레이어">
+    <button class="rv-close vid-close" data-video-close aria-label="닫기"><i data-lucide="x"></i></button>
+    <video controls playsinline preload="none" poster="assets/core-video-poster.webp"></video>
+  </div>
+</div>
 <div class="rv-modal" id="payModal" hidden>
   <div class="rv-back" data-pay-close></div>
   <div class="rv-box pay-box" role="dialog" aria-modal="true" aria-labelledby="payTitle">
@@ -1510,7 +1518,7 @@ window.addEventListener('resize', rvClampAll);
 })();
 </script>
 
-<script src="assets/site-sections.js?v=9822c3c0"></script>
+<script src="assets/site-sections.js?v=e17a50eb"></script>
 <script src="assets/site-chrome.js?v=b6500623"></script>
 </body>
 </html>
