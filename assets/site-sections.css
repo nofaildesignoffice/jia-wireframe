@@ -90,6 +90,7 @@
 .linestory_section .answer-box{max-width:1000px;margin:4vw auto 0;padding:0 24px;text-align:center}
 .linestory_section .answer-box p{font-size:1.0416666667vw;line-height:1.8;color:var(--ul-ink);letter-spacing:-.02em}
 .linestory_section .answer-box strong{font-weight:700;color:var(--ul-brown)}
+.linestory_section .answer-box.ans-ink strong{color:#000}
 
 @media screen and (max-width:900px){
   .linestory_section{padding:16vw 0 18vw}
@@ -1342,6 +1343,13 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .core-clinic .clinic .left{flex:none;width:100%}
   .core-clinic .clinic .right{display:block}
   .core-clinic .clinic .right .sig-ph{width:100%;height:auto;aspect-ratio:16/9}
+
+  /* 영상 박스를 본문과 STEP 사이에 배치 */
+  .core-video-mid-m .clinic{align-items:stretch;padding-top:13.3333333333vw;padding-bottom:13.3333333333vw}
+  .core-video-mid-m .clinic .left{display:contents}
+  .core-video-mid-m .clinic .left > *{order:1}
+  .core-video-mid-m .clinic .right{order:2;margin-top:8vw}
+  .core-video-mid-m .clinic .left > .step-points{order:3}
 }
 
 /* How It Works 카드 사진 */
