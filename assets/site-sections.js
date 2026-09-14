@@ -148,6 +148,13 @@ document.querySelectorAll('[data-cls-src]').forEach(function(el){
     if(window.lucide) lucide.createIcons();
     if(detail) detail.scrollTop=0;
   }
+  /* 모바일: 과정을 고르면 상세 내용 위치로 스크롤 */
+  function scrollToDetail(){
+    var box=modal.querySelector('.pay-box');
+    if(!box || !detail || !window.matchMedia('(max-width:900px)').matches) return;
+    var top=box.scrollTop+detail.getBoundingClientRect().top-box.getBoundingClientRect().top;
+    box.scrollTo({top:top,behavior:'smooth'});
+  }
   function reset(){
     modal.querySelectorAll('input[name="payClass"]').forEach(function(r){ r.checked=false });
     modal.querySelectorAll('.pay-opt').forEach(function(o){ o.classList.remove('is-on') });
@@ -181,7 +188,7 @@ document.querySelectorAll('[data-cls-src]').forEach(function(el){
   });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
   modal.querySelectorAll('input[name="payClass"]').forEach(function(r){
-    r.onchange=function(){ select(r) };
+    r.onchange=function(){ select(r); scrollToDetail(); };
   });
   if(btn) btn.onclick=function(e){ if(btn.classList.contains('is-disabled')) e.preventDefault(); };
 })();

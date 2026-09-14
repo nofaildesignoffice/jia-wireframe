@@ -818,14 +818,16 @@ body.gnb-light .care_section{padding-bottom:5.2083333333vw}
   .letterlist_section .head p{font-size:3.7333333333vw}
   .letterlist_section .tabs{gap:2vw;margin-bottom:8vw}
   .letterlist_section .tabs button{padding:2.4vw 3.6vw;font-size:3.4666666667vw}
-  .letterlist_section .grid-3{grid-template-columns:1fr;gap:6.4vw}
-  .letterlist_section .post-body{padding:5.3vw 5.3vw 6vw}
-  .letterlist_section .post-body .tag{font-size:3.2vw;padding:1.2vw 3vw;margin-bottom:3.2vw}
-  .letterlist_section .post-body h3{font-size:4.5333333333vw;margin-bottom:2.4vw}
-  .letterlist_section .post-body p{font-size:3.7333333333vw;margin-bottom:4vw}
-  .letterlist_section .post-body time{font-size:3.4666666667vw}
-  .letterlist_section .post-foot{padding-top:3.2vw;gap:3vw}
-  .letterlist_section .post-foot .lock{font-size:3.2vw;gap:1.2vw}
+  /* 카드 한 줄에 2개 */
+  .letterlist_section .grid-3{grid-template-columns:repeat(2,minmax(0,1fr));gap:6.4vw 3.7333333333vw}
+  .letterlist_section .post-card .img-placeholder svg{width:24px;height:24px}
+  .letterlist_section .post-body{padding:3.2vw 3.2vw 3.7333333333vw}
+  .letterlist_section .post-body .tag{font-size:2.6666666667vw;padding:.8vw 1.8666666667vw;margin-bottom:2.1333333333vw}
+  .letterlist_section .post-body h3{font-size:3.7333333333vw;margin-bottom:1.6vw;line-height:1.45}
+  .letterlist_section .post-body p{font-size:3.2vw;margin-bottom:2.6666666667vw;line-height:1.55}
+  .letterlist_section .post-body time{font-size:2.9333333333vw}
+  .letterlist_section .post-foot{padding-top:2.1333333333vw;gap:1.6vw;flex-wrap:wrap}
+  .letterlist_section .post-foot .lock{font-size:2.9333333333vw;gap:1.0666666667vw}
   .letterlist_section .micro{font-size:3.2vw;margin-top:6vw}
 }
 
@@ -1296,6 +1298,21 @@ section.tone-b{background-color:var(--ul-cream-2)}
   .pay-detail{padding:24px 22px 28px;overflow:visible}
   .pay-total .v{font-size:19px}
   .pay-btn{height:48px;font-size:14px}
+
+  /* 결제 금액·결제하기를 모달 하단에 고정 (선택 목록 → 상세 → 하단 바 순서) */
+  .pay-split{display:flex;flex-direction:column}
+  .pay-side{display:contents}
+  .pay-side > h3,.pay-side > .pay-lead,.pay-side > .pay-list{order:1;margin-left:22px;margin-right:22px}
+  .pay-side > h3{margin-top:28px}
+  .pay-side > .pay-list{margin-bottom:26px}
+  .pay-detail{order:2;border-top:1px solid #E2DDD5}
+  .pay-foot{order:3;position:sticky;bottom:0;z-index:5;background:var(--ul-cream);border-top:1px solid #E2DDD5;
+    padding:12px 22px 14px;display:flex;align-items:center;gap:14px}
+  .pay-foot .pay-total{flex-direction:column;align-items:flex-start;gap:2px;margin:0;flex-shrink:0}
+  .pay-foot .pay-total .k{font-size:12px}
+  .pay-foot .pay-total .v{font-size:17px;text-align:left}
+  .pay-foot .pay-total .v:not(:empty){text-align:left}
+  .pay-foot .pay-btn{flex:1;margin-top:0}
 }
 
 /* ==========================================================================
@@ -1579,4 +1596,12 @@ body.gnb-light .letterbanner_section.partner_cta{padding:13.35vw 0}
   .pm-grid-m .pm-slide:has(.more) .text{flex:1;display:flex;flex-direction:column}
   .pm-grid-m .pm-slide .text .hash{margin-bottom:3.2vw}
   .pm-grid-m .pm-slide .text .more{margin-top:auto;height:10.6666666667vw;min-height:0;font-size:3.4666666667vw}
+}
+
+/* 모바일 (page_02) — Solution 목록 하단 가로선 제거, How It Works 이미지를 카드명 위로 */
+@media screen and (max-width:900px){
+  .ls-nobottom-m .titleContList{border-bottom:none}
+  .hiw-img-top-m .cont .box{display:flex;flex-direction:column}
+  .hiw-img-top-m .cont .box .pm-img{order:-1;margin-bottom:3.2vw}
+  .hiw-img-top-m .cont .box span{margin-bottom:0}
 }
