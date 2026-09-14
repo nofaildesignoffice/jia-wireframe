@@ -1605,3 +1605,8 @@ body.gnb-light .letterbanner_section.partner_cta{padding:13.35vw 0}
   .hiw-img-top-m .cont .box .pm-img{order:-1;margin-bottom:3.2vw}
   .hiw-img-top-m .cont .box span{margin-bottom:0}
 }
+
+/* 배경 사진 + 오버레이 섹션 — 회색 보조 문구를 흰색에 가깝게 (가독성) */
+.subhero_section .label,.subhero_section .lead,.subhero_section .stats .k,
+.letter_section span,
+.partner_cta .label,.partner_cta p{color:rgba(255,255,255,.9)}
